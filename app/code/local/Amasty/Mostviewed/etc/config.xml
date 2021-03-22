@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Mostviewed
+ */
+-->
+<config>
+
+    <modules>
+        <Amasty_Mostviewed>
+            <version>1.4.0</version>
+        </Amasty_Mostviewed>
+    </modules>
+
+    <global>
+        <models>
+            <ammostviewed>
+                <class>Amasty_Mostviewed_Model</class>
+            </ammostviewed>
+        </models>
+
+        <blocks>
+            <catalog>
+                <rewrite>
+        			<product_list_upsell>Amasty_Mostviewed_Block_Catalog_Product_List_Upsell</product_list_upsell>
+        			<product_list_related>Amasty_Mostviewed_Block_Catalog_Product_List_Related</product_list_related>
+        		</rewrite>
+            </catalog>
+
+			<enterprise_targetrule>
+				<rewrite>
+				    <catalog_product_list_upsell>Amasty_Mostviewed_Block_Catalog_Product_List_Upsell</catalog_product_list_upsell>
+        		    <catalog_product_list_related>Amasty_Mostviewed_Block_Catalog_Product_List_Related</catalog_product_list_related>
+				</rewrite>
+			</enterprise_targetrule>
+
+            <checkout>
+                <rewrite>
+                    <cart_crosssell>Amasty_Mostviewed_Block_Checkout_Cart_Crosssell</cart_crosssell>
+                </rewrite>
+            </checkout>
+        </blocks>
+
+        <helpers>
+            <ammostviewed>
+                <class>Amasty_Mostviewed_Helper</class>
+            </ammostviewed>
+        </helpers>
+
+        <resources>
+            <ammostviewed_setup>
+                <setup>
+                    <module>Amasty_Mostviewed</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ammostviewed_setup>
+            <ammostviewed_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ammostviewed_write>
+            <ammostviewed_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ammostviewed_read>
+        </resources>
+    </global>
+
+    <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ammostviewed translate="title" module="ammostviewed">
+                                            <title>Customers Also Viewed</title>
+                                        </ammostviewed>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                     </children>
+                </admin>
+			</resources>
+		</acl>
+        <translate>
+            <modules>
+                <Amasty_Mostviewed>
+                    <files>
+                        <default>Amasty_Mostviewed.csv</default>
+                    </files>
+                </Amasty_Mostviewed>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <general>
+            <limit>1000</limit>
+            <exclude></exclude>
+        </general>
+        <ammostviewed>
+            <up_sells>
+                <enabled>1</enabled>
+                <size>4</size>
+                <manually>1</manually>
+                <in_stock>1</in_stock>
+                <show_for_out_of_stock_only>0</show_for_out_of_stock_only>
+                <period>1000</period>
+                <data_source>0</data_source>
+                <order_status>complete</order_status>
+                <category>0</category>
+                <brand_condition>0</brand_condition>
+                <brand_attribute></brand_attribute>
+                <price_condition>0</price_condition>
+            </up_sells>
+            <cross_sells>
+                <enabled>1</enabled>
+                <size>4</size>
+                <manually>1</manually>
+                <in_stock>1</in_stock>
+                <period>1000</period>
+                <data_source>0</data_source>
+                <order_status>complete</order_status>
+                <category>0</category>
+                <brand_condition>0</brand_condition>
+                <brand_attribute></brand_attribute>
+                <price_condition>0</price_condition>
+            </cross_sells>
+            <related_products>
+                <enabled>1</enabled>
+                <size>4</size>
+                <manually>1</manually>
+                <in_stock>1</in_stock>
+                <show_for_out_of_stock_only>0</show_for_out_of_stock_only>
+                <period>1000</period>
+                <data_source>0</data_source>
+                <order_status>complete</order_status>
+                <category>0</category>
+                <brand_condition>0</brand_condition>
+                <brand_attribute></brand_attribute>
+                <price_condition>0</price_condition>
+            </related_products>
+        </ammostviewed>
+    </default>
+</config>

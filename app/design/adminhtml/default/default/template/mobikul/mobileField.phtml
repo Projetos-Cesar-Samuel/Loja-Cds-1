@@ -1,0 +1,23 @@
+<?php 
+    $mobile = "";
+    $customerId = $this->getRequest()->getParam("id");
+    if($customerId > 0){
+        $collection = Mage::getModel("mobikul/customermobile")
+            ->getCollection()
+            ->addFieldToFilter("customer_id", $customerId);
+        foreach($collection as $each){
+            $mobile = $each->getMobile();
+        }
+    }
+?>
+<script>
+    var html = '<tr>'+
+        '<td class="label"><label for="_accountmobilenumber">Mobile No. <span class="required">*</span></label></td>'+
+        '<td class="value">'+
+            '<input id="_accountmobilenumber" name="account[mobile_number]" value="'+'<?php echo $mobile; ?>'+'" class="validate-phoneLax required-entry input-text" type="text">'+
+        '</td>'+
+    '</tr>';
+    var target = "";
+        target = $("_accountemail").up(1);
+    target.insert({after:html});
+</script>

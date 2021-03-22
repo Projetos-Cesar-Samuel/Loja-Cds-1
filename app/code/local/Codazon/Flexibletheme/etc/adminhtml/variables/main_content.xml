@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Codazon_ThemeLayoutPro:etc/system_file.xsd">
+    <system>
+        <section id="variables">
+            <group id="library">
+                <label>Library</label>
+                <field id="flexible_less" translate="label" type="multiselect" sortOrder="10" sourceModel="Codazon_Flexibletheme_Model_System_Config_Source_ImportContentLessFiles" dataScope="custom_fields">
+                    <label>Import Less File</label>
+                </field>
+                <field id="use_as_block" translate="label" type="select" sortOrder="10" sourceModel="adminhtml/system_config_source_yesno" dataScope="custom_fields">
+                    <label>Use as a CMS Block</label>
+                    <note>Set Yes if you only use this main content as a CMS block, not use for building home page.</note>
+                    <default>0</default>
+                </field>
+                <field id="category_view_less" translate="label" type="hidden" sortOrder="10" dataScope="custom_fields">
+                    <label></label>
+                </field>
+                <field id="product_view_less" translate="label" type="hidden" sortOrder="10" dataScope="custom_fields">
+                    <label></label>
+                </field>
+            </group>
+            <group id="typography">
+                <label>Typography</label>
+                <field id="google_web_fonts" translate="label" type="multiselect" sortOrder="10" sourceModel="Codazon_Flexibletheme_Model_System_Config_Source_Googlefonts" dataScope="custom_fields">
+                    <label>Google Font</label>
+                </field>
+                <field id="google_font_weights" translate="label" type="text" sortOrder="20" dataScope="custom_fields">
+                    <label>Font Weights</label>
+                </field>
+                <field id="google_font_subset" translate="label" type="text" sortOrder="25" dataScope="custom_fields">
+                    <label>Font Subset</label>
+                </field>
+                <field id="f_default" translate="label" type="text" sortOrder="30">
+                    <label>Default Font</label>
+                </field>
+                <field id="f_h1" translate="label" type="text" sortOrder="40">
+                    <label>H1 Font</label>
+                </field>
+                <field id="f_h2" translate="label" type="text" sortOrder="50">
+                    <label>H2 Font</label>
+                </field>
+                <field id="f_h3" translate="label" type="text" sortOrder="60">
+                    <label>H3 Font</label>
+                </field>
+                <field id="f_h4" translate="label" type="text" sortOrder="70">
+                    <label>H4 Font</label>
+                </field>
+                <field id="f_h5" translate="label" type="text" sortOrder="80">
+                    <label>H5 Font</label>
+                </field>
+                <field id="f_h6" translate="label" type="text" sortOrder="90">
+                    <label>H6 Font</label>
+                </field>
+                <field id="f_special" translate="label" type="text" sortOrder="100">
+                    <label>Special</label>
+                </field>
+                <field id="f_note" translate="label" type="text" sortOrder="110">
+                    <label>Note</label>
+                </field>
+                <field id="f_input" translate="label" type="text" sortOrder="120">
+                    <label>Input</label>
+                </field>
+            </group>
+            <group id="main">
+                <label>Main</label>
+                <field id="main_background_file" translate="label" type="ajax_image" sortOrder="10">
+                    <label>Main Background Image</label>
+                </field>
+                <field id="main_background" translate="label" type="color" sortOrder="11">
+                    <label>Main Background</label>
+                </field>
+                <field id="main_background_image_option" translate="label" type="text" sortOrder="12">
+                    <label>Main Background Image Option</label>
+                </field>
+                <field id="main_block_background" translate="label" type="color" sortOrder="20">
+                    <label>Main Block Background</label>
+                </field>
+                <field id="main_block_title_text" translate="label" type="color" sortOrder="30">
+                    <label>Main Block Title Text</label>
+                </field>
+                <field id="main_block_title_background" translate="label" type="color" sortOrder="30">
+                    <label>Main Block Title Background</label>
+                </field>
+                <field id="main_text" translate="label" type="color" sortOrder="50">
+                    <label>Main Text</label>
+                </field>
+                <field id="main_hover_text" translate="label" type="color" sortOrder="60">
+                    <label>Main Hovered Text</label>
+                </field>
+                <field id="main_title_text" translate="label" type="color" sortOrder="70">
+                    <label>Main Title Text</label>
+                </field>
+                <field id="main_text_normal" translate="label" type="color" sortOrder="80">
+                    <label>Main Normal Text</label>
+                </field>
+                <field id="main_text_normal2" translate="label" type="color" sortOrder="90">
+                    <label>Main Normal Text 2</label>
+                </field>
+                <field id="main_productname_text" translate="label" type="color" sortOrder="100">
+                    <label>Main Product Name</label>
+                </field>
+                <field id="main_price_text" translate="label" type="color" sortOrder="110">
+                    <label>Main Price</label>
+                </field>
+                <field id="main_hover_text_box" translate="label" type="color" sortOrder="120">
+                    <label>Main Hover Text Box</label>
+                </field>
+                <field id="main_border" translate="label" type="color" sortOrder="130">
+                    <label>Main Border</label>
+                </field>
+                <field id="main_title_border" translate="label" type="color" sortOrder="140">
+                    <label>Main Title Border</label>
+                </field>
+                <field id="main_tab_background" translate="label" type="color" sortOrder="150">
+                    <label>Main Tab Background</label>
+                </field>
+                <field id="main_tab_hover_background" translate="label" type="color" sortOrder="160">
+                    <label>Main Tab Hovered Background</label>
+                </field>
+                <field id="main_tab_text" translate="label" type="color" sortOrder="170">
+                    <label>Main Tab Text</label>
+                </field>
+                <field id="main_tab_hover_text" translate="label" type="color" sortOrder="180">
+                    <label>Main Tab Horvered Text</label>
+                </field>
+                <field id="main_tab_border" translate="label" type="color" sortOrder="190">
+                    <label>Main Tab Border</label>
+                </field>
+                <field id="main_tab_hover_border" translate="label" type="color" sortOrder="200">
+                    <label>Main Tab Hovered Border</label>
+                </field>
+                <field id="main_input_background" translate="label" type="color" sortOrder="210">
+                    <label>Main Input Background</label>
+                </field>
+                <field id="main_input_text" translate="label" type="color" sortOrder="220">
+                    <label>Main Input Text</label>
+                </field>
+                <field id="main_input_border" translate="label" type="color" sortOrder="230">
+                    <label>Main input Border</label>
+                </field>
+                <field id="main_input_shadow" translate="label" type="text" sortOrder="240">
+                    <label>Main input Shadow</label>
+                </field>
+                <field id="main_box_background" translate="label" type="color" sortOrder="250">
+                    <label>Main Box Background</label>
+                </field>
+                <field id="main_box_radius" translate="label" type="text" sortOrder="260">
+                    <label>Main Box Radius</label>
+                </field>
+                <field id="main_box_border" translate="label" type="color" sortOrder="270">
+                    <label>Main Box Border</label>
+                </field>
+                <field id="main_box_shadow" translate="label" type="text" sortOrder="280">
+                    <label>Main Box Shadow</label>
+                </field>
+            </group>
+            <group id="button">
+                <label>Button</label>
+                <field id="btn_font" translate="label" type="text" sortOrder="10">
+                    <label>Button Font</label>
+                </field>
+                <field id="btn_padding" translate="label" type="text" sortOrder="20">
+                    <label>Button Padding</label>
+                </field>
+                <field id="btn_radius" translate="label" type="text" sortOrder="30">
+                    <label>Button Radius</label>
+                </field>
+                <field id="btn_shadow" translate="label" type="text" sortOrder="40">
+                    <label>Button Shadow</label>
+                </field>
+                <field id="btn_default_background" translate="label" type="color" sortOrder="50">
+                    <label>Default Button Background</label>
+                </field>
+                <field id="btn_default_text" translate="label" type="color" sortOrder="60">
+                    <label>Default Button Text</label>
+                </field>
+                <field id="btn_default_border" translate="label" type="color" sortOrder="70">
+                    <label>Default Button Border</label>
+                </field>
+                <field id="btn_primary_background" translate="label" type="color" sortOrder="80">
+                    <label>Primary Button Background</label>
+                </field>
+                <field id="btn_primary_text" translate="label" type="color" sortOrder="90">
+                    <label>Primary Button Text</label>
+                </field>
+                <field id="btn_primary_border" translate="label" type="color" sortOrder="100">
+                    <label>Primary Button Border</label>
+                </field>
+                <field id="btn_normal_background" translate="label" type="color" sortOrder="110">
+                    <label>Normal Button Background</label>
+                </field>
+                <field id="btn_normal_text" translate="label" type="color" sortOrder="120">
+                    <label>Normal Button Text</label>
+                </field>
+                <field id="btn_normal_border" translate="label" type="color" sortOrder="130">
+                    <label>Normal Button Border</label>
+                </field>
+                <field id="btn_hover_background" translate="label" type="color" sortOrder="140">
+                    <label>Horvered Button Background</label>
+                </field>
+                <field id="btn_hover_text" translate="label" type="color" sortOrder="150">
+                    <label>Horvered Button Text</label>
+                </field>
+                <field id="btn_hover_border" translate="label" type="color" sortOrder="160">
+                    <label>Horvered Button Border</label>
+                </field>
+                <field id="btn_icon_background" translate="label" type="color" sortOrder="170">
+                    <label>Icon Button Background</label>
+                </field>
+                <field id="btn_icon_text" translate="label" type="color" sortOrder="180">
+                    <label>Icon Button Text</label>
+                </field>
+                <field id="btn_icon_border" translate="label" type="color" sortOrder="190">
+                    <label>Icon Button Border</label>
+                </field>
+                <field id="btn_quickshop_background" translate="label" type="color" sortOrder="200">
+                    <label>Quickview Button Background</label>
+                </field>
+                <field id="btn_quickshop_text" translate="label" type="color" sortOrder="210">
+                    <label>Quickview Button Text</label>
+                </field>
+                <field id="btn_quickshop_border" translate="label" type="color" sortOrder="220">
+                    <label>Quickview Button Border</label>
+                </field>
+                <field id="btn_icon_hover_background" translate="label" type="color" sortOrder="230">
+                    <label>Horvered Icon Button Background</label>
+                </field>
+                <field id="btn_icon_hover_text" translate="label" type="color" sortOrder="240">
+                    <label>Horvered Icon Button Text</label>
+                </field>
+                <field id="btn_icon_hover_border" translate="label" type="color" sortOrder="250">
+                    <label>Hovered Icon Button Border</label>
+                </field>
+            </group>
+			<group id="section_bar">
+				<label>Section bar</label>
+				<field id="bar_main_background" translate="label" type="color" sortOrder="10">
+                    <label>Bar Main Background</label>
+                </field>
+				<field id="bar_main_color" translate="label" type="color" sortOrder="20">
+                    <label>Bar Text Color</label>
+                </field>
+				<field id="bar_active_color" translate="label" type="color" sortOrder="30">
+                    <label>Bar Active Background</label>
+                </field>
+				<field id="bar_active_text_color" translate="label" type="color" sortOrder="40">
+                    <label>Bar Active Text Color</label>
+                </field>
+				<field id="bar_tooltip_color" translate="label" type="color" sortOrder="50">
+                    <label>Bar Tooltip Background</label>
+                </field>
+				<field id="bar_tooltip_text_color" translate="label" type="color" sortOrder="60">
+                    <label>Bar Tooltip Text Color</label>
+                </field>
+			</group>
+            <group id="swatch_custom">
+                <label>Product swatches (Product view page)</label>
+                <field id="swatch_image_width" translate="label" type="text" sortOrder="10">
+                    <label>Swatch image width</label>
+                    <default>30px</default>
+                </field>
+                <field id="swatch_image_height" translate="label" type="text" sortOrder="20">
+                    <label>Swatch image height</label>
+                    <default>30px</default>
+                </field>
+                <field id="swatch_color_width" translate="label" type="text" sortOrder="30">
+                    <label>Swatch color width</label>
+                    <default>30px</default>
+                </field>
+                <field id="swatch_color_height" translate="label" type="text" sortOrder="40">
+                    <label>Swatch color height</label>
+                    <default>30px</default>
+                </field>
+                <field id="swatch_text_width" translate="label" type="text" sortOrder="50">
+                    <label>Swatch text width</label>
+                    <default>auto</default>
+                </field>
+                <field id="swatch_text_height" translate="label" type="text" sortOrder="60">
+                    <label>Swatch text height</label>
+                    <default>auto</default>
+                </field>
+            </group>
+			<group id="mobile_setting">
+				<label>Mobile</label>
+				<field id="main_mobile_toolbar_background" translate="label" type="color" sortOrder="10">
+                    <label>Mobile Tool Bar Background </label>
+                </field>
+				<field id="main_mobile_toolbar_color" translate="label" type="color" sortOrder="20">
+                    <label>Mobile Tool Bar Color </label>
+                </field>
+				<field id="btn_mobile_icon_text" translate="label" type="color" sortOrder="30">
+                    <label>Mobile Button Icon Text </label>
+                </field>
+				<field id="btn_mobile_icon_border" translate="label" type="color" sortOrder="40">
+                    <label>Mobile Button Icon Border </label>
+                </field>
+				<field id="btn_mobile_icon_bg" translate="label" type="color" sortOrder="50">
+                    <label>Mobile Button Icon Background </label>
+                </field>
+			</group>
+            <group id="mb_typography">
+                <label>Mobile Typography</label>
+                <field id="fm_default" translate="label" type="text" sortOrder="10">
+                    <label>Default Font</label>
+                </field>
+                <field id="fm_h1" translate="label" type="text" sortOrder="20">
+                    <label>H1 Font/Homepage Title</label>
+                </field>
+                <field id="fm_h2" translate="label" type="text" sortOrder="30">
+                    <label>H2 Font/Product price</label>
+                </field>
+                <field id="fm_h3" translate="label" type="text" sortOrder="40">
+                    <label>H3 Font/Product name</label>
+                </field>
+                <field id="fm_h4" translate="label" type="text" sortOrder="50">
+                    <label>H4 Font</label>
+                </field>
+                <field id="fm_h5" translate="label" type="text" sortOrder="60">
+                    <label>H5 Font</label>
+                </field>
+                <field id="fm_h6" translate="label" type="text" sortOrder="70">
+                    <label>H6 Font</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

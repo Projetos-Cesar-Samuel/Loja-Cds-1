@@ -1,0 +1,31 @@
+/*Fashion megastore*/
+@media screen and (min-width: 768px){
+	.page-header {
+		.abs-boxshadow(~'0px 7px 20px 0px rgba(179, 175, 175, 0.09)');
+		.cms-index-index &{
+			.abs-boxshadow(none);
+		}
+		.logo{
+			margin: 0;
+		}
+		.header-panel-right {
+		    padding-right: 0;
+		}
+		.store-contact{
+			letter-spacing: 0;
+			a{
+				.abs-transition();
+			}
+		}		
+		.features-links li{
+			.rtl-layout &{
+				&:last-child{padding-left:0;}
+			}
+		}
+		.sticky-menu:not(.active) .header-panel-right{
+			.rtl-layout &{
+				padding-left: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+ 
+<layout>
+    <adminhtml_sizechart_chart_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/chart</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_chart" name="chart">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+
+        </reference>
+    </adminhtml_sizechart_chart_index>
+    <adminhtml_sizechart_chart_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ave_sizechart/adminhtml_chart_grid" name="chart_grid"/>
+        </block>
+    </adminhtml_sizechart_chart_grid>
+    <!-- Chart add/edit action -->
+    <adminhtml_sizechart_chart_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/chart</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_chart_edit" name="chart_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+            <block type="ave_sizechart/adminhtml_chart_edit_tabs" name="chart_tabs"></block>
+        </reference>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+        </reference>
+        <reference name="js">
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_sizechart_chart_edit>
+
+    <adminhtml_sizechart_category_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/category</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_category" name="category">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+
+        </reference>
+    </adminhtml_sizechart_category_index>
+    <adminhtml_sizechart_category_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ave_sizechart/adminhtml_category_grid" name="category_grid"/>
+        </block>
+    </adminhtml_sizechart_category_grid>
+    <!-- Category add/edit action -->
+    <adminhtml_sizechart_category_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/category</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_category_edit" name="category_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+            <block type="ave_sizechart/adminhtml_category_edit_tabs" name="category_tabs"></block>
+        </reference>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+        </reference>
+        <reference name="js">
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_sizechart_category_edit>
+
+    <adminhtml_sizechart_dimension_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/dimension</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_dimension" name="dimension">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+
+        </reference>
+    </adminhtml_sizechart_dimension_index>
+    <adminhtml_sizechart_dimension_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ave_sizechart/adminhtml_dimension_grid" name="dimension_grid"/>
+        </block>
+    </adminhtml_sizechart_dimension_grid>
+    <!-- Dimension add/edit action -->
+    <adminhtml_sizechart_dimension_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/dimension</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_dimension_edit" name="dimension_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+            <block type="ave_sizechart/adminhtml_dimension_edit_tabs" name="dimension_tabs"></block>
+        </reference>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+        </reference>
+        <reference name="js">
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_sizechart_dimension_edit>
+
+    <adminhtml_sizechart_size_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/size</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_size" name="size" />
+
+        </reference>
+    </adminhtml_sizechart_size_index>
+    <adminhtml_sizechart_size_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ave_sizechart/adminhtml_size_grid" name="size_grid"/>
+        </block>
+    </adminhtml_sizechart_size_grid>
+    <!-- Size add/edit action -->
+    <adminhtml_sizechart_size_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/size</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_size_edit" name="size_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="ave_sizechart/adminhtml_size_edit_tabs" name="size_tabs"></block>
+        </reference>
+    </adminhtml_sizechart_size_edit>
+
+    <adminhtml_sizechart_type_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/type</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_type" name="type">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+
+        </reference>
+    </adminhtml_sizechart_type_index>
+    <adminhtml_sizechart_type_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ave_sizechart/adminhtml_type_grid" name="type_grid"/>
+        </block>
+    </adminhtml_sizechart_type_grid>
+    <!-- Type add/edit action -->
+    <adminhtml_sizechart_type_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>catalog/ave_sizechart/type</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_type_edit" name="type_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+            <block type="ave_sizechart/adminhtml_type_edit_tabs" name="type_tabs"></block>
+        </reference>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+        </reference>
+        <reference name="js">
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_sizechart_type_edit>
+
+    <adminhtml_sizechart_chart_attribute_index>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_chart_attribute" name="attribute_grid"></block>
+        </reference>
+    </adminhtml_sizechart_chart_attribute_index>
+    <adminhtml_sizechart_chart_attribute_edit>
+        <reference name="left">
+            <block type="ave_sizechart/adminhtml_chart_attribute_edit_tabs" name="attribute_edit_tabs"></block>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_chart_attribute_edit" name="attribute_edit_content"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="ave_sizechart/attribute/js.phtml">
+                <action method="setMainEntityName"><name>chart</name></action>
+            </block>
+        </reference>
+    </adminhtml_sizechart_chart_attribute_edit>
+    <adminhtml_sizechart_category_attribute_index>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_category_attribute" name="attribute_grid"></block>
+        </reference>
+    </adminhtml_sizechart_category_attribute_index>
+    <adminhtml_sizechart_category_attribute_edit>
+        <reference name="left">
+            <block type="ave_sizechart/adminhtml_category_attribute_edit_tabs" name="attribute_edit_tabs"></block>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_category_attribute_edit" name="attribute_edit_content"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="ave_sizechart/attribute/js.phtml">
+                <action method="setMainEntityName"><name>category</name></action>
+            </block>
+        </reference>
+    </adminhtml_sizechart_category_attribute_edit>
+    <adminhtml_sizechart_dimension_attribute_index>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_dimension_attribute" name="attribute_grid"></block>
+        </reference>
+    </adminhtml_sizechart_dimension_attribute_index>
+    <adminhtml_sizechart_dimension_attribute_edit>
+        <reference name="left">
+            <block type="ave_sizechart/adminhtml_dimension_attribute_edit_tabs" name="attribute_edit_tabs"></block>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_dimension_attribute_edit" name="attribute_edit_content"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="ave_sizechart/attribute/js.phtml">
+                <action method="setMainEntityName"><name>dimension</name></action>
+            </block>
+        </reference>
+    </adminhtml_sizechart_dimension_attribute_edit>
+    <adminhtml_sizechart_type_attribute_index>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_type_attribute" name="attribute_grid"></block>
+        </reference>
+    </adminhtml_sizechart_type_attribute_index>
+    <adminhtml_sizechart_type_attribute_edit>
+        <reference name="left">
+            <block type="ave_sizechart/adminhtml_type_attribute_edit_tabs" name="attribute_edit_tabs"></block>
+        </reference>
+        <reference name="content">
+            <block type="ave_sizechart/adminhtml_type_attribute_edit" name="attribute_edit_content"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="ave_sizechart/attribute/js.phtml">
+                <action method="setMainEntityName"><name>type</name></action>
+            </block>
+        </reference>
+    </adminhtml_sizechart_type_attribute_edit>
+
+    <adminhtml_sales_order_view>
+        <reference name="head">
+            <action method="addItem" ifconfig="ave_sizechart/general/show_in_cart">
+                <type>skin_css</type>
+                <stylesheet>ave/sizechart.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="order_items">
+            <action method="addColumnRender" ifconfig="ave_sizechart/general/show_in_cart">
+                <column>name</column>
+                <block>adminhtml/sales_items_column_name</block>
+                <template>ave_sizechart/sales/items/column/name.phtml</template>
+            </action>
+            <action method="addColumnRender" ifconfig="ave_sizechart/general/show_in_cart">
+                <column>name</column>
+                <block>adminhtml/sales_items_column_name_grouped</block>
+                <template>ave_sizechart/sales/items/column/name.phtml</template>
+                <type>grouped</type>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

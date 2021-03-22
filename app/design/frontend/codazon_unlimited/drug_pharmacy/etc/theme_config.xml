@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config>
+    <default>
+        <flexibletheme>
+            <general>
+                <newsletter_popup>unlimited-drug-pharmacy-newsletter-popup</newsletter_popup>
+            </general>
+            <header>
+                <header>header-style-03</header>
+                <main_menu>unlimited-drug-pharmacy-main-menu</main_menu>
+            </header>
+            <main_content>
+                <main_content>main-content-style-09</main_content>
+            </main_content>
+            <footer>
+                <footer>footer-style-12</footer>
+            </footer>
+        </flexibletheme>
+        <category_view>
+            <design>
+                <template>catalog/product/list/grid-styles/grid-style-01.phtml</template>
+            </design>
+        </category_view>
+    </default>
+</config>

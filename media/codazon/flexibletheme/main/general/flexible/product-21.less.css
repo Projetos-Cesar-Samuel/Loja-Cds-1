@@ -1,0 +1,133 @@
+/*Kids & Baby Store*/
+.img-label .product-list-style-21 {
+	.cdz-product-labels .label-item.new,
+	.cdz-product-labels .label-item.sale{
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+	}
+	.cdz-product-labels .label-item.sale{
+		.abs-cssbg(transparent, "codazon/flexibletheme/images/sale.png", ~"0 0", no-repeat);
+	}
+	.cdz-product-labels .label-item.new{
+		.abs-cssbg(transparent, "codazon/flexibletheme/images/new.png", ~"0 0", no-repeat);
+	}
+}
+.product-list-style-21{
+	.abs-product-hover-img(); 
+	.cdz-block-content{
+		border: 2px solid @main_box_border;
+		background: @main_box_background;
+		text-align: center;
+		overflow: hidden;
+		.abs-borderradius(@main_box_radius);
+	}
+	.product-item{
+		border-top: 1px solid @main_box_border;
+		margin: 0 20px;
+		padding: 15px 0;
+		overflow: hidden;
+	}
+	.item-group:first-child .product-item{
+		border-top-color: transparent;
+	}
+	.product-item-info{
+		display: flex;
+	}
+	.ratings .amount{
+		display: none
+	}
+	.button-hover-wrap{
+		position: absolute;
+		background: @main_box_background;
+		display: flex;
+		z-index: 1;
+		.abs-transition();
+		.btn-cart,
+		.qs-button,
+		.tocompare{
+			font-size: 0;
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			margin-right:10px;
+			padding: 0;
+			text-align: center;
+			border:1px solid;
+			.abs-borderradius(@btn_radius);
+			.abs-style(@btn_icon_text, @btn_icon_border, @btn_icon_background);
+			border-bottom: 3px solid darken(@btn_icon_border, 10%);
+			.abs-transition();
+			&:hover{
+				.abs-style(@btn_icon_hover_text, @btn_icon_hover_border, @btn_icon_hover_background);
+				border-color: darken(@btn_icon_hover_border, 10%);
+			}
+			.rtl-layout &{
+				margin-right:0;
+				margin-left:10px;
+			}
+		}
+		.btn-cart > span:before{
+			.abs-iconfont('\f291', 14px);
+		}
+		.tocompare:before{
+			.abs-iconfont('\f0ec', 14px);
+		}
+	}
+	.product.details{
+		text-align: left;
+		.rtl-layout &{
+			text-align: right
+		}
+		.product-name{
+			padding: 0;
+		}
+		.price-box .price{
+			font-size: 14px;
+		}
+	}
+	.towishlist{
+		position: absolute;
+		top: 0;
+		right: 0px;
+		z-index: 1;
+		.rtl-layout &{
+			right: auto;
+			left: 0;
+		}
+		&:before{
+			.abs-iconfont('\f004', 14px);
+			color: @main_box_border;
+			min-width: 18px;
+		}
+		&:hover{
+			&:before{
+				color: @main_hover_text;
+			}
+		}
+	}
+}
+@media @tablet_vertical{
+	.product-list-style-21{
+		.product-item:hover .button-hover-wrap{
+			.abs-opacity(1);
+		}
+		.button-hover-wrap{
+			bottom: 0;
+			.abs-opacity(0);
+		}
+	}
+}
+@media @phone{
+	.product-list-style-21{
+		.product-item-info .product-name{
+			text-align: left;
+			.rtl-layout &{
+				text-align: right
+			}
+		}
+		.button-hover-wrap{
+			position: static;
+		}
+	}
+}

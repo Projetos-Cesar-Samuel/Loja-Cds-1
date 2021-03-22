@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config>
+    <default>
+        <flexibletheme>
+            <general>
+                <enable_rtl>0</enable_rtl>
+                <custom_body_class></custom_body_class>
+                <newsletter_popup>unlimited-default-newsletter-popup</newsletter_popup>
+                <newsletter_popup_delay_time>0</newsletter_popup_delay_time>
+                <newsletter_popup_frequency>60</newsletter_popup_frequency>
+            </general>
+           <header>
+                <header>header-style-01</header>
+                <left_menu>unlimited-links-list</left_menu>
+                <left_menu_style>dropdown</left_menu_style>
+                <wishlist_style>dropdown</wishlist_style>
+                <mini_cart_style>dropdown</mini_cart_style>
+                <account_panel_style>dropdown</account_panel_style>
+                <display_advanced_search>1</display_advanced_search>
+                <enable_sticky_menu>1</enable_sticky_menu>
+                <main_menu>unlimited-electronic-main-menu</main_menu>
+                <disable_default_menu>1</disable_default_menu>
+                <vertical_menu_title>All Categories</vertical_menu_title>
+            </header>
+            <main_content>
+                <main_content>main-content-style-03</main_content>
+            </main_content>
+            <search_by_category>
+                <enable>1</enable>
+                <category_parent_id>2</category_parent_id>
+                <category_max_depth>3</category_max_depth>
+            </search_by_category>
+            <footer>
+                <footer>footer-style-07</footer>
+            </footer>
+            <env>
+                <enable_dev_mode>0</enable_dev_mode>
+            </env>
+        </flexibletheme>
+        <product_view>
+            <design>
+                <template>catalog/product/view/view-styles/view-style-02.phtml</template>
+                <moreview_style>vertical</moreview_style>
+                <moreview_margin>10</moreview_margin>
+                <enable_zoom_lens>1</enable_zoom_lens>
+                <inner_zoom>1</inner_zoom>
+                <lens_width>300</lens_width>
+                <lens_height>300</lens_height>
+                <display_social_links>1</display_social_links>
+                <relation_list_style></relation_list_style>
+                <display_social_links>1</display_social_links>
+                <display_sale_timer>1</display_sale_timer>
+                <display_size_chart>1</display_size_chart>
+                <display_size_chart_as_page_link>0</display_size_chart_as_page_link>
+                <size_chart_label>Size Chart</size_chart_label>
+                <size_chart_link>sizechart.html</size_chart_link>
+                <size_chart_popup>unlimited-product-view-size-chart-popup</size_chart_popup>
+                <custom_text>unlimited-product-view-custom-block-style-01</custom_text>
+            </design>
+        </product_view>
+        <category_view>
+            <design>
+                <template>catalog/product/list/grid-styles/grid-style-01.phtml</template>
+                <show>thumb,sku,name,review,price,addtocart,wishlist,compare,quickshop,label</show>
+                <margin_right_desktop>20</margin_right_desktop>
+                <margin_bottom_desktop>20</margin_bottom_desktop>
+                <margin_right_mobile>10</margin_right_mobile>
+                <margin_bottom_mobile>10</margin_bottom_mobile>
+                <show_label>1</show_label>
+            </design>
+            <items_per_row_1>
+                <items_1900>5</items_1900>
+                <items_1600>5</items_1600>
+                <items_1420>5</items_1420>
+                <items_1280>5</items_1280>
+                <items_980>4</items_980>
+                <items_768>3</items_768>
+                <items_480>2</items_480>
+                <items_320>2</items_320>
+                <items_0>2</items_0>
+            </items_per_row_1>
+            <items_per_row_2>
+                <items_1900>4</items_1900>
+                <items_1600>4</items_1600>
+                <items_1420>4</items_1420>
+                <items_1280>4</items_1280>
+                <items_980>3</items_980>
+                <items_768>2</items_768>
+                <items_480>2</items_480>
+                <items_320>2</items_320>
+                <items_0>2</items_0>
+            </items_per_row_2>
+            <items_per_row_3>
+                <items_1900>3</items_1900>
+                <items_1600>3</items_1600>
+                <items_1420>3</items_1420>
+                <items_1280>3</items_1280>
+                <items_980>2</items_980>
+                <items_768>2</items_768>
+                <items_480>2</items_480>
+                <items_320>2</items_320>
+                <items_0>2</items_0>
+            </items_per_row_3>
+        </category_view>
+        <pages>
+            <blog>
+                <date_format>M d Y</date_format>
+            </blog>
+            <contact>
+                <display_google_map>1</display_google_map>
+                <google_api_key>AIzaSyDsUcTjt43mTheN9ruCsQVgBE-wgN6_AfY</google_api_key>
+                <map_zoom>10</map_zoom>
+                <map_title>Main Store</map_title>
+                <map_address>6505 boulevard Henri-Bourassa, Montréal, Quebec, H1G2V5</map_address>
+                <map_ratio>0.86</map_ratio>
+                <map_latitude>45.6107667</map_latitude>
+                <map_longitude>-73.6108024</map_longitude>
+                <map_additional_markers>Store 2|45.5107660|-73.5108023|160 Chemin Tour-de-l’Isle Montreal, QC H3C 4G8
+Store 3|45.710767|-73.7108656|2505 Boulevard des EntreprisesTerrebonne, QC J6X 5S5</map_additional_markers>
+                <contact_info>unlimited-contact-page-store-information</contact_info>
+                <replacement_content>unlimited-contact-page-store-information</replacement_content>
+            </contact>
+        </pages>
+        <images>
+            <product>
+                <product_base_image_width>1000</product_base_image_width>
+                <product_base_image_height>1000</product_base_image_height>
+                <product_moreview_image_width>110</product_moreview_image_width>
+                <product_moreview_image_height>110</product_moreview_image_height>
+                <product_listing_image_width></product_listing_image_width>
+                <product_listing_image_height></product_listing_image_height>
+                <product_cart_image_width></product_cart_image_width>
+                <product_cart_image_height></product_cart_image_height>
+            </product>
+            <category>
+                <product_image_width>330</product_image_width>
+                <product_image_height>330</product_image_height>
+            </category>
+            <blog>
+                <blog_base_image_width>1100</blog_base_image_width>
+                <blog_base_image_height>841</blog_base_image_height>
+                <blog_thumbnail_image_width>276</blog_thumbnail_image_width>
+                <blog_thumbnail_image_height>184</blog_thumbnail_image_height>
+            </blog>
+        </images>
+    </default>
+</config>

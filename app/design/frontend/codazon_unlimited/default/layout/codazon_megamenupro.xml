@@ -1,0 +1,21 @@
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/menu.js</name></action>
+			<!--action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/plugin.js</name></action-->
+			<action method="addItem"><type>skin_css</type><name>codazon/megamenupro/css/font-awesome.min.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>codazon/megamenupro/css/menu.css</name></action>
+		</reference>
+		<reference name="root">
+			<action method="addBodyClass" ifconfig="codazon_megamenupro/general/active_rtl"><classname>cdz-rtl</classname></action>
+		</reference>
+		<reference name="header">
+			<block type="core/text_list" name="top.menu" as="topMenu" translate="label">
+				<label>Navigation Bar</label>
+				<block type="core/template" name="catalog.topnav" template="codazon_megamenupro/topmenu.phtml" />
+			</block>
+			<remove name="mobile.catalog.topnav" />
+			<remove name="mobile.top.menu" />
+		</reference>
+    </default>
+</layout>

@@ -1,0 +1,348 @@
+/*checkout page*/
+#checkout-progress-wrapper{
+	margin: 30px 0;
+}
+.checkout-onepage-index{
+	.opc{
+		input[type=email], input[type=search], input[type=number], input[type=password], input[type=tel], input[type=text]{
+			width: 100%;
+			border-width: 1px;
+		}
+	}
+	.main{
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+	}
+	.col-main{
+		-webkit-flex-basis: 100%;
+		flex-basis: 100%;
+		-webkit-flex-grow: 1;
+		flex-grow: 1;
+		-ms-flex-order: 2;
+		-webkit-order: 2;
+		order: 2;
+		width:100%;
+		padding:0;
+		margin-bottom:40px;
+	}
+	
+	.sidebar{
+		-webkit-flex-grow: 1;
+		flex-grow: 1;
+		-webkit-flex-basis: 100%;
+		flex-basis: 100%;
+		-ms-flex-order: 1;
+		-webkit-order: 1;
+		order: 1;
+		width:100%;
+		padding:0;
+		margin-bottom:40px;
+	}
+	.page-title{
+		display:none;
+	}
+}
+
+
+.sidebar .opc-block-progress{
+	padding:0;
+	opacity: 1!important;
+	border:none;
+	background:transparent;
+	box-shadow: none;
+	.block-title{
+		border:0!important;
+		text-align:center;
+		padding:0;
+		background:transparent;
+		strong{
+			border:0;
+			font:@f_h1;
+			padding:0;
+			margin:0;
+			.lib-css(color, @main_title_text);
+		}
+	}
+	.block-content {
+		padding:40px 0 0!important;
+		text-align:center!important;
+		div{
+			position: relative;
+			display: inline-block;
+			padding: 0 30px;
+			margin:0;
+		}
+		dd.complete{display:none}
+		dt{
+			.lib-css(color, @main_text);
+			font:@f_h5;
+			padding:0;
+			&.complete{
+				&:after{
+					background:@main_hover_text;
+					z-index:1;
+				}
+				&:before{
+					content : '\f00c';
+					color: #fff;
+					height: 16px;
+					width: 16px;
+					border-radius: 100px;
+					padding: 0;
+					margin: 0;
+					text-align: center;
+					background:@main_hover_text;
+				}
+			}
+			&:before{
+				position: absolute;
+				display: block;
+				width: 8px;
+				height: 8px;
+				.abs-iconfont('\f111', 12px);
+				.abs-borderradius(100%);
+				top: -19px;
+				left: 41%;
+				z-index:1;
+				line-height:1.35;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				display: block;
+				width: 97%;
+				height: 2px;
+				margin-left: 7px;
+				top: -14px;
+				left: 45%;
+				.rtl-layout &{
+					right: 58%;
+					left: auto;
+					margin-left: 0;
+					margin-right: 0px;
+					width:98%;
+				}
+			}
+		}
+		#shipping-progress-opcheckout:before, 
+		#shipping_method-progress-opcheckout:before, 
+		#payment-progress-opcheckout:before, 
+		.checkout-progress li:before{
+			content: "";
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 2px;
+			top: -14px;
+			right: 54%;
+			margin-right: 5px;
+			background:@main_text;
+			.rtl-layout &{
+				right:auto;
+				left:44%;
+			}
+		}
+		#payment-progress-opcheckout dt:after{display:none}
+	}
+	.changelink a{
+		
+		font-size: 0px;
+	}
+	.changelink a:before{
+		position: absolute;
+		.abs-iconfont('\f044', 14px);
+		.abs-borderradius(100%);		
+		top:2px;
+		.rtl-layout &{
+			right:9px;
+		}
+	}
+}
+
+
+.opc{
+	li.section{
+		display:none;
+		.step-title{
+			opacity:1!important;
+			text-align:center;
+			border:none!important;
+			h2{
+				.lib-css(font, @f_h2);
+				.lib-css(margin, 0 0 10px);
+				.lib-css(color, @main_title_text)!important;
+				float:none;
+			}
+			.number{
+				display:none!important;
+			}
+		}
+		.sp-methods{
+			text-transform: uppercase;
+			color: @main_title_text;
+			dt{
+				font-weight: normal;
+			}
+		}
+		.step{
+			width:50%;
+			margin:0 auto;
+			border: 1px solid @main_border;
+			background: @main_block_background;
+			.abs-borderradius(@main_box_radius);
+			.abs-boxshadow(@main_box_shadow);
+			padding:20px;
+			h3{
+				.lib-css(font, @f_h4);
+				.lib-css(color, @main_title_text);
+			}
+			.form-list{
+				.control label{
+					background:transparent;
+					.abs-colorfont(@main_text, @f_default);
+				}
+				select{
+					max-width:100%;
+				}
+			}
+			.buttons-set{
+				margin: 0 -20px -20px;
+				background: #eeeeee;
+				padding: 40px 20px;
+				text-align:center;
+				button.button{
+					margin:0;
+					float:none;
+					min-width: 40%;
+				}
+				.secondary,.back-link{
+					margin-top: 10px;
+					margin-bottom: 10px;
+					width: 100%;
+					text-align: center;
+					line-height: 1.35;
+					a{
+						border-bottom: 1px solid;
+						text-decoration: none !important;
+						text-transform: uppercase;
+						padding: 0;
+						line-height: 1.35;
+					}
+				}
+				.f-left a{
+					padding: 0;
+					line-height: 1.35;
+				}
+			}
+			.col2-set .col-1 .buttons-set{
+				margin-bottom:20px;
+			}
+			#payment-tool-tip{
+				position:absolute;
+				top:100px;
+				.btn-close a{
+					position:absolute;
+					top:-15px;
+					right:0;
+					font-size:0;
+					display:inline-block;
+					height:20px;
+					width:20px;
+					&:before{
+						.abs-iconfont('\f2d3', 20px);
+					}
+				}
+			}
+		}
+		.col2-set .col-1, .col2-set .col-2{
+			width:100%;
+			padding:0;
+		}
+	}
+	li.section.active{display:block}
+	.form-list .fields .field{
+		position:relative;
+		
+	}
+	#opc-login .step{
+		padding:20px;
+		p:not(.required){
+			.abs-colorfont(@main_text, @f_default);
+		}
+		.buttons-set{
+			padding-top:40px;
+		}
+	}
+	.checkout-review-table{
+		margin-bottom:20px;
+		h3.product-name{
+			font: @f_h5;
+			margin:0;
+		}
+	}
+	#review-buttons-container{
+		margin:0 -20px -20px;
+		width:auto;
+		.f-left{
+			float:none;
+			margin: 10px 0 0;
+			text-transform: uppercase;
+		}
+	}
+}
+
+/*resize*/
+@media only screen and (max-width: 979px){
+	.opc li.section .step{
+		width:80%
+	}
+}
+
+@media only screen and (max-width: 767px){
+	.opc li.section .step{
+		width:100%
+	}
+	.opc .checkout-review-table{
+		display:block;
+		overflow:auto;
+	}
+}
+
+body[class*="checkout-multishipping-"] .page-title{
+	float: none;
+	h1{
+		float: none;
+		margin: 0;
+	}
+}
+.fieldset p.required{
+	.rtl-layout &{
+		float: left;
+	}
+}
+.form-list .control input.radio, 
+.form-list .control input.checkbox, 
+.sp-methods dt input.radio, 
+.sp-methods dt input.checkbox, 
+#checkout-shipping-method-load 
+.sp-methods dd input.radio, 
+#checkout-shipping-method-load 
+.sp-methods dd input.checkbox, 
+#co-shipping-method-form .sp-methods dd input.radio, 
+#co-shipping-method-form .sp-methods dd input.checkbox, 
+.product-options ul.options-list input.radio, 
+.product-options ul.options-list input.checkbox{
+	.rtl-layout &{
+		float: right;
+		margin-right: 0;
+	}
+}
+.checkout-onepage-success{
+	.main-container .main{
+		padding: 60px 0;
+	}
+}

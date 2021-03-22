@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$isLoggedIn = Mage::helper('customer')->isLoggedIn();
+?>
+<div class="wl-state <?= $isLoggedIn ? 'wl-login' : 'wl-no-login' ?>">
+<?php if ($isLoggedIn) : ?>
+    <?php $html = $this->getBlockHtml('wishlist.minilist'); ?>
+    <?php if ($html) : ?>
+        <?= $html ?>
+    <?php else : ?>
+    <div class="block block-wishlist">
+        <div class="block-top">
+            <div class="block-title">
+                <strong><?= $this->__('Your Wishlist') ?></strong>
+                <span> - </span><span><?= $this->__('%s item', 0); ?></span>
+                <a class="details md-icon-button launch md-ink-ripple" href="<?= $this->helper('wishlist')->getListUrl() ?>"></a>
+            </div>
+        </div>
+        <div class="block-content">
+            <div class="wishlist-empty"><?php echo $this->__('Your wishlist has no items');?></div>
+        </div>
+    </div>
+    <?php endif ?>
+<?php else : ?>
+<?php echo $this->getBlockHtml('cdz_wishlist.login_form'); ?>
+<?php endif ?>
+</div>

@@ -1,0 +1,144 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This software is designed to work with Magento community edition and
+ * its use on an edition other than specified is prohibited. aheadWorks does not
+ * provide extension support in case of incorrect edition use.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Blog
+ * @version    tip
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?>
+<?php
+$_helper = Mage::helper('flexibletheme');
+$width = $_helper->getConfig('images/blog/blog_thumbnail_image_width')?:276;
+$height = $_helper->getConfig('images/blog/blog_thumbnail_image_height')?:184;
+$paddingBottom = $height*100/$width;
+$imgHelper = Mage::helper('blogfeatures/image');
+$dateFormat = $_helper->getConfig('pages/blog/date_format')?:'Y-m-d';
+$dateHelper = Mage::getModel('core/date');
+$route = Mage::helper('blog')->getRoute();
+?>
+
+
+<?php $posts = $this->getPosts(); ?>
+<?php if (count($posts)): ?>
+ <?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
+ <div class="post-list-wrapper">
+ <ol class="post-list">
+    <?php foreach ($posts as $post): ?>
+        <?php
+            $postName = $this->escapeHtml($post->getTitle(), true, null);
+            $postUrl = $post->getAddress();
+            $postImage = $imgHelper->getImage($post, $width, null, array('keep_frame' => false));
+            $postCats = $post->getCats();
+            $catCount = count($postCats);
+        ?>
+        <li class="post-holder post-holder-<?php echo $post->getId() ?>">
+            <div class="post-inner row">
+                <div class="col-sm-9">
+					<a href="<?= $postUrl ?>" class="post-img abs-img" style="padding-bottom: <?= $paddingBottom ?>%">
+						<img class="img-responsive" src="<?= $postImage ?>" />
+					</a>
+                </div>
+                <div class="col-sm-15">
+                    <div class="post-info-panel">
+                        <div class="post-header">
+                            <div class="post-title-holder clearfix">
+                                <?php $date = $dateHelper->date($dateFormat, $post->getCreatedTime()); ?>
+                                <div class="post-date"><?= $date ?></div>
+                                <h3 class="post-title">
+                                    <a class="post-item-link"
+                                       href="<?php echo $postUrl ?>">
+                                        <?php echo $postName; ?>
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <div class="item post-author">
+                                <span class="label"><?php echo __('Posted by:') ?></span>
+                                <span class="value"><?= $post->getUser(); ?></span>
+                            </div>
+                            <?php if ($catCount > 0) : ?>
+                            <div class="item post-categories">
+                                <span class="label"><?php echo __('Categories:') ?></span>
+                                <?php $n = 0; foreach ($postCats as $data): ?>
+                                    <a href="<?php echo $data['url']; ?>"><?php echo $data['title']; ?></a>
+                                <?php $n++; if ($n != $catCount) : ?>, <?php endif ?>
+                                <?php endforeach; ?>
+                            </div>
+                            <?php endif ?>
+                            <?php if (trim($post->getTags())) : ?>
+                            <?php $tags = explode(',', $post->getTags()); ?>
+                            <div class="item post-tags">
+                                <span class="label"><?php echo __('Tags:') ?></span>
+                                <?php foreach ($tags as $tag): ?>
+                                <a href="<?php echo Mage::getUrl($route . '/tag/' . urlencode($tag)) ?>"><?php echo $tag ?></a>
+                                <?php endforeach ?>
+                            </div>
+                            <?php endif ?>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-description clearfix">
+                                <div class="post-text-hld clearfix">
+                                    <?php echo $post->getShortContent() ?>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="post-footer">
+                            <a class="post-read-more" href="<?php echo $postUrl ?>" title="<?php echo $postName ?>"><?php echo $this->__('Read more &#187;') ?></a>
+                            <div class="addthis_toolbox addthis_default_style"
+                                addthis:url="<?php echo $postUrl ?>"
+                                addthis:title="<?php echo $postName; ?>"
+                                <?php if ($postImage) { ?>
+                                addthis:media="<?php echo $postImage ?>"
+                                <?php } ?>>
+                                <a class="addthis_button_facebook"></a>
+                                <a class="addthis_button_twitter"></a>
+                                <a class="addthis_button_email"></a>
+                                <a class="addthis_button_compact"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    <?php endforeach; ?>
+    <li class="hidden">
+        <script type="text/javascript">
+            if (window.addthis) {
+                addthis.toolbox('.addthis_toolbox');
+            }
+        </script>
+    </li>
+</ol>
+</div>
+<?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
+<?php else: ?>
+    <?php echo Mage::helper('blog')->__('No Posts in this Category.'); ?>
+<?php endif; ?>
+
+<script type="text/javascript">
+    var addthis_config = {
+        "ui_language": '<?= Mage::app()->getLocale()->getLocaleCode() ?>',
+        "data_track_clickback": false
+    }
+</script>
+<script type="text/javascript" async src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4def63cd3cf37569"></script>

@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$helper = Mage::helper('flexibletheme');
+$displayStyle = $this->getData('display_style')?:($helper->getAccountPanelStyle()?:'dropdown');
+?>
+
+<a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="visible-xs skip-link skip-account">
+    <span class="icon"></span>
+    <span class="label"><?php echo $this->__('Account'); ?></span>
+</a>

@@ -1,0 +1,23 @@
+<?php
+$tweets = $this->getLastestTweets();
+$dateFormat = $this->getData('date_format')?:'D m, Y';
+$userPage = 'https://twitter.com/'.$this->getData('user_name');
+?>
+
+<?php if (count($tweets)) : ?>
+<ul class="twitter-list">
+<?php foreach ($tweets as $tweet) : ?>
+<li class="tweet-item">
+    <div class="tweet-text">
+        <?= $tweet->text ?>
+    </div>
+    <div class="tweet-time">
+        <a target="_blank" href="https://twitter.com/<?= $tweet->user->id ?>/status/<?= $tweet->id_str ?>" ><?= $this->dateFormat($tweet->created_at, $dateFormat); ?></a>
+    </div>
+    <div class="tweet-user">
+        <span><?= __('by') ?></span> <a target="_blank" href="<?= $userPage ?>"><?= $tweet->user->name ?></a>
+    </div>
+</li>
+<?php endforeach ?>
+</ul>
+<?php endif ?>

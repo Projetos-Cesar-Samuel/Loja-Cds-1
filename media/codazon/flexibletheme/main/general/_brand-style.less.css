@@ -1,0 +1,68 @@
+.brand-slider-wrapper {
+    .item {
+        overflow: hidden;
+    }
+    .item-image {
+        .abs-scale(1);
+        .abs-transition();
+        display: block;
+        &:hover {
+            .abs-scale(1.1);
+        }
+    }
+    /*IE fix*/
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .item-image, .item {
+            display: inline-block
+        }
+    }
+}
+[class*='brand-style']{
+    @media @phone{
+        .owl-nav {
+            display: none;
+        }
+    }
+}
+/*Fashion*/
+
+.brand-style01 {
+    position: relative;
+    border: 1px solid @main_border;
+    .owl-stage-outer {
+        position: static;
+        padding: 40px 0;
+    }
+    .brand-slider-wrapper {
+        position: relative;
+        border: 1px solid @main_border;
+    }
+}
+/*Fashion megastore*/
+
+.brand-style02 {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+/*Furniture*/
+
+.brand-style03 {
+    padding: 20px;
+    background: #f9f9f9;
+}
+/*Baby kid*/
+
+.brand-style04 {
+		.cdz-block-content{
+			.slider-arrow-style-10();
+	  	.owl-dots-style-01();
+	  }
+    .cdz-block-content {
+        border: 2px solid @main_box_border;
+        .abs-borderradius(@main_box_radius);
+        background: @main_box_background;
+    }
+    .owl-carousel .owl-stage-outer {
+        padding: 10px;
+    }
+}

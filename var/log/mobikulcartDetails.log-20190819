@@ -1,0 +1,326 @@
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Request Params-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): Array
+(
+    [storeId] => 1
+    [width] => 720
+    [quoteId] => 0
+    [customerId] => 5
+)
+
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Request Params-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Auth Data-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): Array
+(
+    [authKey] => jfd0he8rq7r77vc9dj13ak9gr7
+    [responseCode] => 2
+    [message] => 
+)
+
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Auth Data-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): ---------- Quote -----------
+2019-08-17T18:30:05+00:00 DEBUG (7): Mage_Sales_Model_Quote Object
+(
+    [_eventPrefix:protected] => sales_quote
+    [_eventObject:protected] => quote
+    [_cacheTag:protected] => quote
+    [_customer:protected] => 
+    [_addresses:protected] => 
+    [_items:protected] => 
+    [_payments:protected] => 
+    [_errorInfoGroups:protected] => Array
+        (
+        )
+
+    [_preventSaving:protected] => 
+    [_resourceName:protected] => sales/quote
+    [_resource:protected] => 
+    [_resourceCollectionName:protected] => sales/quote_collection
+    [_dataSaveAllowed:protected] => 1
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [entity_id] => 15
+            [store_id] => 1
+            [created_at] => 2019-08-17 17:43:17
+            [updated_at] => 2019-08-17 18:25:43
+            [converted_at] => 
+            [is_active] => 1
+            [is_virtual] => 0
+            [is_multi_shipping] => 0
+            [items_count] => 1
+            [items_qty] => 2.0000
+            [orig_order_id] => 0
+            [store_to_base_rate] => 1.0000
+            [store_to_quote_rate] => 1.0000
+            [base_currency_code] => BRL
+            [store_currency_code] => BRL
+            [quote_currency_code] => BRL
+            [grand_total] => 18.0000
+            [base_grand_total] => 18.0000
+            [checkout_method] => 
+            [customer_id] => 5
+            [customer_tax_class_id] => 3
+            [customer_group_id] => 1
+            [customer_email] => anc@hit.com
+            [customer_prefix] => 
+            [customer_firstname] => anchit
+            [customer_middlename] => test
+            [customer_lastname] => makkar
+            [customer_suffix] => 
+            [customer_dob] => 
+            [customer_note] => 
+            [customer_note_notify] => 1
+            [customer_is_guest] => 0
+            [remote_ip] => 
+            [applied_rule_ids] => 
+            [reserved_order_id] => 
+            [password_hash] => 
+            [coupon_code] => 
+            [global_currency_code] => BRL
+            [base_to_global_rate] => 1.0000
+            [base_to_quote_rate] => 1.0000
+            [customer_taxvat] => 
+            [customer_gender] => 0
+            [subtotal] => 18.0000
+            [base_subtotal] => 18.0000
+            [subtotal_with_discount] => 18.0000
+            [base_subtotal_with_discount] => 18.0000
+            [is_changed] => 1
+            [trigger_recollect] => 0
+            [ext_shipping_info] => 
+            [gift_message_id] => 
+            [is_persistent] => 0
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => Array
+        (
+            [entity_id] => 15
+            [store_id] => 1
+            [created_at] => 2019-08-17 17:43:17
+            [updated_at] => 2019-08-17 18:25:43
+            [converted_at] => 
+            [is_active] => 1
+            [is_virtual] => 0
+            [is_multi_shipping] => 0
+            [items_count] => 1
+            [items_qty] => 2.0000
+            [orig_order_id] => 0
+            [store_to_base_rate] => 1.0000
+            [store_to_quote_rate] => 1.0000
+            [base_currency_code] => BRL
+            [store_currency_code] => BRL
+            [quote_currency_code] => BRL
+            [grand_total] => 18.0000
+            [base_grand_total] => 18.0000
+            [checkout_method] => 
+            [customer_id] => 5
+            [customer_tax_class_id] => 3
+            [customer_group_id] => 1
+            [customer_email] => anc@hit.com
+            [customer_prefix] => 
+            [customer_firstname] => anchit
+            [customer_middlename] => test
+            [customer_lastname] => makkar
+            [customer_suffix] => 
+            [customer_dob] => 
+            [customer_note] => 
+            [customer_note_notify] => 1
+            [customer_is_guest] => 0
+            [remote_ip] => 
+            [applied_rule_ids] => 
+            [reserved_order_id] => 
+            [password_hash] => 
+            [coupon_code] => 
+            [global_currency_code] => BRL
+            [base_to_global_rate] => 1.0000
+            [base_to_quote_rate] => 1.0000
+            [customer_taxvat] => 
+            [customer_gender] => 0
+            [subtotal] => 18.0000
+            [base_subtotal] => 18.0000
+            [subtotal_with_discount] => 18.0000
+            [base_subtotal_with_discount] => 18.0000
+            [is_changed] => 1
+            [trigger_recollect] => 0
+            [ext_shipping_info] => 
+            [gift_message_id] => 
+            [is_persistent] => 0
+        )
+
+    [_idFieldName:protected] => entity_id
+    [_isDeleted:protected] => 
+    [_oldFieldsMap:protected] => Array
+        (
+        )
+
+    [_syncFieldsMap:protected] => Array
+        (
+        )
+
+)
+
+2019-08-17T18:30:05+00:00 DEBUG (7): ---------- Quote -----------
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Request Params-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): Array
+(
+    [storeId] => 1
+    [width] => 720
+    [quoteId] => 0
+    [customerId] => 5
+)
+
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Request Params-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Auth Data-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): Array
+(
+    [authKey] => jfd0he8rq7r77vc9dj13ak9gr7
+    [responseCode] => 2
+    [message] => 
+)
+
+2019-08-17T18:30:05+00:00 DEBUG (7): ----------Auth Data-----------
+2019-08-17T18:30:05+00:00 DEBUG (7): ---------- Quote -----------
+2019-08-17T18:30:05+00:00 DEBUG (7): Mage_Sales_Model_Quote Object
+(
+    [_eventPrefix:protected] => sales_quote
+    [_eventObject:protected] => quote
+    [_cacheTag:protected] => quote
+    [_customer:protected] => 
+    [_addresses:protected] => 
+    [_items:protected] => 
+    [_payments:protected] => 
+    [_errorInfoGroups:protected] => Array
+        (
+        )
+
+    [_preventSaving:protected] => 
+    [_resourceName:protected] => sales/quote
+    [_resource:protected] => 
+    [_resourceCollectionName:protected] => sales/quote_collection
+    [_dataSaveAllowed:protected] => 1
+    [_isObjectNew:protected] => 
+    [_data:protected] => Array
+        (
+            [entity_id] => 15
+            [store_id] => 1
+            [created_at] => 2019-08-17 17:43:17
+            [updated_at] => 2019-08-17 18:30:05
+            [converted_at] => 
+            [is_active] => 1
+            [is_virtual] => 0
+            [is_multi_shipping] => 0
+            [items_count] => 1
+            [items_qty] => 2.0000
+            [orig_order_id] => 0
+            [store_to_base_rate] => 1.0000
+            [store_to_quote_rate] => 1.0000
+            [base_currency_code] => BRL
+            [store_currency_code] => BRL
+            [quote_currency_code] => BRL
+            [grand_total] => 18.0000
+            [base_grand_total] => 18.0000
+            [checkout_method] => 
+            [customer_id] => 5
+            [customer_tax_class_id] => 3
+            [customer_group_id] => 1
+            [customer_email] => anc@hit.com
+            [customer_prefix] => 
+            [customer_firstname] => anchit
+            [customer_middlename] => test
+            [customer_lastname] => makkar
+            [customer_suffix] => 
+            [customer_dob] => 
+            [customer_note] => 
+            [customer_note_notify] => 1
+            [customer_is_guest] => 0
+            [remote_ip] => 
+            [applied_rule_ids] => 
+            [reserved_order_id] => 
+            [password_hash] => 
+            [coupon_code] => 
+            [global_currency_code] => BRL
+            [base_to_global_rate] => 1.0000
+            [base_to_quote_rate] => 1.0000
+            [customer_taxvat] => 
+            [customer_gender] => 0
+            [subtotal] => 18.0000
+            [base_subtotal] => 18.0000
+            [subtotal_with_discount] => 18.0000
+            [base_subtotal_with_discount] => 18.0000
+            [is_changed] => 1
+            [trigger_recollect] => 0
+            [ext_shipping_info] => 
+            [gift_message_id] => 
+            [is_persistent] => 0
+        )
+
+    [_hasDataChanges:protected] => 1
+    [_origData:protected] => Array
+        (
+            [entity_id] => 15
+            [store_id] => 1
+            [created_at] => 2019-08-17 17:43:17
+            [updated_at] => 2019-08-17 18:30:05
+            [converted_at] => 
+            [is_active] => 1
+            [is_virtual] => 0
+            [is_multi_shipping] => 0
+            [items_count] => 1
+            [items_qty] => 2.0000
+            [orig_order_id] => 0
+            [store_to_base_rate] => 1.0000
+            [store_to_quote_rate] => 1.0000
+            [base_currency_code] => BRL
+            [store_currency_code] => BRL
+            [quote_currency_code] => BRL
+            [grand_total] => 18.0000
+            [base_grand_total] => 18.0000
+            [checkout_method] => 
+            [customer_id] => 5
+            [customer_tax_class_id] => 3
+            [customer_group_id] => 1
+            [customer_email] => anc@hit.com
+            [customer_prefix] => 
+            [customer_firstname] => anchit
+            [customer_middlename] => test
+            [customer_lastname] => makkar
+            [customer_suffix] => 
+            [customer_dob] => 
+            [customer_note] => 
+            [customer_note_notify] => 1
+            [customer_is_guest] => 0
+            [remote_ip] => 
+            [applied_rule_ids] => 
+            [reserved_order_id] => 
+            [password_hash] => 
+            [coupon_code] => 
+            [global_currency_code] => BRL
+            [base_to_global_rate] => 1.0000
+            [base_to_quote_rate] => 1.0000
+            [customer_taxvat] => 
+            [customer_gender] => 0
+            [subtotal] => 18.0000
+            [base_subtotal] => 18.0000
+            [subtotal_with_discount] => 18.0000
+            [base_subtotal_with_discount] => 18.0000
+            [is_changed] => 1
+            [trigger_recollect] => 0
+            [ext_shipping_info] => 
+            [gift_message_id] => 
+            [is_persistent] => 0
+        )
+
+    [_idFieldName:protected] => entity_id
+    [_isDeleted:protected] => 
+    [_oldFieldsMap:protected] => Array
+        (
+        )
+
+    [_syncFieldsMap:protected] => Array
+        (
+        )
+
+)
+
+2019-08-17T18:30:05+00:00 DEBUG (7): ---------- Quote -----------

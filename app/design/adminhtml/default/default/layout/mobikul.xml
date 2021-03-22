@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <mobikul_adminhtml_bannerimage_index>
+        <reference name="content">
+            <block type="mobikul/adminhtml_bannerimage" name="bannerimage"/>
+        </reference>
+    </mobikul_adminhtml_bannerimage_index>
+    <mobikul_adminhtml_notification_index>
+        <reference name="content">
+            <block type="mobikul/adminhtml_notification" name="notification"/>
+        </reference>
+    </mobikul_adminhtml_notification_index>
+    <mobikul_adminhtml_notification_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/fix-defer-before.js</name>
+                <params/>
+                <if/>
+                <condition>can_load_ext_js</condition>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/ext-tree.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/fix-defer.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/ext-tree-checkbox.js</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ext-all.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ytheme-magento.css</name>
+            </action>
+        </reference>
+    </mobikul_adminhtml_notification_edit>
+    <mobikul_adminhtml_featuredcategories_index>
+        <reference name="content">
+            <block type="mobikul/adminhtml_featuredcategories" name="featuredcategories"/>
+        </reference>
+    </mobikul_adminhtml_featuredcategories_index>
+    <mobikul_adminhtml_featuredcategories_edit>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+        </reference>
+        <reference name="head">
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/fix-defer-before.js</name>
+                <params/>
+                <if/>
+                <condition>can_load_ext_js</condition>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/ext-tree.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/fix-defer.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/mobikul-ext-tree-checkbox.js</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ext-all.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ytheme-magento.css</name>
+            </action>
+        </reference>
+    </mobikul_adminhtml_featuredcategories_edit>
+    <mobikul_adminhtml_featuredcategories_categories>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="mobikul/adminhtml_featuredcategories_edit_tab_categories" name="featuredcategories.edit.tab.categories"/>
+        </block>
+    </mobikul_adminhtml_featuredcategories_categories>
+    <mobikul_adminhtml_categoryimages_index>
+        <reference name="content">
+            <block type="mobikul/adminhtml_categoryimages" name="categoryimages"/>
+        </reference>
+    </mobikul_adminhtml_categoryimages_index>
+    <mobikul_adminhtml_categoryimages_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/fix-defer-before.js</name>
+                <params/>
+                <if/>
+                <condition>can_load_ext_js</condition>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/ext-tree.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/fix-defer.js</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>extjs/mobikul-ext-tree-checkbox.js</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ext-all.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ytheme-magento.css</name>
+            </action>
+        </reference>
+    </mobikul_adminhtml_categoryimages_edit>
+    <mobikul_adminhtml_categoryimages_categories>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="mobikul/adminhtml_categoryimages_edit_tab_categories" name="categoryimages.edit.tab.categories"/>
+        </block>
+    </mobikul_adminhtml_categoryimages_categories>
+    <adminhtml_customer_edit>
+        <reference name="content">
+            <block type="core/template" name="mobikul_admin_mobile"/>
+        </reference>
+        <reference name="mobikul_admin_mobile">
+            <action method="setTemplate" ifconfig="mobikul/basic/enable_mobile_login" ifvalue="1">
+                <template>mobikul/mobileField.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>
+     <default>
+        <reference name="content">
+            <block type="core/template" name="for_image_item" template="mobikul/item.phtml"/>
+        </reference>
+    </default>
+</layout>

@@ -1,0 +1,24 @@
+<config>
+   <identifier/>
+   <title/>
+   <variables>
+      <footer_background>#414b56</footer_background>
+      <footer_background_file/>
+      <footer_background_image_option/>
+      <footer_background_normal>#5d666f</footer_background_normal>
+      <footer_border>#5d666f</footer_border>
+      <footer_bottom_background>#414b56</footer_bottom_background>
+      <footer_font>14px</footer_font>
+      <footer_hover_text>#ffffff</footer_hover_text>
+      <footer_text>#a8aeba</footer_text>
+      <footer_text_normal>#ffffff</footer_text_normal>
+      <footer_title_font>12px</footer_title_font>
+      <footer_title_text>#ffffff</footer_title_text>
+      <footer_top_background>#414b56</footer_top_background>
+   </variables>
+   <layout_xml/>
+   <custom_variables/>
+   <custom_fields/>
+   <parent/>
+   <content/>
+</config>

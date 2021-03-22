@@ -1,0 +1,121 @@
+<config>
+   <identifier>footer-style-04</identifier>
+   <title>Footer Style 04</title>
+   <variables>
+      <footer_background>#ffffff</footer_background>
+      <footer_background_file/>
+      <footer_background_image_option>0 0 no-repeat fixed</footer_background_image_option>
+      <footer_background_normal/>
+      <footer_border>#ffffff</footer_border>
+      <footer_bottom_background>#5c6ac3</footer_bottom_background>
+      <footer_font>13px</footer_font>
+      <footer_hover_text>#fc7070</footer_hover_text>
+      <footer_text>#ffffff</footer_text>
+      <footer_text_normal>#ffffff</footer_text_normal>
+      <footer_title_font>14px</footer_title_font>
+      <footer_title_text>#ffffff</footer_title_text>
+      <footer_top_background>#5c6ac3</footer_top_background>
+   </variables>
+   <layout_xml>&lt;reference name=&quot;footer&quot;&gt;
+&lt;block name=&quot;theme-layout-footer&quot; type=&quot;flexibletheme/footer&quot; /&gt;
+&lt;remove name=&quot;store_switcher&quot; /&gt;
+&lt;remove name=&quot;footer_links&quot; /&gt;
+&lt;remove name=&quot;footer_links2&quot; /&gt;
+&lt;remove name=&quot;footer.newsletter&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links_sm&quot; /&gt;
+&lt;remove name=&quot;footer_currency&quot; /&gt;
+&lt;/reference&gt;</layout_xml>
+   <custom_variables/>
+   <custom_fields/>
+   <parent/>
+   <content>&lt;div class=&quot;footer-style-04&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;footer content&quot;&gt;
+&lt;div class=&quot;footer-content-top&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-18&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-1&quot;&gt;Infomation&lt;/p&gt;
+&lt;ul class=&quot;footer-link showhide hover-link01&quot; id=&quot;footer-content-1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}privacy-policy-cookie-restriction-mode/&quot;&gt;Privacy and Cookie Policy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}about-us&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}customer-service&quot;&gt;Customer Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}catalogsearch/advanced/&quot;&gt;Advanced Search&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}sales/guest/form/&quot;&gt;Orders and Returns&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}contacts/&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-2&quot;&gt;Shop&lt;/p&gt;
+&lt;ul class=&quot;footer-link showhide hover-link01&quot; id=&quot;footer-content-2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Technology&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Fashion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sport&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home &amp;amp; Garden&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Jewellery&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Toys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-3&quot;&gt;Customer Suport&lt;/p&gt;
+&lt;ul class=&quot;footer-link showhide hover-link01&quot; id=&quot;footer-content-3&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Help &amp;amp; FAQs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}contacts/&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Returns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Order History&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sample Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-4&quot;&gt;Extras&lt;/p&gt;
+&lt;ul class=&quot;footer-link showhide hover-link01&quot; id=&quot;footer-content-4&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Brands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Gift Vouchers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Affiliates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Delivery&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Specials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;newsletter footer-box&quot;&gt;
+&lt;p class=&quot;newsletter-title h5&quot; data-cdz-toggle=&quot;#footer-content-5&quot;&gt;Subscribe Us&lt;/p&gt;
+&lt;div class=&quot;showhide&quot; id=&quot;footer-content-5&quot;&gt;
+&lt;div class=&quot;newsletter-content&quot;&gt;{{block type=&quot;newsletter/subscribe&quot; name=&quot;cdz.newsletter&quot; template=&quot;newsletter/subscribe.phtml&quot;}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-content-bottom&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-8&quot;&gt;
+&lt;div class=&quot;footer-address&quot;&gt;
+&lt;p&gt;&amp;copy; 2018 Codazon Ltd. Trademarks and brands&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-8 text-center&quot;&gt;
+&lt;div class=&quot;footer-social hover-iconsocial&quot;&gt;
+&lt;p class=&quot;social&quot;&gt;&lt;a class=&quot;spin circle&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-facebook&quot;&gt;&lt;span&gt;facebook&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-twitter&quot;&gt;&lt;span&gt;twitter&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-pinterest-p&quot;&gt;&lt;span&gt;pinterest&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-google-plus&quot;&gt;&lt;span&gt;google plus&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-rss&quot;&gt;&lt;span&gt;rss&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-8 text-right&quot;&gt;
+&lt;div class=&quot;footer-payment&quot;&gt;&lt;img alt=&quot;Accept Payment&quot; class=&quot;img-responsive&quot; src=&quot;{{media url=&quot;wysiwyg/codazon/footer-payment.png&quot;}}&quot; /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+</config>

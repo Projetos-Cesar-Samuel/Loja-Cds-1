@@ -1,0 +1,85 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$customerSession = Mage::getSingleton('customer/session');
+$isLoggedIn = $customerSession->isLoggedIn();
+$customer = $customerSession->getCustomer();
+?>
+
+<div class="mini-account-dashboard">
+    <div class="account-info-summary">
+        <div class="info-summary-top">
+            <?php if ($isLoggedIn) : ?>
+                <div class="icon-account"></div>
+            <?php else: ?>
+                <?php echo $this->getBlockHtml('mini.login_form'); ?>
+            <?php endif ?>
+        </div>
+        <div class="info-summary-bottom">
+            <div class="md-content">
+                <?php if ($isLoggedIn) : ?>
+                <p class="title"><a href="<?php echo $this->getUrl('customer/account/edit', array('_secure' => true)); ?>" /><?php echo "Olá " . $customer->getFirstname(); ?></a></p>
+                <!--<p><a class="md-raised md-primary" href="<?php /*echo $this->getUrl('customer/account/logout'); */?>"><?php /*echo __('Sign Out') */?></a></p>-->
+                <?php else : ?>
+                <p class="secondary">
+                    <span class="create-account-question"><?php echo $this->__('New customer?') ?></span>
+                    <a class="create-account-link" href="<?php echo $this->getUrl('customer/account/create'); ?>"><?php echo $this->__('Start Here.') ?></a>
+                </p>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+    <div class="acount-menu">
+        <ul class="account-menu-items items">
+            <!--<li class="item compare">
+                <a href="javascript:void(0)" onclick="jQuery('#compare-iframe-loader').show(); jQuery('#compare-iframe').attr('src', jQuery('#compare-iframe').data('src') + '?t=' + Math.random())" data-cdzpopuptrigger="compare-popup"><?php /*echo $this->__('Compare') */?></a>
+                <div style="display:none;">
+                    <div class="md-dialog-container compare-popup" data-cdzpopup id="compare-popup">
+                        <div class="abs-frame" style="padding-bottom: 75%" >
+                            <iframe onload="jQuery('#compare-iframe-loader').hide()" id="compare-iframe" frameborder="0" class="abs-frame-inner" data-src="<?php /*echo $this->getUrl('catalog/product_compare'); */?>" ></iframe>
+                            <div class="abs-frame-inner compare-iframe-loader" id="compare-iframe-loader">
+                                <div class="double-bounce-spinner">
+                                    <div class="double-bounce1">
+                                        <div class="double-bounce2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>-->
+            <li class="item order">
+                <a href="<?php echo $this->getUrl('customer/account/'); ?>"><?php echo $this->__('Minha Conta') ?></a>
+            </li>
+            <li class="item wishlist">
+                <a href="<?php echo $this->getUrl('wishlist'); ?>"><?php echo $this->__('Wish List') ?></a>
+            </li>
+            <li class="item order">
+                <a href="<?php echo $this->getUrl('sales/order/history'); ?>"><?php echo $this->__('My orders') ?></a>
+            </li>
+            <li class="item contact">
+                <a href="<?php echo $this->getUrl('contacts'); ?>"><?php echo $this->__('Contact') ?></a>
+            </li>
+            <li class="item language-link" id="desk_store-language">
+                <?php echo $this->getBlockHtml('mini.store_language') ?>
+            </li>
+            <li class="currency-link" id="desk_store-currency">
+                <?php echo $this->getBlockHtml('mini.currency') ?>
+            </li>
+            <li class="store-link" id="desk_store-group">
+                <?php echo $this->getBlockHtml('mini.store_switcher') ?>
+            </li>
+            <?php if ($isLoggedIn){ ?>
+                <hr>
+                <li class="info-summary-bottom">
+                    <a class="md-raised md-primary" href="<?php echo $this->getUrl('customer/account/logout'); ?>"><?php echo __('Sair') ?></a>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
+</div>

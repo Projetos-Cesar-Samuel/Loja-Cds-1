@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Codazon_ThemeLayoutPro:etc/system_file.xsd">
+    <system>
+        <section id="variables">
+            <group id="cdz_footer">
+                <label>Footer</label>
+                <field id="footer_background" translate="label" type="color">
+                    <label>Footer Background</label>
+                </field>
+                <field id="footer_background_file" translate="label" type="ajax_image">
+                    <label>Footer Background Image</label>
+                </field>
+                <field id="footer_background_image_option" translate="label" type="text">
+                    <label>Footer Background Image Option</label>
+                </field>
+                <field id="footer_top_background" translate="label" type="color">
+                    <label>Footer Top Background</label>
+                </field>
+                <field id="footer_bottom_background" translate="label" type="color">
+                    <label>Footer Bottom Background</label>
+                </field>
+                <field id="footer_text" translate="label" type="color">
+                    <label>Footer Text</label>
+                </field>
+                <field id="footer_title_text" translate="label" type="color">
+                    <label>Footer Title Text</label>
+                </field>
+                <field id="footer_hover_text" translate="label" type="color">
+                    <label>Footer Hover Text</label>
+                </field>
+                <field id="footer_border" translate="label" type="color">
+                    <label>Footer Border</label>
+                </field>
+				<field id="footer_text_normal" translate="label" type="color">
+                    <label>Footer Text Normal</label>
+                </field>
+				<field id="footer_background_normal" translate="label" type="color">
+                    <label>Footer Background Normal</label>
+                </field>
+				<field id="footer_font" translate="label" type="text">
+                    <label>Footer Font Size</label>
+                </field>
+				<field id="footer_title_font" translate="label" type="text">
+                    <label>Footer Title Font Size</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

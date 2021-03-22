@@ -1,0 +1,68 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$customerHelper = Mage::helper('customer');
+$helper = Mage::helper('flexibletheme');
+$wishlistHelper = $this->helper('wishlist');
+$displayStyle = $this->getData('display_style')?:($helper->getHeaderWishlistStyle()?:'dropdown');
+$label = $this->getData('label')? : $this->__('Your Wishlist');
+$isLoggedIn = $customerHelper->isLoggedIn();
+?>
+<?php if ($wishlistHelper->isAllow()) : ?>
+<li class="link wishlist">
+<?php if ($displayStyle == 'popup') : ?>
+    <div class="link-content">
+        <a id="top-wishlist" class="top-wishlist" href="javascript:void(0)" data-cdzpopuptrigger="wishlist-popup" >
+            <span class="text-underlink"><?= $this->__('Welcome') ?></span>
+            <span class="text-uppercase">
+                <?= $this->escapeHtml($label) ?>
+                <?php if ($isLoggedIn) : ?>
+                <span class="counter qty js-wishlist-count"><?= $wishlistHelper->getItemCount() ?></span>
+                <?php endif ?>
+            </span>
+        </a>
+        <div style="display:none;">
+            <div class="mini-wishlist-container" data-cdzpopup id="wishlist-popup">
+                <?= $this->getBlockHtml('mini.wishlist_panel'); ?>
+            </div>
+        </div>
+    </div>
+<?php elseif ($displayStyle == 'sidebar') : ?>
+    <div class="link-content">
+        <a id="top-wishlist" class="top-wishlist" href="javascript:void(0)" data-sidebartrigger='{"side": "right", "section":"mini-wishlist-container"}' >
+            <span class="text-underlink"><?= $this->__('Welcome') ?></span>
+            <span class="text-uppercase">
+                <?= $this->escapeHtml($label) ?>
+                <?php if ($isLoggedIn) : ?>
+                <span class="counter qty js-wishlist-count"><?= $wishlistHelper->getItemCount() ?></span>
+                <?php endif ?>
+            </span>
+        </a>
+    </div> 
+<?php else : ?>
+    <div class="link-content cdz-dropdown" data-role="cdz-dropdown">
+        <a id="top-wishlist" class="cdz-dd-trigger top-wishlist" href="javascript:void(0)"  data-role="cdz-dd-trigger">
+            <span class="text-underlink"><?= $this->__('Welcome') ?></span>
+            <span class="text-uppercase">
+                <?= $this->escapeHtml($label) ?>
+                <?php if ($isLoggedIn) : ?>
+                <span class="counter qty js-wishlist-count"><?= $wishlistHelper->getItemCount() ?></span>
+                <?php endif ?>
+            </span>
+        </a>
+        <div class="cdz-dd-content" data-role="cdz-dd-content">
+            <div class="cdz-dd-content-inner">
+                <div class="mini-wishlist-container" id="wishlist-popup">
+                    <?= $this->getBlockHtml('mini.wishlist_panel'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+</li>
+<?php endif ?>

@@ -1,0 +1,176 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @see Mage_Catalog_Block_Layer_View
+ */
+?>
+<?php if($this->canShowBlock()): ?>
+    <div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
+        <div class="block-title">
+            <strong><span><?php echo $this->__('Shop By') ?></span></strong>
+        </div>
+        <div class="block-content toggle-content">
+            <?php echo $this->getStateHtml() ?>
+            <?php if ($this->getLayer()->getState()->getFilters()): ?>
+            <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+        <?php endif; ?>
+        <?php if($this->canShowOptions()): ?>
+            <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p>
+            <dl id="narrow-by-list">
+                <?php $_filters = $this->getFilters() ?>
+                <?php foreach ($_filters as $_filter): ?>
+                    <?php if($_filter->getItemsCount()): ?>
+
+                        <dt class="linha toogle-set-<?php echo strtolower($this->__($_filter->getName())) ?>">
+
+                            <?php echo $this->__($_filter->getName()) ?>
+
+                            <div class="fa fa-chevron-up rotate-<?php echo strtolower($this->__($_filter->getName())) ?>" ></div>
+
+                        </dt> 
+
+                        <dd class=" <?php 
+                        if (strtolower($this->__($_filter->getName())) == "modelagem")
+                        {
+                            echo 'swatch-modelagem fechado';
+                        }
+                        else if (strtolower($this->__($_filter->getName())) == "gola")
+                        {
+                            echo 'swatch-gola fechado';
+                        }
+                        else if (strtolower($this->__($_filter->getName())) == "cor")
+                        {
+                            echo 'swatch-cor fechado';
+                        }
+                        else if (strtolower($this->__($_filter->getName())) == "manga")
+                        {
+                            echo 'swatch-manga fechado';
+                        }
+                        else if (strtolower($this->__($_filter->getName())) == "material")
+                        {
+                            echo 'swatch-material fechado';
+                        }
+                        else if (strtolower($this->__($_filter->getName())) == "preço")
+                        {
+                            echo 'aberto';
+                        }
+                        else if (strtolower($this->__($_filter->getName())) == "cor")
+                        {
+                            echo 'cor';
+                        }
+                        else
+                        {}
+                        ?>">
+
+                        <script>
+
+                            jQuery('.toogle-set-<?php echo strtolower($this->__($_filter->getName())) ?>').click(function() {
+
+                                jQuery(".rotate-<?php echo strtolower($this->__($_filter->getName())) ?>").toggleClass("down");
+
+                                jQuery('.swatch-<?php echo strtolower($this->__($_filter->getName())) ?>').slideToggle
+                                ('medium',function(){
+
+                                });
+                                jQuery('.linha ').addClass('active');
+                            });
+
+                        </script>
+                        <style>
+                        span.span-more-<?php echo $this->__($_filter->getName()) ?>
+                        {
+                            transition: all 100ms;
+                        }
+                        .rotate-<?php echo strtolower($this->__($_filter->getName())) ?>{
+                            transform: rotate(90deg);
+                            -moz-transition: all 500ms linear;
+                            -webkit-transition: all 500ms linear;
+                            transition: all 500ms linear;
+                        }
+
+                        .rotate-<?php echo strtolower($this->__($_filter->getName())) ?>.down{
+                            -moz-transform:rotate(180deg)!important;
+                            -webkit-transform:rotate(180deg)!important;
+                            transform:rotate(180deg)!important;
+                            padding-bottom: 2px;
+                            /* padding-left: 3px; */
+                            margin-left: 3px;
+                        }
+                    </style>
+
+                    <?php echo $_filter->getHtml() ?></dd>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </dl>
+        <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+    <?php endif; ?>
+</div>
+</div>
+<?php endif; ?>
+
+
+
+<script>
+    jQuery(document).ready(function(){
+        jQuery('.fechado').toggle();
+        jQuery(".rotate-gênero").toggleClass("down");
+        jQuery(".rotate-tamanho").toggleClass("down");
+        jQuery(".rotate-preço").toggleClass("down");
+
+    });
+</script>
+
+
+<style>
+
+.border {
+    border-bottom: 1px solid #ebebeb!important;
+    padding-bottom: 10px!important;
+}
+.sidebar .block-layered-nav .block-content > dl > dt:after
+{
+    display: none;
+}
+.sidebar .block-layered-nav .block-content.accordion-open > dl > dt.current:after
+{
+    display: none;
+}
+.categoria
+{
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid #6a7f9a;
+    transition: all 500ms;
+}
+   a.categoria:hover {
+    background-color: #6e859d!important;
+    color: white;
+}
+</style>

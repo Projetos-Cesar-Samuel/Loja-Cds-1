@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<config>
+    <tabs>
+        <la translate="label">
+            <label>LA Extension</label>
+            <sort_order>400</sort_order>
+        </la>
+    </tabs>
+    <sections>
+        <postcode translate="label" module="postcode">
+            <class>separator-top</class>
+            <label>Postcode</label>
+            <tab>la</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>299</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>        
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </enable>
+                    </fields>
+                </general>
+            </groups>
+        </postcode>
+    </sections>
+</config>

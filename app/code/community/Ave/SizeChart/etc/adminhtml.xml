@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ave_sizechart translate="title" module="ave_sizechart">
+                                        <title>SizeChart</title>
+                                    </ave_sizechart>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <catalog>
+                        <children>
+                            <ave_sizechart translate="title" module="ave_sizechart">
+                                <title>Size Chart</title>
+                                <children>
+                                    <chart translate="title" module="ave_sizechart">
+                                        <title>Chart</title>
+                                        <sort_order>0</sort_order>
+                                    </chart><!--
+                                    <chart_attributes module="ave_sizechart" translate="title">
+                                        <title>Manage Chart attributes</title>
+                                        <sort_order>7</sort_order>
+                                    </chart_attributes>-->
+                                    <category translate="title" module="ave_sizechart">
+                                        <title>Category Of Sizes</title>
+                                        <sort_order>10</sort_order>
+                                    </category>
+                                    <dimension translate="title" module="ave_sizechart">
+                                        <title>Dimension</title>
+                                        <sort_order>20</sort_order>
+                                    </dimension>
+                                    <type translate="title" module="ave_sizechart">
+                                        <title>Type</title>
+                                        <sort_order>40</sort_order>
+                                    </type>
+                                </children>
+                            </ave_sizechart>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <catalog>
+            <children>
+                <ave_sizechart translate="title" module="ave_sizechart">
+                    <title>Size Chart</title>
+                    <sort_order>15</sort_order>
+                    <children>
+                        <chart translate="title" module="ave_sizechart">
+                            <title>Chart</title>
+                            <action>adminhtml/sizechart_chart</action>
+                            <sort_order>0</sort_order>
+                        </chart><!--
+                        <chart_attributes module="ave_sizechart" translate="title">
+                            <title>Manage Chart Attributes</title>
+                            <action>adminhtml/sizechart_chart_attribute</action>
+                            <sort_order>7</sort_order>
+                        </chart_attributes>-->
+                        <category translate="title" module="ave_sizechart">
+                            <title>Category Of Sizes</title>
+                            <action>adminhtml/sizechart_category</action>
+                            <sort_order>10</sort_order>
+                        </category>
+                        <dimension translate="title" module="ave_sizechart">
+                            <title>Dimension</title>
+                            <action>adminhtml/sizechart_dimension</action>
+                            <sort_order>20</sort_order>
+                        </dimension>
+                        <type translate="title" module="ave_sizechart">
+                            <title>Type</title>
+                            <action>adminhtml/sizechart_type</action>
+                            <sort_order>40</sort_order>
+                        </type>
+                    </children>
+                </ave_sizechart>
+            </children>
+        </catalog>
+    </menu>
+</config>

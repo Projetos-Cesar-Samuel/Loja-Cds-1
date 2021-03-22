@@ -1,0 +1,48 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$request = $this->getRequest();
+$code = 'price';
+$productCollection = $this->getLayer()->getProductCollection();
+if ($priceRange = $request->getParam($code)) {
+    $priceRange = explode('-', $priceRange);
+    $minPrice = $priceRange[0] ? $priceRange[0] : 0;
+    $maxPrice = $priceRange[1] ? : $productCollection->getMaxPrice();
+} else {
+    $minPrice = $productCollection->getMinPrice();
+    $maxPrice = $productCollection->getMaxPrice();
+}
+$query = $request->getQuery();
+$query[$code] = null;
+$action = $this->getUrl('*/*/*', [
+    '_current'      => true,
+    '_use_rewrite'  => true,
+    '_query'        => $query
+]);
+$currency = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+$uniqId = uniqid();
+?>
+
+<div class="price-slider-container" data-role="price-slider-container">
+    <form action="<?= $action ?>" method="GET" data-role="price-form">
+        <input type="hidden" name="<?= $code ?>" value="<?= $minPrice ?>-<?= $maxPrice ?>" />
+        <div class="price-slider" data-role="price-slider"></div>
+        <div class="input-wrap">
+            <div class="control min-value">
+                <input class="input-text" id="min-price-<?= $uniqId ?>" name="min_price" type="text" required="required" number="true" validate-zero-or-greater="true" placeholder="<?= $this->__('From') ?>" data-role="min_price" value="<?= $minPrice ?>" />
+            </div>
+            <span class="delimiter">-</span>
+            <div class="control max-value">
+                <input class="input-text" id="max-price-<?= $uniqId ?>" name="max_price" type="text" required="required" number="true" validate-greater-than-zero="true" placeholder="<?= $this->__('To') ?>" data-role="max_price" value="<?= $maxPrice ?>" />
+            </div>
+            <span class="currency"><?= $currency ?></span>
+        </div>
+        <div class="action">
+            <button type="submit" class="btn submit" data-role="go" title="<?= $this->__('Apply filter') ?>"><?= $this->__('Go') ?></button>
+        </div>
+    </form>
+</div>

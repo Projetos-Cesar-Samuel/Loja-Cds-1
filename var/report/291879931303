@@ -1,0 +1,9 @@
+a:5:{i:0;s:618:"Error in file: "/chroot/home/basicabr/basicabranca.com.br/html/app/code/community/Ave/SizeChart/sql/ave_sizechart_setup/install-0.0.3.php" - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '14-name' for key 'UNQ_EAV_ATTRIBUTE_ENTITY_TYPE_ID_ATTRIBUTE_CODE', query was: INSERT INTO `eav_attribute` (`entity_type_id`, `attribute_code`, `backend_model`, `backend_type`, `backend_table`, `frontend_model`, `frontend_input`, `frontend_label`, `frontend_class`, `source_model`, `is_required`, `is_user_defined`, `default_value`, `is_unique`, `note`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";i:1;s:1126:"#0 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Resource/Setup.php(644): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '1.2.22')
+#2 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('1.2.22')
+#3 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/App.php(428): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/App.php(354): Mage_Core_Model_App->_initModules()
+#6 /chroot/home/basicabr/basicabranca.com.br/html/app/Mage.php(687): Mage_Core_Model_App->run(Array)
+#7 /chroot/home/basicabr/basicabranca.com.br/html/index.php(84): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:51:"/feminino/blusas/manga-curta?___SID=U&mode=grid&p=5";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

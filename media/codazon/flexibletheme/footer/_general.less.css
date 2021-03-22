@@ -1,0 +1,58 @@
+@import (less)'../_function.less.css';
+@import (less)'../_monitor.less.css';
+.page-footer {
+	padding-bottom:0;
+	.footer .block-subscribe {
+		.content {
+	    	position: relative;
+	    }
+	    .actions{
+	    	width: auto;
+		    right: 0;
+		    top: 0;
+		    position: absolute;
+		    .rtl-layout &{
+		    	right:auto;
+		    	left:0;
+		    }		    
+	    }
+	}
+	.newsletter-content{
+		.title,
+		label{display: none}
+		.block.newsletter{
+			width: 100%;			
+		}
+		.rtl-layout &{
+			.action.subscribe{
+				transform: translateX(0px);
+				&:hover{
+					transform: translateX(-5px);
+				}
+			}
+		}
+	}
+	.block.newsletter .action.subscribe{
+		transform: translateX(0px);
+		&:hover{
+			transform: translateX(-5px);
+		}
+	}	
+}
+.block.newsletter .field .control{
+	&:before{
+		.abs-iconfont("\f003", 18px);
+		font-size: 24px;
+	    position: absolute;
+	    top: 5px;
+	}
+	input{
+		padding:0 35px;
+	}
+}
+
+@media(max-width: @screen-xs-max) {
+	.footer-container .container-fluid{
+		padding: 0;
+	}
+}

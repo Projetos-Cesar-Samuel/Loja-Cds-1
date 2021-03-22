@@ -1,0 +1,90 @@
+/*sport*/
+@media screen and (min-width: 768px){
+	.close-cart,
+	.cdz-ajax-trigger,
+	.btn-proceed-checkout,
+	.buttons-set .button,
+	.button-set .form-button,
+	.btn-update.button-secondary,
+	.sidebar .actions .button,
+	.compare-table button,
+	.add-to-cart-buttons button,
+	.buttons-set button,
+	.form-add button,
+	.cart-footer-actions button,
+	.discount-form button,
+	.cart-totals-wrapper button,
+	.block-compare button{
+		.button-slide-effect(); /*function*/
+	}
+	.sidebar .actions .button:hover,
+	#wishlist-table .item-manage .button:hover,
+	.btn-proceed-checkout:hover,
+	.cart-totals-wrapper button:hover,
+	.product-view .product-essential .product-info-main .btn-cart:hover,
+	.product-view #addTagForm button:hover:hover{
+		.btnhover-style();
+	}
+}
+
+/*slide-show*/
+.cdz-slideshow{
+	.slider-arrow-style-07();
+}
+@media(max-width: @screen-xs-max) {
+	.cdz-slideshow.main-slideshow{
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+}
+.button-link{
+	.abs-borderradius(@btn_radius);		
+	.button-slide-effect();
+}
+
+/*Title*/
+.cdz-block-title{
+	text-align: center;
+	.title-desc{
+		color: @main_title_text;
+	}	
+}
+
+/*Blog*/
+.cdz-blog-wrap{
+	padding:30px 0;
+}
+
+[class*='product-list-style'],
+[class*='post-list-style'],
+.brand-slider-wrapper{
+	.slider-arrow-style-08();/* wrapper-product*/
+}
+/*Product page*/
+.product-view-style-02{
+	.product-main,
+	.product-collateral.tabs{
+		.product-info-box(0px);
+	}
+}
+
+@media(min-width: 771px) {
+	/*Sidebar*/
+	.sidebar .block:not(.block-progress):not(.block-blog){
+		.block-style03();	
+	}
+	/*Sidebar - Blog*/
+	.block-blog{
+		.blogsidebar-style03();
+	}
+}
+
+.toolbar{
+	.toolbar-option2(0);
+}
+.crosssell,
+.box-collateral.box-up-sell{
+	.owl-nav [class*='owl-']{
+		.abs-calc-top(~'calc( (100% - 40px )/2 )');
+	}
+}

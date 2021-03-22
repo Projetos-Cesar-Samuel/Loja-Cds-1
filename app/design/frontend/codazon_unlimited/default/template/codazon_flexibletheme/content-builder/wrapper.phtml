@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$elements = $this->getMainContentElements();
+?>
+
+<?php if (count($elements)) : ?>
+<div class="cdz-main-content widget block block-static-block">
+    <?= $this->getElementHtml($elements); ?>
+</div>
+<?php endif ?>

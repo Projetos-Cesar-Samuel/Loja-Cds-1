@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+    $widget = array(
+        "codazon.productAjaxLoad" => array(
+            "ajaxUrl"    => $this->getUrl('productfilterpro/ajax/loadproducts'),
+            "currentUrl" => Mage::helper('core/url')->getCurrentUrl(),
+            "jsonData"   => $this->getFilterData()
+        )
+    );
+?>
+<div class="no-loaded" data-cdzwidget='<?= json_encode($widget) ?>'>
+    <div class="brand-loader double-bounce-spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>

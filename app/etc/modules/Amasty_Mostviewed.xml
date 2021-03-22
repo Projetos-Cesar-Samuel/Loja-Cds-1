@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Mostviewed
+ */
+-->
+<config>
+    <modules>
+        <Amasty_Mostviewed>
+            <active>true</active>
+            <codePool>local</codePool>
+            <edition>enterprise</edition>
+            <name>Customers Also Viewed</name>
+            <url>https://amasty.com/customers-also-viewed.html</url>
+        </Amasty_Mostviewed>
+    </modules>
+</config>

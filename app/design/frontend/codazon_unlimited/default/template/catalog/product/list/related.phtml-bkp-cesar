@@ -1,0 +1,209 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php if($this->getItems()->getSize()): ?>
+
+<div class="block block-related related">
+    <div class="block-title related">
+        <h2><?php echo $this->__('Related Products') ?></h2>
+    </div>
+    <div class="block-content"  id="produtos">
+        <!--<p class="block-subtitle block-actions"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<a role="select-all" href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p>-->
+        <div class="products-list-container ">
+            <ol class="mini-products-list" id="block-related">
+            <?php foreach($this->getItems() as $_item): ?>
+                <li class="item">
+                    <?php if(!$_item->isComposite() && $_item->isSaleable()): ?>
+                        <?php if (!$_item->getRequiredOptions()): ?>
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="related-checkbox<?php echo $_item->getId() ?>">
+                            <input type="checkbox" class="checkbox related related-checkbox mdl-checkbox__input" id="related-checkbox<?php echo $_item->getId() ?>" name="related_products[]" value="<?php echo $_item->getId() ?>" />
+                        </label>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <div class="product">
+                        <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail') ?>" width="300" height="250" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" /></a>
+                        <div class="product-details related">
+                            <center><strong class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></strong></center>
+                            <div class="preco-relacionado"><?php echo $this->getPriceHtml($_item, true, '-related') ?></div>
+                            <?php if ($this->helper('wishlist')->isAllow()) : ?>    
+                                <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+                            <?php endif; ?>
+                            <center>
+                            <button id="botao-relacionados" class="button-upsell" onclick="setLocation('<?php echo $_item->getProductUrl() ?>')">COMPRAR</button></center>
+                        </div>
+                    </div>
+                </li>
+            <?php endforeach ?>
+            </ol>
+        </div>
+        
+ 
+        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    $$('.related-checkbox').each(function(elem){
+        Event.observe(elem, 'click', addRelatedToProduct)
+    });
+
+    var relatedProductsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (relatedProductsCheckFlag == false) {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            relatedProductsCheckFlag = true;
+            txt.innerHTML="<?php echo Mage::helper('core')->jsQuoteEscape($this->__('unselect all')) ?>";
+        } else {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            relatedProductsCheckFlag = false;
+            txt.innerHTML="<?php echo Mage::helper('core')->jsQuoteEscape($this->__('select all')) ?>";
+        }
+        addRelatedToProduct();
+    }
+
+    function addRelatedToProduct(){
+        var checkboxes = $$('.related-checkbox');
+        var values = [];
+        for(var i=0;i<checkboxes.length;i++){
+            if(checkboxes[i].checked) values.push(checkboxes[i].value);
+        }
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    //]]>
+    </script>
+</div>
+<?php endif ?>
+
+<style>
+
+    .block-related .product-details .price-box span {
+        float: none;
+    }
+    a.product-image {
+        width: 100%;
+    }
+    a.product-image img {
+        width: 100%!important;
+    }
+    .mini-products-list .product-image {
+         float: none!important;
+    }
+    ol#block-related >  li.item.last.odd {
+        margin: 0 0 10px 9px!important;
+    }
+    .product-details
+    {
+        margin-left: 0!important;
+    }
+    .product-details.related p {
+        width: 100%;
+    }
+  
+    .product-details.related > .price-box > .regular-price
+    {
+        padding: 0!important;
+    }
+    .preco-relacionado .price-box .special-price {
+        padding-left: 0!important;
+    }
+
+    .preco-relacionado {
+        text-align: center!important;
+        height: 100px!important;
+    }
+
+@media only screen and (max-width: 600px)
+{
+    .products-list-container {
+    outline: none;
+    overflow: scroll;
+
+}
+ol#block-related {
+    width: 1000px;
+
+}
+ol#block-related > li.item {
+    width: 19%;
+    float: left;
+    clear: none;
+}
+#botao-relacionados {
+    width: 100px;
+    padding: 10px 20px;
+}
+.product-image-gallery.abs-img
+{
+
+    padding-bottom: 100%!important;
+}
+}
+
+
+@media only screen and (min-width:600px)
+{
+    ol#block-related > li.item {
+    width: 19%!important;
+    float: left!important;
+    clear: none;
+}
+}
+</style>
+
+
+<script>
+        var button = document.getElementById('slide');
+button.onclick = function () {
+    var container = document.getElementById('block-related');
+    sideScroll(container,'right',25,100,10);
+};
+
+var back = document.getElementById('slideBack');
+back.onclick = function () {
+    var container = document.getElementById('produtos');
+    sideScroll(container,'left',25,100,10);
+};
+
+function sideScroll(element,direction,speed,distance,step){
+    scrollAmount = 0;
+    var slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
+</script>

@@ -1,0 +1,102 @@
+<script type="text/javascript">
+//<![CDATA[
+    var payment = new Payment('<?php echo $this->getUrl('oscheckout/index/loadreview/', array('_secure'=>true)) ?>','<?php echo $this->getUrl('oscheckout/index/loadpayment/', array('_secure'=>true)) ?>','<?php echo $this->getUrl('oscheckout/index/index', array('_secure'=>true)) ?>');
+//]]>	
+ </script>
+
+<div class="step-title payment-title block-title">
+	<h3 class="title-name"><?php echo Mage::helper('oscheckout')->__('Payment Methods') ?></h3>
+</div>
+
+<div id="ajax-payment-methods">
+<?php echo $this->getChildHtml('methods'); ?>
+</div>
+<script type="text/javascript">
+    function savePay(paymentmethod, tipo){
+        console.log("chegou aqui", tipo);
+        var loading = 'cartao';
+        if(tipo == 'Boleto'){
+            loading = 'boleto';
+            preencherDados();
+        }
+        var idLoading = '#loading-' + loading;
+        var para = {code: paymentmethod};
+        new Ajax.Request('<?php echo $this->getUrl('oscheckout/index/savepay/', array('_secure'=>true)) ?>', {
+            method: 'post',
+            parameters: para,
+            onLoading: function(){
+                console.log('before');
+                jQuery('#loading-boleto').hide();
+                jQuery('#loading-cartao').hide();
+                jQuery(idLoading).show();
+                jQuery(idLoading).html('<div class="ajax-load">&nbsp;</div>');
+                //jQuery('#mercadopago-form-general').css('width', '365px');
+            },
+            onSuccess: function(transport) {
+                if(transport.status == 200) {
+                    jQuery('#loading-boleto').hide();
+                    jQuery('#loading-cartao').hide();
+                    console.log('200');
+                    payment.switchMethod(paymentmethod);
+                }
+            }
+
+        });
+    }
+    function preencherDados(){
+
+        if(jQuery("input[name='billing[firstname]']").val() != ''){
+            jQuery("#MPv1-firstname").val(jQuery("input[name='billing[firstname]']").val());
+        }
+        if(jQuery("input[name='billing[lastname]']").val() != ''){
+            jQuery("#MPv1-lastname").val(jQuery("input[name='billing[lastname]']").val());
+        }
+        if(jQuery("input[id='billing:street1']").val() != ''){
+            jQuery("#MPv1-address").val(jQuery("input[id='billing:street1']").val());
+        }
+        if(jQuery("input[id='billing:street2']").val() != ''){
+            jQuery("#MPv1-number").val(jQuery("input[id='billing:street2']").val());
+        }
+        if(jQuery("input[name='billing[city]']").val() != ''){
+            jQuery("#MPv1-city").val(jQuery("input[name='billing[city]']").val());
+        }
+        if(jQuery("input[name='billing[postcode]']").val() != ''){
+            jQuery("#MPv1-zipcode").val(jQuery("input[name='billing[postcode]']").val());
+        }
+        if(jQuery("select[name='billing[region_id]']").val() != ''){
+            selecionarEstado(jQuery("select[name='billing[region_id]']").val());
+        }
+    }
+    function selecionarEstado(id) {
+
+        console.log("chegou aqui", id);
+
+        if(id == "485"){ jQuery('#MPv1-state').val('AC'); }
+        if(id == "486"){ jQuery('#MPv1-state').val('AL'); }
+        if(id == "487"){ jQuery('#MPv1-state').val('AP'); }
+        if(id == "488"){ jQuery('#MPv1-state').val('AM'); }
+        if(id == "489"){ jQuery('#MPv1-state').val('BA'); }
+        if(id == "490"){ jQuery('#MPv1-state').val('CE'); }
+        if(id == "511"){ jQuery('#MPv1-state').val('DF'); }
+        if(id == "491"){ jQuery('#MPv1-state').val('ES'); }
+        if(id == "492"){ jQuery('#MPv1-state').val('GO'); }
+        if(id == "493"){ jQuery('#MPv1-state').val('MA'); }
+        if(id == "495"){ jQuery('#MPv1-state').val('MS'); }
+        if(id == "494"){ jQuery('#MPv1-state').val('MT'); }
+        if(id == "496"){ jQuery('#MPv1-state').val('MG'); }
+        if(id == "499"){ jQuery('#MPv1-state').val('PA'); }
+        if(id == "498"){ jQuery('#MPv1-state').val('PB'); }
+        if(id == "497"){ jQuery('#MPv1-state').val('PR'); }
+        if(id == "500"){ jQuery('#MPv1-state').val('PE'); }
+        if(id == "501"){ jQuery('#MPv1-state').val('PI'); }
+        if(id == "503"){ jQuery('#MPv1-state').val('RN'); }
+        if(id == "504"){ jQuery('#MPv1-state').val('RS'); }
+        if(id == "502"){ jQuery('#MPv1-state').val('RJ'); }
+        if(id == "505"){ jQuery('#MPv1-state').val('RO'); }
+        if(id == "506"){ jQuery('#MPv1-state').val('RA'); }
+        if(id == "507"){ jQuery('#MPv1-state').val('SC'); }
+        if(id == "509"){ jQuery('#MPv1-state').val('SE'); }
+        if(id == "508"){ jQuery('#MPv1-state').val('SP'); }
+        if(id == "510"){ jQuery('#MPv1-state').val('TO'); }
+    }
+</script>

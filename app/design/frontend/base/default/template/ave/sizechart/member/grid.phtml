@@ -1,0 +1,50 @@
+<?php
+/** @var $this Ave_SizeChart_Block_Customer_Member */
+?>
+<?php echo $this->getMessagesBlock()->toHtml() ?>
+<?php $members = $this->getMembersCollection(); ?>
+<div class="page-title title-buttons">
+    <h1><?php echo $this->__('Size Chart Members') ?></h1>
+    <button type="button" title="<?php echo $this->__('Add New Member') ?>" class="button"
+            onclick="window.location='<?php echo $this->getNewUrl() ?>';"><span><span><?php echo $this->__(
+                    'Add New Member'
+                ) ?></span></span></button>
+</div>
+<?php if($members->getSize()): ?>
+<table class="data-table" id="my-members-table">
+    <thead>
+        <tr>
+            <th><?php echo $this->__('Name') ?></th>
+            <th><span class="nobr"><?php echo $this->__('Status') ?></span></th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php $_odd = ''; ?>
+        <?php foreach ($members as $member): ?>
+        <tr>
+            <td><?php echo $this->escapeHtml($member->getName()) ?></td>
+            <td><?php if($member->getActive()) {echo '<em>' . $this->__('Default') . '</em>';} else {echo ' ';} ?></td>
+            <td class="a-center">
+                <span class="nobr"><a href="<?php echo $this->getEditUrl($member) ?>"><?php echo $this->__(
+                            'Edit') ?></a> |
+                    <a href="<?php echo $this->getDeleteUrl($member) ?>" class="link-remove" onclick="return confirmDelete();"><?php echo $this->__(
+                            'Remove') ?></a>
+                </span>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<script type="text/javascript">
+    decorateTable('my-members-table');
+
+    function confirmDelete ()
+    {
+        return confirm("Are you sure you want to do this?");
+    }
+
+</script>
+<?php else: ?>
+    <p><?php echo $this->__('You don\'t have any members.'); ?></p>
+<?php endif ?>

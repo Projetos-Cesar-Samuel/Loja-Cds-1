@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <!-- Add stylesheets with media queries for use by modern browsers -->
+            
+            <action method="addItem"><type>skin_js</type><name>codazon/mdl/material.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/mdl/material-theme.js</name></action>
+            <action method="addItem"><type>skin_css</type><name helper="flexibletheme/bootstrapCssFile"/></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/mdl/material.min.css</name></action>
+        </reference>
+        <block name="styles_bulding" type="flexibletheme/header" template="codazon_flexibletheme/layout/style-building.phtml" />
+        
+        <block type="flexibletheme/header" name="featured_links" template="page/html/element/featured-links-style-01.phtml"></block>
+        <block type="flexibletheme/header" name="header_custom_text_1" template="page/html/element/header-custom-text.phtml">
+            <action method="setData"><key>attribute_code</key><value>content</value></action>
+        </block>
+        <block type="flexibletheme/header" name="header_custom_text_2" template="page/html/element/header-custom-text.phtml">
+            <action method="setData"><key>attribute_code</key><value>content_1</value></action>
+        </block>
+        
+        <block type="core/template" name="featured_links.wishlist" template="page/html/element/featured-links/wishlist.phtml" />
+        <block type="core/template" name="featured_links.currency_language" template="page/html/element/featured-links/currency-language.phtml" />
+        <block type="core/template" name="featured_links.account" template="page/html/element/featured-links/account.phtml" />
+        <block type="checkout/cart_minicart" name="minicart_head" template="page/html/element/featured-links/cart.phtml" />
+        <block type="core/template" name="featured_links.contact" template="page/html/element/featured-links/contact.phtml" />
+        
+        <block type="core/template" name="toggle_menu" template="codazon_megamenupro/toggle-menu.phtml">
+            <action method="setData"><key>css_class</key><value>toggle-menu-container</value></action>
+            <action method="setData"><key>html_id</key><value>toggle-menu-container</value></action>
+        </block>
+        <block type="core/template" name="menu_toggle_button" template="page/html/element/featured-links/menu-toggle-button.phtml">
+            <action method="setData"><key>direction</key><value>left</value></action>
+            <action method="setData"><key>section</key><value>toggle-menu-container</value></action>
+        </block>
+        
+        <!-- Toggle sidebar - left and right -->
+        <block type="core/template" name="toggle_sidebar_left" template="page/html/element/toggle-sidebar.phtml">
+            <action method="setData"><key>component_id</key><value>left</value></action>
+            <action method="setData"><key>css_class</key><value>md-sidenav-left</value></action>
+            <block type="core/template" name="mobi_panel" template="page/html/element/mobi-panel.phtml">
+                <action method="setData"><key>css_class</key><value>mobi-panel-container</value></action>
+                <action method="setData"><key>html_id</key><value>mobi-panel-container</value></action>
+            </block>
+        </block>
+        
+        <block type="core/template" name="toggle_sidebar_right" template="page/html/element/toggle-sidebar.phtml">
+            <action method="setData">
+                <key>required_blocks</key>
+                <value>getAccountPanelStyle___mini_account_dashboard,getHeaderWishlistStyle___mini.wishlist_panel,getMiniCartStyle___minicart_content</value>
+            </action>
+            <action method="setData"><key>component_id</key><value>right</value></action>
+            <action method="setData"><key>css_class</key><value>md-sidenav-right</value></action>
+        </block>
+        <!-- Mini cart -->
+        <reference name="minicart_content">
+            <action method="setData"><key>css_class</key><value>mini-cart-container</value></action>
+            <action method="setData"><key>html_id</key><value>header-cart</value></action>
+        </reference>
+        <!-- End mini cart -->
+        
+        <!-- End sidebar - left and right -->
+        <!-- Wislist elements -->
+        <block type="core/template" name="mini.wishlist_panel" template="page/html/element/wishlist-panel.phtml">
+            <action method="setData"><key>css_class</key><value>mini-wishlist-container</value></action>
+            <action method="setData"><key>html_id</key><value>mini-wishlist-container</value></action>
+        </block>
+        
+        <block type="customer/form_login" name="cdz_wishlist.login_form"  template="customer/form/mini.login.phtml">
+            <action method="setTitle" translate="value"><value>You must be logged in to manage your wish list.</value></action>
+            <action method="setPrefix"><value>wl-</value></action>
+            <action method="setDisplayBottom"><value>1</value></action>
+        </block>
+        <!-- Mini Wislist -->
+        <block type="wishlist/customer_sidebar" name="wishlist.minilist" template="wishlist/item/mini.list.phtml" />
+        <!-- End mini wislist -->
+        <!-- End wislist elements -->
+        
+        <!-- Mini account dashboard -->
+        <block type="core/template" name="mini_account_dashboard"  template="page/html/element/mini-account-dashboard.phtml">
+            <action method="setData"><key>css_class</key><value>mini-account-container</value></action>
+            <action method="setData"><key>html_id</key><value>mini-account-container</value></action>
+        </block>
+        <block type="customer/form_login" name="mini.login_form"  template="customer/form/mini.login.phtml">
+            <action method="setTitle" translate="value"><value>Please Login First</value></action>
+            <action method="setPrefix"><value>mini-dashboard-</value></action>
+            <action method="setDisplayTitle"><value>0</value></action>
+        </block>
+        <block type="directory/currency" name="mini.currency" template="directory/currency.phtml"/>
+        <block type="page/switch" name="mini.store_language" template="page/switch/languages.phtml"/>
+        <block type="page/switch" name="mini.store_switcher" template="page/switch/stores.phtml"/>
+        <block type="core/template" name="simple_vertical_menu" template="page/html/vertcial-menu.phtml" />
+        <block type="core/template" name="store_vertical_menu" template="page/html/store-vertical-menu.phtml" />
+        <!-- End mini account dashboard -->
+        
+        <!-- Category search -->
+        <reference name="top.container">
+            <block type="core/template" name="cdz_search_by_category"  template="page/html/element/category-search.phtml">
+                <block name="category.search.list" type="flexibletheme/widget_categorytree" />
+            </block>
+            <block type="core/template" name="mobi-vertcial-menu-container" before="-" template="page/html/mobi-vertcial-menu-container.phtml" />
+        </reference>
+        <!-- End category search -->
+        
+        <reference name="before_body_end">
+            <block type="core/template" name="cdz_newsletter_popup"  template="page/html/element/newsletter-popup.phtml" />
+        </reference>
+    </default>
+
+
+    <cms_index_index>
+		<reference name="root">
+            <action method="addBodyClass"><value>page-main-full</value></action>
+        </reference>
+        <reference name="content">
+            <block name="theme-main-content" type="flexibletheme/content" />
+        </reference>
+        <remove name="page_content_heading" />
+    </cms_index_index>
+
+
+    <catalog_category_layered>
+        <reference name="category.products">
+            <action method="setTemplate"><template>catalog/category/view-container.phtml</template></action>
+        </reference>
+        <reference name="product_list.after">
+            <block type="core/template" name="category_custom_script"  template="catalog/product/list/custom-script.phtml" />
+        </reference>
+    </catalog_category_layered>
+
+
+    <catalog_category_default>
+        <reference name="product_list.after">
+            <block type="core/template" name="category_custom_script"  template="catalog/product/list/custom-script.phtml" />
+        </reference>
+    </catalog_category_default>
+</layout>

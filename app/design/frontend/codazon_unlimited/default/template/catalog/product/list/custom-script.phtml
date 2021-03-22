@@ -1,0 +1,17 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<script>
+if (typeof ConfigurableMediaImages !== 'undefined') {
+    if (typeof ConfigurableMediaImages.oldSwapListImage == 'undefined') {
+        ConfigurableMediaImages.oldSwapListImage = ConfigurableMediaImages.swapListImage;
+        ConfigurableMediaImages.swapListImage = function(productId, imageObject) {
+            imageObject.addClass('product-image-photo hovered-img');
+            ConfigurableMediaImages.oldSwapListImage(productId, imageObject);
+        }
+    }
+}
+</script>

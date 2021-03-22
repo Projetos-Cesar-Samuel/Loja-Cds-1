@@ -1,0 +1,25 @@
+<?php
+    $mobile = "";
+    if(Mage::getSingleton("customer/session")->isLoggedIn()){
+        $customerId = Mage::getSingleton("customer/session")->getCustomer()->getId();
+        $collection = Mage::getModel("mobikul/customermobile")->getCollection()
+            ->addFieldToFilter("customer_id", $customerId);
+        foreach($collection as $each){
+            $mobile = $each->getMobile();
+        }
+    }
+?>
+<script>
+    var html = '<li class="mobikul-mobile-login-container">'+
+        '<label for="mobile_number" class="required"><em>*</em><?php echo $this->__("Enter Mobile No."); ?></label>'+
+            '<div class="input-box">'+
+                '<input type="text" value="'+'<?php echo $mobile; ?>'+'" title="'+'<?php echo Mage::helper("core")->quoteEscape($this->__("Enter Mobile No.")) ?>'+'" class="validate-phoneLax input-text required-entry" name="mobile_number" id="mobile_number"/>'+
+            '</div>'+
+        '</li>';
+    var target = "";
+    if($("email_address") != undefined)
+        target = $("email_address").up(1);
+    else
+        target = $("email").up(1);
+    target.insert({after:html});
+</script>

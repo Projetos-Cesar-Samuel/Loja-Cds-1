@@ -1,0 +1,398 @@
+<style type="text/css">
+    #attributeRowContainer{
+        border-left: 1px dotted;
+        margin-left: 5px;
+        min-height: 20px;
+    }
+    .attributeRow{
+        margin-left: 10px;
+        padding: 4px 2px;
+    }
+    .selectedAttributeContainer{
+        display: inline-block;
+        padding: 0 2px;
+    }
+    .selectedAttributeValue{
+        display: inline-block;
+        padding: 0 2px;
+    }
+    .removeAttributeRule{
+        display: inline-block;
+        padding: 0 2px;
+    }
+    .filter_block{
+        border-left: 3px solid #c5c3c3;
+        display: none;
+        margin: 10px;
+        padding: 5px 14px;
+    }
+    .productIdContainer{
+        display: inline-block;
+    }
+    .selectedIds{
+        display: inline-block;
+        margin: 0 2px;
+    }
+    .productIdChooser{
+        display: inline-block;
+        margin: 0 2px;
+    }
+    .productIdApply{
+        display: inline-block;
+        margin: 0 2px;
+    }
+    .selectedAttributeValueSelectorContainer{
+        display: inline-block;
+        min-height: 16px;
+    }
+    .selectedAttributeValueSelectorContainer select{
+        width: 200px;
+    }
+    .productCategoryChooserContainer{
+        margin: 10px 0 0 40px;
+    }
+</style>
+<?php   $notification = Mage::registry("notification_data");
+        $id = $this->getRequest()->getParam("id");      ?>
+<div style="" id="promo_catalog_edit_tabs_conditions_section_content">
+    <div class="entry-edit">
+        <div class="rule-tree">
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-edit-form fieldset-legend">Custom Product Collection</h4>
+            </div>
+            <fieldset id="custom_collection_conditions_fieldset">
+                Create Product Collection Based on :
+                <select class="select" name="collection_type" id="collection_type">
+                    <option <?php if($id == "") echo "selected='selected'";?>>Please choose a condition to add...</option>
+                    <option <?php if($notification->getCollectionType() == "product_attribute") echo "selected='selected'";?> value="product_attribute"> Product Attribute Assigned</option>
+                    <option <?php if($notification->getCollectionType() == "product_ids") echo "selected='selected'";?> value="product_ids"> Products ids</option>
+                    <option <?php if($notification->getCollectionType() == "product_new") echo "selected='selected'";?> value="product_new"> Newly Added Products with count</option>
+                </select>
+                <div class="product_attribute filter_block">
+                    <span class="">Add multiple filter attributes to product collection</span>
+                    <div id="attributeRowContainer"></div>
+                    <a id="addRule" href="javascript:void(0)">
+                        <img title="Add" alt="Add" class="v-middle" src="<?php echo Mage::getBaseUrl('skin').'adminhtml/default/default/images/rule_component_add.gif'; ?>">
+                    </a>
+                </div>
+                <div class="product_ids filter_block">
+                    Select or Enter Product ids (comma separated)
+                    <span class="productIdContainer">
+                        <input type="text" class="input-text selectedIds" value="" name="productIds" id="in_category_products">
+                        <a class="productIdChooser" href="javascript:void(0)" onclick="openProductGrid(this);">
+                            <img title="Open Chooser" class="v-middle" alt="" src="<?php echo Mage::getBaseUrl('skin').'adminhtml/default/default/images/rule_chooser_trigger.gif'; ?>">
+                        </a>
+                        <a class="productIdApply" href="javascript:void(0)" onclick="selectionDoneOfProductGrid(this);">
+                            <img title="Apply" alt="Apply" class="v-middle" src="<?php echo Mage::getBaseUrl('skin').'adminhtml/default/default/images/rule_component_apply.gif'; ?>">
+                        </a>
+                    </span>
+                    <div class="productCategoryChooserContainer"></div>
+                </div>
+                <div class="product_new filter_block">
+                    Please enter the count of newly added products to display in collection
+                    <input type="text" class="input-text" value="" name="newProductCount" id="newProductCount">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="checking" id="required_check" class=""/>
+<script type="text/javascript">
+    if (typeof jQuery == "undefined"){
+        document.write(unescape("%3Cscript src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+</script>
+
+<script type="text/javascript">
+    jQuery.noConflict();
+    var attributeData = {};
+    var selectedAttributes = [];
+    var collectionType = "<?php echo $notification->getCollectionType(); ?>";
+<?php   if($id == ""){  ?>
+            jQuery(document).ready(function(){
+                jQuery("#collection_type option").eq(0).prop("selected", true);
+            });
+<?php   }
+        else{   ?>
+            attributeData = <?php echo Mage::helper("core")->jsonEncode(unserialize($notification->getFilterData())); ?>;
+            collectionType = "<?php echo $notification->getCollectionType(); ?>";
+            if(Object.keys(attributeData).length > 0 && collectionType == "product_attribute") {
+                jQuery(document).ready(function(){
+                    jQuery("#collection_type").trigger("change");
+                    for (var key in attributeData){
+                        jQuery("#addRule").trigger("click");
+                        jQuery("#attributeRowContainer").find(".attributeRow:last-child").find(".attributeChooser").val(key).trigger("change");
+                    }
+                });
+            }
+            if(collectionType == "product_ids"){
+                jQuery(document).ready(function(){
+                    jQuery("#collection_type").trigger("change");
+                    jQuery("#in_category_products").val(attributeData);
+                });
+            }
+            if(collectionType == "product_new"){
+                jQuery(document).ready(function(){
+                    jQuery("#collection_type").trigger("change");
+                    jQuery("#newProductCount").val(attributeData);
+                });
+            }
+<?php   }   ?>
+
+    var attributeRow =  '<div class="attributeRow">'+
+                            '<span class="selectedAttributeContainer">'+
+                                '<span class="selectedAttributeLabel"></span>'+
+                                '<select class="attributeChooser" name="" onchange="attributeChooser(this);">'+
+                                    '<option value="">Please choose a condition to add...</option>'+
+                                    '<option value="type_id"> Product Type</option>'+
+                                        '<?php  $options = "";
+                                        foreach ($this->getAssignedAttributes() as $attribute) {
+                                            $options .= "<option value=\'".$attribute["value"]."\'>".$attribute["label"]."</option>";
+                                        }
+                                        echo $options; ?>'+
+                                '</select>'+
+                            '</span>'+
+                            '<span class="selectedAttributeValue"></span>'+
+                            '<span class="selectedAttributeValueSelectorContainer"></span>'+
+                            '<a title="Remove" onclick="removeAttributeRule(this);" class="removeAttributeRule" href="javascript:void(0)">'+
+                                '<img class="v-middle" alt="remove" src="<?php echo Mage::getBaseUrl('skin').'adminhtml/default/default/images/rule_component_remove.gif'; ?>">'+
+                            '</a>'+
+                            '<div class="productCategoryChooserContainer"></div>'+
+                        '</div>';
+
+    jQuery(document).ready(function(){
+         jQuery("#type").trigger("change");
+    });
+
+    jQuery("#collection_type").on("change", function(){
+        var thisthis = jQuery(this);
+        var thisVal = thisthis.val();
+        jQuery("#attributeRowContainer").html("");
+        jQuery(".productCategoryChooserContainer").html("");
+        if(thisVal == "")
+            jQuery("#required_check").val("");
+        else
+            jQuery("#required_check").val("filled");
+        jQuery(".filter_block").hide();
+        if(thisVal != "")
+            jQuery("."+thisVal).show();
+    });
+
+    jQuery("#type").change(function(){
+        if(jQuery(this).val() == 4)
+            jQuery("#required_check").addClass("required-entry");
+        else
+            jQuery("#required_check").removeClass("required-entry");
+    });
+
+    function attributeChooser(thisthis){
+        var thisthis = jQuery(thisthis);
+        var thisVal = thisthis.val();
+        if(selectedAttributes.indexOf(thisVal) < 0){
+            selectedAttributes.push(thisVal);
+        }
+        else{
+            alert("You can not add the already added attribute");
+            thisthis.parents(".attributeRow").find(".removeAttributeRule").trigger("click");
+            return;
+        }
+        var targetConatiner = thisthis.parents(".attributeRow").find(".selectedAttributeValueSelectorContainer");
+        targetConatiner.addClass("rule-param-wait");
+        thisthis.hide();
+        thisthis.prev("span").text(thisthis.find(":selected").text());
+        jQuery.ajax({
+            url     :   "<?php echo Mage::helper('adminhtml')->getUrl('mobikul/adminhtml_notification/getAttributeHtml'); ?>",
+            type    :   "GET",
+            dataType:   "json",
+            data    :   {"attributeCode" : thisVal},
+            success:function(content){
+                if(content){
+                    if(content.type == "category_ids"){
+                        if ((typeof attributeData === "object") && (attributeData !== null) && thisVal in attributeData)
+                            attributeValue = attributeData[thisVal];
+                        else
+                            attributeValue = "";
+                        var categoryHtml = 'id(s) are <span class="productIdContainer">'+
+                            '<input name="attribute['+thisVal+']" type="text" class="input-text selectedIds required-entry" value="'+attributeValue+'" name="selectedCategoryIds" id="selectedCategoryIds">'+
+                            '<a class="categoryIdChooser" href="javascript:void(0)" onclick="openCategoryTree(this);">'+
+                                '<img title="Open Chooser" class="v-middle" alt="" src="<?php echo Mage::getBaseUrl('skin').'adminhtml/default/default/images/rule_chooser_trigger.gif'; ?>">'+
+                            '</a>'+
+                            '<a class="categoryIdApply" href="javascript:void(0)" onclick="applyCategory(this);">'+
+                                '<img title="Apply" alt="Apply" class="v-middle" src="<?php echo Mage::getBaseUrl('skin').'adminhtml/default/default/images/rule_component_apply.gif'; ?>">'+
+                            '</a>'+
+                        '</span>';
+                        targetConatiner.html(categoryHtml).removeClass("rule-param-wait");
+                    }
+                    if(content.type == "text"){
+                        if ((typeof attributeData === "object") && (attributeData !== null) && thisVal in attributeData)
+                            attributeValue = attributeData[thisVal];
+                        else
+                            attributeValue = "";
+                        var inputField = "is <input type='text' name='attribute["+thisVal+"]' class='required-entry input-text' value='"+attributeValue+"'/>";
+                        targetConatiner.html(inputField).removeClass("rule-param-wait");
+                    }
+                    if(content.type == "type_id"){
+                        if ((typeof attributeData === "object") && (attributeData !== null) && thisVal in attributeData)
+                            attributeValue = attributeData[thisVal];
+                        else
+                            attributeValue = [];
+                        var multiselect = "are <select class='required-entry' multiple='multiple' name='attribute["+thisVal+"][]'>";
+                        var data = content.options;
+                        for(var i in data){
+                            if(attributeValue.indexOf(i) >= 0)
+                                multiselect += "<option selected='selected' value='"+i+"'>"+data[i]+"</option>";
+                            else
+                                multiselect += "<option value='"+i+"'>"+data[i]+"</option>";
+                        }
+                        multiselect += "</select>";
+                        targetConatiner.html(multiselect).removeClass("rule-param-wait");
+                    }
+                    if(content.type == "attribute_set_id"){
+                        if ((typeof attributeData === "object") && (attributeData !== null) && thisVal in attributeData)
+                            attributeValue = attributeData[thisVal];
+                        else
+                            attributeValue = [];
+                        var multiselect = "are <select class='required-entry' multiple='multiple' name='attribute["+thisVal+"][]'>";
+                        var data = content.options;
+                        for(var i=0; i<data.length; i++){
+                            var internalData = data[i];
+                            if(attributeValue.indexOf(internalData.attribute_set_id) >= 0)
+                                multiselect += "<option selected='selected' value='"+internalData.attribute_set_id+"'>"+internalData.attribute_set_name+"</option>";
+                            else
+                                multiselect += "<option value='"+internalData.attribute_set_id+"'>"+internalData.attribute_set_name+"</option>";
+                        }
+                        multiselect += "</select>";
+                        targetConatiner.html(multiselect).removeClass("rule-param-wait");
+                    }
+                    if(content.type == "multiselect"){
+                        if ((typeof attributeData === "object") && (attributeData !== null) && thisVal in attributeData)
+                            attributeValue = attributeData[thisVal];
+                        else
+                            attributeValue = [];
+                        var multiselect = "are <select class='required-entry' multiple='multiple' name='attribute["+thisVal+"][]'>";
+                        var data = content.options;
+                        for(var i=0; i<data.length; i++){
+                            var internalData = data[i];
+                            if(attributeValue.indexOf(internalData.value) >= 0)
+                                multiselect += "<option selected='selected' value='"+internalData.value+"'>"+internalData.label+"</option>";
+                            else
+                                multiselect += "<option value='"+internalData.value+"'>"+internalData.label+"</option>";
+                        }
+                        multiselect += "</select>";
+                        targetConatiner.html(multiselect).removeClass("rule-param-wait");
+                    }
+                }
+            }
+        });
+    }
+
+    function openProductGrid(thisthis){
+        var thisthis = jQuery(thisthis);
+        thisthis.prev().val("");
+        thisthis.parents(".productIdContainer").addClass("rule-param-wait");
+        var targetConatiner = thisthis.parents(".product_ids").find(".productCategoryChooserContainer");
+        jQuery.ajax({
+            url     :   "<?php echo Mage::helper('adminhtml')->getUrl('mobikul/adminhtml_notification/getProductGridHtml'); ?>",
+            type    :   "GET",
+            dataType:   "html",
+            data    :   {"id" : "<?php echo $this->getRequest()->getParam('id'); ?>"},
+            success:function(content){
+                if(content){
+                    targetConatiner.html(content);
+                    thisthis.parents(".productIdContainer").removeClass("rule-param-wait");
+<?php               if(($block = $this->getLayout()->createBlock("mobikul/adminhtml_notification_edit_tab_grid")) && ($_gridJsObject = $block->getJsObjectName())): ?>
+                    var categoryProducts = <?php echo $this->getProductsJson() ?>;
+                    jQuery("#in_category_products").val(categoryProducts.join(","));
+                    function registerCategoryProduct(grid, element, checked){
+                        if(checked){
+                            if(categoryProducts.indexOf(element.value) < 0 && element.value != "on")
+                                categoryProducts.push(element.value);
+                        }
+                        else{
+                            var index = categoryProducts.indexOf(element.value);
+                            if (index > -1)
+                                categoryProducts.splice(index, 1);
+                        }
+                        jQuery("#in_category_products").val(categoryProducts.join(","));
+                        grid.reloadParams = {'selected_products[]':categoryProducts.keys()};
+                    }
+                    function categoryProductRowClick(grid, event){
+                        var trElement = Event.findElement(event, 'tr');
+                        var isInput   = Event.element(event).tagName == 'INPUT';
+                        if(trElement){
+                            var checkbox = Element.getElementsBySelector(trElement, 'input');
+                            if(checkbox[0]){
+                                var checked = isInput ? checkbox[0].checked : !checkbox[0].checked;
+                                <?php echo $_gridJsObject ?>.setCheckboxChecked(checkbox[0], checked);
+                            }
+                        }
+                    }
+                    function positionChange(event){
+                        var element = Event.element(event);
+                        if(element && element.checkboxElement && element.checkboxElement.checked){
+                            categoryProducts.set(element.checkboxElement.value, element.value);
+                            jQuery("#in_category_products").val(categoryProducts.join(","));
+                        }
+                    }
+                    var tabIndex = 1000;
+                    function categoryProductRowInit(grid, row){
+                        var checkbox = $(row).getElementsByClassName('checkbox')[0];
+                        var position = $(row).getElementsByClassName('input-text')[0];
+                        if(checkbox && position){
+                            checkbox.positionElement = position;
+                            position.checkboxElement = checkbox;
+                            position.disabled = !checkbox.checked;
+                            position.tabIndex = tabIndex++;
+                            Event.observe(position,'keyup',positionChange);
+                        }
+                    }
+                    <?php echo $_gridJsObject ?>.rowClickCallback = categoryProductRowClick;
+                    <?php echo $_gridJsObject ?>.initRowCallback = categoryProductRowInit;
+                    <?php echo $_gridJsObject ?>.checkboxCheckCallback = registerCategoryProduct;
+                    <?php echo $_gridJsObject ?>.rows.each(function(row){categoryProductRowInit(<?php echo $_gridJsObject ?>, row)});
+                <?php endif; ?>
+                }
+            }
+        });
+    }
+
+    function openCategoryTree(thisthis){
+        var thisthis = jQuery(thisthis);
+        thisthis.prev().val("");
+        var targetConatiner = thisthis.parents(".attributeRow").find(".selectedAttributeValueSelectorContainer");
+        targetConatiner.addClass("rule-param-wait");
+        jQuery.ajax({
+            url     :   "<?php echo Mage::helper('adminhtml')->getUrl('mobikul/adminhtml_notification/getCategoryTreeHtml'); ?>",
+            type    :   "GET",
+            dataType:   "html",
+            data    :   {"id" : "<?php echo $this->getRequest()->getParam('id'); ?>"},
+            success:function(content){
+                if(content){
+                    thisthis.parents(".attributeRow").find(".productCategoryChooserContainer").html(content);
+                    targetConatiner.removeClass("rule-param-wait");
+                }
+            }
+        });
+    }
+
+    function applyCategory(thisthis){
+        var currentElement = jQuery(thisthis);
+        var parentElement = currentElement.parents(".attributeRow");
+        var selectedValue = parentElement.find("#product_categories").val();
+        jQuery(thisthis).parents(".productIdContainer").find("#selectedCategoryIds").val(selectedValue);
+        parentElement.find(".productCategoryChooserContainer").html("");
+    }
+
+    function selectionDoneOfProductGrid(thisthis){
+        var currentElement = jQuery(thisthis);
+        currentElement.parents(".product_ids").find(".productCategoryChooserContainer").html("");
+    }
+
+    jQuery("#addRule").on("click", function(){
+        jQuery("#attributeRowContainer").append(attributeRow);
+    });
+
+    function removeAttributeRule(thisthis){
+        jQuery(thisthis).parents(".attributeRow").remove();
+    }
+</script>

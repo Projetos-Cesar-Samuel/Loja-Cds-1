@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Idnovate_WhatsAppChat>
+			<active>true</active>
+			<codePool>community</codePool>
+		</Idnovate_WhatsAppChat>
+	</modules>
+</config>

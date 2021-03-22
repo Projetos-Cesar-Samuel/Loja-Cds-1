@@ -1,0 +1,187 @@
+<?php
+
+/**
+ * Copyright [2014] [Dexxtz]
+ *
+ * @package   Dexxtz_Customaddress
+ * @author    Dexxtz
+ * @license   http://www.apache.org/licenses/LICENSE-2.0
+ */
+ 
+ ?>
+<?php 
+	$helper = Mage::helper('customaddress');
+	$helper->checkStates();
+	$storeCode = Mage::app()->getStore()->getLocaleCode();
+?>
+
+<script type="text/javascript">
+	var jQuery = jQuery.noConflict();
+	jQuery(document).ready(function() {
+		jQuery('.state_autocomplete').addClass('validate-select');
+		jQuery('.state_autocomplete').addClass('required-entry');
+	});
+	function getStates() {
+		return 	JSON.parse('<?php echo json_encode($_SESSION['states']) ?>');
+	}
+</script>
+
+<?php if($this->getTitle()): ?>
+<div class="page-title">
+    <h1><?php echo $this->getTitle() ?></h1>
+</div>
+<?php endif; ?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="form-validate">
+    <div class="fieldset">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+    <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+        <h2 class="legend"><?php echo $this->__('Contact Information') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <?php echo $this->getNameBlockHtml() ?>
+            </li>
+            <?php if ($helper->getCompany() == 1) { ?>
+            <li class="wide">
+                <label for="company"><?php echo $this->__('Company') ?></label>
+                <div class="input-box">
+                    <input type="text" name="company" id="company" title="<?php echo $helper->__('Company') ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getCompany()) ?>" title="<?php echo $helper->__('Company') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('company') ?>" />
+                </div>
+            </li>
+            <?php } ?>
+            <li class="fields">
+                <div class="field">
+                    <label for="telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="telephone"<?php echo $helper->addMask(16, $storeCode);?> value="<?php echo $this->escapeHtml($this->getAddress()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text  <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="fax"><?php echo $this->__('Fax') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="fax" id="fax" <?php echo $helper->addMask(17, $storeCode);?> title="<?php echo $helper->__('Fax') ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getFax()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('fax') ?>" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="fieldset">
+        <h2 class="legend"><?php echo $this->__('Address') ?></h2>
+        <ul class="form-list">
+        	<li class="fields">        		
+                <div class="field">
+                    <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
+                    <div class="input-box">
+                        <input type="text"<?php echo $helper->getAutoComplete('zip_autocomplete', true, false) . $helper->addZipMask($storeCode);?> name="postcode" value="<?php echo $this->escapeHtml($this->getAddress()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international<?php echo $helper->getAutoComplete(' zip_autocomplete ') . $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
+                    </div>
+                </div>
+                <?php if ($storeCode == 'pt_BR' && $helper->getZipLink() == 1) { ?>
+                <br />
+                <div class="field">
+                	<div class="input-box">
+	                	<a class="not_know_zip" target="_blank" href="http://www.buscacep.correios.com.br/">
+	                		<?php echo $helper->getZipText(); ?>
+	                	</a>
+                	</div>               	
+                </div>
+                <?php } ?>
+        	</li>
+            <li class="fields">
+            	<div class="field">
+                    <label for="street_1" class="required"><em>*</em><?php echo $helper->__('Address') ?></label>
+                    <div class="input-box">
+                        <input type="text" title="<?php echo $helper->__('Address') ?>" name="street[]" id="street_1" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(1)) ?>" class="input-text required-entry<?php echo $helper->getAutoComplete(' street1_autocomplete');?>" />
+                    </div>
+				</div>
+				<div class="field">
+                    <label for="street_2" class="required"><em>*</em><?php echo $helper->__('Number') ?></label>
+                    <div class="input-box">
+                        <input type="text" title="<?php echo $helper->__('Number') ?>" name="street[]" id="street_2" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(2)) ?>" class="input-text required-entry" />
+                    </div>
+				</div>
+			</li>
+			<li class="fields">
+            	<div class="field">
+                    <label for="street_3" class="required"><em>*</em><?php echo $helper->__('Region') ?></label>
+                    <div class="input-box">
+                        <input type="text" title="<?php echo $helper->__('Region') ?>" name="street[]" id="street_3" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(3)) ?>" class="input-text required-entry<?php echo $helper->getAutoComplete(' street3_autocomplete');?>" />
+                    </div>
+				</div>
+				<div class="field">
+                    <label for="street_4"><?php echo $helper->__('Complement') ?></label>
+                    <div class="input-box">
+                        <input type="text" title="<?php echo $helper->__('Complement') ?>" name="street[]" id="street_4" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(4)) ?>" class="input-text" />
+                    </div>
+				</div>
+			</li>
+            <?php if ($this->helper('customer/address')->isVatAttributeVisible()) : ?>
+            <li class="wide">
+                <label for="vat_id"><?php echo $this->__('VAT Number') ?></label>
+                <div class="input-box">
+                    <input type="text" name="vat_id" value="<?php echo $this->escapeHtml($this->getAddress()->getVatId()) ?>" title="<?php echo $this->__('VAT Number') ?>" id="vat_id" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('vat_id') ?>" />
+                </div>
+            </li>
+            <?php endif; ?>
+            <li class="fields">
+                <div class="field">
+                    <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>"  title="<?php echo $this->__('City') ?>" class="input-text<?php echo $helper->getAutoComplete(' city_autocomplete ') . $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
+                    <div class="input-box">
+                        <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select required-entry<?php echo $helper->getAutoComplete(' state_autocomplete');?>" style="display:none;">
+                           <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                        </select>
+                        <script type="text/javascript">
+                        //<![CDATA[
+                            $('region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
+                        //]]>
+                        </script>
+                        <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getAddress()->getRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text required-entry<?php echo $helper->getAutoComplete(' state_autocomplete') . $this->helper('customer/address')->getAttributeValidationClass('region') ?>" />
+                    </div>
+                </div>
+            </li>
+            <li class="fields"<?php if ($helper->getCountry() == 0) { echo ' style="display:none;"'; } ?>>
+                <div class="field">
+                    <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                    <div class="input-box">
+                        <?php echo $this->getCountryHtmlSelect() ?>
+                    </div>
+                </div>
+            </li>
+            <li<?php if($this->canSetAsDefaultBilling()) echo ' class="control"' ?>>
+                <?php if($this->isDefaultBilling()): ?>
+                    <strong><?php echo $this->__('Default Billing Address') ?></strong>
+                <?php elseif($this->canSetAsDefaultBilling()): ?>
+                    <input type="checkbox" id="primary_billing" name="default_billing" value="1" title="<?php echo $this->__('Use as My Default Billing Address') ?>" class="checkbox" /><label for="primary_billing"><?php echo $this->__('Use as my default billing address') ?></label>
+                <?php else: ?>
+                    <input type="hidden" name="default_billing" value="1" />
+                <?php endif; ?>
+            </li>
+            <li<?php if($this->canSetAsDefaultShipping()) echo ' class="control"' ?>>
+                <?php if($this->isDefaultShipping()): ?>
+                    <strong><?php echo $this->__('Default Shipping Address') ?></strong>
+                <?php elseif($this->canSetAsDefaultShipping()): ?>
+                    <input type="checkbox" id="primary_shipping" name="default_shipping" value="1" title="<?php echo $this->__('Use as My Default Shipping Address') ?>" class="checkbox" /><label for="primary_shipping"><?php echo $this->__('Use as my default shipping address') ?></label>
+                <?php else: ?>
+                    <input type="hidden" name="default_shipping" value="1" />
+                <?php endif; ?>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <button data-action="save-customer-address" type="submit" title="<?php echo $this->__('Save Address') ?>" class="button"><span><span><?php echo $this->__('Save Address') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+    new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+//]]>
+</script>

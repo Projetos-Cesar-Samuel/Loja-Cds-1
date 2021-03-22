@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$recentPhotos = $this->getInstagramRecentPhotos();
+$widget = array('codazon.slider' => array('sliderConfig' => $this->getSliderData()));
+$rows = $this->getData('total_rows')?:1;
+$maxI = $this->getData('max_items') - 1;
+$count = count($recentPhotos);
+$sliderMargin = (float)$this->getData('slider_margin');
+?>
+<?php if ($count > 0 ) : ?>
+<div class="instagram-photos items owl-carousel" data-cdzwidget='<?= json_encode($widget) ?>'>
+	<?php $i = 0; foreach($recentPhotos as $photo): ?>
+    <?php echo (($i%$rows == 0) && ($rows > 1))?'<div class="item-group">':'' ?>
+    <div class="photo-item" <?php echo ($rows > 1)?"style='margin-bottom: {$sliderMargin}px'":'' ?>>
+        <a data-largeimg="<?= $photo->images->standard_resolution->url; ?>" class="photo-item-link abs-img" style="padding-bottom: 100%" href="<?php echo $photo->link ?>" target="_blank">
+            <img class="img-responsive" src="<?php echo $photo->images->low_resolution->url ?>" />
+        </a>
+    </div>
+    <?php echo ((($i%$rows == $rows - 1) || ($i == ($count - 1)) || ($i == $maxI)) && ($rows > 1))?'</div>':'' ?>
+    <?php if ($i == $maxI) break; ?>
+    <?php $i++ ?>
+    <?php endforeach ?>
+</div>
+<?php endif ?>

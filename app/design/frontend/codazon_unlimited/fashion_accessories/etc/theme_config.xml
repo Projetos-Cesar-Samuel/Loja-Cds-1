@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config>
+    <default>
+        <flexibletheme>
+            <general>
+                <newsletter_popup>unlimited-accessories-newsletter-popup</newsletter_popup>
+            </general>
+            <header>
+                <header>header-style-02</header>
+                <main_menu>unlimited-fashion-accessories-main-menu</main_menu>
+            </header>
+            <main_content>
+                <main_content>main-content-style-02</main_content>
+            </main_content>
+            <footer>
+                <footer>footer-style-01</footer>
+            </footer>
+        </flexibletheme>
+        <category_view>
+            <design>
+                <template>catalog/product/list/grid-styles/grid-style-01.phtml</template>
+            </design>
+            <items_per_row_1>
+                <items_1900>5</items_1900>
+                <items_1600>5</items_1600>
+                <items_1420>5</items_1420>
+                <items_1280>5</items_1280>
+                <items_980>4</items_980>
+                <items_768>3</items_768>
+                <items_480>2</items_480>
+                <items_320>2</items_320>
+                <items_0>2</items_0>
+            </items_per_row_1>
+            <items_per_row_2>
+                <items_1900>4</items_1900>
+                <items_1600>4</items_1600>
+                <items_1420>4</items_1420>
+                <items_1280>4</items_1280>
+                <items_980>3</items_980>
+                <items_768>2</items_768>
+                <items_480>2</items_480>
+                <items_320>2</items_320>
+                <items_0>2</items_0>
+            </items_per_row_2>
+            <items_per_row_3>
+                <items_1900>3</items_1900>
+                <items_1600>3</items_1600>
+                <items_1420>3</items_1420>
+                <items_1280>3</items_1280>
+                <items_980>2</items_980>
+                <items_768>2</items_768>
+                <items_480>2</items_480>
+                <items_320>2</items_320>
+                <items_0>2</items_0>
+            </items_per_row_3>
+        </category_view>
+        <images>
+            <product>
+                <product_base_image_width>1000</product_base_image_width>
+                <product_base_image_height>1000</product_base_image_height>
+                <product_moreview_image_width>110</product_moreview_image_width>
+                <product_moreview_image_height>110</product_moreview_image_height>
+            </product>
+            <category>
+                <product_image_width>320</product_image_width>
+                <product_image_height>320</product_image_height>
+            </category>
+            <blog>
+                <blog_base_image_width>1100</blog_base_image_width>
+                <blog_base_image_height>841</blog_base_image_height>
+                <blog_thumbnail_image_width>276</blog_thumbnail_image_width>
+                <blog_thumbnail_image_height>184</blog_thumbnail_image_height>
+            </blog>
+        </images>
+    </default>
+</config>

@@ -1,0 +1,92 @@
+<?php
+/**
+ * Copyright © 2017 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$attributeCode = 'themelayout_content';
+$isUseDefault = $this->isUseDefault($attributeCode);
+?>
+<div class="main-content-builder custom-bootstrap" data-role="page-builder">
+    <div class="row">
+        <div class="col-sm-5 col-left">
+            <div class="block-title"><?= __('Element Set') ?></div>
+            <div class="element-type-area" data-role="ele-area">
+                <?php if($this->displayUseDefault($attributeCode)) : ?>
+                <div class="admin__field-control">
+                    <div class="admin__field-service">
+                        <input type="checkbox" <?php if ($isUseDefault) : ?>checked<?php endif ?> id="themelayout_content_default" name="use_default[themelayout_content]" class="admin__control-checkbox" onclick="toggleThemeContent(this)" />
+                        <label for="themelayout_content_default" class="admin__field-label">
+                            <span class="use-default-label"><?= __('Use Default Content') ?></span>
+                        </label>
+                    </div>
+                </div>
+                <?php endif ?>
+            </div>
+        </div>
+        <div class="col-sm-19 col-right">
+            <div class="block-title"><?= __('Main Area') ?></div>
+            <div class="page-main-area" data-role="main-area"></div>
+        </div>
+    </div>
+</div>
+<?php
+$params = array(
+    'imageUrl'      => $this->getUrl('adminhtml/cms_wysiwyg_images/index'),
+    'editorUrl'     => $this->getUrl('adminhtml/flexibletheme_content/wysiwyg'),
+);
+?>
+<script type="text/javascript">
+var Codazon = <?php echo json_encode($params); ?>;
+(function($) {
+    var $pageBuilder = $('[data-role=page-builder]').first(),
+    $themcontentInput = $('#content'),
+    itemData = [],
+    contentValue = $themcontentInput.val(),
+    $eleArea = $('[data-role=ele-area]').first();
+    
+    if (contentValue) {
+        itemData = JSON.parse(contentValue);
+    }
+    $pageBuilder.pagebuilder({
+        itemTypes: <?= json_encode($this->getItemTypes()) ?>,
+        itemData: itemData,
+        imagePlaceholder: '<?= $this->getImageUrl('placeholder.jpg') ?>',
+        mediaUrl: '<?= $this->getMediaUrl() ?>'
+    });
+    var builder = $pageBuilder.data('codazonPagebuilder');
+    
+    $eleArea.stick_in_parent({
+        offset_top: 87
+    });
+    
+    $(window).load(function(){
+		$('#edit_form').on('beforeSubmit', function(event, form, url, save) {
+			
+		});
+	});
+    function beforeSubmit(form, url) {
+        if(typeof url !== 'undefined'){
+            form.action = url;
+        }
+        var elementJson = builder.elementHTMLtoJson();
+        $themcontentInput.val(JSON.stringify(elementJson)).trigger('change');
+        console.log($themcontentInput.val());
+    }
+	function submitForm(url){
+		window.editForm.submit = function(url) {
+			if (this.validator.validate()) {
+				var form = this.validator.form;
+				beforeSubmit(form, url);
+                setTimeout(function() {
+                    form.submit();
+                }, 100);
+                return false;
+			}
+		};
+	}
+	submitForm();
+}) (jQuery);
+</script>

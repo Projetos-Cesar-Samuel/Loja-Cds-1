@@ -1,0 +1,17 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php $labels = $this->getLabels(); ?>
+<?php if(count($labels) > 0): ?>
+<ul class="cdz-product-labels">
+	<?php foreach($labels as $label): ?>
+		<li class="label-item <?php echo $label['html_class'] ?>">
+			<div class="label-content"><?php echo $label['label'] ?></div>
+		</li>
+    <?php endforeach ?>
+</ul>
+<?php endif ?>

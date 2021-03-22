@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Total Metrica
+ * 
+ * @category    Modulo de parcelamento
+ * @package     TotalMetrica_Parcelamento
+ * @author      César Martins <cesar@totalmetrica.com>
+ */
+-->
+<config>
+    <tabs>
+        <totalmetrica translate="label">
+            <label>Total Metrica</label>
+            <sort_order>1</sort_order>
+        </totalmetrica>
+    </tabs>
+    <sections>
+        <parcelamento translate="label" module="parcelamento">
+            <class>separator-top</class>
+            <label>Parcelamento</label>
+            <tab>totalmetrica</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>299</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Configurações</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>        
+                        <enable translate="label">
+                            <label>Habilitar</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>2</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </enable>
+
+                        <parcelamento_usar_mercado_pago translate="label">
+                            <label>Usar API do Mercado Pago</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>3</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </parcelamento_usar_mercado_pago>
+
+                        <parcelamento_api_mercado_pago translate="label">
+                            <label>Api Mercado pago - Public Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </parcelamento_api_mercado_pago>
+
+                        <parcelamento_payment_show_interest translate="label">
+                            <label>Mostrar parcelas com juros?</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>5</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </parcelamento_payment_show_interest>
+
+                        <parcelamento_taxa_juros translate="label">
+                            <label>Taxa de Juros</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Informe no caso não tenha Api do mercado pago</comment>
+                        </parcelamento_taxa_juros>
+
+                        <parcelamento_valor_minimo_parcela translate="label">
+                            <label>Valor Minímo da Parcela</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </parcelamento_valor_minimo_parcela>
+
+                        <parcelamento_quantity translate="label">
+                            <label>Qtd. de Max. de Parcelas</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </parcelamento_quantity>
+
+                        <parcelamento_quantity_sem_juros translate="label">
+                            <label>Qtd. de Parcelas sem juros</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Deixe o campo vazio para mostrar a quantidade maxíma de parcelas</comment>
+                        </parcelamento_quantity_sem_juros>
+
+                        <parcelamento_cor_hexadecimal translate="label">
+                            <label>Cor do Campo de Parcelamento</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Informe a cor em hexadecimal: #000000</comment>
+                        </parcelamento_cor_hexadecimal>
+
+                        <parcelamento_payment_show_other translate="label">
+                            <label>Mostrar parcelamento em outras páginas</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>12</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </parcelamento_payment_show_other>
+                    </fields>
+                </general>
+            </groups>
+        </parcelamento>
+    </sections>
+</config>

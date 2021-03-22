@@ -1,0 +1,11 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php if ($currentTheme = Mage::registry('current_theme')) : ?>
+<div class="container-header" style="background: #fff; padding: 23px 27px 0 27px;">
+    <h3 style="display: inline-block; color: #eb5e00;"><?php echo $this->__('Configuration: %s', $currentTheme->getThemeTitle()); ?></h3>
+</div>
+<?php endif ?>

@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$helper = Mage::helper('flexibletheme');
+?>
+<?php if ($helper->isDeveloperMode()) : ?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('codazon/js/less.js') ?>"></script>
+<script>
+less.options.relativeUrls = false;
+less.options.rootpath = '<?php echo Mage::getBaseUrl('media'); ?>';
+
+less.options.useFileCache = false;
+less.options.compress = true;
+less.options.dumpLineNumbers = true;
+var lessFileSet = <?php echo json_encode($helper->getLessFilesSet()); ?>;
+var lessElement;
+for (var lessIndex in lessFileSet) {
+    lessElement = document.createElement('link');
+    lessElement.rel = "stylesheet/less";
+    lessElement.href = lessFileSet[lessIndex];
+    less.sheets.push(lessElement);
+}
+less.refresh();
+setTimeout(function() {
+    var event = new Event('less_complete');
+    window.dispatchEvent(event);
+}, 1500);
+</script>
+<?php endif ?>
+
+<script>
+var codazon = <?php echo json_encode($helper->getSettingArray()); ?>;
+</script>

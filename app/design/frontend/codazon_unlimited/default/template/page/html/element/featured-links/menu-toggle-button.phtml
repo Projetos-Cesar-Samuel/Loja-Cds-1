@@ -1,0 +1,14 @@
+<?php
+	/**
+	 * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+	 * See COPYING.txt for license details.
+	 */
+?>
+<?php
+$direction = $this->getData('direction')?:'left';
+$section = $this->getData('section')?:'toggle-menu-container';
+$htmlTag = $this->getData('html_tag')?:'div';
+?>
+<<?= $htmlTag ?> class="utilies-toggle-wrap hidden-xs">
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect toggle-btn" data-sidebartrigger='{"side": "<?php echo $direction ?>", "section":"<?php echo $section ?>"}'></button>
+</<?= $htmlTag ?>>

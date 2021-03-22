@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$_product = $this->getProduct();
+?>
+<?php if ($_product) : ?>
+<?php
+$name = $this->stripTags($_product->getName(), null, true);
+$url = $_product->getProductUrl();
+$width = 70;
+$height = 70;
+$imageHelper = $this->helper('catalog/image');
+$paddingBottom = 100 * $height/$width;
+$src = $imageHelper->init($_product, 'small_image')->resize($width, $height);
+$imageLabel = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true);
+$message = $this->getData('message') ? : '%s was added to your wishlist.';
+?>
+<div class="result-wrapper">
+    <div class="rs-col rs-left">
+        <a href="<?= $url ?>" class="product-item-image abs-img" style="padding-bottom: <?= $paddingBottom ?>%">
+            <img src="<?= $src ?>" />
+        </a>
+    </div>
+    <div class="rs-col rs-right">
+        <div class="minicart-message"><?= $this->__($message, 
+            '<strong class="product-name">' . $name . '</strong>') ?>
+            <a class="go-link go-wishlist" title="<?php echo $this->__('View wishlist'); ?>" href="<?php echo $this->getUrl('wishlist'); ?>"><?php echo $this->__('View wishlist'); ?>
+        </div>
+    </div>
+</div>
+<?php elseif ($this->getMessage()) : ?>
+<?= $this->getMessage() ?>
+<?php endif ?>

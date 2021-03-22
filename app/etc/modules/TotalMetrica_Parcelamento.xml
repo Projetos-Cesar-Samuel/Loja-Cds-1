@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <TotalMetrica_Parcelamento>
+            <active>true</active>
+            <codePool>local</codePool>
+        </TotalMetrica_Parcelamento>
+    </modules>
+</config>

@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$helper = $this->helper('flexibletheme');
+$disableDefaultMenu = $helper->getConfig('flexibletheme/header/disable_default_menu');
+$usedMegamenu = $helper->getConfig('flexibletheme/header/main_menu');
+
+if ($disableDefaultMenu) {
+	echo $this->getLayout()->createBlock('megamenupro/widget_megamenu')->setMenu($usedMegamenu)->toHtml();
+} else {
+	$defaultMenu = $this->getLayout()->createBlock('page/html_topmenu')->setTemplate('page/html/topmenu.phtml');
+	$render = $this->getLayout()->createBlock('page/html_topmenu_renderer')->setTemplate('page/html/topmenu/renderer.phtml');
+	$defaultMenu->setChild('catalog.topnav.renderer',$render);
+	echo $defaultMenu->toHtml();
+}
+?>

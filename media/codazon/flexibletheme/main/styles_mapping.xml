@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<styles>
+    <product-list-style-01>product-01.less.css</product-list-style-01>
+    <product-list-style-02>product-02.less.css</product-list-style-02>
+    <product-list-style-03>product-03.less.css</product-list-style-03>
+    <product-list-style-04>product-04.less.css</product-list-style-04>
+    <product-list-style-05>product-05.less.css</product-list-style-05>
+    <product-list-style-07>product-07.less.css</product-list-style-07>
+    <product-list-style-08>product-08.less.css</product-list-style-08>
+    <product-list-style-09>product-09.less.css</product-list-style-09>
+    <product-list-style-13>product-13.less.css</product-list-style-13>
+    <product-list-style-14>product-14.less.css</product-list-style-14>
+    <product-list-style-15>product-15.less.css</product-list-style-15>
+    <product-list-style-16>product-16.less.css</product-list-style-16>
+    <product-list-style-20>product-20.less.css</product-list-style-20>
+    <product-list-style-21>product-21.less.css</product-list-style-21>
+    <post-list-style01>blog-01.less.css</post-list-style01>
+    <post-list-style02>blog-02.less.css</post-list-style02>
+    <post-list-style04>blog-04.less.css</post-list-style04>
+    <post-list-style05>blog-05.less.css</post-list-style05>
+    <post-list-style08>blog-08.less.css</post-list-style08>
+    <post-list-style10>blog-10.less.css</post-list-style10>
+</styles>

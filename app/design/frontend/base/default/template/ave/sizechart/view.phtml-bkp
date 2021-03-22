@@ -1,0 +1,115 @@
+<?php
+/** @var $this Ave_SizeChart_Block_Product_View */
+if (empty($ave_sizechart_is_once)) {
+    $ave_sizechart_is_once = true;
+    $chart = $this->getChart();
+    $defaultDimension = $this->getDefaultDimension();
+    $dimensionList = $this->getDimensionList();
+    ?>
+    <?php if (!empty($chart)) { ?>
+        <a href="javascript:void(0);" class="ave-sizechart-show-link hidden"><span><span id="ave-sizechart-button-label">
+        <?php if (($icon = Mage::getStoreConfig('ave_sizechart/general/icon'))) {
+            $icon = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'chart/icon/' . $icon;
+            echo '<img src="' . $icon . '" class="ave-sizechart-icon" alt="' . $this->__('Size Chart') . '" />';
+        } else {
+            echo $this->__('Size Chart');
+        }
+        ?></span></span></a>
+
+        <div class="ave hidden">
+            <div id="ave-sizechart-holder">
+                <h3><?php echo $chart['name']; ?></h3>
+
+                <div class="ave-sizechart-info">
+                    <?php if (array_key_exists('image', $chart) && ($image = $chart['image'])) { ?>
+                        <img class="ave-sizechart-image"
+                             src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'chart/image'
+                                 . $image; ?>" alt="<?php echo $chart['name']; ?>"/>
+                    <?php } ?>
+                    <?php
+                    //todo: move generation this block to js
+                    $members = $this->getMembers();           //start member layout ?>
+                    <?php if (Mage::getStoreConfig('ave_sizechart/general/enable_member') && !empty($members) && count($members) > 0) { ?>
+                    <div class="ave-sizechart-members">
+                        <select id="active_member" class="full-width">
+                            <option value=""><?php echo $this->__('Please select member'); ?></option>
+                        <?php
+                        foreach ($members as $member) {
+                            $active = $member->getActive() ? ' selected="selected"' : '';
+                            echo '<option value="' . $member->getId() . '"' . $active . '>' . $this->escapeHtml($member->getName()) . '</option>';
+                        }
+                        ?>
+                        </select>
+
+                    </div>
+                    <?php }              //end member layout ?>
+                    <div class="ave-sizechart-dimensions">
+                        <?php echo $this->__('Your dimensions:') ?><br>
+                        <table>
+                            <?php foreach ($chart['dimensions'] as $dimension) {
+                                if ('dimension' == $dimension['type']) {
+                                    echo '<tr>';
+                                    $dimensionInput = '<input id="ave_sizechart_dimension_' . $dimension['id']
+                                        . '" name="ave_sizechart_dimension_' . $dimension['id']
+                                        . '" type="number" step="0.25" min="0" class="ave-sizechart-input-dimension" />';
+                                    echo '<td>' . $dimension['name'] . '</td><td>' . $dimensionInput . '</td>';
+                                    echo '</tr>';
+                                }
+                            } ?>
+                        </table>
+                        <?php
+                        $dimensionButtons = '<div class="measurement_toggle">';
+                        foreach ($dimensionList as $key => $label) {
+                            $selection = ($key == $defaultDimension) ? ' active' : '';
+                            $dimensionButtons
+                                .= '<div class="dimension_btn' . $selection . '" data-code="' . $key
+                                . '" data-name="ave_sizechart_dimension_select">' . $this->__($label) . '</div>';
+                        }
+                        $dimensionButtons .= '</div>';
+                        echo $dimensionButtons;
+                        ?>
+                    </div>
+                    <div class="ave-sizechart-note">
+                        <?php if (array_key_exists('note', $chart)) {
+                            echo $chart['note'];
+                        } ?>
+                    </div>
+                </div>
+                <div class="ave-sizechart-table-holder">
+                    <table class="ave-sizechart-table">
+                        <thead>
+                        <tr><?php
+                            $dimensionsCount = count($chart['dimensions']);
+                            $colWidth = round(100 / $dimensionsCount, 2) . '%';
+                            foreach ($chart['dimensions'] as $dimension) {
+                                echo '<th id="dimension_' . $dimension['id'] . '" width="' . $colWidth . '">' . $dimension['name'] . '</th>';
+                            }
+                            ?>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        list($html, $sizesToJs) = $this->generateBodySizes($chart);
+                        echo $html;
+                        ?>
+                        </tbody>
+                    </table>
+
+                    <div id="ave-sizechart-current-size" class="ave"><?php echo $this->__('Suggested Size is undefined'); ?></div>
+                    <div class="ave-sizechart-description">
+                        <?php echo $this->getDescription($chart['description']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+            $params = Mage::helper('ave_sizechart/frontend_data')->getData();
+        ?>
+        <script language="JavaScript">
+            document.observe("dom:loaded", function () {
+                ave_sizechart = new Ave.SizeChart(<?php echo json_encode($params); ?>, <?php echo (int) Mage::getStoreConfig('ave_sizechart/general/use_ajax'); ?>);
+            });
+        </script>
+    <?php
+    }
+} ?>

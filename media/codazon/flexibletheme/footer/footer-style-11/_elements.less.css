@@ -1,0 +1,14 @@
+.page-footer{
+	background:none;
+	.footer-bottom{
+		background:@footer_background url(@footer_background_file) @footer_background_image_option;
+	}
+}
+@media screen and (max-width: 767px){
+	.page-footer{
+		.footer-bottom{
+			background-position: center;
+    		background-size: cover;
+		}
+	}
+}

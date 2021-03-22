@@ -1,0 +1,14 @@
+@import (less)'../_function.less.css';
+@import (less)'../_monitor.less.css';
+@import (less)'general/_function.less.css';
+
+@font-face {
+  font-family: 'CodazonFont';
+  src:  url('codazon/flexibletheme/fonts/CodazonFont.eot');
+  src:  url('codazon/flexibletheme/fonts/CodazonFont.eot') format('embedded-opentype'),
+    url('codazon/flexibletheme/fonts/CodazonFont.ttf') format('truetype'),
+    url('codazon/flexibletheme/fonts/CodazonFont.woff') format('woff'),
+    url('codazon/flexibletheme/fonts/CodazonFont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

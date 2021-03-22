@@ -1,0 +1,47 @@
+<?php if ($this->isActive()): ?>
+	<?php $whatsappchat = $this->getWhatsAppChat(); ?>
+    <?php if(!$whatsappchat): return false; endif; ?>
+    <?php if ($whatsappchat['custom_js'] != ''): ?>
+    <script>
+        <?php echo $whatsappchat['custom_js']; ?>
+    </script>
+    <?php endif; ?>
+	<?php if ($whatsappchat['custom_css'] != ''): ?>
+    <style type="text/css">
+        <?php echo $whatsappchat['custom_css']; ?>
+    </style>
+	<?php endif; ?>
+	<?php if ($whatsappchat['type'] == 'floating_ball'): ?>
+        <?php if ($whatsappchat['offline_message'] == ''): ?>
+            <a target="_blank" href="<?php echo $whatsappchat['url']; ?>" class="float float-<?php echo $whatsappchat['position']; ?> float-floating<?php if ($whatsappchat['offline_message'] != ''): ?> whatsapp-offline<?php endif; ?>" style="background-color: #<?php echo $whatsappchat['color']; ?>">
+        <?php endif; ?>
+        <?php if ($whatsappchat['offline_message'] != ''): ?>
+            <a class="float float-<?php echo $whatsappchat['position']; ?> float-floating<?php if ($whatsappchat['offline_message'] != ''): ?> whatsapp-offline<?php endif; ?>" style="background-color: #<?php echo $whatsappchat['color']; ?>">
+        <?php endif; ?>
+        <i class="whatsapp-icon-3x" <?php if ($whatsappchat['text'] != ''): ?>style="padding-right:0px!important;"<?php endif; ?>></i>
+        </a>
+		<?php if ($whatsappchat['text'] != ''): ?>
+        <div class="label-container label-container-<?php echo $whatsappchat['position']; ?> float-floating">
+			<?php if (strpos($whatsappchat['position'], 'left') != false || $whatsappchat['position'] == 'left'): ?>
+            <i class="icon icon-caret-left label-arrow" style="font-size: x-large;"></i>
+            <div class="label-text"><?php if ($whatsappchat['offline_message'] != ''): ?><?php echo $whatsappchat['offline_message']; ?><?php else: ?><?php echo $whatsappchat['text']; ?><?php endif; ?></div>
+            <?php else: ?>
+            <div class="label-text"><?php if ($whatsappchat['offline_message'] != ''): ?><?php echo $whatsappchat['offline_message']; ?><?php else: ?><?php echo $whatsappchat['text']; ?><?php endif; ?></div>
+            <i class="icon icon-play label-arrow"></i>
+			<?php endif; ?>
+        </div>
+		<?php endif; ?>
+    <?php else: ?>
+		<?php if ($whatsappchat['offline_message'] == ''): ?>
+            <a target="_blank" href="<?php echo $whatsappchat['url']; ?>">
+		<?php endif; ?>
+        <div class="whatsapp whatsapp-<?php echo $whatsappchat['type'].' '.$whatsappchat['position']; ?><?php if ($whatsappchat['offline_message'] != ''): ?> whatsapp-offline<?php endif; ?>"
+		     <?php if ($whatsappchat['color'] != ''): ?>style="background-color: #<?php echo $whatsappchat['color']; ?>"<?php endif; ?>>
+        <span <?php if ($whatsappchat['color'] != ''): ?>style="background-color: #<?php echo $whatsappchat['color']; ?>"<?php endif; ?><?php if ($whatsappchat['offline_message'] != ''): ?> class="whatsapp-offline"<?php endif; ?>>
+        <i class="whatsapp-icon" <?php if ($whatsappchat['message'] == ''): ?>style="padding-right:0px!important;"<?php endif; ?>></i>
+	        <?php if ($whatsappchat['offline_message'] != ''): ?><?php echo $whatsappchat['offline_message']; ?><?php else: ?><?php echo $whatsappchat['text']; ?><?php endif; ?>
+        </span>
+        </div>
+		<?php if ($whatsappchat['offline_message'] == ''): ?></a><?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>

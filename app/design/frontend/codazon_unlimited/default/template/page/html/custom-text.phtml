@@ -1,0 +1,19 @@
+<?php
+/**
+* Copyright © 2018 Codazon, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+<?php
+$helper = Mage::helper('flexibletheme');
+$configPath = $this->getData('config_path') ? : 'product_view/design/custom_text';
+$customBlockIdentifier = $helper->getConfig($configPath);
+?>
+<?php if ($customBlockIdentifier) : ?>
+<?php
+$block = Mage::getModel('Mage_Cms_Model_Block')->load($customBlockIdentifier, 'identifier');
+?>
+<?php if ($block->getId()) : ?>
+<?= $helper->htmlFilter($block->getContent()) ?>
+<?php endif ?>
+<?php endif ?>

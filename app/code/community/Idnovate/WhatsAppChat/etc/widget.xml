@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<widgets>
+<whatsappchat_widget type="idnovate_whatsappchat/widget" translate="name description" module="whatsappchat">
+    <name>WhatsApp chat</name>
+    <description>Allows to add a WhatsApp chat button</description>
+    <parameters>
+        <!-- <link_options>
+            <label>Link Options</label>
+            <visible>1</visible>
+            <required>1</required>
+            <type>multiselect</type>
+            <source_model>widgetlinks/options</source_model>
+        </link_options> -->
+        <phone translate="label">
+            <label>Mobile phone</label>
+            <visible>1</visible>
+            <type>text</type>
+        </phone>
+        <group translate="label">
+            <label>Group id</label>
+            <visible>1</visible>
+            <type>text</type>
+        </group>
+        <text translate="label">
+            <label>Button text</label>
+            <visible>1</visible>
+            <type>text</type>
+        </text>
+        <message translate="label">
+            <label>Predefined message</label>
+            <visible>1</visible>
+            <type>text</type>
+        </message>
+        <color translate="label">
+            <label>Color (hexadecimal)</label>
+            <visible>1</visible>
+            <type>text</type>
+            <value>#</value>
+        </color>
+        <share translate="label">
+            <label>Share</label>
+            <visible>1</visible>
+            <type>select</type>
+            <source_model>adminhtml/system_config_source_yesno</source_model>
+        </share>
+    </parameters>
+</whatsappchat_widget>
+</widgets>

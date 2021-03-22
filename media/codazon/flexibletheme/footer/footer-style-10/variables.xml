@@ -1,0 +1,167 @@
+<config>
+   <identifier>footer-style-10</identifier>
+   <title>Footer Style 10</title>
+   <variables>
+      <footer_background>#ffffff</footer_background>
+      <footer_background_file/>
+      <footer_background_image_option/>
+      <footer_background_normal>#ffffff</footer_background_normal>
+      <footer_border>#f5f3ea</footer_border>
+      <footer_bottom_background>#f2f8fd</footer_bottom_background>
+      <footer_font>12px</footer_font>
+      <footer_hover_text>#7fba00</footer_hover_text>
+      <footer_text>#b1b1b1</footer_text>
+      <footer_text_normal>#000000</footer_text_normal>
+      <footer_title_font>14px</footer_title_font>
+      <footer_title_text>#000000</footer_title_text>
+      <footer_top_background>#ffffff</footer_top_background>
+   </variables>
+   <layout_xml>&lt;reference name=&quot;footer&quot;&gt;
+&lt;block name=&quot;theme-layout-footer&quot; type=&quot;flexibletheme/footer&quot; /&gt;
+&lt;remove name=&quot;store_switcher&quot; /&gt;
+&lt;remove name=&quot;footer_links&quot; /&gt;
+&lt;remove name=&quot;footer_links2&quot; /&gt;
+&lt;remove name=&quot;footer.newsletter&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links_sm&quot; /&gt;
+&lt;remove name=&quot;footer_currency&quot; /&gt;
+&lt;/reference&gt;</layout_xml>
+   <custom_variables/>
+   <custom_fields/>
+   <parent/>
+   <content>&lt;div class=&quot;footer-style-10&quot;&gt;
+&lt;div class=&quot;main-footer&quot;&gt;
+&lt;div class=&quot;footer-content-top&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;service-banner-style02 row&quot;&gt;
+&lt;div class=&quot;col-sm-18 col-xs-24&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;item col-sm-6 col-xs-12&quot;&gt;
+&lt;p class=&quot;item-icon&quot;&gt;&lt;span class=&quot;fa-lock fa&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;100% Secured&lt;/p&gt;
+&lt;p&gt;Payment&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item col-sm-6 col-xs-12&quot;&gt;
+&lt;p class=&quot;item-icon&quot;&gt;&lt;span class=&quot;fa-phone fa&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Customer Service&lt;/p&gt;
+&lt;p&gt;Mail &amp;amp; Telephone&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item col-sm-6 col-xs-12&quot;&gt;
+&lt;p class=&quot;item-icon&quot;&gt;&lt;span class=&quot;fa-exchange fa&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;14 Days to Change&lt;/p&gt;
+&lt;p&gt;Your Mind&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item col-sm-6 col-xs-12&quot;&gt;
+&lt;p class=&quot;item-icon&quot;&gt;&lt;span class=&quot;fa-thumbs-o-up fa&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Highest Quality&lt;/p&gt;
+&lt;p&gt;Guarantee&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item last col-sm-6 col-xs-24&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;{{media url=&quot;wysiwyg/codazon/footer/app01.png&quot;}}&quot; alt=&quot;cdz-alt&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;{{media url=&quot;wysiwyg/codazon/footer/app02.png&quot;}}&quot; alt=&quot;cdz-alt&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-content-middle&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;footer content&quot;&gt;
+&lt;div class=&quot;row middle-top&quot;&gt;
+&lt;div class=&quot;col-sm-14&quot;&gt;
+&lt;div class=&quot;newsletter-content&quot;&gt;&lt;span class=&quot;title-text&quot;&gt;Be the first to save!&lt;/span&gt;{{block type=&quot;newsletter/subscribe&quot; name=&quot;cdz.newsletter&quot; template=&quot;newsletter/subscribe.phtml&quot;}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-10&quot;&gt;
+&lt;div class=&quot;footer-social hover-iconsocial&quot;&gt;&lt;span class=&quot;title-text&quot;&gt;Stay Connected&lt;/span&gt;
+&lt;p class=&quot;social&quot;&gt;&lt;a class=&quot;spin circle&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-facebook&quot;&gt;&lt;span&gt;facebook&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-twitter&quot;&gt;&lt;span&gt;twitter&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-pinterest-p&quot;&gt;&lt;span&gt;pinterest&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-google-plus&quot;&gt;&lt;span&gt;google plus&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-rss&quot;&gt;&lt;span&gt;rss&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row middle-bottom&quot;&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-1&quot;&gt;About shop&lt;/p&gt;
+&lt;div id=&quot;footer-content-1&quot; class=&quot;showhide&quot;&gt;&lt;span&gt;Although, today we’re even more excited to release our Wireframe Kit.&lt;/span&gt;
+&lt;div class=&quot;footer-text&quot;&gt;&lt;span&gt;Montergade 19 1140&lt;/span&gt; &lt;span&gt;Copenhagen, Denmark&lt;/span&gt; &lt;span&gt;+45 878-xx-xx&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-18&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-2&quot;&gt;Codazon.com&lt;/p&gt;
+&lt;ul id=&quot;footer-content-2&quot; class=&quot;footer-link showhide hover-link01&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;{{store url=&apos;privacy-policy-cookie-restriction-mode&apos;}}&quot;&gt;Privacy and Cookie Policy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{store url=&apos;about-us&apos;}}&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{config path=&quot;web/unsecure/base_url&quot;}}customer-service&quot;&gt;Customer Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{store url=&apos;catalogsearch/advanced&apos;}}&quot;&gt;Advanced Search&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{store url=&apos;sales/guest/form&apos;}}&quot;&gt;Orders and Returns&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;{{store url=&apos;contacts&apos;}}&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-3&quot;&gt;Customer Service&lt;/p&gt;
+&lt;ul id=&quot;footer-content-3&quot; class=&quot;footer-link showhide hover-link01&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Returns Policy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Product Recalls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Int’l Customers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tax Exempt Program&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;{{store url=&apos;contacts&apos;}}&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Feedback&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Store Pickup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-4&quot;&gt;Get to know us&lt;/p&gt;
+&lt;ul id=&quot;footer-content-4&quot; class=&quot;footer-link showhide hover-link01&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;{{store url=&apos;about-us&apos;}}&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Corporate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Suppliers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Careers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;The Digital Museum&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Product Care Plans&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-5&quot;&gt;In the spotlight&lt;/p&gt;
+&lt;ul id=&quot;footer-content-5&quot; class=&quot;footer-link showhide hover-link01&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Grocery &amp;amp; Gourmet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Beverages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Breakfast &amp;amp; Cereal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Meals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Condiments&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Canned Goods&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-content-bottom&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-12&quot;&gt;
+&lt;div class=&quot;footer-address&quot;&gt;
+&lt;p&gt;© 2018 Codazon Ltd. Trademarks and brands&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-12&quot;&gt;
+&lt;div class=&quot;footer-payment&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;{{media url=&quot;wysiwyg/codazon/footer-payment.png&quot;}}&quot; alt=&quot;Accept Payment&quot; /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+</config>

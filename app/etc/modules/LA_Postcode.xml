@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <LA_Postcode>
+            <active>true</active>
+            <codePool>local</codePool>
+        </LA_Postcode>
+    </modules>
+</config>

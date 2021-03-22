@@ -1,0 +1,26 @@
+@import (less)'../_function.less.css';
+@import (less)'../_monitor.less.css';
+
+@import (less)'../_function.less.css';
+@import (less)'general/_wishlist-cart-account.less.css';
+@import (less)'general/_header-popup.less.css';
+@import (less)'general/_header-dropdown.less.css';
+@import (less)'general/_header-menu.less.css';
+@import (less)'general/_header-sidebar-menu.less.css';
+@import (less)'general/_header-mobile.less.css';
+@import (less)'general/_header-sticky.less.css';
+@import (less)'general/_header-search.less.css';
+
+@media only screen and (min-width: @screen-sm-min){
+	.page-header{
+		max-width: unset;
+	}
+}
+@media (min-width: @screen-sm-max) {
+	.page-header{
+		border-bottom: 0;
+	}
+}
+.logo:hover {
+    opacity: 1;
+}

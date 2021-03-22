@@ -1,0 +1,30 @@
+<?php
+    /**
+     * Copyright © 2018 Codazon, Inc. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+?>
+<div class="mb-toggle-panel">
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+            <a href="#mb-menu-tab" class="mdl-tabs__tab is-active"><?= $this->__('Menu') ?></a>
+            <a href="#mb-account-tab" class="mdl-tabs__tab"><?= $this->__('Account') ?></a>
+            <a href="#mb-settings-tab" class="mdl-tabs__tab"><?= $this->__('Settings') ?></a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="mb-menu-tab">
+            <div id="mobi_header-nav" class="mb-header-nav"></div>
+        </div>
+        <div class="mdl-tabs__panel" id="mb-account-tab">
+            <div id="mobi_top-links" class="mb-top-links"></div>
+        </div>
+        <div class="mdl-tabs__panel" id="mb-settings-tab">
+            <div class="store-language-currency">
+                <ul class="account-menu-items">
+                    <li class="language-link" id="mobi_store-language"></li>
+                    <li class="currency-link" id="mobi_store-currency"></li>
+                    <li class="store-link" id="mobi_store-group"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

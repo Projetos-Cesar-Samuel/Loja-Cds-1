@@ -1,0 +1,9 @@
+a:5:{i:0;s:25:"Unsupported image format.";i:1;s:1201:"#0 /chroot/home/senhorit/senhoritaluna.com.br/html/lib/Varien/Image/Adapter/Gd2.php(74): Varien_Image_Adapter_Gd2->_getCallback('create')
+#1 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Adminhtml/controllers/Cms/WysiwygController.php(55): Varien_Image_Adapter_Gd2->open('/chroot/home/se...')
+#2 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Mage_Adminhtml_Cms_WysiwygController->directiveAction()
+#3 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('directive')
+#4 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#5 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#6 /chroot/home/senhorit/senhoritaluna.com.br/html/app/Mage.php(687): Mage_Core_Model_App->run(Array)
+#7 /chroot/home/senhorit/senhoritaluna.com.br/html/index.php(83): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:159:"/index.php/senhorit_admin/cms_wysiwyg/directive/___directive/e3ttZWRpYSB1cmw9Ind5c2l3eWcvbG9nby1tZXJjYWRvLXBhZ28tMSJ9fQ,,/key/8d54bb2aea442c8fb9ddfee33568ad35/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:5:"admin";}

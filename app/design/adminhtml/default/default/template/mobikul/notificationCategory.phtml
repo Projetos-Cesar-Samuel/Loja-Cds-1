@@ -1,0 +1,109 @@
+<div class="entry-edit">
+	<fieldset id="grop_fields">
+		<div id="product-categories" class="tree"></div>
+		<input class="required-entry" type="hidden" name="category_id" id="product_categories" value="<?php echo $this->getIdsString() ?>">
+	</fieldset>
+</div>
+<?php if($this->getRootNode() && $this->getRootNode()->hasChildren()): ?>
+<script type="text/javascript">
+	Ext.EventManager.onDocumentReady(function() {
+		var categoryLoader = new Ext.tree.TreeLoader({
+		   dataUrl: '<?php echo $this->getLoadTreeUrl()?>'
+		});
+
+		categoryLoader.createNode = function(config) {
+			config.uiProvider = Ext.tree.CheckboxNodeUI;
+			var node;
+			if (config.children && !config.children.length) {
+				delete(config.children);
+				node = new Ext.tree.AsyncTreeNode(config);
+			}
+			else
+				node = new Ext.tree.TreeNode(config);
+			return node;
+		};
+
+		categoryLoader.on("beforeload", function(treeLoader, node) {
+			treeLoader.baseParams.category = node.attributes.id;
+		});
+
+		categoryLoader.on("load", function(treeLoader, node, config) {
+			varienWindowOnload();
+		});
+
+		var tree = new Ext.tree.TreePanel('product-categories', {
+			animate:true,
+			loader: categoryLoader,
+			enableDD:false,
+			containerScroll: true,
+			rootUIProvider: Ext.tree.CheckboxNodeUI,
+			selModel: new Ext.tree.CheckNodeMultiSelectionModel(),
+			rootVisible: '<?php echo $this->getRootNode()->getIsVisible() ?>'
+		});
+
+		tree.on('check', function(node) {
+			if(node.attributes.checked)
+				categoryAdd(node.id);
+			else
+				categoryRemove(node.id);
+			varienElementMethods.setHasChanges(node.getUI().checkbox);
+		}, tree);
+
+		var root = new Ext.tree.TreeNode({
+			text: '<?php echo $this->jsQuoteEscape($this->getRootNode()->getName()) ?>',
+			draggable:false,
+			checked:'<?php echo $this->getRootNode()->getChecked() ?>',
+			id:'<?php echo $this->getRootNode()->getId() ?>',
+			disabled: <?php echo ($this->getRootNode()->getDisabled() ? 'true' : 'false') ?>,
+			uiProvider: Ext.tree.CheckboxNodeUI
+		});
+		tree.setRootNode(root);
+		bildCategoryTree(root, <?php echo $this->getTreeJson() ?>);
+		tree.render();
+		root.expand();
+	});
+
+	function bildCategoryTree(parent, config){
+		if (!config) return null;
+		if (parent && config && config.length){
+			for (var i = 0; i < config.length; i++){
+				config[i].uiProvider = Ext.tree.CheckboxNodeUI;
+				var node;
+				var _node = Object.clone(config[i]);
+				if (_node.children && !_node.children.length) {
+					delete(_node.children);
+					node = new Ext.tree.AsyncTreeNode(_node);
+				}
+				else
+					node = new Ext.tree.TreeNode(config[i]);
+				parent.appendChild(node);
+				node.loader = node.getOwnerTree().loader;
+				if(config[i].children)
+					bildCategoryTree(node, config[i].children);
+			}
+		}
+	}
+
+	function categoryClick(node, e){
+		if (node.disabled)
+			return;
+		node.getUI().check(!node.getUI().checked());
+		varienElementMethods.setHasChanges(Event.element(e), e);
+	};
+	var categories = [];
+	function categoryAdd(id) {
+		if(categories.indexOf(id) < 0) {
+			categories.push(id);
+			$("product_categories").value = categories.join(",");
+		}
+	}
+
+	function categoryRemove(id) {
+		var index = categories.indexOf(id);
+		if (index > -1) {
+    		categories.splice(index, 1);
+			$("product_categories").value = categories.join(",");
+		}
+	}
+</script>
+<?php endif; ?>

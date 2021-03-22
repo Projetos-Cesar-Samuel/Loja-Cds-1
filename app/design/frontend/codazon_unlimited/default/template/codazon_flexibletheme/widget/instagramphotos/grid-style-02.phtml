@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$recentPhotos = $this->getInstagramRecentPhotos();
+$maxCount = 8;
+?>
+
+<?php if( count($recentPhotos) > 0 ): ?>
+<?php $i = 0; foreach($recentPhotos as $photo): ?>
+<?php
+    $img = $photo->images->thumbnail;
+?>
+<div class="item photo-item">
+    <a class="photo-item-link abs-img" style="padding-bottom: 100%" href="<?php echo $photo->link ?>" target="_blank">
+        <img class="img-responsive" src="<?php echo $img->url ?>" />
+    </a>
+</div>
+<?php $i++; if ($i == $maxCount) break ?>
+<?php endforeach ?>
+<?php endif ?>

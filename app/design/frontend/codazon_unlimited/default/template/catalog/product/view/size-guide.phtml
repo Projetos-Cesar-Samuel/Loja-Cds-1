@@ -1,0 +1,39 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$helper = Mage::helper('flexibletheme');
+$enableSizeChart = $helper->getConfig('product_view/design/display_size_chart');
+?>
+<?php if ($enableSizeChart) : ?>
+    <?php
+        $title = $helper->getConfig('product_view/design/size_chart_label');
+        $displaySizeChartAsPageLink = $helper->getConfig('product_view/design/display_size_chart_as_page_link');
+    ?>
+    <?php if ($displaySizeChartAsPageLink) : ?>
+        <?php $sizeChartLink = $this->getUrl($helper->getConfig('product_view/design/size_chart_link')); ?>
+        <div class="size-guide-wrap">
+            <a class="size-guide-link" href="<?= $sizeChartLink ?>"><?= $title ?></a>
+        </div>
+    <?php else : ?>
+        <?php
+            $sizeChartPopup = $helper->getConfig('product_view/design/size_chart_popup');
+            $block = Mage::getModel('Mage_Cms_Model_Block')->load($sizeChartPopup, 'identifier');
+        ?>
+        <?php if ($block->getId()) : ?>
+        <div class="size-guide-wrap">
+            <a class="size-guide-link" href="javascript:void(0);" data-cdzpopuptrigger='product-view-side-guide'><?= $title ?></a>
+        </div>
+        <div style="display:none">
+            <div class="md-dialog-container size-guide-popup" data-cdzpopup id="product-view-side-guide">
+                <div class="md-dialog-inner">
+                     <?= $helper->htmlFilter($block->getContent()); ?>
+                </div>
+            </div>
+        </div>
+        <?php endif ?>
+    <?php endif ?>
+<?php endif ?>

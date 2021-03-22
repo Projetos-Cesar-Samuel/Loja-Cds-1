@@ -1,0 +1,659 @@
+/*Electronic*/
+
+.banner-style01 {
+    background-color: @btn_primary_background;
+    color: @btn_primary_text;
+    position: relative;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    .label {
+        font: @f_note;
+        text-transform: uppercase;
+        font-style: italic;
+        margin-bottom: 45px;
+        font-weight: 600;
+        text-align: left;
+        display: block;
+        padding: 0;
+        .rtl-layout & {
+            text-align: right;
+        }
+    }
+    .h2 {
+        font-size: 230%;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1.3;
+        color: @btn_primary_text;
+    }
+    .desc {
+        line-height: inherit;
+    }
+    .actions {
+        margin-top: auto;
+        .primary {
+            padding: 6px 30px;
+            width: auto;
+            border-color: @btn_primary_text;
+            border-width: 2px;
+            font: @f_h5;
+            height: auto;
+            text-transform: uppercase;
+            color: @btn_primary_text;
+            .abs-borderradius(5px);
+            span {
+                padding: 0;
+                &:before, &:after {
+                    display: none;
+                }
+            }
+            &:hover {
+                .abs-style(@btn_primary_background, @btn_primary_text, @btn_primary_text )
+            }
+            .rtl-layout & {
+                float: right;
+            }
+        }
+    }
+    &:after {
+        width: 0px;
+        height: 0px;
+        border-bottom: 12px solid transparent;
+        border-top: 12px solid transparent;
+        border-left: 12px solid @btn_primary_background;
+        content: "";
+        position: absolute;
+        right: -12px;
+        z-index: 2;
+        .abs-calc-top(~'(100% - 12px)/2');
+        .rtl-layout & {
+            border-bottom: 12px solid transparent;
+            border-top: 12px solid transparent;
+            border-right: 12px solid @btn_primary_background;
+            border-left: 0;
+            right: auto;
+            left: -12px
+        }
+    }
+    @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        padding: 15px;
+        .h2 {
+            font-size: 150%
+        }
+    }
+    @media(max-width: @screen-xs-max) {
+        .cdz-banner .cdz-banner-text {
+            .abs-scale(0.8)
+        }
+    }
+}
+/*Fashion -- Middle banner*/
+
+.banner-style02 {
+    @color_1: #ffffff;
+    @background_color: #000000;
+    .cdz-banner {
+        text-align: center;
+        position: relative;
+        float: left;
+        width: 100%;
+        color: @color_1;
+        overflow: hidden;
+        background-color: @background_color;
+        * {
+            .abs-transition(all 0.4s ease-in);
+        }
+        img {
+            position: relative;
+            max-width: 100%;
+            vertical-align: top;
+            .abs-opacity(0.4);
+        }
+        .cdz-banner-text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 1;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h1 {
+                font-size: 36px;
+                text-transform: uppercase;
+                color: @color_1;
+            }
+            .btn.primary {
+                border: 1px solid;
+                font-style: italic;
+                text-transform: lowercase;
+                text-decoration: none;
+                padding: 10px 30px;
+                .abs-borderradius(@btn_radius);
+                .abs-style(@color_1, @color_1, transparent);
+                &:hover {
+                    .btnprimary-color();
+                    /*general*/
+                }
+            }
+        }
+        &:hover img {
+            .abs-transform(~'scale(1.1, 1.1) rotate(2deg)');
+        }
+        @media(max-width: @screen-xs-max) {
+            .cdz-banner-text h1 {
+                font-size: 30px;
+            }
+        }
+        @media(max-width: 425px) {
+            .cdz-banner-text h1 {
+                font-size: 20px;
+            }
+        }
+        @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+            .cdz-banner-text h1 {
+                font-size: 30px;
+            }
+        }
+    }
+}
+/*Fashion -- Bottom banner*/
+
+.banner-style03 {
+    .cdz-banner-text {
+        padding: 50px 13%;
+        height: 100%;
+        .h2 {
+            font: @f_h1;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+        }
+        .desc {
+            margin-bottom: 5rem;
+            p {
+                font-size: 13px;
+            }
+        }
+        .actions .primary {
+            float: none;
+            border-radius: 0;
+            padding: 10px 70px;
+            .btndefault-color();
+            /*general*/
+            &:hover {
+                .abs-style(@btn_default_background, @btn_default_border, @btn_default_text);
+            }
+        }
+    }
+    .cdz-banner {
+        overflow: hidden;
+    }
+    @media(max-width: @screen-xs-max) {
+        .cdz-banner-text {
+            padding: 30px 10px;
+            .desc {
+                margin-bottom: 10px
+            }
+        }
+    }
+    @media(min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        .cdz-banner-text {
+            padding: 30px 20px;
+            .desc {
+                margin-bottom: 10px
+            }
+        }
+    }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .cdz-banner-text .desc {
+            width: 90%
+        }
+    }
+}
+/*Sport style*/
+
+.banner-style04 {
+    .banner-link {
+        position: relative;
+        overflow: hidden;
+        .title {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 20px 35px;
+            text-decoration: none;
+            .abs-transition();
+            .abs-transform(translate(0));
+            &:hover {
+                .abs-transform(translate(15px));
+            }
+        }
+        &.zoom-effect:hover {
+            img {
+                -webkit-animation: zoomin 10s ease-in infinite;
+                animation: zoomin 15s ease-in infinite;
+                transition: all .7s ease-in-out;
+            }
+        }
+    }
+    @media(min-width: @screen-sm-min) and (max-width: @screen-md-max) {
+        .banner-link .title {
+            font-size: 30px !important
+        }
+    }
+    @media(max-width: @screen-xs-max) {
+        padding: 0;
+        .banner-link .title {
+            font-size: 12px !important;
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+}
+/*Sport -- Video*/
+
+.cdz-video-wrap {
+    overflow: hidden;
+    position: relative;
+    .ads-col-left {
+        z-index: 1;
+        .cdz-banner-text {
+            padding: 50px 0 50px 10%;
+            height: 100%;
+            background-color: @main_hover_text;
+            color: @main_text_normal2;
+            background-color: @main_hover_text;
+            font-size: 28px;
+            .sub-title {
+                font-weight: bold;
+            }
+            .h2 {
+                font-size: 200%;
+                text-transform: uppercase;
+                color: @main_text_normal2;
+            }
+            .desc p {
+                margin: 5% 0 15%;
+                font-size: 50%;
+            }
+        }
+        .cdz-banner {
+            position: relative;
+            &:after {
+                position: absolute;
+                content: "";
+                top: -30%;
+                border-bottom: 100px solid transparent;
+                width: 100px;
+                height: 190%;
+                background: @main_hover_text;
+                transform: rotate(10deg);
+                border-right: 10px solid #ffffff;
+                .abs-calc-left(~'100% - 50px');
+                .rtl-layout & {
+                    .abs-calc-left(~'auto');
+                    .abs-calc-right(~'100% - 50px');
+                    transform: rotate(-10deg);
+                    border-left: 10px solid #ffffff;
+                    border-right: 0;
+                }
+            }
+        }
+        .btn.primary {
+            border: 2px solid;
+            padding: 10px 45px;
+            float: none;
+            .abs-borderradius(@btn_radius);
+            .abs-style(@main_text_normal2, @main_text_normal2, transparent);
+            .abs-transition(~'unset');
+            .button-slide-effect(@main_hover_text, @main_text_normal2);
+            &:after {
+                background-color: @main_text_normal2;
+                border-color: @main_text_normal2;
+            }
+            &:hover {
+                .abs-transition(~'background-color .01s ease');
+                transition-delay: .2s;
+            }
+        }
+    }
+    .ads-col-right {
+        .cdz-video-inner {
+            height: 100%;
+            img {
+                position: absolute;
+                height: 100%;
+                width: 100%
+            }
+        }
+        .cdz-video {
+            height: 100%;
+            &.video-no-loaded .cdz-video-inner {
+                position: absolute;
+                top: 50%;
+                left: 65%;
+                width: auto;
+            }
+            .video-player {
+                width: 115%;
+                right: 0;
+            }
+            .brand-loader {
+                margin: 0;
+            }
+        }
+    }
+    @media(min-width: 768px) and (max-width: 1199px) {
+        .ads-col-left {
+            .cdz-banner-text {
+                font-size: 13px;
+                padding: 30px 10%;
+                .desc p {
+                    font-size: 100%;
+                    margin: 5% 0 8%
+                }
+                .h2 {
+                    font-size: 160%
+                }
+                .btn.primary {
+                    padding: 5px 30px;
+                }
+            }
+            .cdz-banner:after {
+                .rtl-layout & {
+                    left: -12%;
+                }
+            }
+        }
+    }
+    @media(max-width: 767px) {
+        .ads-col-left {
+            padding: 0 10px;
+            .rtl-layout & {
+                padding: 0 10px;
+            }
+            .cdz-banner {
+                position: relative;
+                padding: 3rem;
+                &:after {
+                    display: none;
+                }
+            }
+            .cdz-banner-text .h2 {
+                font-size: 100%;
+            }
+        }
+        .ads-col-right {
+            position: relative;
+            width: 100%;
+            .cdz-video .video-player {
+                width: 100%;
+            }
+            .cdz-video-inner img {
+                position: static;
+            }
+        }
+    }
+    @media(min-width: 1200px) {
+        .ads-col-left .cdz-banner-text .h2 {
+            font-size: 150%
+        }
+        .cdz-video {
+            /*img{height: 100%}*/
+        }
+    }
+}
+/*Fashion megastore*/
+
+.banner-style05 .cdz-banner {
+    position: relative;
+    .cdz-banner-desc {
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: 30px 50px;
+        align-items: center;
+        color: #ffffff;
+        .title {
+            font-size: 34px;
+            font-weight: 600;
+            margin-bottom: 0;
+            display: inline-block;
+        }
+        .actions {
+            display: inline-block;
+            float: right;
+            margin-right: 10%;
+            .rtl-layout & {
+                margin-left: 0;
+                float: left;
+            }
+        }
+        .action.primary {
+            padding: 10px 40px;
+            font-weight: 600;
+            .abs-borderradius(0);
+            .abs-style(#000000, #ffffff, #ffffff);
+            white-space: nowrap;
+            &:hover {
+                .btnprimary-color();
+                /*general*/
+            }
+        }
+        @media(min-width: @screen-sm-min) and (max-width: @screen-md-max) {
+            .title {
+                font-size: 20px
+            }
+            .actions {
+                margin-right: 5%;
+            }
+        }
+        @media(max-width: @screen-xs-max) {
+            padding: 15px;
+            .title {
+                font-size: 14px
+            }
+            .actions {
+                margin-right: 0;
+            }
+            .action.primary {
+                font-size: 12px;
+                padding: 5px 15px;
+            }
+        }
+    }
+    .desc {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
+        padding: 30px 10%;
+        .h1 {
+            color: #ffffff;
+        }
+    }
+}
+/*Parallax banner*/
+
+/*Furniture*/
+
+.parallax-bg {
+    background-size: 100%;
+    min-height: 339px;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.4)
+    }
+    .desc {
+        text-align: center;
+        color: #ffffff;
+        height: 100%;
+        letter-spacing: 2px;
+        width: 60%;
+        margin: 0 auto;
+        z-index: 2;
+        position: relative;
+        .h1 {
+            color: #ffffff;
+            font-size: 30px;
+        }
+    }
+    @media(max-width: @screen-xs-max) {
+        background-size: cover;
+        .desc {
+            width: 80%
+        }
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+    .parallax-bg {
+        background-attachment: unset !important;
+        background-position: center top !important;
+    }
+}
+/*IE Fix*/
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .parallax-banner .desc {
+        max-width: 70%;
+        display: inline-block;
+        padding: 10%
+    }
+}
+/*Drug pharmacy*/
+
+.banner-style06 .cdz-banner {
+    position: relative;
+    .abs-boxshadow(@main_box_shadow);
+    >a {
+        display: block;
+        &:before {
+            position: absolute;
+            width: 100%;
+            height: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            background-color: @btn_primary_background;
+            opacity: 0.2;
+            z-index: 1;
+            .abs-transition();
+            .abs-borderradius(3px);
+        }
+        &:hover {
+            &:before {
+                height: 100%;
+            }
+        }
+    }
+    img {
+        .abs-borderradius(3px);
+    }
+    .cdz-banner-desc {
+        .abs-borderradius(0 0 3px 3px);
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2px 10px;
+        opacity: 0.8;
+        font: @f_h1;
+        font-weight: 500;
+        background-color: @btn_primary_background;
+        color: @btn_primary_text;
+    }
+}
+/*Baby Kids*/
+
+.banner-style07 {
+    .cdz-banner, .item {
+        position: relative;
+        &:hover {
+            .item-content {
+                bottom: 33%;
+                color: #282828;
+                padding: 10px 20px;
+                .banner-content {
+                    position: relative;
+                    z-index: 1;
+                }
+                &:after {
+                    background: #fff;
+                }
+            }
+        }
+    }
+    .cdz-banner {
+        @media screen and (max-width: @screen-xs-max) {
+            margin-bottom: 10px;
+        }
+    }
+    .item-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+        .abs-transition();
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            content: '';
+            height: 100%;
+            z-index: 0;
+            .abs-opacity(0.9);
+            .abs-transition();
+        }
+        .bc-title {
+            font-size: 30px;
+            font-weight: 600;
+            @media screen and (max-width: @screen-md-max) {
+                font-size: 25px;
+            }
+            @media screen and (max-width: @screen-sm-max) {
+                font-size: 16px;
+            }
+            @media screen and (max-width: @screen-xs-max) {
+                font-size: 16px;
+            }
+        }
+        .bc-desc {
+            font-style: italic;
+            font-size: 16px;
+        }
+    }
+}

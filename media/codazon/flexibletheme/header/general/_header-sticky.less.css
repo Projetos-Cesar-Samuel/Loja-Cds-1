@@ -1,0 +1,96 @@
+/* ============================================ *
+ * Codazon_Header-Sticky
+ * ============================================ */
+.page-header .sticky-menu.active{
+	.abs-boxshadow(0 0 5px #bdbdbd);
+	width: 100%;
+	max-width: 100% !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 880;
+	margin: 0 auto;
+	padding: 0;
+	position: fixed !important;
+	background-color: @menu_background;
+	-webkit-animation-name: fadeInDown;
+	-webkit-animation-duration: 5.0s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: normal;
+	-webkit-animation-play-state: running;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-name: anim_titles;
+	-moz-animation-duration: 5.0s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: normal;
+	-moz-animation-play-state: running;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-duration: 0.7s;
+	-moz-animation-duration: 0.7s;
+	-webkit-animation-delay: 0s;
+	-moz-animation-delay: 0s;
+	-webkit-animation-timing-function: ease-out;
+	-moz-animation-timing-function: ease-out;
+	.header.panel{
+		.abs-borderradius(0);
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin: 0;
+		.header-panel-bottom{
+			margin: 0;
+			/*max-width: 1400px;*/
+		}
+	}
+	.desktop-header {
+	    position: relative;
+	    margin: 0 auto;
+	}
+	.cdz-dropdown .cdz-dd-content{
+		top:100%;
+	}
+	
+}
+@media (min-width: @screen-sm-min){
+	.page-header .sticky-menu.active{
+		.header-panel-bottom{
+			padding: 0 250px 0 0;
+			border: 0;
+			.rtl-layout &{
+				padding: 0 0 0 250px;
+			}
+		}
+		.logo{
+			display: none;
+		}
+	}
+}
+@media (max-width: @screen-xs-max){
+	.page-header .sticky-menu.active{
+		padding: 0 10px;
+		background-color: @header_mobile_background;
+		color: @header_mobile_icon;
+		background: @header_mobile_background url(@header_background_file) @header_background_image_option;
+		min-height: 50px;
+	}
+	
+}
+@media (min-width: @screen-llg-min){
+	.page-header .sticky-menu.active{
+		.desktop-header {
+		    max-width: @screen-llg-min;
+		}
+	}
+}
+@media (min-width: @screen-slg-max){
+	.page-header .sticky-menu.active{
+		.desktop-header {
+		    max-width: @screen-slg-max;
+		}
+	}
+}

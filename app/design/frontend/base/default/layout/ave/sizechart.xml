@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<layout>
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/sizechart.js</script>
+            </action>
+            <action method="addJs">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <stylesheet>css/ave/sizechart.css</stylesheet>
+            </action>
+        </reference>
+    </catalog_product_view>
+    <PRODUCT_TYPE_simple translate="label" module="catalog">
+        <reference name="product.info.extrahint">
+            <block type="ave_sizechart/product_view" name="product.ave.sizechart" before="-" />
+        </reference>
+    </PRODUCT_TYPE_simple>
+    <PRODUCT_TYPE_configurable translate="label" module="catalog">
+        <reference name="product.info.options.wrapper">
+            <block type="ave_sizechart/product_view" name="product.ave.sizechart" />
+        </reference>
+    </PRODUCT_TYPE_configurable>
+    <PRODUCT_TYPE_grouped>
+        <reference name="product.info.grouped.extra">
+            <block type="ave_sizechart/product_view" name="product.ave.sizechart" />
+        </reference>
+    </PRODUCT_TYPE_grouped>
+    <PRODUCT_TYPE_bundle>
+        <reference name="product.info.options.wrapper">
+            <block type="ave_sizechart/product_view" name="product.ave.sizechart" />
+        </reference>
+    </PRODUCT_TYPE_bundle>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="ave_sizechart"
+                    ifconfig="ave_sizechart/general/enable_member">
+                <name>sizechart</name>
+                <path>sizechart/member_manage</path>
+                <label>Size Chart Members</label>
+            </action>
+        </reference>
+    </customer_account>
+    <sizechart_member_manage_index translate="label">
+        <label>Size Chart Members</label>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="ave_sizechart/customer_member" name="customer_sizechart">
+                <block type="page/html_wrapper" name="customer.sizechart.form.before" as="form_before"
+                       translate="label">
+                    <label>Size Chart Members</label>
+                </block>
+            </block>
+            <block type="customer/account_dashboard" name="customer.account.link.back"
+                   template="customer/account/link/back.phtml"/>
+        </reference>
+    </sizechart_member_manage_index>
+
+    <sizechart_member_manage_form translate="label">
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <stylesheet>css/ave/sizechart.css</stylesheet>
+            </action>
+        </reference>
+        <label>Customer My Account Size Chart Member Edit Form</label>
+        <!-- Mage_Customer -->
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="ave_sizechart/customer_member_edit" name="customer_sizechart_member_edit"
+                   template="ave/sizechart/member/edit.phtml" />
+        </reference>
+    </sizechart_member_manage_form>
+
+    <checkout_cart_index translate="label">
+        <reference name="head">
+            <action method="addItem" ifconfig="ave_sizechart/general/show_in_cart">
+                <type>skin_css</type>
+                <stylesheet>css/ave/sizechart.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="checkout.cart">
+            <action method="addItemRender" ifconfig="ave_sizechart/general/show_in_cart">
+                <type>default</type>
+                <block>checkout/cart_item_renderer</block>
+                <template>ave/sizechart/checkout/cart/item/default.phtml</template>
+            </action>
+            <action method="addItemRender" ifconfig="ave_sizechart/general/show_in_cart">
+                <type>simple</type>
+                <block>checkout/cart_item_renderer</block>
+                <template>ave/sizechart/checkout/cart/item/default.phtml</template>
+            </action>
+            <action method="addItemRender" ifconfig="ave_sizechart/general/show_in_cart">
+                <type>grouped</type>
+                <block>checkout/cart_item_renderer_grouped</block>
+                <template>ave/sizechart/checkout/cart/item/default.phtml</template>
+            </action>
+            <action method="addItemRender" ifconfig="ave_sizechart/general/show_in_cart">
+                <type>configurable</type>
+                <block>checkout/cart_item_renderer_configurable</block>
+                <template>ave/sizechart/checkout/cart/item/default.phtml</template>
+            </action>
+        </reference>
+    </checkout_cart_index>
+</layout>

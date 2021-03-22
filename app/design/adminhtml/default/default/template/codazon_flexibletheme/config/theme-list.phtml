@@ -1,0 +1,80 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$themeList = $this->getThemeList();
+$grid = 'col-sm-3';
+$activeThemeId = false;
+?>
+
+<?php if ($themeList->count()) : ?>
+<?php
+$activeTheme = $this->findActiveThemeInThemeList($themeList);
+?>
+<div class="content-header">
+    <h3 class="icon-head head-adminhtml-content"><?= $this->__('Theme List'); ?></h3>
+</div>
+<div class="theme-container row">
+<?php if ($activeTheme !== false) : ?>
+<?php
+$theme = $activeTheme;
+$activeThemeId = $activeTheme->getId();
+?>
+<div class="col-sm-3">
+    <div class="theme-list">
+        <div class="item theme-item large-item col-sm-12">
+            <div class="active-theme"><?= $this->__('Active') ?></div>
+            <div class="item-inner">
+                <div class="item-top">
+                    <img class="theme-img" src="<?= $theme->getPreviewImageUrl() ?>" />
+                    <!--div class="hovered-section">
+                        <div class="hovered-section-inner">
+                            <button class="btn-link import-data admin-icon"><?= __('Import Data') ?></button>
+                        </div>
+                    </div-->
+                </div>
+                <div class="item-bottom">
+                    <h3 class="theme-title"><?= $theme->getThemeTitle(); ?></h3>
+                    <div class="actions">
+                        <a class="btn-link config-theme admin-icon" href="<?= $this->getConfigUrl($theme); ?>"><?= __('Config') ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-9">
+<?php endif ?>
+    <div class="theme-list">
+        <?php foreach($themeList as $theme) : ?>
+            <?php if ($theme->getId() == $activeThemeId) continue; ?>
+            <div class="item theme-item <?= $grid ?>">
+                <div class="item-inner">
+                    <div class="item-top">
+                        <img class="theme-img" src="<?= $theme->getPreviewImageUrl() ?>" />
+                        <!--div class="hovered-section">
+                            <div class="hovered-section-inner">
+                                <button class="btn-link import-data admin-icon"><?= $this->__('Import Data') ?></button>
+                            </div>
+                        </div-->
+                    </div>
+                    <div class="item-bottom">
+                        <h3 class="theme-title"><?= $theme->getThemeTitle(); ?></h3>
+                        <div class="actions">
+                            <button class="btn-link activate-theme" onclick="window.location.href = '<?= $this->getActivateThemeUrl($theme); ?>'"><?= $this->__('Activate') ?></button>
+                            <a class="btn-link config-theme admin-icon" href="<?= $this->getConfigUrl($theme); ?>"><?= __('Config') ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
+    </div>
+<?php if ($activeTheme !== false) : ?>
+</div>
+<?php endif ?>
+</div>
+<?php endif ?>

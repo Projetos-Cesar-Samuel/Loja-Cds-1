@@ -1,0 +1,39 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php if (Mage::getStoreConfig('codazon_ajaxlayerednavpro/general/enable')) : ?>
+<div class="product-list-container" id="product-list-container">
+    <?php echo $this->setTemplate('catalog/category/view.phtml')->toHtml(); ?>
+    <link rel="stylesheet" type="text/css" href="<?= $this->getSkinUrl('codazon/css/jquery-ui/jquery-ui.min.css') ?>" media="all" />
+    <script>
+    (function($) {
+        if (typeof $.codazon.ajaxlayerednavpro == 'undefined') {
+            $.ajax({
+                url: '<?= $this->getSkinUrl('codazon/js/jquery-ui-slider.min.js') ?>',
+            }).always(function() {
+                $.ajax({
+                    cache: true,
+                    url: '<?= $this->getSkinUrl('codazon/js/ajax-layered-navigation.js') ?>',
+                    success: function() {
+                        $.codazon.ajaxlayerednavpro({}, $('#product-list-container'));
+                    }
+                });
+            });
+        }
+    })(jQuery);
+    </script>
+    <div class="ajax-layered-nav-loader cdz-full-box" id="ajax-layered-nav-loader" style="display:none;">
+        <div class="double-bounce-spinner">
+            <div class="double-bounce1">
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php else : ?>
+<?php echo $this->setTemplate('catalog/category/view.phtml')->toHtml(); ?>
+<?php endif ?>

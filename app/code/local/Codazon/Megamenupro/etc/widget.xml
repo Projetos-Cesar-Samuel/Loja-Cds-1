@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<widgets> 
+	<codazon_megamenu type="megamenupro/widget_megamenu" translate="name description" module="megamenupro">
+		<name>Codazon Megamenu</name>
+		<parameters>
+			<menu>
+				<visible>1</visible>
+                <required>1</required>
+                <label>Menu</label>
+                <type>select</type>
+                <source_model>megamenupro/menulist</source_model>
+			</menu>
+			<custom_template>
+				<visible>1</visible>
+                <required>0</required>
+                <label>Template</label>
+                <type>text</type>
+				<description>Leave empty to use default template</description>
+			</custom_template>
+		</parameters>
+	</codazon_megamenu>
+	<codazon_categorytree type="megamenupro/widget_categorytree" translate="name description" module="megamenupro">
+		<name>Codazon Category Tree</name>
+		<parameters>
+			<parent_id translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Category</label>
+                <type>label</type>
+                <helper_block>
+                    <type>adminhtml/catalog_category_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Category...</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>10</sort_order>
+            </parent_id>
+			<wrap_class translate="label">
+				<visible>1</visible>
+                <required>0</required>
+                <label>Wrap Class</label>
+                <type>text</type>
+			</wrap_class>
+			<max_depth>
+				<visible>1</visible>
+                <required>0</required>
+                <label>Maximal Depth</label>
+                <type>text</type>
+				<description>Leave empty or set value "0" to get all category depths</description>
+			</max_depth>
+		</parameters>
+	</codazon_categorytree>
+	<codazon_googlemap type="megamenupro/widget_googlemap" translate="name description" module="megamenupro">
+		<name>Codazon Google Map</name>
+		<parameters>
+			<address>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Address</label>
+			</address>
+			<latitude>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Lattitue</label>
+			</latitude>
+			<longtitude>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Longtitude</label>
+			</longtitude>
+			<zoom>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Zoom</label>
+			</zoom>
+			<map_width>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Map Width</label>
+				<description>Eg. '100%', '400px'</description>
+			</map_width>
+			<map_height>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Map Height</label>
+				<description>Eg. '400px'</description>
+			</map_height>
+			<marker_title>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Marker Title</label>
+			</marker_title>
+		</parameters>
+	</codazon_googlemap>
+	<codazon_contactform type="megamenupro/widget_contactform" translate="name description" module="megamenupro">
+		<name>Codazon Contact Form</name>
+		<parameters>
+			<form_title>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Form Title</label>
+			</form_title>
+			<form_desc>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<label>Form Description</label>
+			</form_desc>
+			<display_telephone_field>
+				<visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+				<label>Display Telephone Field</label>
+			</display_telephone_field>
+		</parameters>
+	</codazon_contactform>
+</widgets>

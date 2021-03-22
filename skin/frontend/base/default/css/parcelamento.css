@@ -1,0 +1,33 @@
+.installment-titulo {
+    width: 100%;
+    border: 1px solid #cccccc;
+    clear: both;
+    position: relative;
+}
+
+.parcelamento-titulo {
+    border-bottom: 1px solid #cccccc;
+    padding: 5px 10px;
+}
+
+.parcelamento-titulo-boleto {
+    border-top: 1px solid #cccccc;
+    padding: 5px 10px;
+}
+
+.parcelamento-parcelas{
+    padding: 10px 10px;
+}
+
+.div-imagem-boleto{
+    display: inline-grid;
+}
+
+.valor-boleto {
+    float: right;
+    padding: 5px;
+}
+
+.installment2 {
+    font-weight: bold;
+}

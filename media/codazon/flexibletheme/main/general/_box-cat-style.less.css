@@ -1,0 +1,131 @@
+/*box-cate-style01*/
+.box-cate-style01{
+	/*Block Tab Prouct Title*/
+	.abs-title-tab-style-01(@main_hover_text);
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+	}
+	.cdz-box{
+		padding-left: 0;
+    padding-right: 0;
+		background: @main_box_background;
+		.abs-boxshadow(@main_box_shadow);	
+		.abs-borderradius(@main_box_radius);
+	}
+	.non-padding{
+  	padding: 0
+  }
+	/*Tab title*/
+	.block-title{
+		margin-bottom:0;
+		padding: 0;
+		border:0;
+		.b-title.h2{
+			font:@f_h1;
+			color: @main_title_text;
+			letter-spacing: 2px;
+			text-transform: capitalize;
+			margin-bottom: 0
+		}
+	}
+	.title-section{
+		padding: 15px 15px 10px;
+		border-bottom:1px solid @main_border;
+		.tab-links-title{
+			.rtl-layout &{
+				padding: 0;
+			}
+		}
+	}
+	.box-cate-link{
+		padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    .item{
+    	display: inline-block;
+    	padding: 5px 0;
+    	margin:0 10px;
+    	letter-spacing: 1px;
+    	.abs-borderradius(@btn_radius);
+    	.abs-transition();
+    	.tab-title{
+    		padding: 0 15px;
+    		font-size: 14px;
+    		text-decoration: none;	
+    		.abs-transition();
+    	}
+    	&.active{	
+    		.tab-title{color:#ffffff}
+    		&:hover{
+    			.tab-title{color:#ffffff}
+    		}
+    	}
+    }
+    .rtl-layout &{
+    	text-align: left;
+    }
+  }
+}
+
+/*Suppermarket Style 01*/
+.product-layout-style-01{
+	/*Block Product Title*/
+	/*Col-left*/
+	.product-col-left {
+    border-right:1px solid @main_border;
+    .rtl-layout &{
+    	border-right:0;
+    	border-left:1px solid @main_border;
+    }
+    [class*='product-list-style']{
+    	.product-item-top{
+    		max-width: 250px;
+    		margin: auto
+    	}
+    }
+	}
+	/*Col-right*/
+	.product-col-right{
+		padding:0;
+		.product-item{
+   	 	padding:5px 5px 10px;
+   	 	border-bottom: 1px solid @main_border;
+   	 	border-left:0;
+   	 	.abs-borderradius(0);
+   	 	.product-name {
+			  padding: 0 10px;
+			}
+    }
+    .product-item-info{
+  		position: relative;
+  		height: 100%;
+  	}
+    .item-group{
+    	padding: 0;
+    	.product-item:nth-child(2){
+   	 		margin-top:0px;
+   	 		border-bottom:0;
+   	 		margin-top:0px;
+   	 	}
+    }
+    .product-item-top{
+  		max-width: 170px;
+  		margin: auto;
+  		overflow: visible;
+  		.abs-borderradius(0);
+  		.cdz-product-labels{
+  			left:-30px;
+  		}
+  	}
+  	.cdz-product{
+			border: 0;
+			.abs-borderradius(0);
+			.abs-boxshadow(none);
+		}
+		.product-list-style-05 .owl-carousel.owl-drag .owl-item:after{
+			display: none
+		}
+	}
+}

@@ -1,0 +1,94 @@
+<?php
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$_postCollection = $this->getPostCollection();
+?>
+<?php if (!$_postCollection->count()): ?>
+    <div class="message info empty"><div><?php echo __('We can\'t find posts matching the selection.') ?></div></div>
+<?php else: ?>
+<?php
+$descLength = $this->getData('desc_length')?:100;
+$width = $this->getData('thumb_width')?:200;
+$height = $this->getData('thumb_height')?:200;
+$paddingBottom = $height*100/$width;
+$dateFormat = $this->getData('date_format')?:'Y-m-d H:i:s';
+$imgHelper = Mage::helper('blogfeatures/image');
+$showImage = $this->isShow('post_image');
+$showTitle = $this->isShow('title');
+$showShortContent = $this->isShow('short_content');
+$showPublishTime = $this->isShow('publish_time');
+$showAuthor = $this->isShow('author');
+$showCategory = $this->isShow('category');
+
+$totalRows = (int)$this->getData('total_rows')?:1;
+$showSlider = $this->getData('show_slider');
+$widget = array('codazon.slider' => array(
+    'sliderConfig' => $this->getSliderData(),
+    'sameHeight' => array('.post-title', '.post-desc')
+));
+
+$dateHelper = Mage::getModel('core/date');
+?>
+<div class="post-grid-07 grid blog-post-grid">
+    <div class="items post-items<?= $showSlider?' owl-carousel':''?>" <?php if ($showSlider) : ?>data-cdzwidget='<?= json_encode($widget) ?>'<?php endif ?>>
+    <?php $i = 0; foreach ($_postCollection as $_post) : ?>
+        <?php
+            $_postName = $this->escapeHtml($_post->getTitle(), true, null);
+            $_postUrl = $this->getPostUrl($_post);
+        ?>
+        <?php if ($i%$totalRows == 0) : ?>
+        <div class="item-group">
+        <?php endif ?>
+        <div class="item post-item">
+            <div class="post-top">
+                <?php if ($showImage) : ?>
+                <?php $_postImage = $imgHelper->getImage($_post, $width, $height); ?>
+                <a href="<?= $_postUrl ?>" class="post-img abs-img" style="padding-bottom: <?= $paddingBottom ?>%">
+                    <?php if ($showSlider) : ?>
+                    <img class="owl-lazy img-responsive" data-src="<?= $_postImage ?>" />
+                    <?php else : ?>
+                    <img class="img-responsive" src="<?= $_postImage ?>" />
+                    <?php endif ?>
+                </a>
+                <?php endif ?>
+                
+                <?php if ($showCategory) : ?>
+                    <?php $category = $this->getPostCategory($_post); ?>
+                    <a class="post-category" href="<?= $category->getCategoryUrl() ?>"><?= $category->getTitle() ?></a>
+                <?php endif ?>
+            </div>
+            <div class="post-bottom">
+                <?php if ($showTitle) : ?>
+                <div class="post-title">
+                    <a class="post-item-link" title="<?= $_postName ?>" href="<?= $_postUrl ?>"><?= $_postName; ?></a>
+                </div>
+                <?php endif ?>
+                
+                <?php if ($showShortContent) : ?>
+                <div class="post-desc">
+                    <?= $this->subString($_post->getShortContent(), $descLength); ?>
+                </div>
+                <?php endif ?>
+                                
+                <div class="post-footer">
+                <?php if ($showAuthor) : ?>
+                <div class="post-author"><?= $_post->getUser(); ?></div>
+                <?php endif ?>
+                <?php if ($showPublishTime) : ?>
+                <?php $date = $dateHelper->date($dateFormat, $_post->getCreatedTime()); ?>
+                <div class="post-date"><?= $date ?></div>
+                <?php endif ?>
+                </div>
+            </div>
+        </div>
+        <?php if ($i%$totalRows == ($totalRows-1)) : ?>
+        </div>
+        <?php endif ?>
+    <?php $i++; endforeach; ?>
+    </div>
+</div>
+<?php endif ?>

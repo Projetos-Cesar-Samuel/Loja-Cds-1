@@ -1,0 +1,8 @@
+a:4:{i:0;s:70:"Module "MercadoPago_MercadoEnvios" requires module "MercadoPago_Core".";i:1;s:898:"#0 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Model/Config.php(852): Mage::throwException('Module "Mercado...')
+#1 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Model/Config.php(815): Mage_Core_Model_Config->_sortModuleDepends(Array)
+#2 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Model/Config.php(318): Mage_Core_Model_Config->_loadDeclaredModules()
+#3 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Model/App.php(425): Mage_Core_Model_Config->loadModules()
+#4 /chroot/home/senhorit/senhoritaluna.com.br/html/app/code/core/Mage/Core/Model/App.php(354): Mage_Core_Model_App->_initModules()
+#5 /chroot/home/senhorit/senhoritaluna.com.br/html/app/Mage.php(687): Mage_Core_Model_App->run(Array)
+#6 /chroot/home/senhorit/senhoritaluna.com.br/html/index.php(83): Mage::run('', 'store')
+#7 {main}";s:3:"url";s:27:"/teste-conifiguravel-samuel";s:11:"script_name";s:10:"/index.php";}

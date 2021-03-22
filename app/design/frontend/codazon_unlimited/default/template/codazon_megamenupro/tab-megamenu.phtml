@@ -1,0 +1,50 @@
+<?php
+$menu = $this->getMenuObject();
+$type = $menu->getData('type');
+$styles = json_decode($menu->getData('style'));
+$items = $this->getMenuTree();
+$this->setTemplate('codazon_megamenupro/tab-menu-item.phtml');
+$dropdownStyle = (isset($styles->dropdown_style)&&($styles->dropdown_style=='full_width'))?'dropdown-fullwidth':'';
+$uniqId = uniqid("menu-{$menu->getId()}-");
+$dataMenu = json_encode(array(
+	'dropdownEffect' => $styles->dropdown_animation,
+	'type' => $menu->type
+));
+$this->setData('need_filter',false);
+?>
+
+<div class="menu-tab" data-menutab='{}'>
+    <ul class="nav nav-tabs">
+    <?php
+		$active = 'active';
+	?>
+    <?php foreach($items as $id => $item): ?>
+    	<?php
+			$hasChildren = isset($item->children);
+		?>
+        <?php $tabId = 'menu-tabitem-'.$id; ?>
+        <li class="<?php echo $active ?>"><a class="menu-tab-link" href='<?php echo $item->content->url ?>'  data-href="#<?php echo $tabId ?>"><?php echo $item->content->label ?></a></li>
+        <?php $active = ''; ?>
+    <?php endforeach ?>
+    </ul>
+    <div class="tab-content">
+    <?php $active = 'in active'; ?>
+    <?php foreach($items as $id => $item): ?>
+        <?php 
+            $content = $item->content;
+            $hasChildren = isset($item->children);
+			$tabId = 'menu-tabitem-'.$id;
+        ?>
+        <div class="tab-pane menu-tab-pane fade <?php echo $active ?>" id="<?php echo $tabId ?>">
+        <?php if($hasChildren): ?>
+        <div class="cdz-menu cdz-horizontal-menu <?php echo $dropdownStyle ?> <?php echo $styles->css_class ?> <?php echo 'cdz-'.$styles->dropdown_animation ?>" data-megamenu='<?php echo $dataMenu ?>' data-megamenu='{}'>
+            <ul class="groupmenu">
+            <?php echo $this->getMenuHtml($item->children) ?>
+            </ul>
+        </div>
+        <?php endif ?>
+        </div>
+        <?php $active = ''; ?>
+    <?php endforeach ?> 
+    </div>
+</div>

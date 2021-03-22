@@ -1,0 +1,97 @@
+<?php echo $this->getTabsHtml() ?>
+<script type="text/javascript">
+    //<![CDATA[
+    function load_product_funcs(){
+<?php if (($block = $this->getLayout()->getBlock("featured.products.grid")) && ($_gridJsObject = $block->getJsObjectName())): ?>
+            if(!$("outlet_products")){
+                setTimeout("load_product_funcs()",500);
+                return false;
+            }
+            var selectedProducts = $H(<?php echo $this->getProductsJson(); ?>);
+            $("outlet_products").value = selectedProducts.keys().toArray();
+            $("outlet_qtys").value = '<?php echo $this->getOutletQtyData(); ?>';            
+            function registerSelectedProduct(grid, element, checked){
+                var parent_td_checkbox = element.up("td");
+                var next_td = parent_td_checkbox.next("td");
+                var next_next_td = next_td.next("td");
+                if(checked){
+                    selectedProducts.set(element.value, element.value);
+                    next_td.down("input").addClassName("required-entry");
+                }
+                else {
+                    selectedProducts.unset(element.value);
+                    next_td.down("input").removeClassName("required-entry");
+                    if(next_td.down("div") != undefined)
+                        next_td.down("div").remove();
+                }
+                $("outlet_products").value = selectedProducts.keys().toArray();
+            }    
+            function selectedProductRowClick(grid, event){
+                var trElement = Event.findElement(event, "tr");
+                var isInput   = Event.element(event).tagName == "INPUT";
+                if(trElement){
+                    var checkbox = Element.getElementsBySelector(trElement, "input");
+                    if(checkbox[0]){
+                        var checked = isInput ? checkbox[0].checked : !checkbox[0].checked;
+                        <?php echo $_gridJsObject ?>.setCheckboxChecked(checkbox[0], checked);
+                    }
+                }
+            }
+            function selectedProductRowInit(grid, row){
+                var checkbox = $(row).getElementsByClassName("checkbox")[0];
+                if($("outlet_products").value != ""){
+                    var products = $("outlet_products").value.split(",");
+                    var checkbox = Element.getElementsBySelector(row, "input");
+                    var checked = false;
+                    if(products.indexOf(row.down("td").next("td").next("td").down("input").value) >= 0) {
+                        checked = true;
+                        $(row).getElementsByClassName("outlet_qty")[0].addClassName("required-entry");
+                        <?php echo $_gridJsObject ?>.setCheckboxChecked(checkbox[0], checked);
+                    }
+                }
+
+                if($("outlet_qtys").value != ""){
+                    var outletQtyData = JSON.parse($("outlet_qtys").value);
+                    var productId = row.down("td").next("td").next("td").down("input").value;
+                    if(outletQtyData[productId] != undefined) {
+                        row.down("td").next("td").next("td").next("td").down("input").value = outletQtyData[productId];
+                    }
+                }
+
+                var outletQty = $(row).getElementsByClassName("outlet_qty")[0];
+                outletQty.observe("blur", function(){
+                    var outlet_qty = {};
+                    if($(outlet_qtys).value != "")
+                        outlet_qty = JSON.parse($(outlet_qtys).value);
+                    if(this.up("td").previous("td").down("input").checked){
+                        var this_value = this.up("td").previous("td").down("input").value;
+                        outlet_qty[this_value] = this.value;
+                    }
+                    $(outlet_qtys).value = JSON.stringify(outlet_qty);
+                });
+
+                var numberCheck = $(row).getElementsByClassName("number_check")[0];
+                numberCheck.observe("keyup", function(){
+                    var this_value = this.value.trim();
+                    if(this_value != ""){
+                        var intRegex = /^\d+$/;
+                        var result = !intRegex.test(this_value)
+                        if (result) {
+                            var newStr = this_value.substring(0, this_value.length-1);
+                            this.value = newStr;
+                        }
+                    }
+                });
+            }
+            <?php echo $_gridJsObject ?>.rowClickCallback       = selectedProductRowClick;
+            <?php echo $_gridJsObject ?>.initRowCallback        = selectedProductRowInit;
+            <?php echo $_gridJsObject ?>.checkboxCheckCallback  = registerSelectedProduct;
+            <?php echo $_gridJsObject ?>.rows.each(function(row){selectedProductRowInit(<?php echo $_gridJsObject ?>, row)});
+
+<?php endif; ?>
+    }
+    load_product_funcs();
+    //]]>
+</script>
+<input id="outlet_products" name="outlet_product_ids" value="" type="hidden">
+<input id="outlet_qtys" name="outlet_qtys" value="" type="hidden">

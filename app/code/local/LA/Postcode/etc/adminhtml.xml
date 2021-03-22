@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Postcode
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config>
+    <menu>
+        <postcode module="postcode" translate="title">
+            <title>Postcode</title>
+            <sort_order>71</sort_order>
+            <children>
+                <postcode module="postcode" translate="title">
+                    <title>Manage Items</title>
+                    <sort_order>0</sort_order>
+                    <action>postcodeadmin/adminhtml_postcode</action>
+                </postcode>
+                <settings module="postcode" translate="title">
+                    <title>Settings</title>
+                    <sort_order>1000</sort_order>
+                    <action>adminhtml/system_config/edit/section/postcode</action>
+                </settings>
+            </children>
+        </postcode>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <postcode module="postcode" translate="title">
+                                        <title>Postcode</title>
+                                        <sort_order>71</sort_order>
+                                    </postcode>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <postcode module="postcode" translate="title">
+                        <title>Postcode</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <postcode module="postcode" translate="title">
+                                <title>Manage Items</title>
+                                <sort_order>0</sort_order>
+                            </postcode>
+                            <settings module="postcode" translate="title">
+                                <title>Settings</title>
+                                <sort_order>1000</sort_order>
+                            </settings>
+                        </children>
+                    </postcode>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

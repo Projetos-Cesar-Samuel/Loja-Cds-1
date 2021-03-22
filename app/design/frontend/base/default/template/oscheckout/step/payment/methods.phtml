@@ -1,0 +1,112 @@
+<?php
+/**
+ * One page checkout payment methods
+ *
+ * @see Mage_Checkout_Block_Onepage_Payment_Methods
+ */
+?>
+<?php 
+$paymentmethods = Mage::getStoreConfig('oscheckout/general/default_payment_method');
+$paycount = count($this->getMethods());
+
+/*edit by alan*/
+$billing_data = $this->getRequest()->getPost('billing', array());
+$isModuleEnabled = Mage::getStoreConfig('postcode/general/enable');
+$checkModule = Mage::helper('core')->isModuleEnabled('LA_Postcode');
+$billingPostcode = '';
+
+if ($isModuleEnabled && $checkModule) {
+    /*if (!empty($billing_data['postcode'])) {
+        $billingPostcode = $billing_data['postcode'];
+    }*/
+
+    $cartPostCode = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getPostcode();
+
+    if (count($billing_data)) {
+        $billingPostcode = $billing_data['postcode'];
+    }else {
+        if($cartPostCode != null){
+            $billingPostcode = $cartPostCode;
+        }
+    }
+
+    if ($billingPostcode) {
+        $configPaymentMethod = '';
+        $dataPostcode = Mage::helper('postcode')->getDataPostcode($billingPostcode);
+        $checkIssetPostcode = Mage::helper('postcode')->checkIssetPostcode();
+        if (!empty($dataPostcode[$billingPostcode]['payment_method'])) {
+            $configPaymentMethod = $dataPostcode[$billingPostcode]['payment_method'];
+            $configPaymentMethod = implode(',', $configPaymentMethod);
+            $configPaymentMethod = 'check_'.$configPaymentMethod;
+        }
+    }
+}
+
+?>
+
+<dl class="sp-methods" id="checkout-payment-method-load ">
+<?php foreach ($this->getMethods() as $_method): $_code = $_method->getCode() ?>
+    <?php if ($isModuleEnabled && $checkModule) { ?>
+         <?php if (!$billingPostcode): ?>
+            <label><?php echo $this->__('Preencha o CEP para visualizar') ?></label>
+            <?php break;?>
+        <?php endif;?>
+        
+        <?php if($billingPostcode && empty($configPaymentMethod) && !empty($checkIssetPostcode)):?>
+            <?php continue;?>
+        <?php endif;?>
+
+        <?php if ($checkModule):?>
+            <?php if ($isModuleEnabled && !empty($configPaymentMethod) && !strpos($configPaymentMethod, $_code )):?>
+                <?php continue;?>
+            <?php endif;?>
+        <?php endif; ?>
+    <?php } ?>
+    <dt>
+    <?php if( sizeof($this->getMethods()) > 0 ): ?>
+        <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" onclick="savePay('<?php echo $_code ?>')" class="validate-one-required-by-name" <?php if( sizeof($this->getMethods()) ==1 ) echo "checked=true";?> />
+    <?php else: ?>
+        <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($_code): ?> checked="checked"<?php endif; ?>  class="" /></span>
+    <?php endif; ?>
+        <label for="p_method_<?php echo $_code ?>"><?php echo $this->getMethodTitle($_method) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
+    </dt>
+    <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
+    <dd>
+        <?php echo $html; ?>
+    </dd>
+    <?php endif; ?>
+
+<?php endforeach; ?>
+</dl>
+<?php echo $this->getChildChildHtml('additional'); ?>
+
+<script type="text/javascript">
+var paymentMethod;
+//<![CDATA[
+<?php  if(sizeof($this->getMethods()) ==1 || isset($paymentmethods)) { ?>
+paymentMethod = "<?php echo $paymentmethods ?>"; 
+
+<?php }?>    
+//]]> 
+<?php if( $paycount < 2 ): ?>
+//payment.switchMethod("<?php echo $_code ?>");
+eval('payment.switchMethod("<?php echo $_code ?>");');
+<?php endif; ?>
+//
+window.onload = function() {
+jQuery('#p_method_mercadopago_custom').click();
+//<![CDATA[
+<?php  if(sizeof($this->getMethods()) ==1 || isset($paymentmethods)): ?>
+    payment.currentMethod = "<?php echo $paymentmethods ?>"; 
+    payment.switchMethod('<?php echo $paymentmethods ?>');
+<?php endif ?>    
+<?php echo $this->getChildChildHtml('scripts'); ?>
+//payment.init();
+//]]> 
+<?php if($paycount ==1): ?>
+payment.switchMethod("<?php echo $_code ?>");
+eval('payment.switchMethod("<?php echo $_code ?>");');
+<?php endif; ?>
+}
+jQuery('#p_method_mercadopago_custom').click();
+</script>

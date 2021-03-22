@@ -1,0 +1,141 @@
+.product-view-style-02{
+	.product-main-top{
+		padding: 0;
+		.product-info-main{
+			padding:20px 15px;
+			margin:0;
+		}
+	}
+	.product-main-bottom{
+		background: #FAFAFA;
+		border-radius: 0 0px @main_box_radius @main_box_radius;
+		/*short description*/
+	    .short-description{
+	        .std{
+	            line-height: 1.55;
+	            font-weight: 400
+	        }
+	    }
+	    .product-bottom-right {
+		    text-align: right;
+		    .logo {
+			    float: right;
+			    max-width: unset;
+			    width: auto;
+			    padding: 0;
+			    min-height: unset;
+			}
+			.rtl-layout &{
+				text-align: left;
+				.logo{
+					float: left;
+				}
+			}
+		}
+	}
+	/*Overview*/
+	.attribute.overview{
+		.type{
+			letter-spacing: 0.5px;
+		    font-weight: 500;
+		    margin-bottom: 7px;
+		    float: left;
+		    display: block;
+		    width: 100%;
+		    color: @main_productname_text;  
+		}
+		.value {
+		    line-height: 1.55;
+		}
+	}
+	@media (min-width: @screen-sm-min){
+		.product-main{
+			margin-right: 0;
+			margin-left: 0;
+			margin-bottom: 40px;			
+		}
+		.product-main-bottom{	
+			padding: 20px 15px;
+			.product-info-main{
+				margin:0;
+			}
+		}	
+		.extra-info{
+	        margin-bottom: 50px;
+	    }
+		.product-info-main {
+			/*SKU - stock*/
+			.product-info-stock-sku{
+				margin-bottom: 50px;
+				.stock{
+					float: right;
+				}
+				.attribute.sku{
+					float: left;
+				}
+			}
+			/*Price*/
+			.price-box{
+				.price{
+					font-weight: 500;
+				}
+				.special-price{
+					
+				}
+				.old-price{
+					margin-bottom: 5px;
+				}
+			}
+			.product-static-text{
+				margin-top:auto;
+				text-align: right;
+				.logo {
+				    float: right;
+				}
+			}
+			.product.attribute.overview{
+				margin:0;
+			}
+		}
+		&.rtl-layout{
+			.product-info-main {
+				.product-static-text .logo{
+					float: left;
+				}
+				/*RTL*/
+				.product-info-stock-sku{
+					.stock{
+						float: left;
+					}
+					.attribute.sku{
+						float: right;
+					}
+				}
+			}
+			.our-payments{
+				text-align: left;
+			}
+		}
+	}
+	@media(max-width: @screen-xs-max) {
+	    .product-main-bottom {
+	        padding: 10px 0;
+	    }
+	    .product-main-bottom  .product-bottom-right{
+	    	margin-top: 10px;
+	    	text-align: left;
+	    	.logo{
+	    		float: left;
+	    	}
+	    }
+	    .rtl-layout &{
+	    	.product-main-bottom  .product-bottom-right{
+		    	margin-top: 10px;
+		    	text-align: left;
+		    	.logo{
+		    		float: left;
+		    	}
+		    }
+	    }
+	}
+}

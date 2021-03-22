@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <idnovate_tab translate="label" module="whatsappchat">
+            <label></label>
+            <sort_order>1000</sort_order>
+            <class>tab-idnovate-extensions</class>
+        </idnovate_tab>
+    </tabs>
+	<sections>
+		<idnovate_whatsappchat translate="label" module="whatsappchat">
+			<label>WhatsApp Chat</label>
+			<tab>idnovate_tab</tab>
+			<frontend_type>text</frontend_type>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <comment></comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+						<phone translate="label comment">
+							<label>Mobile phone</label>
+							<comment>Introduce mobile phone number with the international country code.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>1</enabled>
+							</depends>
+						</phone>
+						<group translate="label comment">
+							<label>Group id</label>
+							<comment>Identification of the WhatsApp chat group. If defined, will open the group and will offer  to the customer to join it.
+								You can obtain this Id going to the Info group - add participant - Invite to group via link. You can find identification needed in https://chat.whatsapp.com/xxxxxx where xxxxxx it is the Id.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>25</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>1</enabled>
+							</depends>
+						</group>
+						<text translate="label comment">
+							<label>Button text</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>1</enabled>
+							</depends>
+						</text>
+						<message translate="label comment">
+							<label>Predefined message</label>
+							<comment>Predefined message to send when WhatsApp app opens.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>35</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>1</enabled>
+							</depends>
+						</message>
+						<share translate="label">
+							<label>Share</label>
+							<comment>With this option enabled, message text from WhatsApp chat opened will be filled with current URL address. With mobile phone number filled above, URL address will be shared to this number. Without mobile phone, will be shared with customer WhatsApp contact list.</comment>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</share>
+					</fields>
+				</general>
+				<display translate="label">
+					<label>Display configuration</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<type translate="label">
+							<label>Type</label>
+							<frontend_type>select</frontend_type>
+							<source_model>idnovate_whatsappchat/adminhtml_types</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</type>
+						<position translate="label">
+							<label>Position</label>
+							<comment>Select where do you want to show the WhatsApp chat contact button.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>idnovate_whatsappchat/adminhtml_positions</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</position>
+						<show_on_pc translate="label comment">
+							<label>Show on PC/Desktop</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</show_on_pc>
+						<show_on_mobile translate="label comment">
+							<label>Show on mobile</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</show_on_mobile>
+						<color translate="label comment">
+							<label>Color</label>
+							<comment>Color of the button.</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>idnovate_whatsappchat/adminhtml_system_config_color</frontend_model>
+							<sort_order>31</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</color>
+						<custom_css translate="label comment">
+							<label>Custom CSS</label>
+							<comment>Custom CSS styles. This will override other defined css classes.</comment>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</custom_css>
+						<custom_js translate="label comment">
+							<label>Custom JavaScript</label>
+							<comment>Custom JavaScript code. For example, you can add here Google Analytics code to track chat button event clicks.</comment>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>110</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</custom_js>
+						<schedule translate="label comment">
+							<label>Schedule</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>idnovate_whatsappchat/adminhtml_system_config_schedule</frontend_model>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</schedule>
+						<offline_message translate="label comment">
+							<label>Offline message</label>
+							<comment>Offline message to show out of time. Leave blank to not show the button out of time.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</offline_message>
+					</fields>
+				</display>
+				<filters translate="label">
+					<label>Filters</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<allpages translate="label">
+							<label>Show on all pages</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</allpages>
+						<pages translate="label">
+							<label>Specific pages</label>
+							<comment>Show in these pages.</comment>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>idnovate_whatsappchat/adminhtml_pages</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<allpages>0</allpages>
+							</depends>
+						</pages>
+						<customer_groups translate="label">
+							<label>Customer groups</label>
+							<comment>Show for these customer groups.</comment>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>idnovate_whatsappchat/adminhtml_groups</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends>
+								<enabled>
+									<fieldset>general</fieldset>
+									<value>1</value>
+								</enabled>
+							</depends>
+						</customer_groups>
+					</fields>
+				</filters>
+			</groups>
+		</idnovate_whatsappchat>
+	</sections>
+</config>

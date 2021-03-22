@@ -1,0 +1,102 @@
+<config>
+   <identifier>header-style-07</identifier>
+   <title>Header Style 07</title>
+   <variables>
+      <header_background>#ffffff</header_background>
+      <header_background_file/>
+      <header_background_image_option>0 0</header_background_image_option>
+      <header_border>#282828</header_border>
+      <header_cart_background>transparent</header_cart_background>
+      <header_cart_border/>
+      <header_cart_icon>#222e46</header_cart_icon>
+      <header_cart_quality_background>#282828</header_cart_quality_background>
+      <header_cart_text>#222e46</header_cart_text>
+      <header_drop_background>#ffffff</header_drop_background>
+      <header_drop_border_color>#dbdbdb</header_drop_border_color>
+      <header_drop_hover_text>#009688</header_drop_hover_text>
+      <header_drop_text>#282828</header_drop_text>
+      <header_hover_text>#009688</header_hover_text>
+      <header_mobile_background>#009688</header_mobile_background>
+      <header_mobile_icon>#ffffff</header_mobile_icon>
+      <header_mobile_search_text_background/>
+      <header_mobile_search_text_border/>
+      <header_mobile_search_text_text/>
+      <header_search_background>#ffffff</header_search_background>
+      <header_search_button_background>#ffffff</header_search_button_background>
+      <header_search_button_text>#222e46</header_search_button_text>
+      <header_search_text>#222e46</header_search_text>
+      <header_shadow>0 -8px 10px #6c14eb</header_shadow>
+      <header_text>#222e46</header_text>
+      <header_top_background>#000000</header_top_background>
+      <header_top_text>#ffffff</header_top_text>
+      <menu_background>#ffffff</menu_background>
+      <menu_border>#e1e1e1</menu_border>
+      <menu_content_background>#353535</menu_content_background>
+      <menu_content_border>#1f1f1f</menu_content_border>
+      <menu_content_color>#ffffff</menu_content_color>
+      <menu_drop_background>#ffffff</menu_drop_background>
+      <menu_drop_border>#e1e1e1</menu_drop_border>
+      <menu_drop_font>400 12px/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif</menu_drop_font>
+      <menu_drop_hover_text>#009688</menu_drop_hover_text>
+      <menu_drop_shadow>0 3px 3px #e1e1e1</menu_drop_shadow>
+      <menu_drop_text>#282828</menu_drop_text>
+      <menu_drop_text_title>#282828</menu_drop_text_title>
+      <menu_font>600 14px/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif</menu_font>
+      <menu_hover_background>#ffffff</menu_hover_background>
+      <menu_hover_text>#009688</menu_hover_text>
+      <menu_text>#222e46</menu_text>
+      <menu_title_background>#ffffff</menu_title_background>
+      <menu_title_border>#1f1f1f</menu_title_border>
+      <menu_title_color>#353535</menu_title_color>
+      <vermenu_background>#fafafa</vermenu_background>
+      <vermenu_border>#ebebeb</vermenu_border>
+      <vermenu_font>500 12px/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif</vermenu_font>
+      <vermenu_hover_background>#009688</vermenu_hover_background>
+      <vermenu_hover_text>#ffffff</vermenu_hover_text>
+      <vermenu_text>#444444</vermenu_text>
+   </variables>
+   <layout_xml>&lt;reference name=&quot;header&quot;&gt;
+    &lt;action method=&quot;setTemplate&quot;&gt;&lt;template&gt;page/html/header/header-style-04.phtml&lt;/template&gt;&lt;/action&gt;
+    &lt;action method=&quot;setData&quot;&gt;&lt;key&gt;class_name&lt;/key&gt;&lt;value&gt;header-style-07&lt;/value&gt;&lt;/action&gt;
+&lt;/reference&gt;
+&lt;reference name=&quot;featured_links&quot;&gt;
+    &lt;action method=&quot;insert&quot;&gt;
+        &lt;blockName&gt;featured_links.wishlist&lt;/blockName&gt;
+    &lt;/action&gt;
+    &lt;action method=&quot;insert&quot;&gt;
+        &lt;blockName&gt;featured_links.account&lt;/blockName&gt;
+    &lt;/action&gt;
+    &lt;action method=&quot;insert&quot;&gt;
+        &lt;blockName&gt;minicart_head&lt;/blockName&gt;
+    &lt;/action&gt;
+    &lt;action method=&quot;insert&quot;&gt;
+        &lt;blockName&gt;menu_toggle_button&lt;/blockName&gt;
+    &lt;/action&gt;
+&lt;/reference&gt;
+&lt;reference name=&quot;menu_toggle_button&quot;&gt;
+    &lt;action method=&quot;setData&quot;&gt;&lt;key&gt;direction&lt;/key&gt;&lt;value&gt;right&lt;/value&gt;&lt;/action&gt;
+    &lt;action method=&quot;setData&quot;&gt;&lt;key&gt;section&lt;/key&gt;&lt;value&gt;toggle-menu-container&lt;/value&gt;&lt;/action&gt;
+    &lt;action method=&quot;setData&quot;&gt;&lt;key&gt;html_tag&lt;/key&gt;&lt;value&gt;li&lt;/value&gt;&lt;/action&gt;
+&lt;/reference&gt;    
+&lt;reference name=&quot;toggle_sidebar_right&quot;&gt;
+    &lt;action method=&quot;insert&quot;&gt;
+        &lt;blockName&gt;toggle_menu&lt;/blockName&gt;
+        &lt;siblingName&gt;&lt;/siblingName&gt;
+        &lt;after&gt;0&lt;/after&gt;
+    &lt;/action&gt;a
+&lt;/reference&gt;</layout_xml>
+   <custom_variables/>
+   <custom_fields/>
+   <parent>header-style-04</parent>
+   <content>&lt;div class=&quot;store-info-top container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-12 colleft&quot;&gt;
+&lt;div class=&quot;store-contact&quot;&gt;&lt;a class=&quot;store-tel&quot; href=&quot;tel:0123456789&quot;&gt;&lt;em class=&quot;fa fa-phone&quot;&gt;&lt;/em&gt; (0123) 456 xxx&lt;/a&gt; &lt;a class=&quot;store-mail&quot; href=&quot;mailto:codazon@sample.com&quot;&gt;&lt;em class=&quot;fa fa-envelope&quot;&gt;&lt;/em&gt; codazon@sample.com&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-12 colright&quot;&gt;
+&lt;div class=&quot;social-wrap f-right&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;em class=&quot;fa fa-pinterest-p&quot;&gt;&lt;/em&gt;pinterest&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;em class=&quot;fa fa-vimeo&quot;&gt;&lt;/em&gt;vimeo&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;em class=&quot;fa fa-twitter&quot;&gt;&lt;/em&gt;twitter&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;em class=&quot;fa fa-facebook&quot;&gt;&lt;/em&gt;facebook&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;em class=&quot;fa fa-google-plus&quot;&gt;&lt;/em&gt;google-plus&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+</config>

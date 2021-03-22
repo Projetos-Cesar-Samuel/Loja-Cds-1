@@ -1,0 +1,31 @@
+<?php
+$_product = $this->getProduct();
+$_product->load('media_gallery');
+
+$width = $this->getImageWidth();
+$height = $this->getImageHeight();
+$smallWidth = $this->getSmallWidth()?:100;
+$smallHeight = $height*$smallWidth/$width;
+$_helper = $this->helper('catalog/image');
+$images = $this->getGalleryImages();
+$widget = array();
+
+if ($images) {    
+    $widget['width'] = $width;
+    $widget['height'] = $height;
+    $widget['moreviewSettings'] = $this->getData('moreview_settings')?: array('items' => 4, 'nav'   => 1, 'dots'  => 0);
+    foreach ($images as $_image) {
+        if($this->isGalleryImageVisible($_image)) {
+            $_img = $_helper->init($_product, 'thumbnail', $_image->getFile());
+            $widget['images'][] = [
+                'large' => (string)$_img->resize($width, $height),
+                'small' => (string)$_img->resize($smallWidth, $smallHeight)
+            ];
+        }
+    }
+}
+?>
+
+<?php if ($widget) : ?>
+<div class="img-gallery hidden-xs" data-gallery='<?php echo json_encode($widget); ?>'></div>
+<?php endif ?>

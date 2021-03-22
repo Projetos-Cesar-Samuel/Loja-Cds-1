@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$product = $this->getProduct();
+$productTypeId = $product->getTypeId();
+?>
+<?php if ($productTypeId == 'bundle') : ?>
+ <script src="<?= $this->getSkinUrl('js/bundle.js') ?>"></script>
+<?php elseif ($productTypeId == 'configurable') : ?>
+<script src="<?= $this->getSkinUrl('js/configurableswatches/swatches-quickview.js') ?>"></script>
+<?php $this->getLayout()->getBlock('product.info.options.configurable')->setTemplate('codazon_quickviewpro/product/view/type/options/configurable.phtml') ?>
+<?php endif ?>

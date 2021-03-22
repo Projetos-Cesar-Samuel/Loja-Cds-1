@@ -1,0 +1,170 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$_productCollection=$this->getLoadedProductCollection();
+$_helper = $this->helper('catalog/output');
+?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else : ?>
+<?php if ($this->getMode()!='grid') : ?>
+<?php echo $this->setTemplate('catalog/product/list/list-styles/list-style-01.phtml')->toHtml(); ?>
+<?php else: ?>
+<?php
+$themeHelper = $this->helper('flexibletheme');
+$quickShopHelper = $this->helper('quickviewpro');
+$imageHelper = $this->helper('catalog/image');
+$labelHelper = $themeHelper->getLabelHelper();
+$wishlistHelper = $this->helper('wishlist');
+$width = $themeHelper->getConfig('images/category/product_image_width')?:300;
+$height = $themeHelper->getConfig('images/category/product_image_height')?:300;
+$paddingBottom = 100;
+$showDescription = $themeHelper->isDisplayOnList('description');
+$showSku = $themeHelper->isDisplayOnList('sku');
+$showWishlist = $wishlistHelper->isAllow() && $themeHelper->isDisplayOnList('wishlist');
+$showCompare = $themeHelper->isDisplayOnList('compare');
+$showCart = $themeHelper->isDisplayOnList('addtocart');
+$showQuickShop = $themeHelper->isDisplayOnList('quickshop');
+$showLabel = $themeHelper->isDisplayOnList('label');
+$showThumb = $themeHelper->isDisplayOnList('thumb');
+$showName = $themeHelper->isDisplayOnList('name');
+$showReview = $themeHelper->isDisplayOnList('review');
+$showPrice = $themeHelper->isDisplayOnList('price');
+$layout = $themeHelper->getBlockPageLayout($this);
+?>
+<style type="text/css">
+<?= $themeHelper->getColumnStyle('.cdz-products-grid', '.cdz-products-grid .item.product-item', '.product-items .item.product-item', $layout); ?>
+</style>
+<div class="category-products product-list-style-14">
+    <?php echo $this->getToolbarHtml() ?>
+    <ul class="cdz-products-grid items product-items flex-grid" data-sameheight=".product-details,.product-item-details">
+        <?php foreach ($_productCollection as $_product): ?>
+        <?php
+        $url = $_product->getProductUrl();
+        $name = $this->stripTags($_product->getName(), null, true);
+        ?>
+        <li class="item product product-item">
+            <div class="product-item-info">
+                <div class="product-item-top">
+                    <a href="<?= $url ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image abs-img" style="padding-bottom: <?php echo $paddingBottom ?>%">
+                        <img class="product-image-photo main-img" src="<?= $imageHelper->init($_product, 'small_image')->keepFrame(false)->resize($width); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+                        <img class="product-image-photo hovered-img" src="<?= $imageHelper->init($_product, 'thumbnail')->keepFrame(false)->resize($width); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'thumbnail'), null, true) ?>" id="product-collection-image-<?php echo $_product->getId(); ?>" />
+                    </a>
+                    <?= $showLabel?$labelHelper->showLabel($_product):''; ?>
+                    
+                    <?php if ($showCart || $showCompare || $showQuickShop): ?>
+                    <!--<div class="button-hover-wrap hidden-xs">
+                        <div class="overlay-bg"></div>
+                        <div class="button-panel">
+                            <?php if ($showCart) : ?>
+                            <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+                                <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php elseif($_product->canConfigure() && $_product->isSaleable()): ?>
+                                <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="CodazonAjaxCartPro.getConfigurableOptions('<?php echo $this->getUrl('quickviewpro/cart/view', array('id' => $_product->getId())) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                                <a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
+                            <?php else : ?>
+                                <button type="button" title="<?php echo $this->quoteEscape($this->__('Out of stock')) ?>" class="button btn-cart out-of-stock disabled unavailable" disabled><span><span><?php echo $this->__('Out of stock') ?></span></span></button>
+                            <?php endif ?>
+                            <?php endif; ?>
+                            <?= $showQuickShop?$quickShopHelper->getQuickShopButton($_product):''; ?>
+                            <?php if(($_compareUrl = $this->getAddToCompareUrl($_product)) && $showCompare): ?>
+                            <a href="<?php echo $_compareUrl ?>" class="tocompare link-compare"><?php echo $this->__('Add to Compare') ?></a>
+                            <?php endif; ?>
+                            
+                        </div>
+                    </div>-->
+                    <?php endif ?>
+                </div>
+                <div class="product details product-item-details product-info">
+                    <div class="detail-items-wrap">
+                        <?php if ($showWishlist) : ?>
+                        <div class="product-item-header">
+                            <a href="#" class="product-item-brand" style="display: none;">Clothing</a>
+                            <a href="<?php echo $wishlistHelper->getAddUrl($_product) ?>" class="towishlist link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+                        </div>
+                        <?php endif; ?>
+                        <div class="product-item-inner">
+                            <?php if ($showName): ?>
+                            <strong class="product-name" style="display: flex; justify-content: center;"><a class="product-item-link" href="<?= $url; ?>"><?= $name; ?></a></strong>
+                            <?php endif ?>
+                            <?php if ($showSku) : ?>
+                            <div class="product-item-sku"><span class="label"><?= $this->__('SKU: ') ?></span><span class="value"><?= $_product->getData('sku') ?></span></div>
+                            <?php endif ?>
+                            <?= $showPrice ? $this->getPriceHtml($_product, true) : '' ?>
+                            <?= ($showReview && $_product->getRatingSummary()) ? $this->getReviewsSummaryHtml($_product, 'short') : ''; ?>
+                            <?php if ($showDescription):?>
+                            <div class="product description product-item-description">
+                                <?= $themeHelper->subString($_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description'), 70) ?>
+                            </div>
+                            <?php endif; ?>
+                            <?php
+                            if ($this->getChild('name.after')) {
+                                $_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
+                                foreach ($_nameAfterChildren as $_nameAfterChildName) {
+                                    $_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
+                                    $_nameAfterChild->setProduct($_product);
+                                    echo $_nameAfterChild->toHtml();
+                                }
+                            }
+                            ?>
+                            <?php if ($showCart || $showWishlist || $showCompare) : ?>
+                            <!--<div class="actions-secondary visible-xs">
+                                <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+                                    <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <?php elseif($_product->canConfigure() && $_product->isSaleable()): ?>
+                                    <button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="CodazonAjaxCartPro.getConfigurableOptions('<?php echo $this->getUrl('quickviewpro/cart/view', array('id' => $_product->getId())) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                                    <a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
+                                <?php else : ?>
+                                    <button type="button" title="<?php echo $this->quoteEscape($this->__('Out of stock')) ?>" class="button btn-cart out-of-stock disabled unavailable" disabled><span><span><?php echo $this->__('Out of stock') ?></span></span></button>
+                                <?php endif ?>
+                                <?php if ($showWishlist) : ?>
+                                <a href="<?php echo $wishlistHelper->getAddUrl($_product) ?>" class="towishlist link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
+                                <?php endif; ?>
+                                <?php if(($_compareUrl = $this->getAddToCompareUrl($_product)) && $showCompare): ?>
+                                <a href="<?php echo $_compareUrl ?>" class="tocompare link-compare"><?php echo $this->__('Add to Compare') ?></a>
+                                <?php endif; ?>
+                            </div>-->
+                            <?php endif; ?>
+                        </div>
+                        <?php if ($showCart) : ?>
+				        <div class="product-item-inner">
+					       <div class="product actions product-item-actions" style="display: flex; justify-content: center;">
+						      <?php if ($_product->isSaleable()) : ?>
+							     <button style="width: 60%"; type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						      <?php else : ?>
+							     <button type="button" title="<?php echo $this->quoteEscape($this->__('Out of stock')) ?>" style="float:left;" class="button btn-cart out-of-stock disabled unavailable"disabled><span><span><?php echo $this->__('Out of stock') ?></span></span></button>
+						      <?php endif ?>
+					       </div>
+				        </div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <?php endforeach ?>
+    </ul>
+    <div class="toolbar-bottom">
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+</div>
+<?php
+// Provides a block where additional page components may be attached, primarily good for in-page JavaScript
+if ($this->getChild('after')) {
+    $_afterChildren = $this->getChild('after')->getSortedChildren();
+    foreach ($_afterChildren as $_afterChildName) {
+        $_afterChild = $this->getChild('after')->getChild($_afterChildName);
+        //set product collection on after blocks
+        $_afterChild->setProductCollection($_productCollection);
+        echo $_afterChild->toHtml();
+    }
+}
+?>
+<?php endif ?>
+<?php endif ?>

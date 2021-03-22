@@ -1,0 +1,103 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<header id="header" class="page-header <?= $this->getData('class_name') ?>">
+    <div class="sticky-menu js-sticky-menu" data-cdzwidget='{"codazon.stickyMenu": {}}'>
+        <div class="page-header-container">
+            <div class="mobile-header visible-xs">
+                <div class="mb-main-panel">
+                    <span data-sidebartrigger='{"side": "left", "section":"mobi-panel-container"}' class="action nav-toggle"><span><?= $this->__('Toggle Nav') ?></span></span>
+                    <div id="mobi_logo-wrap" class="mb-logo-wrap"></div>
+                    <div id="mobi_search" class="mb-search-wrap"></div>
+                    <div id="mobi_cart" class="mb-cart-wrap"></div>
+                </div>
+            </div>
+            <div class="hidden" id="desk_top-links">
+                <div class="header-account" id="header-account">
+                    <?php echo $this->getChildHtml('topLinks') ?>
+                </div>
+            </div>
+            <div class="desktop-header hidden-xs">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-md-8 header-top-left">
+                                <?php echo $this->getBlockHtml('header_custom_text_1') ?>
+                            </div>
+                            <div class="col-sm-16 col-md-16 header-panel-right">
+                                <?php echo $this->getBlockHtml('mini.store_switcher'); ?>
+                                <?php echo $this->getBlockHtml('mini.currency'); ?>
+                                <?php echo $this->getBlockHtml('mini.store_language'); ?>
+                                <?php echo $this->getBlockHtml('featured_links'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-middle">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-10 col-md-7 col-lg-6 header-panel-left" id="desk_logo-wrap">
+                                <a class="logo" href="<?php echo $this->getUrl('') ?>">
+                                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+                                    <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+                                </a>
+                            </div>
+                            <div class="col-sm-14 col-md-8 col-lg-9 header-panel-center">
+                                <div id="desk_search" class="desk-search-wrap">
+                                    <div id="header-search" class="header-search">
+                                        <?php echo $this->getChildHtml('topSearch') ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-7 header-panel-right">
+                                <?php echo $this->getBlockHtml('header_custom_text_2') ?>
+                                <ul class="features-links items hidden-xs">
+                                    <?php echo $this->getBlockHtml('minicart_head') ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <div class="container">
+                        <div class="header-menu-wrap cdz-fix-left" id="desk_header-nav">
+                            <div id="header-nav" class="header-nav">
+                                <?php echo $this->getChildHtml('topMenu') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<?php echo $this->getChildHtml('topContainer'); ?>
+<?php echo $this->getBlockHtml('toggle_sidebar_left'); ?>
+<?php echo $this->getBlockHtml('toggle_sidebar_right'); ?>

@@ -1,0 +1,222 @@
+/*Fashion megastore*/
+[class*='product-list-style'],
+[class*='post-list-style'],
+[class*='wrapper-adv-style'],
+.instagram-wrapper,
+.brand-slider-wrapper{
+	.slider-arrow-style-09(); /*wrapper product*/
+}
+.brand-slider-wrapper{
+	.owl-slider("false", 30px, 30px); /*wrapper product*/
+	.owl-nav [class*="owl-"]{
+		&:before{
+			line-height:30px;
+		}
+	}
+}
+.cdz-slideshow{	
+	.slider-arrow-style-09();
+	.owl-slider("false", 50px, 80px);	
+	.button-link{
+		.abs-transition();
+	}
+	.owl-nav [class*='owl-']{
+		&:before{
+			font-size:26px;
+			line-height: 80px
+		}
+		&.owl-prev{
+			left:10px;
+		}
+		&.owl-next{
+			right:10px;
+		}
+	}
+}
+/*Title*/
+.cdz-block-title{
+	text-align: center;
+	margin-bottom: 35px;
+	.b-title.h2{		
+		text-transform: uppercase;
+		color: @main_title_text;
+		span{
+			position: relative;
+			&:after{
+				position: absolute;
+				bottom: -5px;
+				content: "";
+				width: 50px;
+				height: 2px;
+				background: @main_title_text;
+				.abs-calc-left(~'(100% - 50px)/2');
+			}
+		}
+	}
+	.title-desc{
+		color:@main_text_normal;
+		font:@f_h6;
+		width: 50%;
+		min-width: 200px;
+		margin: 10px auto 0
+	}
+	@media(min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		.b-title.h2{
+			font-size: 18px;
+		}
+	}
+	@media(max-width: @screen-xs-max) {
+		margin-bottom:15px !important;
+		.title-desc{
+			width: 90%;
+			font-size: 12px;
+		}
+	}
+}
+
+.boby-bottom{
+	.cdz-block-title .b-title {
+		text-align: left;
+		.rtl-layout &{
+			text-align: right
+		}
+		span:after{
+			display:none;
+		}
+	}
+	.title-desc{
+		text-align: left;
+		margin: 10px 0 0;
+		.rtl-layout &{
+			text-align: right
+		}
+	}
+}
+.ratings {	
+	.rating-box {
+		&:before{
+			content: '\f006' '\f006' '\f006' '\f006' '\f006';
+		}
+		.rating:before{
+			content: '\f005' '\f005' '\f005' '\f005' '\f005';
+		}
+		&:before,
+		.rating:before{color:@main_hover_text;}
+	}
+	.amount{
+		display: none
+	}
+}
+
+
+/*HOME PAGE*/
+/*Three banner*/
+.groupbanner-text{
+	.group-info{
+		padding-top:20px;
+		padding-bottom:20px;
+	}
+	.grifo-title{
+		font-size: 24px;
+		a{
+			.abs-link(@main_title_text,@main_hover_text);
+		}		
+	}
+	.grifo-desc a{.abs-link(@main_title_text,@main_hover_text);}
+}
+.hover-scale{
+	.group-info{
+		display: inline-block;
+		width: 100%;
+		vertical-align: middle;
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		position: relative;
+		-webkit-transition-property: color;
+		transition-property: color;
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		&:before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #ffffff;
+			-webkit-transform: scaleY(0);
+			transform: scaleY(0);
+			-webkit-transform-origin: 50% 0;
+			transform-origin: 50% 0;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+	}
+	&:hover{
+		.abs-boxshadow(0 2px 3px #e1e1e1);
+		.group-info:before{
+			-webkit-transform: scaleY(1);
+			transform: scaleY(1);
+		}
+	}
+}
+@media screen and (max-width: @screen-xs-max){
+	.cdz-slideshow {
+	    margin-top: 10px;
+	    margin-bottom: 20px;
+	}
+}
+/*Product page*/
+.product-view-style-02{
+	.product-main,
+	.product-collateral.tabs{
+		.product-info-box(0);
+	}
+	.product-main-top .product-info-main{
+		padding: 0;
+	}
+	.product-collateral .toggle-tabs,
+	.tab-container{
+		padding-left: 0;
+		padding-right: 0
+	}
+	.more-views{
+		padding-left: 0;
+	}
+}
+@media(min-width: 771px) {
+	/*Sidebar*/
+	.sidebar .block:not(.block-progress):not(.block-blog){
+		.block-style01();	
+	}
+	/*Sidebar - Blog*/
+	.block-blog{
+		.blogsidebar-style01();
+	}
+}
+.toolbar{
+	.toolbar-option4();
+	background: #f9f9f9;
+}
+/*Blog*/
+.post-list .post-holder{
+	padding-left: 0;
+	padding-right: 0
+}
+/*Shopping cart*/
+.cart > form{
+	padding: 0;
+}
+.crosssell,
+.box-collateral.box-up-sell{
+	padding: 0;
+	.owl-nav [class*='owl-']{
+		.abs-calc-top(~'calc( (100% - 40px )/2 )');
+	}
+}

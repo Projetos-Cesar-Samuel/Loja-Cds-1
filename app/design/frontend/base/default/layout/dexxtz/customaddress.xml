@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright [2014] [Dexxtz]
+ *
+ * @package   Dexxtz_Customaddress
+ * @author    Dexxtz
+ * @license   http://www.apache.org/licenses/LICENSE-2.0
+ */
+-->
+<layout>
+	<customer_address_form translate="label">
+		<reference name="head">
+			<action method="addItem" ifconfig="dexxtz_customaddress/general/active">
+				<type>skin_js</type><name>dexxtz/customaddress/js/jquery-2.1.1.js</name><params/><if/>
+			</action>
+			<block type="core/text" name="jquery.no.conflict">
+				<action method="setText">
+					<text><![CDATA[<script type="text/javascript">jQuery.noConflict();</script>]]>
+					</text>
+				</action>
+			</block>
+			<action method="addItem" ifconfig="dexxtz_customaddress/general/active">
+				<type>skin_js</type><name>dexxtz/customaddress/js/dexxtz.js</name><params/><if/>
+			</action>
+		</reference>
+        <reference name="my.account.wrapper">
+			<block type="customer/address_edit" name="customer_address_edit" template="customer/address/edit.phtml">
+				<action method="setTemplate" ifconfig="dexxtz_customaddress/general/active">
+					<template>dexxtz/customaddress/customer/address/edit.phtml</template>
+				</action>
+			</block>
+        </reference>
+    </customer_address_form>
+	
+	<checkout_onepage_index>
+		<reference name="head">
+			<action method="addItem" ifconfig="dexxtz_customaddress/general/active">
+				<type>skin_js</type><name>dexxtz/customaddress/js/jquery-2.1.1.js</name><params/><if/>
+			</action>
+			<block type="core/text" name="jquery.no.conflict">
+				<action method="setText">
+					<text><![CDATA[<script type="text/javascript">jQuery.noConflict();</script>]]>
+					</text>
+				</action>
+			</block>
+			<action method="addItem" ifconfig="dexxtz_customaddress/general/active">
+				<type>skin_js</type><name>dexxtz/customaddress/js/dexxtz.js</name><params/><if/>
+			</action>
+		</reference>
+        <reference name="checkout.onepage.billing">
+            <action method="setTemplate" ifconfig="dexxtz_customaddress/general/active">
+				<template>dexxtz/customaddress/checkout/onepage/billing.phtml</template>
+			</action>
+        </reference>
+		<reference name="checkout.onepage.shipping">
+            <action method="setTemplate" ifconfig="dexxtz_customaddress/general/active">
+				<template>dexxtz/customaddress/checkout/onepage/shipping.phtml</template>
+			</action>
+        </reference>
+    </checkout_onepage_index>
+</layout>

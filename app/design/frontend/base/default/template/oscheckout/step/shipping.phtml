@@ -1,0 +1,162 @@
+<!-- add by loki -->
+
+<?php 
+	$helper = Mage::helper('customaddress');
+	$helper->checkStates();
+	$storeCode = Mage::app()->getStore()->getLocaleCode();
+?>
+
+<script type="text/javascript">
+	var jQuery = jQuery.noConflict();
+	jQuery(document).ready(function() {
+		jQuery('.state_autocomplete').addClass('validate-select');
+		jQuery('.state_autocomplete').addClass('required-entry');
+	});
+	function getStates() {
+		return 	JSON.parse('<?php echo json_encode($_SESSION['states']) ?>');
+	}
+</script>
+<!-- end add by loki -->
+<div id="shipping:same_as_billing_hide">
+	<label for="shipping:same_as_billing">
+		<input type="checkbox" name="billing[use_for_shipping]" id="shipping:same_as_billing" value="1"<?php if (!$this->isCustomerLoggedIn()): ?> checked="checked"<?php endif; ?> title="<?php echo Mage::helper('oscheckout')->__('Use Billing Address') ?>" onclick="shipping.setSameAsBilling(this.checked)" />
+		<?php echo Mage::helper('oscheckout')->__('Enviar para o mesmo Endereço') ?>
+	</label>
+</div>
+<?php if ($this->customerHasAddresses()): ?>
+	<div id="shipping-old-address-form" class="field">
+		<label for="shipping-address-select"><?php echo Mage::helper('oscheckout')->__('Select a shipping address from your address book or enter a new address.') ?></label>
+		<div class="input-box">
+			<?php echo $this->getAddressesHtmlSelect('shipping') ?>
+		</div>
+	</div>
+<?php endif ?>
+<div id="shipping-new-address-form"<?php if ($this->customerHasAddresses()): ?> style="display:none;"<?php endif ?>>
+	<input type="hidden" name="shipping[address_id]" value="<?php echo $this->getAddress()->getId() ?>" id="shipping:address_id" />
+	<input type="hidden" name="hasaddress" value="<?php echo $this->customerHasAddresses(); ?>" id="shipping:has_addresss" />
+	<div style="list-style:none">
+		<?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getAddress())->setFieldIdFormat('shipping:%s')->setFieldNameFormat('shipping[%s]')->setFieldParams('onchange="shipping.setSameAsBilling(false)"')->toHtml() ?>
+	</div>
+	<?php if(!Mage::getStoreConfig('oscheckout/display/company')):?>
+		<div class="form-group">
+			<label for="shipping:company"><?php echo Mage::helper('oscheckout')->__('Company') ?></label>
+			<div class="input-box">
+				<input type="text" id="shipping:company" name="shipping[company]" value="<?php echo $this->htmlEscape($this->getAddress()->getCompany()) ?>" title="<?php echo Mage::helper('oscheckout')->__('Company') ?>" class="form-control input-text" onchange="shipping.setSameAsBilling(false);" />
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<?php if (false): ?>
+		<div class="form-group">
+			<label for="shipping:email" class="required"><?php echo Mage::helper('oscheckout')->__('Endereço de e-mail') ?></label>
+			<div class="input-box">
+				<input type="text" name="shipping[email]" id="shipping:email" value="<?php echo $this->htmlEscape($this->getAddress()->getEmail()) ?>" title="<?php echo Mage::helper('oscheckout')->__('Endereço de e-mail') ?>" class="form-control input-text validate-email required-entry" />
+			</div>
+		</div>
+	<?php endif ?>
+	<div class="row">
+		<?php if(!Mage::getStoreConfig('oscheckout/display/telephone')):?>
+			<div class="form-group col-md-12 col-sm-12 col-xs-12 col-xxs-full">
+				<label for="shipping:telephone" class="required"><?php echo Mage::helper('oscheckout')->__('Telefone') ?></label>
+				<div class="input-box">
+					<input type="text" <?php echo $helper->addMask(17, $storeCode);?> name="shipping[telephone]" value="<?php echo $this->htmlEscape($this->getAddress()->getTelephone()) ?>" title="<?php echo Mage::helper('oscheckout')->__('Telefone') ?>" class="form-control input-text required-entry" id="shipping:telephone" onchange="shipping.setSameAsBilling(false);" />
+				</div>
+			</div>
+		<?php endif ?>
+
+		<?php 
+			$cartPostCode = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getPostcode();
+			if($cartPostCode != null){
+				$postcode = $cartPostCode;
+			}else{
+				$postcode= $this->htmlEscape($this->getAddress()->getPostcode());
+			}
+		?>
+		<div class="form-group col-md-12 col-sm-12 col-xs-12 col-xxs-full">
+			<label for="shipping:postcode" class="required"><?php echo Mage::helper('oscheckout')->__('CEP') ?></label>
+			<div class="input-box">
+				<input type="text"  <?php echo $helper->getAutoComplete('zip_autocomplete', true, true) . $helper->addZipMask($storeCode);?> title="<?php echo Mage::helper('oscheckout')->__('Zip/Postal Code') ?>" name="shipping[postcode]" id="shipping:postcode" value="<?php echo $postcode ?>" class="form-control input-text validate-zip-international<?php echo $helper->getAutoComplete(' zip_autocomplete ') . $this->helper('customer/address')->getAttributeValidationClass('postcode') ?> required-entry" onchange="shipping.setSameAsBilling(false);" />
+			</div>
+		</div>
+		<div class="form-group col-md-6 col-sm-6 col-xs-6 col-xxs-full" style="display:none;">
+			<label for="shipping:country_id" class="required"><?php echo Mage::helper('oscheckout')->__('Country') ?></label>
+			<div class="input-box">
+				<?php echo $this->getCountryHtmlSelect('shipping') ?>
+			</div>
+		</div>
+		<?php if(!Mage::getStoreConfig('oscheckout/display/fax')):?>
+			<div class="form-group col-md-6 col-sm-6 col-xs-6 col-xxs-full">
+				<label for="shipping:fax"><?php echo Mage::helper('oscheckout')->__('Fax') ?></label>
+				<div class="input-box">
+					<input type="text" name="shipping[fax]" value="<?php echo $this->htmlEscape($this->getAddress()->getFax()) ?>" title="<?php echo Mage::helper('oscheckout')->__('Fax') ?>" class="form-control input-text" id="shipping:fax" onchange="shipping.setSameAsBilling(false);" />
+				</div>
+			</div>
+		<?php endif; ?>
+		</div>
+		<?php if(!Mage::getStoreConfig('oscheckout/display/address')):?>
+		<div class="form-group">
+			<label for="shipping:street1" class="required"> <?php echo Mage::helper('oscheckout')->__('Rua') ?></label>
+			<input type="text" title="<?php echo Mage::helper('oscheckout')->__('Street Address') ?>" name="shipping[street][]" id="shipping:street1" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(1)) ?>" class="form-control input-text required-entry street1_autocomplete" onchange="shipping.setSameAsBilling(false);" />
+			<?php //for ($_i=2, $_n=$this->helper('customer/address')->getStreetLines(); $_i<=$_n; $_i++): ?>
+				<!-- <input type="text" title="<?php echo Mage::helper('oscheckout')->__('Street Address %s', $_i) ?>" name="shipping[street][]" id="shipping:street<?php echo $_i?>" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet($_i)) ?>" class="form-control input-text address-fields" onchange="shipping.setSameAsBilling(false);"/> -->
+		   <?php //endfor ?>
+		   <div class="form-group col-md-4 col-sm-4 col-xs-4 col-xxs-4" style="margin-left:-15px">
+				<label for="shipping:street2"  style="margin-top: 10px;" class="required"><?php echo Mage::helper('oscheckout')->__('Número') ?></label>
+				<input type="text" title="<?php echo Mage::helper('oscheckout')->__('Número') ?>" name="shipping[street][]" id="shipping:street2" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(2)) ?>" class="form-control input-text address-fields required-entry" /> 
+			</div>
+			<div class="form-group col-md-8 col-sm-8 col-xs-8 col-xxs-8" style="padding-right: 0px;float: right;">
+				<label for="shipping:street3" style="margin-top: 10px;" ><?php echo Mage::helper('oscheckout')->__('Complemento') ?></label>
+				<input type="text" title="<?php echo Mage::helper('oscheckout')->__('Complemento') ?>" name="shipping[street][]" id="shipping:street3" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(3)) ?>" class="form-control input-text address-fields" /> 
+			</div>
+			<div class="form-group col-md-24 col-sm-24 col-xs-24 col-xxs-full"">
+				<label for="shipping:street4" class="required"><?php echo Mage::helper('oscheckout')->__('Bairro') ?></label>
+				<input type="text" title="<?php echo Mage::helper('oscheckout')->__('Bairro') ?>" name="shipping[street][]" id="shipping:street4" value="<?php echo $this->htmlEscape($this->getAddress()->getStreet(4)) ?>" class="form-control input-text address-fields street3_autocomplete required-entry" /> 
+
+            </div>
+		<?php endif; ?>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-12 col-sm-12 col-xs-12 col-xxs-full">
+			<label for="shipping:city" class="required"><?php echo Mage::helper('oscheckout')->__('Cidade') ?></label>
+			<div class="input-box">
+				<input type="text" title="<?php echo Mage::helper('oscheckout')->__('Cidade') ?>" name="shipping[city]" value="<?php echo $this->htmlEscape($this->getAddress()->getCity()) ?>" class="form-control input-text required-entry city_autocomplete" id="shipping:city" onchange="shipping.setSameAsBilling(false);" />
+			</div>
+		</div>
+		<div class="form-group col-md-12 col-sm-12 col-xs-12 col-xxs-full">
+			<label for="shipping:region" class="required"><?php echo Mage::helper('oscheckout')->__('Estado') ?></label>
+			<div class="input-box">
+				<select id="shipping:region_id" name="shipping[region_id]" title="<?php echo Mage::helper('oscheckout')->__('Estado') ?>" class="form-control validate-select state_autocomplete">
+					<option value=""><?php echo Mage::helper('oscheckout')->__('Please select region, state or province') ?></option>
+				</select>
+				<script type="text/javascript">
+				//<![CDATA[
+				$('shipping:region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
+				//]]>
+				</script>
+				<input type="text" id="shipping:region" name="shipping[region]" value="<?php echo $this->htmlEscape($this->getAddress()->getRegion()) ?>" title="<?php echo Mage::helper('oscheckout')->__('State/Province') ?>" class="form-control input-text" style="display:none;" />
+			</div>
+		</div>
+	</div>
+	<!-- <div class="row">
+		
+	</div> -->
+	<?php if ($this->isCustomerLoggedIn() && $this->customerHasAddresses()): ?>
+		<input type="hidden" name="shipping[save_in_address_book]" value="1" title="<?php echo Mage::helper('oscheckout')->__('Save in address book') ?>" id="shipping:save_in_address_book"/>
+	<?php else: ?>
+		<input type="hidden" name="shipping[save_in_address_book]" value="1" />
+	<?php endif; ?>
+</div>
+
+<script type="text/javascript">
+	//<![CDATA[
+		$('shipping:country_id').addClassName('form-control');
+		var shipping = new Shipping('oscheckout-form', '<?php echo $this->getUrl('checkout/onepage/saveShipping', array('_secure'=>true)) ?>','<?php echo $this->getUrl('checkout/onepage/shippingMethod', array('_secure'=>true)) ?>','<?php echo $this->getUrl('oscheckout/index/saveshippingmethod', array('_secure'=>true)) ?>');
+		var shippingForm = new VarienForm('oscheckout-form');
+		shipping.setSameAsBilling(true);
+		shippingForm.extraChildParams = ' onchange="shipping.setSameAsBilling(false);"';
+		$('shipping-address-select') && shipping.newAddress(!$('shipping-address-select').value);
+		<?php if(!Mage::getStoreConfig('oscheckout/display/state')):?>
+			var shippingRegionUpdater = new RegionUpdater('shipping:country_id', 'shipping:region', 'shipping:region_id', countryRegions, undefined, 'shipping:postcode');
+		<?php endif; ?>
+	//]]>
+</script>

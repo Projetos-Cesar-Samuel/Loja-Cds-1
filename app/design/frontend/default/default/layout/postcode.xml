@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <default>
+        <!-- update layout for all frontend page -->
+    </default>
+    <postcode_index_index>
+        <reference name="content">
+            <block type="postcode/postcode" name="postcode" template="postcode/postcode.phtml" />
+        </reference>
+    </postcode_index_index>
+</layout>

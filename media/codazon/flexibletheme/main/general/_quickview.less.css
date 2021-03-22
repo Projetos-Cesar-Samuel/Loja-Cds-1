@@ -1,0 +1,18 @@
+/* Define popup width */
+.cdz-popup-area .cdz-popup.popup-quickview-modal{
+    width: 900px;
+    max-width: ~'calc(100% - 40px)';
+}
+
+/* Quick view detail */
+.popup-quickview-modal{
+	.product-view-style-02 .product-main, 
+	.product-view-style-02 .product-collateral.tabs{
+		margin: 0;
+		.abs-boxshadow(none);
+		border: 0;
+	}
+	.product-view .product-essential .product-info-main .product-name .h1{
+		font-size: 26px;
+	}
+}

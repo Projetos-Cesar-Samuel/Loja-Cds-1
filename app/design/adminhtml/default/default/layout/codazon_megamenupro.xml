@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <adminhtml_megamenupro_index_index>
+		<reference name="content">
+			<block type="megamenupro/adminhtml_megamenupro" name="megamenupro" />
+		</reference>
+	</adminhtml_megamenupro_index_index>
+    
+	<adminhtml_megamenupro_index_edit>
+		<update handle="editor" />
+		<reference name="head">
+            <action method="removeItem"><type>js</type><name>mage/adminhtml/browser.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/jquery-1.12.1.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/jquery-migrate-1.3.0.min.js</name></action>	
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/jquery.tmpl.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/jquery-ui.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/media.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/menu-layout.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/menu.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/plugin.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/megamenupro/js/custom-browser.js</name></action>
+			
+			<action method="addJs"><script>mage/adminhtml/wysiwyg/tiny_mce/setup.js</script></action>
+			<!-- <action method="addJs"><script>tiny_mce/tiny_mce.js</script></action> -->
+
+			<action method="addCss"><stylesheet>codazon/megamenupro/css/menu.css</stylesheet></action>
+			<action method="addCss"><stylesheet>codazon/megamenupro/css/demo_menu.css</stylesheet></action>
+			<action method="addCss"><stylesheet>codazon/megamenupro/css/font-awesome/font-awesome.min.css</stylesheet></action>
+		</reference>
+		<reference name="content">
+			<block type="megamenupro/adminhtml_megamenupro_edit" name="edit_form" />
+			<block type="megamenupro/adminhtml_megamenupro_edit_fields_menuItems_types" template="codazon_megamenupro/menu-layout.phtml" name="menu_layout" />
+			<block type="megamenupro/adminhtml_megamenupro_edit_fields_menuItems_types" template="codazon_megamenupro/icons.phtml" name="menu_icons" />
+			<block type="megamenupro/adminhtml_megamenupro_edit_fields_menuItems_types" template="codazon_megamenupro/col_templates.phtml" name="menu_templates" />
+		</reference>
+	</adminhtml_megamenupro_index_edit>
+	<adminhtml_megamenupro_index_new>
+		<update handle="adminhtml_megamenupro_index_edit" />
+	</adminhtml_megamenupro_index_new>
+</layout>

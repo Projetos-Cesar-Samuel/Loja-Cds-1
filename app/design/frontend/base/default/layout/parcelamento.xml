@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <default>
+        <!-- update layout for all frontend page -->
+    </default>
+    <parcelamento_index_index>
+        <reference name="content">
+            <block type="parcelamento/parcelamento" name="parcelamento" template="parcelamento/parcelamento.phtml" />
+        </reference>
+    </parcelamento_index_index>
+
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/parcelamento.css</name></action>
+        </reference>
+        <reference name="product.info.extrahint">
+            <block type="catalog/product_view" as="productticks_productticks" template="parcelamento/installmentpayment.phtml" />
+        </reference>
+    </catalog_product_view>
+
+</layout>

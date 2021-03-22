@@ -1,0 +1,215 @@
+<?php
+/**
+ * Shipping Estimate extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   EcomDev
+ * @package    EcomDev_ProductPageShipping
+ * @copyright  Copyright (c) 2011 EcomDev BV (http://www.ecomdev.org)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Ivan Chepurnyi <ivan.chepurnyi@ecomdev.org>
+ */
+
+/**
+ * Estimate shipping form
+ *
+ */
+/* @var $this EcomDev_ProductPageShipping_Block_Estimate_Form */
+?>
+<?php if ($this->isEnabled()): ?>
+<div class="block block-shipping-estimate">
+    <div class="block-title" style="display:none;">
+        <strong><span><?php echo Mage::helper('ecomdev_productpageshipping')->__('Estimate Shipping') ?></span></strong>
+    </div>
+    <div class="block-content">
+    <!--<p class="block-subtitle"><?php echo Mage::helper('ecomdev_productpageshipping')->__('Enter your destination to get a shipping estimate.') ?></p>-->
+    <ul class="shipping-estimation-form" id="shipping-estimation-form">
+        <?php if ($this->isFieldVisible('country')): ?>
+        
+        <?php else: ?>
+            <input type="hidden" id="estimate_country" name="estimate[country_id]" value="<?php echo $this->htmlEscape($this->getConfig()->getDefaultCountry())?>" />
+        <?php endif; ?>
+        <?php if ($this->isFieldVisible('region')): ?>
+            <li class="item">
+                <label for="estimate_region_id"<?php if ($this->isFieldRequired('region')):?> class="required" <?php endif;?>><?php if ($this->isFieldRequired('region')):?><em>*</em><?php endif;?><?php echo $this->__('State/Province') ?></label>
+                
+                <div class="input-box">
+                    <select id="estimate_region_id" name="estimate[region_id]" title="<?php echo Mage::helper('ecomdev_productpageshipping')->__('State/Province') ?>" style="display:none;"<?php echo ($this->isFieldRequired('region') ? ' class="validate-select"' : '') ?>>
+                        <option value=""><?php echo  Mage::helper('ecomdev_productpageshipping')->__('Please select an option') ?></option>
+                    </select>
+                   <script type="text/javascript">
+                   //<![CDATA[
+                       $('estimate_region_id').setAttribute('defaultValue',  '<?php echo $this->jsQuoteEscape($this->getFieldValue('region_id')); ?>');
+                   //]]>
+                   </script>
+                   <input type="text" id="estimate_region" name="estimate[region]" value="<?php echo $this->htmlEscape($this->getFieldValue('region')) ?>"  title="<?php echo  Mage::helper('ecomdev_productpageshipping')->__('State/Province') ?>" class="input-text" style="display:none;" />
+               </div>
+            </li>
+            <script type="text/javascript">
+            //<![CDATA[
+                new RegionUpdater('estimate_country', 'estimate_region', 'estimate_region_id', <?php echo $this->helper('directory')->getRegionJson() ?>);
+            //]]>
+            </script>
+        <?php endif; ?>
+      
+				
+        <?php if ($this->isFieldVisible('postcode')): ?>
+                        <p>Selecione o tamanho para calcular o frete.</p>
+            <li class="item">
+                <div class="input-box" id="bloco-desk">
+<img src="http://geekgame.nextmp.net/media/wysiwyg/bota_o-geek-gamer.png" style="    float: left;
+    margin-right: 10px;
+    height: 37px;">
+                <!--<label  for="estimate_postcode" <?php if ($this->isFieldRequired('postcode')):?> class="required" <?php endif;?>><?php if ($this->isFieldRequired('postcode')):?><em>*</em><?php endif;?><?php echo Mage::helper('ecomdev_productpageshipping')->__('Zip/Postal Code') ?></label>-->
+                    <input placeholder="xxxxx-xxx" onkeyup="limitarInput(this)" class="input-text validate-postcode <?php if ($this->isFieldRequired('postcode')):?> required-entry<?php endif;?>" <?php if ($this->isFieldRequired('postcode')):?>data-required="1"<?php endif;?> type="text" id="estimate_postcode" name="estimate[postcode]" value="<?php echo $this->htmlEscape($this->getFieldValue('postcode')) ?>" />
+               			 <button class="btn btn-primary type-2" type="button" title="<?php echo Mage::helper('ecomdev_productpageshipping')->__('Get a Quote') ?>" onclick="estimateProductShipping();" class="button"><span><span><?php echo Mage::helper('ecomdev_productpageshipping')->__('Get a Quote') ?></span></span></button>
+
+ </div>
+                 
+            </li>
+       <?php endif; ?>
+
+    </ul>
+		
+    <script type="text/javascript">decorateList('shipping-estimation-form');</script>
+    <div class="actions" style="display:none;">
+        <span class="please-wait f-left" id="shipping-estimate-loading-message" style="display:none;">
+            <?php echo Mage::helper('ecomdev_productpageshipping')->__('Loading rates...') ?>
+        </span>
+        <!--<div class="f-right">
+				<button type="button" title="<?php echo Mage::helper('ecomdev_productpageshipping')->__('Get a Quote') ?>" onclick="estimateProductShipping()" class="button"><span><span><?php echo Mage::helper('ecomdev_productpageshipping')->__('Get a Quote') ?></span></span></button>
+        </div>-->
+    </div>
+    </div>
+</div>
+
+<div id="shipping-estimate-results" style="display:none">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+var econdev_productshipping_form_items = $$(['.shipping-estimation-form input',
+                    '.shipping-estimation-form select',
+                    '#product_addtocart_form input',
+                    '#product_addtocart_form select']);
+                    
+econdevProductshippingInitialize();
+
+function econdevProductshippingInitialize()
+{
+	econdev_productshipping_form_items.map(function(elem) {
+		elem.removeClassName('required-entry');
+	});
+}
+
+function econdevProductshippingAddRequired()
+{
+	econdev_productshipping_form_items.map(function(elem) {
+		if(elem.hasAttribute('data-required')) {
+			elem.addClassName('required-entry');
+		}
+	});
+}
+
+function estimateProductShipping()
+{
+    var estimationUrl = '<?php echo $this->jsQuoteEscape($this->getEstimateUrl());?>';
+    var items = econdev_productshipping_form_items;
+    var validationResult = true;
+
+    // Check the valid input
+    econdevProductshippingAddRequired();
+    validated = items.map(Validation.validate).all();
+    econdevProductshippingInitialize();
+    
+    if (!validated) {
+        return;
+    }
+
+    var parameters = Form.serializeElements(items, true);
+    $('shipping-estimate-loading-message').show();
+    $('shipping-estimate-results').hide();
+    new Ajax.Updater('shipping-estimate-results', estimationUrl, {
+        parameters: parameters,
+        onComplete: function() {
+            $('shipping-estimate-loading-message').hide();
+            $('shipping-estimate-results').show();
+        }
+    });
+
+}
+//]]>
+</script>
+<?php endif;?>
+
+
+<style>
+li.item.last.odd {padding:0!important;margin: 0!important;}
+
+@media only screen and (max-width:600px)
+{
+input#estimate_postcode{width:25%;}
+}
+
+    
+@media only screen and (min-width:600px)
+{
+input#estimate_postcode{width:30%;padding-left: 10px;height: 35px!important;}
+}
+
+@media only screen and (max-width:600px)
+{
+input#estimate_postcode {padding-left: 10px;height: 35px!important;}
+}
+.please-wait
+{
+    float:left!important;
+}
+
+.block.block-shipping-estimate {
+    margin-bottom: 0!important;
+    margin-top: 20px;
+
+}
+    
+    
+    
+</style>
+
+<script>
+    const inputValue = document.querySelector("#estimate_postcode");
+let zipCode = "";
+
+inputValue.addEventListener("keyup", () => {
+  zipCode = inputValue.value;
+  if(zipCode)
+  if(zipCode.length === 8) {
+    inputValue.value = `${zipCode.substr(0,5)}-${zipCode.substr(5,9)}`;
+    console.log(zipCode); 
+  }
+});
+    
+     function limitarInput(obj) {
+    obj.value = obj.value.substring(0,9); //Aqui eu pego o valor e só deixo o os 10 primeiros caracteres de valor no input
+  }
+    /*
+
+        if (!$(".option-p").hasClass("selected")) 
+        {
+    alert("Selecione um tamanho");
+      */  }
+    
+</script>
+
+
+
+
+
+
+

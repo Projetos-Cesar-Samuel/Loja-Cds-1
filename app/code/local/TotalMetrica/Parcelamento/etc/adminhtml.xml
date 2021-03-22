@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Total Metrica
+ *
+ * @category    Modulo de parcelamento
+ * @package     TotalMetrica_Parcelamento
+ * @author      César Martins <cesar@totalmetrica.com>
+ */
+-->
+<config>
+    <menu>
+        <parcelamento module="parcelamento" translate="title">
+            <title>Parcelamento</title>
+            <sort_order>71</sort_order>
+            <children>
+                <!-- <parcelamento module="parcelamento" translate="title">
+                    <title>Manage Items</title>
+                    <sort_order>0</sort_order>
+                    <action>parcelamentoadmin/adminhtml_parcelamento</action>
+                </parcelamento> -->
+                <settings module="parcelamento" translate="title">
+                    <title>Configurações</title>
+                    <sort_order>1000</sort_order>
+                    <action>adminhtml/system_config/edit/section/parcelamento</action>
+                </settings>
+            </children>
+        </parcelamento>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <parcelamento module="parcelamento" translate="title">
+                                        <title>Parcelamento</title>
+                                        <sort_order>71</sort_order>
+                                    </parcelamento>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <parcelamento module="parcelamento" translate="title">
+                        <title>Parcelamento</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <parcelamento module="parcelamento" translate="title">
+                                <title>Manage Items</title>
+                                <sort_order>0</sort_order>
+                            </parcelamento>
+                            <settings module="parcelamento" translate="title">
+                                <title>Configurações</title>
+                                <sort_order>1000</sort_order>
+                            </settings>
+                        </children>
+                    </parcelamento>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

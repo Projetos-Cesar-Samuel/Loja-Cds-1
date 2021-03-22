@@ -1,0 +1,8 @@
+a:3:{i:0;s:56:"Module "Codazon_Blogfeatures" requires module "AW_Blog".";i:1;s:908:"#0 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Config.php(852): Mage::throwException('Module "Codazon...')
+#1 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Config.php(815): Mage_Core_Model_Config->_sortModuleDepends(Array)
+#2 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Config.php(318): Mage_Core_Model_Config->_loadDeclaredModules()
+#3 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/Config.php(262): Mage_Core_Model_Config->loadModules()
+#4 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/App.php(277): Mage_Core_Model_Config->init(Array)
+#5 /chroot/home/basicabr/basicabranca.com.br/html/app/Mage.php(619): Mage_Core_Model_App->init('admin', 'store', Array)
+#6 /chroot/home/basicabr/basicabranca.com.br/html/cron.php(44): Mage::app('admin')
+#7 {main}";s:11:"script_name";s:56:"/chroot/home/basicabr/basicabranca.com.br/html/index.php";}

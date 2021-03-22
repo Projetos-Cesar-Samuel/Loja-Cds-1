@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<widgets>
+    <codazon_instagramphotos type="flexibletheme/widget_instagramphotos" translate="name description" module="flexibletheme">
+        <name>Codazon Instagram Photos</name>
+        <description type="desc">Get Photos List From Your Instagram</description>
+        <parameters>
+            <access_token>
+                <label>Access Token</label>
+                <description><![CDATA[Please login to your Instagram account. Then go to <a target="_blank" href='http://instagram.pixelunion.net'>http://instagram.pixelunion.net</a> to get access token.]]></description>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+            </access_token>
+            <custom_template>
+                <label>Template</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+            </custom_template>
+            <show_slider>
+                <label>Show As Slider</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </show_slider>
+            <slider_dots>
+                <label>Show Slider Dots</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </slider_dots>
+            <slider_nav>
+                <label>Show Slider Arrows</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </slider_nav>
+            <slider_loop>
+                <label>Loop</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </slider_loop>
+            <total_rows>
+                <label>Total Rows</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+            </total_rows>
+            <max_items>
+                <label>Max Items</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+            </max_items>
+            <slider_margin>
+                <label>Slide Margin</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+            </slider_margin>
+            <stage_padding>
+                <label>Stage Padding</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+            </stage_padding>
+            <items_1900>
+				<label>Desktop 1900 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1900. Default: 6</description>
+			</items_1900>
+            <items_1600>
+				<label>Desktop 1600 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1280. Default: 5</description>
+			</items_1600>
+            <items_1420>
+				<label>Desktop 1420 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1420. Default: 5</description>
+			</items_1420>
+			<items_1280>
+				<label>Desktop 1280 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1280. Default: 3</description>
+			</items_1280>
+			<items_980>
+				<label>Desktop small view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>980 ≤  Window width &lt; 1280. Default: 3</description>
+			</items_980>
+			<items_768>
+				<label>Tablet landscape view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>768 ≤ Window width &lt; 1024. Default: 3</description>
+			</items_768>
+			<items_480>
+				<label>Tablet portrait view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>480 ≤ Window width &lt; 768. Default: 2</description>
+			</items_480>
+			<items_320>
+				<label>Mobile landscape view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>320 ≤ Window width &lt; 480. Default: 2</description>
+			</items_320>
+			<items_0>
+				<label>Mobile portrait view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<depends><show_slider><value>1</value></show_slider></depends>
+				<description>Window width &lt; 320. Default: 1</description>
+			</items_0>
+        </parameters>
+    </codazon_instagramphotos>
+    <codazon_facebookfeeds type="flexibletheme/widget_facebookfeeds" translate="name description" module="flexibletheme">
+        <name>Codazon Facebook Feeds</name>
+        <description type="desc">Codazon Facebook Feeds</description>
+        <parameters>
+            <page_url>
+                <label>Page URL</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>0</required>
+				<description><![CDATA[Your Facebook page url. Ex: https://www.facebook.com/facebook]]></description>
+                <value>https://www.facebook.com/facebook</value>
+            </page_url>
+            <hide_cover>
+                <label>Hide Cover</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <visible>1</visible>
+                <required>0</required>
+            </hide_cover>
+            <show_facepile>
+                <label>Show Facepile</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <visible>1</visible>
+                <required>0</required>
+            </show_facepile>
+        </parameters>
+    </codazon_facebookfeeds>
+    <codazon_twitterfeeds type="flexibletheme/widget_twitterfeeds" translate="name description" module="flexibletheme">
+        <name>Codazon Facebook Feeds</name>
+        <description type="desc">Codazon Facebook Feeds</description>
+        <parameters>
+            <user_name>
+                <label>Page URL</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>0</required>
+				<description><![CDATA[Your Twitter user name. Ex: twitter]]></description>
+                <value>twitter</value>
+            </user_name>
+            <limit>
+                <label>Tweets count</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>0</required>
+                <value>4</value>
+            </limit>
+            <custom_template>
+                <label>Template</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>0</required>
+                <description translate="true"><![CDATA[Default is "flexibletheme/widget/twitterfeeds.phtml". Leave empty to use default.]]></description>
+            </custom_template>
+            <date_format>
+                <label>Date Format</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>0</required>
+                <value>D m, Y</value>
+            </date_format>
+        </parameters>
+    </codazon_twitterfeeds>
+    <codazon_flexibleblock type="flexibletheme/widget_flexibleblock" translate="name description" module="flexibletheme">
+        <name>Codazon Flexible Block</name>
+        <description type="desc">Get Flexible Block from Page Builder</description>
+        <parameters>
+            <block_identifier>
+                <label>Select Main Content</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <source_model>flexibletheme/system_config_source_contents</source_model>
+                <description translate="true"><![CDATA[Go to menu Codazon > Theme Elements > Manage Main Côntents to see main content list.]]></description>
+            </block_identifier>
+            <enable_full_width>
+                <label>Enable full width page</label>
+                <visible>1</visible>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <value>0</value>
+                <description translate="true"><![CDATA[Go to menu Codazon > Flexible Theme > Main Content to see main content list.]]></description>
+            </enable_full_width>
+        </parameters>
+    </codazon_flexibleblock>
+</widgets>

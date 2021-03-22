@@ -1,0 +1,74 @@
+<config>
+   <identifier>footer-style-08</identifier>
+   <title>Footer Style 08</title>
+   <variables>
+      <footer_background>#ffffff</footer_background>
+      <footer_background_file/>
+      <footer_background_image_option/>
+      <footer_background_normal/>
+      <footer_border>#000000</footer_border>
+      <footer_bottom_background>#e1e1e1</footer_bottom_background>
+      <footer_font>14px</footer_font>
+      <footer_hover_text>#009688</footer_hover_text>
+      <footer_text>#000000</footer_text>
+      <footer_text_normal/>
+      <footer_title_font>30px</footer_title_font>
+      <footer_title_text>#282828</footer_title_text>
+      <footer_top_background>#ffffff</footer_top_background>
+   </variables>
+   <layout_xml>&lt;reference name=&quot;footer&quot;&gt;
+&lt;block name=&quot;theme-layout-footer&quot; type=&quot;flexibletheme/footer&quot; /&gt;
+&lt;remove name=&quot;store_switcher&quot; /&gt;
+&lt;remove name=&quot;footer_links&quot; /&gt;
+&lt;remove name=&quot;footer_links2&quot; /&gt;
+&lt;remove name=&quot;footer.newsletter&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links_sm&quot; /&gt;
+&lt;remove name=&quot;footer_currency&quot; /&gt;
+&lt;/reference&gt;</layout_xml>
+   <custom_variables/>
+   <custom_fields/>
+   <parent/>
+   <content>&lt;div class=&quot;footer-style-08 text-center&quot;&gt;
+&lt;div class=&quot;footer content&quot;&gt;
+&lt;div class=&quot;footer-content-top&quot;&gt;
+&lt;div class=&quot;footer-social&quot;&gt;
+&lt;p class=&quot;social&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-facebook&quot;&gt;&lt;span&gt;facebook&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-twitter&quot;&gt;&lt;span&gt;twitter&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-pinterest-p&quot;&gt;&lt;span&gt;pinterest&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-instagram&quot;&gt;&lt;span&gt;instagram&lt;/span&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fa fa-google-plus&quot;&gt;&lt;span&gt;google plus&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;footer-content-middle&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-xs-24 col-sm-16 col-sm-push-4 col-md-12 col-md-push-6&quot;&gt;
+&lt;div class=&quot;newsletter&quot;&gt;
+&lt;p class=&quot;newsletter-title&quot;&gt;subscribe to our Newsletter&lt;/p&gt;
+&lt;div class=&quot;newsletter-content&quot; id=&quot;footer-content-2&quot;&gt;{{block type=&quot;newsletter/subscribe&quot; name=&quot;cdz.newsletter&quot; template=&quot;newsletter/subscribe.phtml&quot;}}&lt;/div&gt;
+&lt;p class=&quot;des text-uppercase&quot;&gt;1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3. T&amp;amp;C&apos;s apply&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-content-bottom row&quot;&gt;
+&lt;div class=&quot;footer-address col-sm-12&quot;&gt;
+&lt;p&gt;&amp;copy; 2018 Codazon Ltd. Trademarks and brands&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-payment col-sm-12 f-right&quot;&gt;
+&lt;p class=&quot;title-payment&quot;&gt;Payment methods&lt;/p&gt;
+&lt;img alt=&quot;Accept Payment&quot; class=&quot;img-responsive&quot; src=&quot;{{media url=&quot;wysiwyg/codazon/footer-payment.png&quot;}}&quot; /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-bottom&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;ul class=&quot;bottom-links&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shopping guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Company&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;About us &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Policies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Services Stores&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact us&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+</config>

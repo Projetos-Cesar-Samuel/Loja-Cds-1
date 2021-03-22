@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2019 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$helper = $this->helper('flexibletheme');
+$verticalMenu = $helper->getConfig('flexibletheme/header/vertical_menu');
+$title = $helper->getConfig('flexibletheme/header/vertical_menu_title');
+?>
+
+<?php if ($verticalMenu) : ?>
+<div id="desk_vertcial-menu-container" class="hidden-xs desk-vertcial-menu-container">
+    <div class="main-content-top-left" data-role="menu-container">
+        <div class="menu-title" data-role="menu-title"><?= $title ?></div>
+        <div class="menu-container hidden-xs" data-role="menu-content">
+            <?php echo $this->getBlockHtml('simple_vertical_menu') ?>
+        </div>
+    </div>
+</div>
+<?php endif ?>

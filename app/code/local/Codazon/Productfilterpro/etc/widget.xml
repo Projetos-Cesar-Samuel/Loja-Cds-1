@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets>
+	<productfilterpro_productlist type="productfilterpro/widget_productlist" translate="name description" module="productfilterpro">
+        <name>Codazon Product Filter</name>
+        <description type="desc">Product Filter</description>
+        <parameters>
+			<categories>
+                <label>Filter by categories</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>multiselect</type>
+                <source_model>productfilterpro/source_categoriestree</source_model>
+            </categories>
+			<filter_type>
+                <label>Filter by</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <source_model>productfilterpro/source_filtertypes</source_model>
+            </filter_type>
+		    <attribute>
+				<label>Attribue</label>
+                <visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+				<values>
+                    <codazon_featured translate="label">
+                        <value>codazon_featured</value>
+                        <label>Featured</label>
+                    </codazon_featured>
+					<codazon_hot translate="label">
+                        <value>codazon_hot</value>
+                        <label>Hot</label>
+                    </codazon_hot>
+                </values>
+				<depends>
+					<filter_type>
+						<value>4</value>
+					</filter_type>
+				</depends>
+			</attribute>
+			<order_by>
+				<label>Order by</label>
+                <visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+				<values>
+                    <cdz_namesort translate="label">
+                        <value>name</value>
+                        <label>Name</label>
+                    </cdz_namesort>
+					<cdz_pricesort translate="label">
+                        <value>price</value>
+                        <label>Price</label>
+                    </cdz_pricesort>
+					<cdz_idsort translate="label">
+                        <value>entity_id</value>
+                        <label>ID</label>
+                    </cdz_idsort>
+                </values>
+			</order_by>
+			<order>
+				<label>Order</label>
+                <visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+				<values>
+					<asc translate="label">
+						<value>asc</value>
+						<label>ASC</label>
+					</asc>
+					<desc translate="label">
+						<value>desc</value>
+						<label>DESC</label>
+					</desc>
+				</values>
+			</order>
+			<products_count>
+				<label>Number of Products to Display</label>
+                <visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<value>12</value>
+				<description>Default is 12</description>
+			</products_count>
+            <total_rows>
+				<label>Total rows</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description><![CDATA[Only used for some template.]]></description>
+			</total_rows>
+			<total_cols>
+				<label>Total columns</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description><![CDATA[Only used for some template.]]></description>
+			</total_cols>
+			<thumb_width>
+				<label>Thumbnail width</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<value>250</value>
+			</thumb_width>
+			<thumb_height>
+				<label>Thumbnail height</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<value>250</value>
+			</thumb_height>
+			<use_ajax>
+				<label>Use ajax</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+				<description>Use ajax to load widget content after page loaded.</description>
+			</use_ajax>
+			<custom_template>
+				<label>Custom template</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>
+					<![CDATA[Leave empty to use default template: codazon_productfilterpro/grid-style-01.phtml]]>
+				</description>
+			</custom_template>
+			<show>
+                <label>Display</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>multiselect</type>
+				<source_model>productfilterpro/source_display</source_model>	
+			</show>
+			<show_slider>
+				<label>Use slider</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+			</show_slider>
+			<slider_margin>
+				<label>Space between items</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+			</slider_margin>
+            <items_1900>
+				<label>Desktop 1900 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1900. Default: 6</description>
+			</items_1900>
+            <items_1600>
+				<label>Desktop 1600 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1280. Default: 5</description>
+			</items_1600>
+            <items_1420>
+				<label>Desktop 1420 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1420. Default: 5</description>
+			</items_1420>
+			<items_1280>
+				<label>Desktop 1280 view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width ≥ 1280. Default: 3</description>
+			</items_1280>
+			<items_980>
+				<label>Desktop small view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>980 ≤  Window width &lt; 1280. Default: 3</description>
+			</items_980>
+			<items_768>
+				<label>Tablet landscape view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>768 ≤ Window width &lt; 1024. Default: 3</description>
+			</items_768>
+			<items_480>
+				<label>Tablet portrait view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>480 ≤ Window width &lt; 768. Default: 2</description>
+			</items_480>
+			<items_320>
+				<label>Mobile landscape view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>320 ≤ Window width &lt; 480. Default: 2</description>
+			</items_320>
+			<items_0>
+				<label>Mobile portrait view</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>text</type>
+				<description>Window width &lt; 320. Default: 1</description>
+			</items_0>
+			<slider_dots>
+				<label>Show Slider Dots</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+				<depends><show_slider><value>1</value></show_slider></depends>
+			</slider_dots>
+			<slider_nav>
+				<label>Show Slider Arrows</label>
+				<visible>1</visible>
+                <required>0</required>
+				<type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+				<value>1</value>
+				<depends><show_slider><value>1</value></show_slider></depends>
+			</slider_nav>
+			<cache_lifetime>
+				<label>Cache Lifetime</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>3600</value>
+				<description>If you have multiple currencies, you should set it to 1 (It is minimum allowed value)</description>
+			</cache_lifetime>
+			<uniq_id>
+				<visible>0</visible>
+                <required>0</required>
+			</uniq_id>
+        </parameters>
+    </productfilterpro_productlist>
+</widgets>

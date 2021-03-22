@@ -1,0 +1,129 @@
+/*Electronic*/
+/*slide show*/
+.slideshow-container{
+    margin-top:10px;
+}
+.cdz-slideshow{
+	position: relative;
+	padding: 10px;
+    background: #ffffff;
+    .abs-borderradius(5px);
+	.owl-dots-style-03();
+	.slider-arrow-style-01();
+	.owl-loaded .owl-stage{
+		padding: 0;
+	}	
+	.item-image{
+		.abs-borderradius(5px);
+	}
+	.item-desc{
+		position: absolute;
+		top: 10%;
+		left: 0;
+		width: 100%;
+		.slide-caption.slide-center{
+			position: absolute;
+			top: 10%;
+			left: 25%;
+			width: 50%;
+		}
+	}
+}
+/*Title*/
+@media(min-width: @screen-sm-min) {
+	.cdz-block-title{
+		margin-bottom: 20px;
+		.b-title.h2{
+			font: @f_h1;
+			color: @main_title_text;
+			text-transform: inherit;
+			margin-bottom: 0;
+			font-weight: 500;
+		}
+		.title-desc{
+			font: @f_h5;
+			color: @main_text_normal;
+			letter-spacing: 1.5px;
+		}	
+	}
+}
+/*Product list*/
+.product-list-style-02{
+	&.cdz-product-wrap{
+		.abs-boxshadow(@main_box_shadow);
+		.abs-borderradius(@main_box_radius);
+		background: @main_block_background;
+	}	
+	.wrap-left{
+		background: @main_block_background;		
+	}
+	.wrap-right{
+		overflow: hidden;
+	}
+}
+
+
+//
+// Responsive
+//----------------------------------------
+@media(min-width: @screen-sm-min) {
+	.cdz-slideshow:after{
+		width: 100%;
+	    height: 100%;
+	    content: '';
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    .abs-borderradius(@main_box_radius);
+	    .abs-boxshadow(@main_box_shadow);
+	}
+}
+@media(min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+	.product-list-style-02 {
+		.wrap-left{width: 30%;}
+		.wrap-right{width: 70%}
+	}
+}
+/*General style*/
+@media(min-width: @screen-lg-min) {
+	[class*='product-list-style']{
+		.slider-arrow-style-02();
+	}
+	[class*='post-list-style']{
+		.slider-arrow-style-02();
+	}
+}
+[class*='product-list-style']{
+	.prolabels-style01();
+}
+/*Product page*/
+.product-view-style-02{
+	.product-main,
+	.product-collateral.tabs{
+		.product-info-box(0px);
+	}
+}
+@media(min-width: @screen-sm-max) {
+	/*Sidebar*/
+	.sidebar .block:not(.block-progress):not(.block-blog){
+		.block-style04();	
+	}
+	/*Sidebar - Blog*/
+	.block-blog{
+		.blogsidebar-style04();
+	}
+	.product-list-style-01 .owl-carousel .owl-stage-outer {
+	    padding: 5px 0;
+	}
+}
+
+.toolbar{
+	.toolbar-option2(0);
+}
+
+.crosssell,
+.box-collateral.box-up-sell{
+	.owl-nav [class*='owl-']{
+		.abs-calc-top(~'calc( (100% - 120px )/2 )');
+	}
+}

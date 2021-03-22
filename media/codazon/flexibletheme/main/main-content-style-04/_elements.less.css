@@ -1,0 +1,110 @@
+/*Fashion*/
+.cdz-main-content{
+	overflow: hidden;
+}
+/*Slideshow*/
+.slide-caption .button-link{
+	border:1px solid;
+	text-transform: lowercase;
+	text-decoration: none;
+	padding: 12px 70px;
+	font-size: 17px;
+	.abs-borderradius(@btn_radius);
+	.abs-style(#ffffff, #ffffff, transparent);
+	.abs-transition();
+	&:hover{
+		.abs-style(@btn_primary_text, @btn_primary_border, @btn_primary_background);
+	}
+}
+/*Page title*/
+@media @tablet_vertical{
+	.cdz-block-title .b-title.h2{
+		font:@f_h1;
+		margin-bottom: 20px;
+	}
+}
+.cdz-block-title{
+		.b-title.h2{
+			color: @main_title_text;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			padding-bottom: 9px;
+			border-bottom: 1px solid @main_border;
+			span{
+				border-bottom: 3px solid @main_title_border;
+				padding-bottom:6px;
+			}
+		}
+	}
+/*General*/
+[class*='product-list-style'],
+[class*='post-list-style'],
+[class*='wrapper-adv-style']{
+	@media screen and (min-width: @screen-sm-min){
+		.slider-arrow-style-04();
+		.owl-nav{
+			display: block;
+		}
+	}
+}
+.brand-slider-wrapper,
+.instagram-wrapper{
+	@media screen and (min-width:@screen-sm-min){
+		.slider-arrow-style-05();
+	}
+}
+.cdz-slideshow{
+	.owl-dots-style-04();
+	@media screen and (min-width: @screen-lg-min){
+		.slider-arrow-style-06()
+	}
+}
+@media screen and (max-width: 770px){
+	.col-main{
+		margin-bottom: 0 !important
+	}
+}
+/*Product page*/
+.product-view-style-02{
+	.product-main,
+	.product-collateral.tabs{
+		.product-info-box(0);
+	}
+	.product-main-top .product-info-main{
+		padding: 0;
+	}
+	.product-collateral .toggle-tabs,
+	.tab-container{
+		padding-left: 0;
+		padding-right: 0
+	}
+	.more-views{
+		padding-left: 0;
+	}
+}
+@media (min-width: 771px) {
+	/*Sidebar*/
+	.sidebar .block:not(.block-progress):not(.block-blog){
+		.block-style01();	
+	}
+	/*Sidebar - Blog*/
+	.block-blog{
+		.blogsidebar-style01();
+	}
+}
+.toolbar{
+	.toolbar-option2();
+}
+/*Blog*/
+.post-list .post-holder{
+	padding-left: 0;
+	padding-right: 0
+}
+/*Shopping cart*/
+.cart > form{
+	padding: 0;
+}
+.crosssell,
+.box-collateral.box-up-sell{
+	padding: 0;
+}

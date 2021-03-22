@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <postcodeadmin_adminhtml_postcode_index>
+        <reference name="content">
+            <block type="postcode/adminhtml_postcode" name="postcode" />
+        </reference>
+    </postcodeadmin_adminhtml_postcode_index>
+    <postcodeadmin_adminhtml_postcode_edit>
+        <reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadRulesJs"><flag>1</flag></action>
+        </reference>
+    </postcodeadmin_adminhtml_postcode_edit>
+</layout>

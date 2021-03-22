@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>codazon/js/jquery-ui.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/js/owl.carousel.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/js/themecore.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/js/theme-widgets.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/css/fontawesome/fontawesome.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/css/owlcarousel/owl.carousel.min.css</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/lib/jquery.cycle2.min.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/lib/jquery.cycle2.swipe.min.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/madisonisland.css</name></action>
+        </reference>
+    </default>
+</layout>

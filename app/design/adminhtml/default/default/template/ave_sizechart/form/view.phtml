@@ -1,0 +1,44 @@
+<?php
+/** @var $this Ave_SizeChart_Block_Adminhtml_Chart_Edit_Form */
+?>
+<style>
+    .sizeGrid {
+        overflow-x: auto;
+    }
+    .sizeGrid a {
+        text-decoration: none;
+    }
+    .sizeGrid a:hover {
+        color: #000;
+    }
+    .sizeGrid table {
+        border-collapse: collapse;
+        border: 1px solid #bbbbbb;
+    }
+    .sizeGrid table input {
+        width: 60px;
+        border: none;
+        margin: 0;
+        padding: 3px 5px;
+        text-align: center;
+        background-color: transparent;
+    }
+    .sizeGrid table input:focus, .sizeGrid table input:hover {
+        background-color: #cfecff;
+    }
+    .sizeGrid table tr {
+        border: 1px solid #bbbbbb;
+    }
+    .sizeGrid table td {
+        width: 60px;
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<div class="entry-edit">
+    <?php echo $this->getFormHtml();?>
+</div>
+<script language="JavaScript">
+    var chartSize = new Ave.Size(<?php echo json_encode($this->getSizes());?>);
+</script>
+<?php echo $this->getChildHtml('form_after');?>

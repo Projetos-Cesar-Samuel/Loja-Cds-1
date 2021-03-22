@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<layout version="0.1.0">
+	<adminhtml_flexibletheme_content_index>
+		<reference name="content">
+			<block type="flexibletheme/adminhtml_content" name="flexibletheme_content" />
+		</reference>
+	</adminhtml_flexibletheme_content_index>
+	<adminhtml_flexibletheme_content_edit>
+        <update handle="editor" />
+        <reference name="head">
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/tiny_mce/setup.js</script></action>
+			<!-- <action method="addJs"><script>tiny_mce/tiny_mce.js</script></action> -->
+            
+            <action method="removeItem"><type>js</type><name>mage/adminhtml/browser.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/jquery-ui.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/custom-bootstrap.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/font-awesome.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/content-builder.css</name></action>
+            
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-1.12.1.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-migrate-1.3.0.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery.tmpl.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-ui.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/editor-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/content-builder.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery.sticky-kit.min.js</name></action>
+        </reference>
+		<reference name="content">
+			<block type="flexibletheme/adminhtml_content_edit" name="edit_form">
+                <block type="adminhtml/store_switcher" name="store_switcher"  as="store_switcher" >
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+            <block type="flexibletheme/adminhtml_content_edit_contentbuilder" template="codazon_flexibletheme/content/element-templates.phtml" name="element_templates" />
+            <block type="flexibletheme/adminhtml_content_edit_contentbuilder" template="codazon_flexibletheme/content/builder.phtml" name="main_content_builder" />
+		</reference>
+	</adminhtml_flexibletheme_content_edit>
+    <adminhtml_flexibletheme_content_new>
+		<update handle="adminhtml_flexibletheme_content_edit" />
+	</adminhtml_flexibletheme_content_new>
+    
+    
+    <adminhtml_flexibletheme_header_index>
+		<reference name="content">
+			<block type="flexibletheme/adminhtml_header" name="flexibletheme_header" />
+		</reference>
+	</adminhtml_flexibletheme_header_index>
+    
+    <adminhtml_flexibletheme_header_edit>
+        <update handle="editor" />
+        <reference name="head">
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/tiny_mce/setup.js</script></action>
+			<!-- <action method="addJs"><script>tiny_mce/tiny_mce.js</script></action> -->
+            
+            <action method="removeItem"><type>js</type><name>mage/adminhtml/browser.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/custom-bootstrap.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/font-awesome.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/content-builder.css</name></action>
+            
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-1.12.1.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-migrate-1.3.0.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery.tmpl.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-ui.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/editor-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery.sticky-kit.min.js</name></action>
+        </reference>
+		<reference name="content">
+			<block type="flexibletheme/adminhtml_header_edit" name="edit_form">
+                <block type="adminhtml/store_switcher" name="store_switcher"  as="store_switcher" >
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+		</reference>
+	</adminhtml_flexibletheme_header_edit>
+    <adminhtml_flexibletheme_header_new>
+		<update handle="adminhtml_flexibletheme_header_edit" />
+	</adminhtml_flexibletheme_header_new>
+    
+    <adminhtml_flexibletheme_footer_index>
+		<reference name="content">
+			<block type="flexibletheme/adminhtml_footer" name="flexibletheme_footer" />
+		</reference>
+	</adminhtml_flexibletheme_footer_index>
+    
+    <adminhtml_flexibletheme_footer_edit>
+        <update handle="editor" />
+        <reference name="head">
+            <action method="addJs"><script>mage/adminhtml/wysiwyg/tiny_mce/setup.js</script></action>
+			<!-- <action method="addJs"><script>tiny_mce/tiny_mce.js</script></action> -->
+            
+            <action method="removeItem"><type>js</type><name>mage/adminhtml/browser.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/custom-bootstrap.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/font-awesome.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/content-builder.css</name></action>
+            
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-1.12.1.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-migrate-1.3.0.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery.tmpl.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery-ui.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/editor-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>codazon/flexibletheme/js/jquery.sticky-kit.min.js</name></action>
+        </reference>
+		<reference name="content">
+			<block type="flexibletheme/adminhtml_footer_edit" name="edit_form">
+                <block type="adminhtml/store_switcher" name="store_switcher"  as="store_switcher" >
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+		</reference>
+	</adminhtml_flexibletheme_footer_edit>
+    <adminhtml_flexibletheme_footer_new>
+		<update handle="adminhtml_flexibletheme_footer_edit" />
+	</adminhtml_flexibletheme_footer_new>
+    
+    <adminhtml_flexibletheme_config_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/bootstrap.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>codazon/flexibletheme/css/theme-config.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="flexibletheme/adminhtml_system_config_switcher" name="adminhtml.system.config.switcher" before="-"/>
+            <block type="flexibletheme/adminhtml_theme" name="theme_list" template="codazon_flexibletheme/config/theme-list.phtml"/>
+        </reference>
+    </adminhtml_flexibletheme_config_index>
+    <adminhtml_flexibletheme_config_edit>
+        <reference name="notifications">
+            <block type="adminhtml/template" name="config_header" as="config_header" template="codazon_flexibletheme/config/container-header.phtml" after="-" />
+        </reference>
+        <reference name="content">
+            <block type="adminhtml/notification_curl" name="notification_curl" as="notification_curl" template="notification/curl.phtml"/>
+        </reference>
+        <reference name="left">
+            <block type="flexibletheme/adminhtml_system_config_switcher" name="adminhtml.system.config.switcher" before="-"/>
+        </reference>
+    </adminhtml_flexibletheme_config_edit>
+</layout>

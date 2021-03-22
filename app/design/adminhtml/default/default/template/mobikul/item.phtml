@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	if (typeof jQuery == 'undefined') {
+		document.write(unescape("%3Cscript src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+</script>
+<script type="text/javascript">
+	$wk_jq=jQuery.noConflict();
+	var acceptedImageType = ["jpg", "jpeg", "gif", "png"];
+	$wk_jq("#filename").change(function(){
+		var imageName = $wk_jq(this).val();
+		var result = imageName.split(".");
+		var length = result.length;
+		if(acceptedImageType.indexOf(result[length-1])!=-1) {
+        } else {
+			$wk_jq("#filename").val("");
+			alert("Invalid Image Format");
+		}
+	});
+    $wk_jq("#banner").change(function(){
+		var imageName = $wk_jq(this).val();
+		var result = imageName.split(".");
+		var length = result.length;
+		if(acceptedImageType.indexOf(result[length-1])!=-1) {
+        } else {
+			$wk_jq("#filename").val("");
+			alert("Invalid Image Format");
+		}
+	});
+</script>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_system_config_edit>
+		<reference name="head">
+			<action method="addCss"><stylesheet>idnovate/extensions/css/extensions.css</stylesheet></action>
+			<action method="addJs"><script>idnovate/jscolor/jscolor.js</script></action>
+			<action method="addJs"><script>idnovate/whatsappchat.js</script></action>
+		</reference>
+	</adminhtml_system_config_edit>
+</layout>

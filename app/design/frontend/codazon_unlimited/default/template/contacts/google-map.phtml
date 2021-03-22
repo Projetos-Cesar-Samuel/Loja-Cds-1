@@ -1,0 +1,54 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$helper = $this->helper('flexibletheme');
+$enable = $helper->getConfig('pages/contact/display_google_map');
+$apiKey = $helper->getConfig('pages/contact/google_api_key');
+?>
+<?php if ($enable) : ?>
+<?php
+$title = $helper->getConfig('pages/contact/map_title');
+$address = $helper->getConfig('pages/contact/map_address');
+$latitude = (float)$helper->getConfig('pages/contact/map_latitude');
+$longitude = (float)$helper->getConfig('pages/contact/map_longitude');
+?>
+<?php if ($address || ($latitude && $longitude)) : ?>
+<?php
+$zoom = (float)$helper->getConfig('pages/contact/map_zoom') ? : 10;
+$mapRatio = (float)$helper->getConfig('pages/contact/map_ratio') ? : 1;
+$additionalMarkers = $helper->getMapAdditionalMarkers();
+$contactInfo = $helper->getConfig('pages/contact/contact_info');
+
+if ( !(($latitude != '') && ($longitude != '')) ) {
+    $mapObject = $helper->getGeocodeByAddress($address);
+    $latitude = $mapObject->results[0]->geometry->location->lat;
+    $longitude = $mapObject->results[0]->geometry->location->lng;
+}
+
+$widget = [
+    'codazon.googlemappro' => [
+        'mapLat'        => $latitude,
+        'mapLong'       => $longitude,
+        'mapZoom'       => $zoom,
+        'mapAddress'    => $address,
+        'markerTitle'   => $title,
+        'jsSource'      => $helper->getGoogleMapJavascriptUrl(),
+        'additionalMarkers' => $additionalMarkers
+    ]
+];
+?>
+<div class="google-map-wrap abs-frame"  style="padding-bottom: <?= $mapRatio*100 ?>%; display: none;" >
+    <div class="abs-frame-inner google-map" data-cdzwidget='<?= json_encode($widget) ?>'></div>
+</div>
+
+<div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8424481241077!2d-34.90498968491839!3d-8.117519283481187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1fadb0daaaab%3A0x1c453745557d133a!2sTotal%20M%C3%A9trica!5e0!3m2!1spt-BR!2sbr!4v1592193164533!5m2!1spt-BR!2sbr" width="650" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+
+<?php endif ?>
+<?php endif ?>

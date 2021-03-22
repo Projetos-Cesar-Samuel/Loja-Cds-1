@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$helper = $this->helper('flexibletheme');
+$linksList = $helper->getConfig('flexibletheme/header/left_menu');
+?>
+
+<?php if ($linksList) : ?>
+<div class="links-list">
+<?php
+    echo $this->getLayout()->createBlock('megamenupro/widget_megamenu')
+        ->setMenu($linksList)
+        ->setType(2)
+        ->toHtml();
+?>
+</div>
+<?php endif ?>

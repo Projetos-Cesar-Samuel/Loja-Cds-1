@@ -1,0 +1,11 @@
+a:5:{i:0;s:56:"A forma de pagamento selecionada não está disponível.";i:1;s:1498:"#0 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Payment/Model/Info.php(82): Mage::throwException('A forma de paga...')
+#1 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Sales/Model/Quote/Payment.php(218): Mage_Payment_Model_Info->getMethodInstance()
+#2 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Sales/Model/Quote/Payment.php(190): Mage_Sales_Model_Quote_Payment->getMethodInstance()
+#3 /chroot/home/basicabr/basicabranca.com.br/html/app/code/local/MGS/Oscheckout/controllers/IndexController.php(459): Mage_Sales_Model_Quote_Payment->getCheckoutRedirectUrl()
+#4 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Controller/Varien/Action.php(418): MGS_Oscheckout_IndexController->saveOrderAction()
+#5 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('saveOrder')
+#6 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#7 /chroot/home/basicabr/basicabranca.com.br/html/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#8 /chroot/home/basicabr/basicabranca.com.br/html/app/Mage.php(687): Mage_Core_Model_App->run(Array)
+#9 /chroot/home/basicabr/basicabranca.com.br/html/index.php(84): Mage::run('', 'store')
+#10 {main}";s:3:"url";s:28:"/oscheckout/index/saveOrder/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

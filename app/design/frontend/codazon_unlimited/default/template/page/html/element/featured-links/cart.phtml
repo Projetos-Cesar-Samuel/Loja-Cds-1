@@ -1,0 +1,70 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ *
+ * @see Mage_Checkout_Block_Cart_Sidebar
+ */
+
+?>
+<?php
+$customerHelper = Mage::helper('customer');
+$helper = Mage::helper('flexibletheme');
+$displayStyle = $this->getData('display_style')?:($helper->getMiniCartStyle()?:'dropdown');
+$isLoggedIn = $customerHelper->isLoggedIn();
+
+$_cartQty = $this->getSummaryCount();
+if(empty($_cartQty)) {
+    $_cartQty = 0;
+}
+?>
+
+<?php if ($displayStyle == 'popup') : ?>
+<li class="link cart-link" id="desk_cart">
+    <div class="link-content header-minicart">
+        <a class="top-cart-link" href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-cdzpopuptrigger="top-cart-popup" class="<?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
+            <span class="text"><?php echo $this->__('Your Cart'); ?></span>
+            <span class="count"><?php echo $_cartQty; ?></span>
+        </a>
+        <div style="display:none;">
+            <div class="mini-cart-container" data-cdzpopup id="top-cart-popup">
+                <div class="block block-cart" id="header-cart">
+                    <?php echo $this->getBlockHtml('minicart_content'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+<?php elseif ($displayStyle == 'sidebar') : ?>
+<li class="link cart-link" id="desk_cart">
+    <div class="link-content header-minicart">
+        <a class="top-cart-link" href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-sidebartrigger='{"side": "right", "section":"header-cart"}' class="<?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
+            <span class="text"><?php echo $this->__('Your Cart'); ?></span>
+            <span class="price js-cart-subtotal"></span>
+			<span class="count"><?php echo $_cartQty; ?></span>
+        </a>
+    </div>
+</li>
+<?php else : ?>
+<li class="link cart-link" id="desk_cart">
+    <div class="link-content header-minicart cdz-dropdown" data-role="cdz-dropdown">
+        <a class="top-cart-link" href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-role="cdz-dd-trigger" class="<?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
+            <span class="text"><?php echo $this->__('Your Cart'); ?></span>
+            <span class="count"><?php echo $_cartQty; ?></span>
+            <span class="price js-cart-subtotal"></span>
+        </a>
+        <div class="cdz-dd-content" data-role="cdz-dd-content">
+            <div class="cdz-dd-content-inner">
+                <div class="mini-cart-container">
+                    <div class="block block-cart" id="header-cart">
+                        <?php echo $this->getBlockHtml('minicart_content'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+<?php endif ?>

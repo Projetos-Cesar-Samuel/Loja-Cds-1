@@ -1,0 +1,50 @@
+<?php
+    /**
+     * Copyright © 2017 Codazon, Inc. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+?>
+<?php
+$childBlocks = array_keys($this->getChild()) ? : [];
+?>
+
+
+<div class="<?php echo $this->getData('css_class'); ?> cdz-sidebar" data-sidebarid="<?php echo $this->getData('component_id'); ?>">
+    <div class="utilies-sections">
+        <?php
+        if ($requiredBlocks = $this->getData('required_blocks')) {
+            $requiredBlocks = explode(',', $requiredBlocks);
+            if ($requiredBlocks) {
+                $helper = Mage::helper('flexibletheme');
+                foreach($requiredBlocks as $key => $value) {
+                    $value = explode('___', $value);
+                    if (count($value) == 2) {
+                        $action = $value[0];
+                        $childName = $value[1];
+                        $requiredBlocks[$key] = $childName;
+                        if (method_exists($helper, $action)) {
+                            if ($helper->{$action}() != 'sidebar') {
+                                unset($requiredBlocks[$key]);
+                            }
+                        }
+                    } else {
+                        unset($requiredBlocks[$key]);
+                    }
+                }
+            }
+            
+            $childBlocks = array_unique(array_merge($requiredBlocks, $childBlocks));
+        }
+        ?>
+        <?php if ($childBlocks) : ?>
+        <?php $active = 'active'; ?>
+        <?php foreach ($childBlocks as $childName) : ?>
+        <?php $child = $this->getLayout()->getBlock($childName); ?>
+        <div class="utilies-section <?php echo $active ?> <?php echo $child->getData('css_class') ?>" <?php echo $child->getData('html_id')?'id="'.$child->getData('html_id').'"':''; ?> >
+            <?php echo $child->toHtml() ?>
+        </div>
+        <?php $active = ''; ?>
+        <?php endforeach ?>
+        <?php endif ?>
+    </div>
+</div>

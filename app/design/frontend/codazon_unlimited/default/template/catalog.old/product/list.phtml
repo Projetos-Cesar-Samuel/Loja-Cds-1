@@ -1,0 +1,12 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$themeHelper = $this->helper('flexibletheme');
+$template = $themeHelper->getConfig('category_view/design/template');
+?>
+<?= $this->setTemplate($template)->toHtml() ?>

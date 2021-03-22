@@ -1,0 +1,83 @@
+<?php
+/**
+ * @var $this Ave_SizeChart_Block_Customer_Member_Edit
+ */
+?>
+<?php if($this->getTitle()): ?>
+<div class="page-title">
+    <h1><?php echo $this->getTitle() ?></h1>
+</div>
+<?php endif; ?>
+<?php echo $this->getMessagesBlock()->toHtml() ?>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="form-validate" class="scaffold-form" enctype="multipart/form-data">
+    <div class="buttons-set">
+        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>">
+                <small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <button type="submit" title="<?php echo $this->__('Save Member') ?>" class="button">
+            <span><span><?php echo $this->__('Save Member') ?></span></span></button>
+    </div>
+    <div class="fieldset">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+    <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+        <h2 class="legend"><?php echo $this->__('Member Information') ?></h2>
+        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="name" class="required"><em>*</em><?php echo $this->__('Name') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="name" id="name" title="<?php echo $this->__('Name') ?>"
+                               value="<?php echo $this->escapeHtml($this->getDimensionModel()->getName()) ?>"
+                               class="input-text required-entry"/>
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="field">
+                    <input type="checkbox" id="active" name="active" value="1"
+                           title="<?php echo $this->__('Use as My Default Size chart member profile') ?>"
+                           class="checkbox" <?php if ($this->getDimensionModel()->getActive()) {
+                        echo 'checked="checked"';
+                    } ?>/><label for="active"><?php echo $this->__(
+                            'Use as My Default Size chart member profile'
+                        ) ?></label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="fieldset">
+        <h2 class="legend"><?php echo $this->__('Measurements') ?></h2>
+        <ul class="form-list col2-set">
+        <?php $measurements = $this->getMeasurementList(); ?>
+        <?php $i = 0;
+        foreach ($measurements as $measure) {
+            $value = isset($measure['value']) ? $measure['value'] : '';
+            ?>
+            <li class="col-<?php echo $i++%2 + 1;?> no-padding">
+                <label for=dimension_<?php echo $measure['entity_id'];?>" class=""><?php echo $this->__($measure['name']) ?></label>
+                <div class="input-box">
+                    <input type="text" name="dimension[<?php echo $measure['entity_id'];?>]"
+                           value="<?php echo $this->escapeHtml($value) ?>"
+                           title="<?php echo $this->__($measure['name']) ?>" id="dimension_<?php echo $measure['entity_id'];?>"
+                           class="input-text"/>
+                </div>
+            </li>
+            <?php
+        }
+        ?>
+        </ul>
+    </div>
+    <div class="note">*<?php echo $this->__('Please note that all values must be entered in cm.') ?></div>
+    <div class="buttons-set">
+        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>">
+                <small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+        <button type="submit" title="<?php echo $this->__('Save Member') ?>" class="button">
+            <span><span><?php echo $this->__('Save Member') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>

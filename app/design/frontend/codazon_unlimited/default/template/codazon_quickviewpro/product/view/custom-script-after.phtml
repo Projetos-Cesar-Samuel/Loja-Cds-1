@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$product = $this->getProduct();
+?>
+<?php if ($product->getTypeId() == 'configurable') : ?>
+<script>
+if (typeof ConfigurableSwatchesList.modify == 'undefined') {
+    ConfigurableSwatchesList.modify = true;
+    ConfigurableSwatchesList.init = function()
+    {
+        var that = this;
+        $j('.configurable-swatch-list li').each(function() {
+            if ($j(this).parents('.quickview-container').length == 0) {
+                that.initSwatch(this);
+                var $swatch = $j(this);
+                if ($swatch.hasClass('filter-match')) {
+                    that.handleSwatchSelect($swatch);
+                }
+            }
+        });
+    };
+}
+var qvswatchesConfig = new Product.ConfigurableSwatches(spConfig);
+</script>
+<?php endif ?>
+<script>
+jQuery.each(optionsPrice.containers, function(i, priceId) {
+    jQuery('#' + priceId).each(function() {
+        var $price = jQuery(this);
+        if ($price.parents('.quickview-container').length == 0) {
+            $price.attr('qv-price-id', priceId);
+            $price.attr('id', 'qv-temp-' + priceId);
+        }
+    });
+});
+ProductMediaManager.init();
+</script>

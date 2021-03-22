@@ -1,0 +1,15 @@
+/*Brand*/
+.brand-style01 {
+  border-radius: @main_box_radius;
+	.owl-stage-outer{
+		padding: 0;
+	}
+	.cdz-block-content {
+    background-color: @main_box_background;
+    border-radius: @main_box_radius
+  }
+}
+/*Blog list*/
+.post-list-style05 .item-group{
+	box-shadow: none
+}

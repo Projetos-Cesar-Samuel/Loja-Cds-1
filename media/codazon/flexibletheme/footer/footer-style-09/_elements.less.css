@@ -1,0 +1,30 @@
+.page-footer{	
+	.footer-box .padding-title {
+	    .rtl-layout &{
+	    	padding-left:0
+	    }
+	}
+	&.footer-container{
+		padding-bottom: 0;
+	}
+	.footer.content{
+		.abs-borderradius(0);
+		.abs-boxshadow(none)
+	}
+	@media screen and (min-width: 1280px){
+		.box-info.footer-box{
+			max-width:70%;
+		}
+	}
+	@media screen and (max-width: 767px){
+		.box-info.footer-box{
+			max-width:100%;
+		}
+		.footer-box .padding-title {
+		    padding-left: 0;
+		    .rtl-layout &{
+		    	padding-right: 0;
+		    }
+		}
+	}
+}

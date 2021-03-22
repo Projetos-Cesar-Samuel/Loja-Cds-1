@@ -1,0 +1,34 @@
+<?php
+$store = Mage::app()->getStore();
+$currency = $store->getCurrentCurrencyCode();
+$language = $store->getName();
+$languageHtml = $this->getBlockHtml('mini.store_language');
+$currencyHtml = $this->getBlockHtml('mini.currency');
+?>
+<?php if ($languageHtml || $currencyHtml) : ?>
+<li class="store-language-currency">
+    <div class="account-wrapper cdz-dropdown" data-role="cdz-dropdown">
+        <a href="javascript:;" class="account-trigger cdz-dd-trigger" data-role="cdz-dd-trigger">
+            <span class="text-underlink"><?= $this->__('Language') ?></span>
+            <span class="text-uppercase">
+                <span class="language"><?php echo $language ?></span>
+                <span class="currency"><?php echo $currency ?></span>
+            </span>
+        </a>
+        <div class="cdz-dd-content" data-role="cdz-dd-content">
+            <div class="cdz-dd-content-inner">
+                <div class="acount-menu">
+                    <ul class="account-menu-items items">
+                        <?php if ($languageHtml) : ?>
+                        <li class="language-link"><?= $languageHtml ?></li>
+                        <?php endif ?>
+                        <?php if ($currencyHtml) : ?>
+                        <li class="currency-link"><?= $currencyHtml ?></li>
+                        <?php endif ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+<?php endif ?>

@@ -1,0 +1,9 @@
+.item-dimensions {
+    border-top: 1px dashed #a3aeb3;
+    padding-top: 5px;
+}
+.item-dimensions .dimension-name {
+    font-weight: 600;
+    padding-right: 5px;
+    font-style: italic;
+}

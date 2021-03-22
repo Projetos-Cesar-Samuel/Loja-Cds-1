@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config>
+    <modules>
+        <Codazon_Flexibletheme>
+            <version>0.1.0</version>
+        </Codazon_Flexibletheme>
+    </modules>
+	<admin>
+		<routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <flexibletheme after="Mage_Adminhtml">Codazon_Flexibletheme_Adminhtml</flexibletheme>
+                    </modules>
+                </args>
+            </adminhtml>
+		</routers>
+	</admin>
+	<adminhtml>
+		<menu>
+            <codazon>
+                <title>Codazon</title>
+                <sort_order>100</sort_order>
+                <children>
+                    <flexibletheme module="flexibletheme">
+                        <title>Theme Elements</title>
+                        <sort_order>100</sort_order>
+                        <children>
+                            <header module="flexibletheme">
+                                <title>Manage Headers</title>
+                                <sort_order>0</sort_order>
+                                <action>adminhtml/flexibletheme_header</action>
+                            </header>
+                            <content module="flexibletheme">
+                                <title>Manage Main Contents</title>
+                                <sort_order>0</sort_order>
+                                <action>adminhtml/flexibletheme_content</action>
+                            </content>
+                            <footer module="flexibletheme">
+                                <title>Manage Footers</title>
+                                <sort_order>0</sort_order>
+                                <action>adminhtml/flexibletheme_footer</action>
+                            </footer>
+                        </children>
+                    </flexibletheme>
+                    <!-- <flexibletheme_installation module="flexibletheme"> -->
+                        <!-- <title>Theme Installation</title> -->
+                        <!-- <sort_order>100</sort_order> -->
+                        <!-- <action>adminhtml/flexibletheme_config</action> -->
+                    <!-- </flexibletheme_installation> -->
+                    <flexibletheme_config module="flexibletheme">
+                        <title>Theme Settings</title>
+                        <sort_order>100</sort_order>
+                        <action>adminhtml/flexibletheme_config</action>
+                    </flexibletheme_config>
+                    <codazon_ajaxlayerednavpro module="flexibletheme">
+                        <title>Ajax Layered Navigation</title>
+                        <sort_order>120</sort_order>
+                        <action>adminhtml/system_config/edit/section/codazon_ajaxlayerednavpro</action>
+                    </codazon_ajaxlayerednavpro>
+                    <codazon_developer module="flexibletheme">
+                        <title>Theme Developer</title>
+                        <sort_order>140</sort_order>
+                        <action>adminhtml/system_config/edit/section/codazon_developer</action>
+                    </codazon_developer>
+                </children>
+            </codazon>
+		</menu>
+        <acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							 <children>
+								<config>
+									<children>
+										<codazon_ajaxlayerednavpro translate="title" module="flexibletheme">
+											<title>Ajax Layered Navigation</title>
+											<sort_order>999</sort_order>
+										</codazon_ajaxlayerednavpro>
+                                        <codazon_developer translate="title" module="flexibletheme">
+											<title>Theme Developer</title>
+											<sort_order>999</sort_order>
+										</codazon_developer>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<flexibletheme>
+					<file>codazon_flexibletheme.xml</file>
+				</flexibletheme>
+			</updates>
+		</layout>
+	</adminhtml>
+    <frontend>
+        <routers>
+            <flexibletheme>
+                <use>standard</use>
+                <args>
+                    <module>Codazon_Flexibletheme</module>
+                    <frontName>flexibletheme</frontName>
+                </args>
+            </flexibletheme>
+        </routers>
+        <layout>
+			<updates>
+				<flexibletheme>
+					<file>codazon_flexibletheme.xml</file>
+				</flexibletheme>
+			</updates>
+		</layout>
+        <events>
+            <controller_action_layout_generate_xml_before>
+                <observers>
+                    <flexibletheme_generate_layout>
+                        <class>flexibletheme/observer</class>
+                        <method>generateLayout</method>
+                    </flexibletheme_generate_layout>
+                </observers>
+            </controller_action_layout_generate_xml_before>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <flexibletheme_modify_blocks>
+                        <class>flexibletheme/observer</class>
+                        <method>modifyBlocks</method>
+                    </flexibletheme_modify_blocks>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+            <controller_action_layout_render_before_catalog_category_view>
+                <observers>
+                    <flexibletheme_before_category_view_render>
+                        <class>flexibletheme/observer</class>
+                        <method>beforeCategoryViewRender</method>
+                    </flexibletheme_before_category_view_render>
+                </observers>
+            </controller_action_layout_render_before_catalog_category_view>
+        </events>
+    </frontend>
+    <global>
+        <models>
+            <flexibletheme>
+                <class>Codazon_Flexibletheme_Model</class>
+                <resourceModel>flexibletheme_resource</resourceModel>
+            </flexibletheme>
+            <flexibletheme_resource>
+                <class>Codazon_Flexibletheme_Model_Resource</class>
+                <deprecatedNode>flexibletheme_mysql4</deprecatedNode>
+                <entities>
+                    <header>
+                        <table>flexibletheme_header_entity</table>
+                    </header>
+                    <content>
+                        <table>flexibletheme_content_entity</table>
+                    </content>
+                    <footer>
+                        <table>flexibletheme_footer_entity</table>
+                    </footer>
+                    <theme>
+                        <table>flexibletheme_theme</table>
+                    </theme>
+                    <config_data>
+                        <table>flexibletheme_config_data</table>
+                    </config_data>
+                    <themeconfig_data>
+                        <table>flexibletheme_config_data</table>
+                    </themeconfig_data>
+                </entities>
+            </flexibletheme_resource>
+        </models>
+        <resources>
+            <flexibletheme_setup>
+                <setup>
+                    <module>Codazon_Flexibletheme</module>
+					<class>Codazon_Flexibletheme_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </flexibletheme_setup>
+            <flexibletheme_write>
+                <connection>
+                    <use>default_write</use>
+                </connection>
+            </flexibletheme_write>
+            <flexibletheme_read>
+                <connection>
+                    <use>default_read</use>
+                </connection>
+            </flexibletheme_read>
+        </resources>
+		<blocks>
+            <flexibletheme>
+                <class>Codazon_Flexibletheme_Block</class>
+            </flexibletheme>
+        </blocks>
+		<helpers>
+            <flexibletheme>
+                <class>Codazon_Flexibletheme_Helper</class>
+            </flexibletheme>
+        </helpers>
+    </global>
+    <default>
+        <codazon_ajaxlayerednavpro>
+            <general>
+                <enable>1</enable>
+                <enable_price_slider>1</enable_price_slider>
+            </general>
+        </codazon_ajaxlayerednavpro>
+        <codazon_developer>
+            <env>
+                <enable_dev_mode>0</enable_dev_mode>
+            </env>
+        </codazon_developer>
+    </default>
+</config>

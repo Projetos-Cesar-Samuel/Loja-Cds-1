@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Mostviewed
+ */
+-->
+<config>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ammostviewed translate="title" module="ammostviewed">
+                                            <title>Customers Also Viewed</title>
+                                        </ammostviewed>
+                                    </children>
+                                </config>
+                            </children>
+                        </system> 
+                     </children>
+                </admin> 
+			</resources>
+		</acl>
+        <translate>
+            <modules>
+                <Amasty_Mostviewed>
+                    <files>
+                        <default>Amasty_Mostviewed.csv</default>
+                    </files>
+                </Amasty_Mostviewed>
+            </modules>
+        </translate>
+</config> 

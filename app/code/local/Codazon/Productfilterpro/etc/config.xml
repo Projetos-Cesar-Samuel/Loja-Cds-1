@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config>
+    <modules>
+        <Codazon_Productfilterpro>
+            <version>0.1.0</version>
+        </Codazon_Productfilterpro>
+    </modules>
+    <frontend>
+        <layout>
+			<updates>
+				<productfilterpro>
+					<file>codazon_poductfilterpro.xml</file>
+				</productfilterpro>
+			</updates>
+		</layout>
+        <routers>
+            <productfilterpro>
+                <use>standard</use>
+                <args>
+                    <module>Codazon_Productfilterpro</module>
+                    <frontName>productfilterpro</frontName>
+                </args>
+            </productfilterpro>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <productfilterpro>
+                <class>Codazon_Productfilterpro_Model</class>
+                <resourceModel>productfilterpro_resource</resourceModel>
+            </productfilterpro>
+        </models>
+        <resources>
+            <productfilterpro_setup>
+                <setup>
+                    <module>Codazon_Productfilterpro</module>
+					<class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </productfilterpro_setup>
+            <productfilterpro_write>
+                <connection>
+                    <use>default_write</use>
+                </connection>
+            </productfilterpro_write>
+            <productfilterpro_read>
+                <connection>
+                    <use>default_read</use>
+                </connection>
+            </productfilterpro_read>
+        </resources>
+		<blocks>
+            <productfilterpro>
+                <class>Codazon_Productfilterpro_Block</class>
+            </productfilterpro>
+        </blocks>
+		<helpers>
+            <productfilterpro>
+                <class>Codazon_Productfilterpro_Helper</class>
+            </productfilterpro>
+        </helpers>
+    </global>
+</config>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$menu = $this->getMenuObject();
+?>
+<?php if ($items = $this->getMenuTree()) : ?>
+<?php
+$type = (int)$menu->getData('type');
+$styles = json_decode($menu->getData('style'));
+$this->setTemplate('codazon_megamenupro/menu-item.phtml');
+$typeClass = ($type == 1)?'cdz-vertical-menu':(($type == 2)?'cdz-toggle-menu':'cdz-horizontal-menu');
+$dropdownStyle = (isset($styles->dropdown_style)&&($styles->dropdown_style=='full_width'))?'dropdown-fullwidth':'';
+$uniqId = uniqid("menu-{$menu->getId()}-");
+$dataMenu = json_encode(array(
+	'dropdownEffect'    =>  $styles->dropdown_animation,
+	'type'              =>  $menu->type
+));
+$this->setData('need_filter',false);
+?>
+<div class="cdz-menu <?php echo $typeClass ?> <?php echo $dropdownStyle ?> <?php echo $styles->css_class ?> <?php echo 'cdz-'.$styles->dropdown_animation ?>" data-id="<?php echo $uniqId ?>" data-megamenu='<?php echo $dataMenu ?>'>
+	<ul class="groupmenu">
+	<?php echo $this->getMenuHtml($items); ?>
+	</ul>
+</div>
+<?php endif ?>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><script>codazon/quickviewpro/quickviewpro.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>codazon/quickviewpro/ajaxcartpro.js</script></action>
+            
+            <action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
+            <action method="addJs"><script>varien/configurable.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>codazon/js/lightslider.min.js</script></action>
+            <action method="addItem"><type>skin_css</type><script>codazon/css/light-plugin/lightslider.min.css</script></action>
+            
+            
+            <!--action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-product.js</name></action-->
+            
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+        </reference>
+        <block type="checkout/cart_sidebar" name="ajax_result_content" template="codazon_quickviewpro/cart/ajax-result-content.phtml" />
+    </default>
+
+    <quickviewpro_index_view translate="label">
+        <update handle="catalog_product_view" />
+        <label>Quick View (Any)</label>
+        <!-- Mage_Catalog -->
+        <reference name="root">
+            <action method="setTemplate"><template>codazon_quickviewpro/root.phtml</template></action>
+        </reference>
+        <reference name="head">
+            
+        </reference>
+        <reference name="content">
+            <reference name="product.info" >
+                <action method="setTemplate"><template>codazon_quickviewpro/product/view.phtml</template></action>
+                <block type="catalog/product_view" name="qv_product_custom_script" as="qv_product_custom_script_before" template="codazon_quickviewpro/product/view/custom-script-before.phtml" />
+                <block type="catalog/product_view" name="qv_product_custom_script" as="qv_product_custom_script_after" template="codazon_quickviewpro/product/view/custom-script-after.phtml" />
+            </reference>
+            <reference name="product.info.media" >
+                <action method="setTemplate"><template>codazon_quickviewpro/product/view/media.phtml</template></action>
+            </reference>
+        </reference>
+        <remove name="product_size_guide" />
+        <reference name="right">
+            
+        </reference>
+    </quickviewpro_index_view>
+    
+    
+    <quickviewpro_cart_view translate="label">
+        <update handle="catalog_product_view" />
+        <label>Product Options (Any)</label>
+        <!-- Mage_Catalog -->
+        <reference name="root">
+            <action method="setTemplate"><template>codazon_quickviewpro/root.phtml</template></action>
+        </reference>
+        <reference name="head">
+            
+        </reference>
+        <reference name="content">
+            <reference name="product.info" >
+                <action method="setTemplate"><template>codazon_quickviewpro/cart/product-options.phtml</template></action>
+                <block type="catalog/product_view" name="qv_product_custom_script" as="qv_product_custom_script_before" template="codazon_quickviewpro/product/view/custom-script-before.phtml" />
+                <block type="catalog/product_view" name="qv_product_custom_script" as="qv_product_custom_script_after" template="codazon_quickviewpro/product/view/custom-script-after.phtml" />
+            </reference>
+            <reference name="product.info.media" >
+                <action method="setTemplate"><template>codazon_quickviewpro/product/view/media.phtml</template></action>
+            </reference>
+        </reference>
+        <remove name="product_size_guide" />
+        <remove name="product.info.addto" />
+        <remove name="product.info.sharing" />
+    </quickviewpro_cart_view>
+</layout>

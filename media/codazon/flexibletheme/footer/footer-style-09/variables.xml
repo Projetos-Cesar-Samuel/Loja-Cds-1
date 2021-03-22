@@ -1,0 +1,108 @@
+<config>
+   <identifier>footer-style-09</identifier>
+   <title>Footer Style 09</title>
+   <variables>
+      <footer_background>#000000</footer_background>
+      <footer_background_file/>
+      <footer_background_image_option/>
+      <footer_background_normal>#5d666f</footer_background_normal>
+      <footer_border>#5d666f</footer_border>
+      <footer_bottom_background>#000000</footer_bottom_background>
+      <footer_font>14px</footer_font>
+      <footer_hover_text>#ffffff</footer_hover_text>
+      <footer_text>#a8aeba</footer_text>
+      <footer_text_normal>#ffffff</footer_text_normal>
+      <footer_title_font>12px</footer_title_font>
+      <footer_title_text>#ffffff</footer_title_text>
+      <footer_top_background>#000000</footer_top_background>
+   </variables>
+   <layout_xml>&lt;reference name=&quot;footer&quot;&gt;
+&lt;block name=&quot;theme-layout-footer&quot; type=&quot;flexibletheme/footer&quot; /&gt;
+&lt;remove name=&quot;store_switcher&quot; /&gt;
+&lt;remove name=&quot;footer_links&quot; /&gt;
+&lt;remove name=&quot;footer_links2&quot; /&gt;
+&lt;remove name=&quot;footer.newsletter&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links&quot; /&gt;
+&lt;remove name=&quot;cms_footer_links_sm&quot; /&gt;
+&lt;remove name=&quot;footer_currency&quot; /&gt;
+&lt;/reference&gt;
+&lt;block type=&quot;page/switch&quot; name=&quot;footer-switch-language&quot; as=&quot;footer-switch-language&quot; template=&quot;page/switch/languages-style-02.phtml&quot;/&gt;
+&lt;block class=&quot;directory/currency&quot; name=&quot;footer-switch-currency&quot; template=&quot;directory/currency-style-02.phtml&quot; /&gt;</layout_xml>
+   <custom_variables/>
+   <custom_fields/>
+   <parent>footer-style-07</parent>
+   <content>&lt;div class=&quot;footer-style-09&quot;&gt;
+&lt;div class=&quot;container-fluid&quot;&gt;
+&lt;div class=&quot;footer content&quot;&gt;{{block name=&quot;footer-top&quot; type=&quot;core/template&quot; template=&quot;codazon_flexibletheme/html/footer-top.phtml&quot; child_blocks=&quot;footer-switch-language,footer-switch-currency&quot;}}
+&lt;div class=&quot;footer-content-middle&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-24&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box box-info&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-1&quot;&gt;About us&lt;/p&gt;
+&lt;p id=&quot;footer-content-1&quot;&gt;Looking cautiously round, to ascertain that they were not overheard, the two hags cowered nearer to the fire, and chuckled heartily.&lt;/p&gt;
+&lt;div class=&quot;newsletter-block&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-2&quot;&gt;Subscribe us&lt;/p&gt;
+&lt;div class=&quot;newsletter-content&quot; id=&quot;footer-content-2&quot;&gt;{{block type=&quot;newsletter/subscribe&quot; name=&quot;cdz.newsletter&quot; template=&quot;newsletter/subscribe.phtml&quot;}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-6&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-3&quot;&gt;orders &amp;amp; returns&lt;/p&gt;
+&lt;ul class=&quot;footer-link showhide hover-link01&quot; id=&quot;footer-content-3&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Order Status&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shipping, Delivery &amp;amp; Store Pickup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Return &amp;amp; Exchange Promise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Price Match Guarantee&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Pay with Points&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-5&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5&quot; data-cdz-toggle=&quot;#footer-content-4&quot;&gt;Support and services&lt;/p&gt;
+&lt;ul class=&quot;footer-link showhide hover-link01&quot; id=&quot;footer-content-4&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Customer Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Protection Plans&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Schedule a Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Trade-In Program&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;Product Recalls&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-7&quot;&gt;
+&lt;div class=&quot;footer-box&quot;&gt;
+&lt;p class=&quot;h5 padding-title&quot; data-cdz-toggle=&quot;#footer-content-5&quot;&gt;Instagram&lt;/p&gt;
+&lt;div id=&quot;footer-content-5&quot;&gt;
+&lt;div class=&quot;instagram-wrapper&quot;&gt;
+&lt;div class=&quot;photo-items items&quot;&gt;{{widget type=&quot;flexibletheme/widget_instagramphotos&quot; access_token=&quot;7292707175.1677ed0.5c6babe4008e488ab25533f8ba6ce5c6&quot; custom_template=&quot;codazon_flexibletheme/widget/instagramphotos/grid-style-02.phtml&quot; show_slider=&quot;0&quot; total_rows=&quot;1&quot; max_items=&quot;1&quot; items_1900=&quot;6&quot; items_1600=&quot;5&quot; items_1420=&quot;5&quot; items_1280=&quot;5&quot; items_980=&quot;4&quot; items_768=&quot;3&quot; items_480=&quot;3&quot; items_320=&quot;2&quot; items_0=&quot;2&quot;}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-content-bottom&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-sm-12&quot;&gt;
+&lt;div class=&quot;footer-address&quot;&gt;
+&lt;p&gt;Prices and offers are subject to change. &amp;copy; 2018 YourSite . All rights reserved. YOUR SITE&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;col-sm-12 text-right&quot;&gt;
+&lt;div class=&quot;footer-app-store&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img alt=&quot;Codazon_alt&quot; src=&quot;{{media url=&quot;wysiwyg/codazon/footer-img-02.jpg&quot;}}&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;#&quot;&gt;&lt;img alt=&quot;Codazon_alt&quot; src=&quot;{{media url=&quot;wysiwyg/codazon/footer-img-01.jpg&quot;}}&quot; /&gt; &lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+</config>

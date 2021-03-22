@@ -1,0 +1,209 @@
+"identifier","title","is_active","variables","parent","custom_fields","layout_xml","content","content_1"
+"header-style-01","Header Style 01","1","{""header_background"":""#ffffff"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_border"":""#ffffff"",""header_cart_background"":""transparent"",""header_cart_border"":"""",""header_cart_icon"":""#5c6ac3"",""header_cart_quality_background"":""#0d0d0d"",""header_cart_text"":""#ffffff"",""header_drop_background"":""#ffffff"",""header_drop_border_color"":""#dbdbdb"",""header_drop_hover_text"":""#5C6AC3"",""header_drop_text"":""#282828"",""header_hover_text"":""#5c6ac3"",""header_mobile_background"":""#5c6ac3"",""header_mobile_icon"":""#ffffff"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_border"":"""",""header_mobile_search_text_text"":"""",""header_search_background"":""#8389e1"",""header_search_button_background"":""transparent"",""header_search_button_text"":""#ffffff"",""header_search_text"":""#ffffff"",""header_shadow"":""0 -8px 10px #4f5eb0"",""header_text"":""#34343c"",""header_top_background"":""#ffffff"",""header_top_text"":""#34343c"",""menu_background"":""#5c6ac3"",""menu_border"":""#525fb0"",""menu_content_background"":""#ffffff"",""menu_content_border"":""#d1d1d1"",""menu_content_color"":""#444444"",""menu_drop_background"":""#ffffff"",""menu_drop_border"":""#e1e1e1"",""menu_drop_font"":""400 13px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_hover_text"":""#fc7070"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_text"":""#999999"",""menu_drop_text_title"":""#282828"",""menu_font"":""600 14px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_hover_background"":""transparent"",""menu_hover_text"":""#ffb21e"",""menu_text"":""#ffffff"",""menu_title_background"":""#e8e8e8"",""menu_title_border"":""#dbdbdb"",""menu_title_color"":""#333333"",""vermenu_background"":""#ffffff"",""vermenu_border"":""#eaeaea"",""vermenu_font"":""400 14px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_hover_background"":""#eaeaea"",""vermenu_hover_text"":""#ff6a00"",""vermenu_text"":""#282828""}","","{""version"":""5da1b378468c6""}","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-01.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-01</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.currency_language</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>minicart_head</blockName>
+    </action>
+</reference>","",""
+"header-style-02","Header Style 02","1","{""header_background"":""#f6f7f9"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_top_background"":""#ffffff"",""header_text"":""#a8aeba"",""header_top_text"":""#34343c"",""header_hover_text"":""#6772e5"",""header_border"":""#f0f2f7"",""header_shadow"":""rgba(0, 0, 0, 0.08) 0px 4px 34px"",""header_cart_background"":""transparent"",""header_cart_quality_background"":""#e3e8f0"",""header_cart_text"":""#6772e5"",""header_cart_icon"":""#6772e5"",""header_cart_border"":"""",""header_search_text"":""#a1a7bd"",""header_search_background"":""#ffffff"",""header_search_button_text"":""#36405e"",""header_search_button_background"":""transparent"",""header_drop_text"":""#282828"",""header_drop_background"":""#ffffff"",""header_drop_hover_text"":""#6772e5"",""header_drop_border_color"":""#dbdbdb"",""menu_background"":""#ffffff"",""menu_hover_background"":"""",""menu_text"":""#343e5c"",""menu_hover_text"":""#ffb21e"",""menu_border"":""#ffffff"",""menu_font"":""600 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_background"":""#fafafa"",""vermenu_hover_background"":""#6772e5"",""vermenu_text"":""#444444"",""vermenu_hover_text"":""#ffffff"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_background"":""#ffffff"",""menu_drop_text_title"":""#282828"",""menu_drop_text"":""#999999"",""menu_drop_hover_text"":""#6772e5"",""menu_drop_border"":""#e1e1e1"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_font"":""400 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""header_mobile_background"":""#ffffff"",""header_mobile_icon"":""#36405e"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_text"":"""",""header_mobile_search_text_border"":"""",""menu_content_background"":""#36405e"",""menu_content_color"":""#ffffff"",""menu_content_border"":""#515e85"",""menu_title_background"":""#f6f7f9"",""menu_title_color"":""#36405e"",""menu_title_border"":""#515e85""}","","","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-02.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-02</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>minicart_head</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+</reference>
+<reference name=""toggle_sidebar_left"">
+    <action method=""insert"">
+        <blockName>toggle_menu</blockName>
+        <siblingName></siblingName>
+        <after>0</after>
+    </action>
+</reference>","",""
+"header-style-03","Header Style 03","1","{""header_background"":""#f6f7f9"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_top_background"":""#ffffff"",""header_text"":""#a8aeba"",""header_top_text"":""#34343c"",""header_hover_text"":""#009688"",""header_border"":""#f0f2f7"",""header_shadow"":""0px 4px 34px rgba(0, 0, 0, 0.08)"",""header_cart_background"":""transparent"",""header_cart_quality_background"":""#e3e8f0"",""header_cart_text"":""#009688"",""header_cart_icon"":""#009688"",""header_cart_border"":"""",""header_search_text"":""#a1a7bd"",""header_search_background"":""#ffffff"",""header_search_button_text"":""#36405e"",""header_search_button_background"":""transparent"",""header_drop_text"":""#282828"",""header_drop_background"":""#ffffff"",""header_drop_hover_text"":""#009688"",""header_drop_border_color"":""#dbdbdb"",""menu_background"":""#ffffff"",""menu_hover_background"":""transparent"",""menu_text"":""#343e5c"",""menu_hover_text"":""#009688"",""menu_border"":""#ffffff"",""menu_font"":""600 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_background"":""#fafafa"",""vermenu_hover_background"":""#009688"",""vermenu_text"":""#444444"",""vermenu_hover_text"":""#ffffff"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_background"":""#ffffff"",""menu_drop_text_title"":""#282828"",""menu_drop_text"":""#999999"",""menu_drop_hover_text"":""#009688"",""menu_drop_border"":""#e1e1e1"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_font"":""400 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""header_mobile_background"":""#ffffff"",""header_mobile_icon"":""#009688"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_text"":"""",""header_mobile_search_text_border"":"""",""menu_content_background"":""#ffffff"",""menu_content_color"":""#444444"",""menu_content_border"":""#d1d1d1"",""menu_title_background"":""#e8e8e8"",""menu_title_color"":""#333333"",""menu_title_border"":""#dbdbdb""}","header-style-02","","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-02.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-03</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>minicart_head</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+</reference>
+<reference name=""toggle_sidebar_left"">
+    <action method=""insert"">
+        <blockName>toggle_menu</blockName>
+        <siblingName></siblingName>
+        <after>0</after>
+    </action>
+</reference>","",""
+"header-style-04","Header Style 04","1","{""header_background"":""#ffffff"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_top_background"":""#000000"",""header_text"":""#222e46"",""header_top_text"":""#ffffff"",""header_hover_text"":""#f44336"",""header_border"":""#282828"",""header_shadow"":"""",""header_cart_background"":""transparent"",""header_cart_quality_background"":""#282828"",""header_cart_text"":""#222e46"",""header_cart_icon"":""#222e46"",""header_cart_border"":"""",""header_search_text"":""#222e46"",""header_search_background"":""#ffffff"",""header_search_button_text"":""#222e46"",""header_search_button_background"":""#ffffff"",""header_drop_text"":""#282828"",""header_drop_background"":""#ffffff"",""header_drop_hover_text"":""#f44336"",""header_drop_border_color"":""#dbdbdb"",""menu_background"":""#ffffff"",""menu_hover_background"":""#ffffff"",""menu_text"":""#222e46"",""menu_hover_text"":""#f44336"",""menu_border"":""#e1e1e1"",""menu_font"":""700 15px\/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_background"":""#fafafa"",""vermenu_hover_background"":""#f44336"",""vermenu_text"":""#444444"",""vermenu_hover_text"":""#ffffff"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_background"":""#ffffff"",""menu_drop_text_title"":""#282828"",""menu_drop_text"":""#282828"",""menu_drop_hover_text"":""#fc7070"",""menu_drop_border"":""#e1e1e1"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_font"":""500 12px\/1.35 Roboto, Helvetica Neue, Verdana, Arial, sans-serif"",""header_mobile_background"":""#f44336"",""header_mobile_icon"":""#ffffff"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_text"":"""",""header_mobile_search_text_border"":"""",""menu_content_background"":""#353535"",""menu_content_color"":""#ffffff"",""menu_content_border"":""#1f1f1f"",""menu_title_background"":""#ffffff"",""menu_title_color"":""#353535"",""menu_title_border"":""#1f1f1f""}","","","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-04.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-04</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>minicart_head</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>menu_toggle_button</blockName>
+    </action>
+</reference>
+<reference name=""menu_toggle_button"">
+    <action method=""setData""><key>direction</key><value>right</value></action>
+    <action method=""setData""><key>section</key><value>toggle-menu-container</value></action>
+    <action method=""setData""><key>html_tag</key><value>li</value></action>
+</reference>    
+<reference name=""toggle_sidebar_right"">
+    <action method=""insert"">
+        <blockName>toggle_menu</blockName>
+        <siblingName></siblingName>
+        <after>0</after>
+    </action>a
+</reference>","<div class=""store-info-top container"">
+<div class=""row"">
+<div class=""col-sm-12 colleft"">
+<div class=""store-contact""><a class=""store-tel"" href=""tel:0123456789""><em class=""fa fa-phone""></em> (0123) 456 xxx</a> <a class=""store-mail"" href=""mailto:codazon@sample.com""><em class=""fa fa-envelope""></em> codazon@sample.com</a></div>
+</div>
+<div class=""col-sm-12 colright"">
+<div class=""social-wrap f-right""><a href=""#""><em class=""fa fa-pinterest-p""></em>pinterest</a> <a href=""#""><em class=""fa fa-vimeo""></em>vimeo</a> <a href=""#""><em class=""fa fa-twitter""></em>twitter</a> <a href=""#""><em class=""fa fa-facebook""></em>facebook</a> <a href=""#""><em class=""fa fa-google-plus""></em>google-plus</a></div>
+</div>
+<div></div>
+</div>
+</div>",""
+"header-style-05","Header Style 05","1","{""header_background"":""#ffffff"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_top_background"":""#ffffff"",""header_text"":""#282828"",""header_top_text"":""#282828"",""header_hover_text"":""#dddddd"",""header_border"":""#eaeaee"",""header_shadow"":"""",""header_cart_background"":""transparent"",""header_cart_quality_background"":""#f96668"",""header_cart_text"":""#282828"",""header_cart_icon"":""#282828"",""header_cart_border"":"""",""header_search_text"":""#282828"",""header_search_background"":""#ffffff"",""header_search_button_text"":""#ffffff"",""header_search_button_background"":""#282828"",""header_drop_text"":""#282828"",""header_drop_background"":""#ffffff"",""header_drop_hover_text"":""#dddddd"",""header_drop_border_color"":""#dbdbdb"",""menu_background"":""#000000"",""menu_hover_background"":""#000000"",""menu_text"":""#ffffff"",""menu_hover_text"":""#dddddd"",""menu_border"":""#000000"",""menu_font"":""500 14px\/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_background"":""#fafafa"",""vermenu_hover_background"":""#e6c1a3"",""vermenu_text"":""#444444"",""vermenu_hover_text"":""#555555"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_background"":""#ffffff"",""menu_drop_text_title"":""#282828"",""menu_drop_text"":""#999999"",""menu_drop_hover_text"":""#dddddd"",""menu_drop_border"":""#e1e1e1"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_font"":""400 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""header_mobile_background"":""#ffffff"",""header_mobile_icon"":""#282828"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_text"":"""",""header_mobile_search_text_border"":"""",""menu_content_background"":""#353535"",""menu_content_color"":""#ffffff"",""menu_content_border"":""#1f1f1f"",""menu_title_background"":""#ffffff"",""menu_title_color"":""#353535"",""menu_title_border"":""#1f1f1f""}","","","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-05.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-05</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+</reference>","<ul class=""header-extra-links"">
+<li><a href=""{{store url=""contact""}}"">Contact</a></li>
+<li><a href=""#"">FAQ</a></li>
+<li><a href=""#"">Ship to United State</a></li>
+</ul>","<div class=""hot-line-wrapper""><span class=""msg-text"">Need Help? Call us now: </span><a class=""telephone"" href=""tel:123455688719"">(123) 455688719</a></div>"
+"header-style-06","Header Style 06","1","{""header_background"":""#ffffff"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_top_background"":""#ffffff"",""header_text"":""#282828"",""header_top_text"":""#282828"",""header_hover_text"":""#a07653"",""header_border"":""#282828"",""header_shadow"":"""",""header_cart_background"":""transparent"",""header_cart_quality_background"":""#f96668"",""header_cart_text"":""#282828"",""header_cart_icon"":""#282828"",""header_cart_border"":"""",""header_search_text"":""#282828"",""header_search_background"":""#ffffff"",""header_search_button_text"":""#282828"",""header_search_button_background"":""#ffffff"",""header_drop_text"":""#282828"",""header_drop_background"":""#ffffff"",""header_drop_hover_text"":""#a07653"",""header_drop_border_color"":""#dbdbdb"",""menu_background"":""#000000"",""menu_hover_background"":""#000000"",""menu_text"":""#ffffff"",""menu_hover_text"":""#a07653"",""menu_border"":""#000000"",""menu_font"":""500 14px\/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_background"":""#fafafa"",""vermenu_hover_background"":""#e6c1a3"",""vermenu_text"":""#444444"",""vermenu_hover_text"":""#555555"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_background"":""#ffffff"",""menu_drop_text_title"":""#282828"",""menu_drop_text"":""#999999"",""menu_drop_hover_text"":""#a07653"",""menu_drop_border"":""#e1e1e1"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_font"":""400 12px\/1.35 Rajdhani, Helvetica Neue, Verdana, Arial, sans-serif"",""header_mobile_background"":""#ffffff"",""header_mobile_icon"":""#282828"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_text"":"""",""header_mobile_search_text_border"":"""",""menu_content_background"":""#353535"",""menu_content_color"":""#ffffff"",""menu_content_border"":""#1f1f1f"",""menu_title_background"":""#ffffff"",""menu_title_color"":""#353535"",""menu_title_border"":""#1f1f1f""}","","","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-06.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-06</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+</reference>","",""
+"header-style-07","Header Style 07","1","{""header_background"":""#ffffff"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_border"":""#282828"",""header_cart_background"":""transparent"",""header_cart_border"":"""",""header_cart_icon"":""#222e46"",""header_cart_quality_background"":""#282828"",""header_cart_text"":""#222e46"",""header_drop_background"":""#ffffff"",""header_drop_border_color"":""#dbdbdb"",""header_drop_hover_text"":""#009688"",""header_drop_text"":""#282828"",""header_hover_text"":""#009688"",""header_mobile_background"":""#009688"",""header_mobile_icon"":""#ffffff"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_border"":"""",""header_mobile_search_text_text"":"""",""header_search_background"":""#ffffff"",""header_search_button_background"":""#ffffff"",""header_search_button_text"":""#222e46"",""header_search_text"":""#222e46"",""header_shadow"":""0 -8px 10px #6c14eb"",""header_text"":""#222e46"",""header_top_background"":""#000000"",""header_top_text"":""#ffffff"",""menu_background"":""#ffffff"",""menu_border"":""#e1e1e1"",""menu_content_background"":""#353535"",""menu_content_border"":""#1f1f1f"",""menu_content_color"":""#ffffff"",""menu_drop_background"":""#ffffff"",""menu_drop_border"":""#e1e1e1"",""menu_drop_font"":""400 12px\/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_hover_text"":""#009688"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_text"":""#282828"",""menu_drop_text_title"":""#282828"",""menu_font"":""600 14px\/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_hover_background"":""#ffffff"",""menu_hover_text"":""#009688"",""menu_text"":""#222e46"",""menu_title_background"":""#ffffff"",""menu_title_border"":""#1f1f1f"",""menu_title_color"":""#353535"",""vermenu_background"":""#fafafa"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 Montserrat, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_hover_background"":""#009688"",""vermenu_hover_text"":""#ffffff"",""vermenu_text"":""#444444""}","header-style-04","","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-04.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-07</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>minicart_head</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>menu_toggle_button</blockName>
+    </action>
+</reference>
+<reference name=""menu_toggle_button"">
+    <action method=""setData""><key>direction</key><value>right</value></action>
+    <action method=""setData""><key>section</key><value>toggle-menu-container</value></action>
+    <action method=""setData""><key>html_tag</key><value>li</value></action>
+</reference>    
+<reference name=""toggle_sidebar_right"">
+    <action method=""insert"">
+        <blockName>toggle_menu</blockName>
+        <siblingName></siblingName>
+        <after>0</after>
+    </action>a
+</reference>","<div class=""store-info-top container"">
+<div class=""row"">
+<div class=""col-sm-12 colleft"">
+<div class=""store-contact""><a class=""store-tel"" href=""tel:0123456789""><em class=""fa fa-phone""></em> (0123) 456 xxx</a> <a class=""store-mail"" href=""mailto:codazon@sample.com""><em class=""fa fa-envelope""></em> codazon@sample.com</a></div>
+</div>
+<div class=""col-sm-12 colright"">
+<div class=""social-wrap f-right""><a href=""#""><em class=""fa fa-pinterest-p""></em>pinterest</a> <a href=""#""><em class=""fa fa-vimeo""></em>vimeo</a> <a href=""#""><em class=""fa fa-twitter""></em>twitter</a> <a href=""#""><em class=""fa fa-facebook""></em>facebook</a> <a href=""#""><em class=""fa fa-google-plus""></em>google-plus</a></div>
+</div>
+<div></div>
+</div>
+</div>",""
+"header-style-08","Header Style 08","1","{""header_background"":""#ffffff"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_border"":""#ffffff"",""header_cart_background"":""#4ac2f7"",""header_cart_border"":""#19b2f5"",""header_cart_icon"":""#ffffff"",""header_cart_quality_background"":""#0d0d0d"",""header_cart_text"":""#ffffff"",""header_drop_background"":""#ffffff"",""header_drop_border_color"":""#dbdbdb"",""header_drop_hover_text"":""#19b2f5"",""header_drop_text"":""#282828"",""header_hover_text"":""#19b2f5"",""header_mobile_background"":""#19b2f5"",""header_mobile_icon"":""#ffffff"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_border"":"""",""header_mobile_search_text_text"":"""",""header_search_background"":""#ffffff"",""header_search_button_background"":""transparent"",""header_search_button_text"":""#19b2f5"",""header_search_text"":""#9c9c9c"",""header_shadow"":""0 -8px 10px #4f5eb0"",""header_text"":""#34343c"",""header_top_background"":""#ecf7fd"",""header_top_text"":""#34343c"",""menu_background"":""#19b2f5"",""menu_border"":""#fed41e"",""menu_content_background"":""#ffffff"",""menu_content_border"":""#e1e1e1"",""menu_content_color"":""#444444"",""menu_drop_background"":""#ffffff"",""menu_drop_border"":""#e1e1e1"",""menu_drop_font"":""400 13px\/1.35 PT Sans, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_hover_text"":""#19b2f5"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_text"":""#999999"",""menu_drop_text_title"":""#282828"",""menu_font"":""600 14px\/1.35 PT Sans, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_hover_background"":""#fed41e"",""menu_hover_text"":""#ffffff"",""menu_text"":""#ffffff"",""menu_title_background"":""#19b2f5"",""menu_title_border"":""#15a4e2"",""menu_title_color"":""#ffffff"",""vermenu_background"":""#ffffff"",""vermenu_border"":""#fed41e"",""vermenu_font"":""500 13px\/1.35 PT Sans, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_hover_background"":""#eaeaea"",""vermenu_hover_text"":""#fed41e"",""vermenu_text"":""#282828""}","","{""version"":""5da1c10d97385""}","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-07.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-08</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+</reference>","<ul class=""header-extra-links"">
+<li><a href=""{{store url=""contacts""}}"">Contact</a></li>
+<li><a href=""#"">FAQ</a></li>
+<li><a href=""#"">Ship to United State</a></li>
+</ul>",""
+"header-style-09","Header Style 09","1","{""header_background"":""#7fba00"",""header_background_file"":"""",""header_background_image_option"":""0 0"",""header_border"":""#507601"",""header_cart_background"":""transparent"",""header_cart_border"":"""",""header_cart_icon"":""#ffffff"",""header_cart_quality_background"":""#ff0054"",""header_cart_text"":""#ffffff"",""header_drop_background"":""#ffffff"",""header_drop_border_color"":""#dbdbdb"",""header_drop_hover_text"":""#7fba00"",""header_drop_text"":""#282828"",""header_hover_text"":""#f7df00"",""header_mobile_background"":""#7fba00"",""header_mobile_icon"":""#ffffff"",""header_mobile_search_text_background"":"""",""header_mobile_search_text_border"":"""",""header_mobile_search_text_text"":"""",""header_search_background"":""#ffffff"",""header_search_button_background"":""#ffffff"",""header_search_button_text"":""#6a7d88"",""header_search_text"":""#CDCDCD"",""header_shadow"":""0 1px 5px 3px #cccccc"",""header_text"":""#ffffff"",""header_top_background"":""#567d03"",""header_top_text"":""#ffffff"",""menu_background"":""#7fba00"",""menu_border"":""#e1e1e1"",""menu_content_background"":""#7fba00"",""menu_content_border"":""#689408"",""menu_content_color"":""#ffffff"",""menu_drop_background"":""#ffffff"",""menu_drop_border"":""#e1e1e1"",""menu_drop_font"":""400 14px\/1.35 PT Sans, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_drop_hover_text"":""#b0d235"",""menu_drop_shadow"":""0 3px 3px #e1e1e1"",""menu_drop_text"":""#999999"",""menu_drop_text_title"":""#282828"",""menu_font"":""400 12px\/1.35 PT Sans, Helvetica Neue, Verdana, Arial, sans-serif"",""menu_hover_background"":""transparent"",""menu_hover_text"":""#f7df00"",""menu_text"":""#ffffff"",""menu_title_background"":""#ffffff"",""menu_title_border"":""#689408"",""menu_title_color"":""#689408"",""vermenu_background"":""#fafafa"",""vermenu_border"":""#ebebeb"",""vermenu_font"":""500 12px\/1.35 PT Sans, Helvetica Neue, Verdana, Arial, sans-serif"",""vermenu_hover_background"":""#b0d235"",""vermenu_hover_text"":""#ffffff"",""vermenu_text"":""#444444""}","","{""version"":""5da1b1fcb01eb""}","<reference name=""header"">
+    <action method=""setTemplate""><template>page/html/header/header-style-08.phtml</template></action>
+    <action method=""setData""><key>class_name</key><value>header-style-09</value></action>
+</reference>
+<reference name=""featured_links"">
+    <action method=""insert"">
+        <blockName>featured_links.contact</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>minicart_head</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.wishlist</blockName>
+    </action>
+    <action method=""insert"">
+        <blockName>featured_links.account</blockName>
+    </action>
+</reference>
+<reference name=""toggle_sidebar_left"">
+    <action method=""insert"">
+        <blockName>toggle_menu</blockName>
+        <siblingName></siblingName>
+        <after>0</after>
+    </action>
+</reference>","",""

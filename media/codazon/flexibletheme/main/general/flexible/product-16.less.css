@@ -1,0 +1,110 @@
+/*Furniture Style*/
+.product-list-style-16{
+	.abs-product-hover-img(); /*hover*/
+	.prolabels-style05();
+	.product-name .product-item-link{
+		text-transform: capitalize;
+		letter-spacing: 1px;
+		.abs-transition();
+	}
+	.cdz-products-grid{
+		overflow: hidden;
+	}
+	.price-box{
+		margin-bottom: 0;
+		.abs-transition();
+		.old-price{
+			margin: 0 7px;
+			float: none
+		}			
+	}
+	.product-item-info{ position: relative}	
+	.ratings {
+		margin:0;
+		.amount{display: none}
+		.rating:before{
+			color:lighten(@main_productname_text, 45%);
+		}
+	}
+}
+@media(min-width: @screen-sm-min){
+	.product-list-style-16{
+		.product-item-details{
+			position: absolute;
+			bottom:0;
+			left:0;
+			width: 100%;
+			z-index: 1;
+			padding: 15px;
+			min-height: unset !important;
+		}
+		.button-hover-wrap{
+			height: 200px;
+		    align-items: center;
+		    position: absolute;
+		    top: 10px;
+		    right: 10px;
+		    z-index: 2;
+		    transform: translateY(-52%);
+		    .abs-transition();
+			.cart-wrap{
+	    		margin: 10px 0;
+	    	}
+	    	.btn-cart,
+	    	.tocompare,
+	    	.towishlist,
+	    	.qs-button{
+	    		margin-bottom: 10px;
+	    		display: block;
+				.icon-style(40px);
+				.abs-opacity(0);				
+				span{display: none}
+			}
+			.btn-cart:after{
+				.abs-iconfont("\f07a", 14px);
+			}
+			.rtl-layout &{
+				right:auto;
+				left:10px;
+			}		
+		}
+		.product-item .tocompare:before{
+			.abs-iconfont("\f0ec", 14px);
+	    }
+		.product-item:hover{
+			.button-hover-wrap{
+				transform: translateY(0);
+				.qs-button,
+				.btn-cart,
+				.towishlist,
+				.tocompare{
+					.abs-opacity(1);
+				}
+				.btn-cart.unavailable{
+					.abs-opacity(0.5);
+				}
+			}
+		}
+	}
+}
+
+@media(min-width: @screen-sm-min) and (max-width: @screen-md-max){
+	.product-list-style-16 {
+		.product-item-details{
+			position: relative;
+			padding: 0
+		}	
+	}
+}
+
+@media(max-width: @screen-xs-max) {
+	.product-list-style-16{
+		.product-item{
+			padding: 0;
+		}
+		.button-hover-wrap {
+		    display: none;
+		    margin-top: 10px
+		}
+	}
+}

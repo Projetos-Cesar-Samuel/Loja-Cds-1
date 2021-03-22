@@ -1,0 +1,91 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+    /* @var $this Mage_Wishlist_Block_Customer_Wishlist_Items */
+?>
+
+<?php
+$items = $this->getWishlistItems();
+$items->setPageSize(20);
+?>
+<div class="block block-wishlist">
+    <div class="block-top">
+        <div class="block-title">
+            <strong><?= $this->__('Your Wishlist') ?></strong>
+            <span> - </span><span><?= $this->__('%s item(s)', $items->count()); ?></span>
+            <a class="details md-icon-button launch md-ink-ripple" href="<?= $this->helper('wishlist')->getListUrl() ?>"></a>
+        </div>
+    </div>
+    <div class="block-content">
+        <?php if ($items->count()): ?>
+        <?php
+            $imageHelper = $this->helper('catalog/image');
+            $removeText = $this->quoteEscape($this->__('Remove This Item'));
+            $confirmText = $this->jsQuoteEscape($this->__('Are you sure you would like to remove this item from the wishlist?'));
+        ?>
+        <ul class="product-items">
+            <?php foreach ($items as $_item): ?>
+                <?php
+                $product = $_item->getProduct();
+                $name = $this->escapeHtml($product->getName());
+                $addCartText = $this->__('Add to Cart');
+                ?>
+                <li class="item product-item">
+                    <div class="product-item-info row">
+                        <div class="col-xs-6 product-item-left">
+                            <a class="product-item-image" href="<?php echo $this->getProductUrl($_item) ?>" title="<?= $name ?>" >
+                                <img src="<?= $imageHelper->init($product, 'thumbnail')->resize(50); ?>" width="50" height="50" alt="<?= $name ?>" />
+                            </a>
+                            <a href="<?php echo $this->getItemRemoveUrl($_item) ?>" title="<?= $removeText  ?>" onclick="return confirm('<?= $confirmText ?>');" class="js-remove-wl-item btn-remove action delete"><?= $removeText ?></a>
+                        </div>
+                        <div class="product-item-details col-xs-18 row">
+                            <div class="col-xs-14">
+                                <strong class="product-item-name">
+                                    <a href="<?php echo $this->getProductUrl($_item) ?>" title="<?= $name ?>">
+                                        <?= $name ?>
+                                    </a>
+                                </strong>
+                                <?php echo $this->getPriceHtml($product, false, '-mini-wishlist') ?>
+                            </div>
+                            <div class="col-xs-10">
+                                <?php if ($product->isSaleable() && $product->isVisibleInSiteVisibility()): ?>
+                                    <form action="<?= $this->getItemAddToCartUrl($_item) ?>" class="wl-cart-form">
+                                        <input class="wl-item-qty md-input" type="text" name="qty" value="<?= ((float)$_item->getQty()) ? : 1 ?>">
+                                        <button class="tocart"><span><?= $addCartText ?></span></button>
+                                    </form>
+                                <?php endif ?>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <?php endforeach ?>
+        </ul>
+        <?php else: ?>
+        <div class="wishlist-empty"><?php echo $this->__('This Wishlist has no Items');?></div>
+        <?php endif; ?>
+    </div>
+</div>

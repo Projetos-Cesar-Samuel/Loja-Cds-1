@@ -1,0 +1,132 @@
+@media (min-width: 992px) {
+	#ytech_mommenu{
+		display:none;
+	}
+}
+@media (max-width: 991px) {
+	#ytech_mommenu .btn2 {
+		position: fixed;
+		left: 0;
+		top: 35%;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 28px;
+		display: none;
+		cursor: pointer;
+		color: #222;
+		background-color: #fff;
+		border: none;
+		box-shadow: 0px 0px 1px grey; 
+		z-index: 99;
+	}
+	#ytech_mommenu .btn2.leftsidebar {
+		display: none;
+	}
+	#ytech_mommenu .btn2.leftsidebar .overlay {
+		background: black;
+		-webkit-opacity: 0.2;
+		-moz-opacity: 0.2;
+		-ms-opacity: 0.2;
+		-o-opacity: 0.2;
+		opacity: 0.2;
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 9998;
+		display: none;
+	}
+	#ytech_mommenu .overlay {
+		background: #000;
+		bottom: 0;
+		content: "";
+		cursor: pointer;
+		display: none;
+		height: 100%;
+		left: 0;
+		opacity: 0.2;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 9998;
+	}
+	
+	#ytech_mommenu .btn2 {
+		height: 103px !important;
+		line-height: 57px !important;
+		width: 30px;
+		background-color:#242120;
+	}
+	
+	#ytech_mommenu .btn2 > p {
+		color: white;
+		line-height: 57px !important;
+	}
+	
+	.col-left.sidebar {
+		position: fixed;
+		top: 0;
+		left: -280px;
+		width: 280px;
+		padding: 15px;
+			padding-top: 15px;
+		bottom: 0;
+		background: 
+		white;
+		Z-index: 9999;
+		overflow: auto;
+		height: 100%;
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		-ms-opacity: 0;
+		-o-opacity: 0;
+		opacity: 0;
+		-webkit-transition: all 0.3s ease-in;
+		-moz-transition: all 0.3s ease-in;
+		-ms-transition: all 0.3s ease-in;
+		-o-transition: all 0.3s ease-in;
+		transition: all 0.3s ease-in;
+	}
+	
+	.col-left.sidebar.col-left-first.active {
+		left: 0;
+		-webkit-opacity: 1;
+		-moz-opacity: 1;
+		-ms-opacity: 1;
+		-o-opacity: 1;
+		opacity: 1;
+	}
+	
+	.sidebar.col-left-first .block:not(.block-layered-nav) .block-content, 
+	.sidebar.col-left-first .block.block-layered-nav .block-content{
+		padding:10px 0;
+		border:none;
+	}
+	
+	#narrow-by-list.no-display {
+		display: block !important;
+	}
+	
+	.block-layered-nav .block-content > dl > dd,
+	.block-layered-nav .block-content.accordion-open > dl > dd,
+	.block-layered-nav .block-content.accordion-open > dl > dd.current {
+		display: block;
+	}
+	
+	body:not(.catalog-category-view) #ytech_mommenu{
+		display:none;
+	}
+}
+
+@media (max-width: 770px) {
+	.sidebar.col-left-first .block:not(.block-layered-nav) .block-content, 
+	.sidebar.col-left-first .block.block-layered-nav .block-content{
+		padding:10px 0!important;
+		border:none!important;
+	}
+}

@@ -1,0 +1,186 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$_product = $this->getProduct();
+?>
+<?php if ($_product) : ?>
+<?php
+$name = $this->stripTags($_product->getName(), null, true);
+$url = $_product->getProductUrl();
+$width = 200;
+$height = 300;
+$imageHelper = $this->helper('catalog/image');
+$paddingBottom = 100 * $height/$width;
+$src = $imageHelper->init($_product, 'image')->resize($width, $height);
+$imageLabel = $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true);
+$local_home= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+
+if (!Mage::getSingleton('customer/session')->isLoggedIn()) {
+    $curl = Mage::getBaseUrl() . 'customer/account/login/';
+    } else {
+    $curl = $this->getCheckoutUrl();
+    }
+
+#
+?>
+<div class="result-wrapper">
+    <div class="rs-col rs-left" id="img-desk">
+        <a href="<?= $url ?>" class="product-item-image abs-img" style="padding-bottom: <?= $paddingBottom ?>%">
+            <img src="<?= $src ?>" />
+        </a>
+    </div>
+
+       <div class="rs-col rs-left" id="img-mob">
+        <center><a href="<?= $url ?>" class="product-item-image abs-img" style="padding-bottom: <?= $paddingBottom ?>%">
+            <img src="<?= $src ?>" />
+            </a></center>
+    </div>
+
+    <div class="rs-col rs-right">
+        <div class="minicart-message">
+            <span id="info-desk">
+                <h4><?= $this->__('<strong class="product-name" id="nome-do-produto" style="white-space: normal;">' . $name . ' foi adicionado ao seu carrinho.</strong>' )?></h4>
+            </span>
+
+            <span id="info-mob">
+                <center>
+                <h4><?= $this->__('<strong class="product-name" id="nome-do-produto" style="white-space: normal;">' . $name . ' foi adicionado ao seu carrinho.</strong>' )?></h4>
+                    </center>
+            </span>
+            <div class="butoes" id="bt-desk">
+                <span>
+                    <button class="button comprar_poppup comprar-produto-pop" style="width:100%;" onclick="window.location.href ='<?php echo $local_home?>'">Adicionar mais Produtos</button>
+                    <center><h4 style="padding: 10px 0px;">Ou</h4></center>
+                    <button class="button comprar_poppup comprar-produto-pop" style="width:100%;" onclick="setLocation('<?php echo $curl; ?>')";>
+                        Finalizar Pedido</button>
+                </span>
+            </div>
+
+            <div class="butoes" id="bt-mob">
+               <center> <span>
+                    <button class="button" onclick="window.location.href ='<?php echo $local_home?>'">Adicionar mais Produtos</button>
+                    <p style="margin:0;">Ou</p>
+                    <button class="button" onclick="window.location.href ='<?php echo $curl; ?>'">
+                        Finalizar Pedido</button>
+                </span></center>
+            </div>
+            <!--<a class="go-link cart-link" title="<?php echo $this->__('Ver carrinho'); ?>" href="<?php echo $this->getUrl('checkout/cart'); ?>"><?php echo $this->__('Ver carrinho'); ?></a>-->
+        </div>
+    </div>
+</div>
+<?php elseif ($this->getMessage()) : ?>
+<?= $this->getMessage() ?>
+<?php endif ?>
+
+<style>
+    .comprar_poppup:hover
+    {
+        background-color: #009688;
+        color: white;
+    }
+    .comprar_poppup
+    {
+        transition: all 500ms;
+        border-radius: 15px;
+    }
+    .cdz-ajaxcart-container .rs-left {
+        width: 30% !important;
+    }
+
+    .cdz-ajaxcart-container .rs-right {
+        width: 70% !important;
+    }
+
+    @media only screen and (max-width:600px) {
+        #info-desk {
+            display: none;
+        }
+        #img-desk
+        {
+            display: none;
+        }
+        a.product-item-image.abs-img>img {
+            width: 86%;
+            margin-left: 17px;
+            margin-top: 6px;
+            border-radius: 15px;
+        }
+
+        #bt-desk {
+            display: none;
+        }
+        a.product-item-image.abs-img
+        {
+            width: 60%!important;
+            padding-bottom: 57%!important;
+        }
+        div#img-mob {
+    width: 100%!important;
+}.cdz-ajaxcart-container .rs-right {
+    width: 100% !important;
+}
+    }
+
+    @media only screen and (min-width:600px) {
+        #bt-mob {
+            display: none;
+        }
+        #img-mob
+        {
+            display: none;
+        }
+
+        #info-mob {
+            display: none;
+        }
+
+        .cdz-popup.popup-ajaxcart-modal {
+            width: 600px;
+        }
+
+        a.product-item-image.abs-img>img {
+            width: 91%;
+            margin-left: 6px;
+            margin-top: 6px;
+            border-radius:15px;
+        }
+    }
+    body.cdz-popup-opened .cdz-popup.popup-ajaxcart-modal.opened {
+        border-radius: 20px;
+    }
+
+    .cdz-popup.popup-ajaxcart-modal .cdz-popup-inner {
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #f3fdfe!important
+    }
+
+    .cdz-popup-area .cdz-popup {
+
+        background: transparent !important;
+    }
+
+    #nome-do-produto{
+    overflow: hidden !important;
+    height: 60px !important;
+    width: 100% !important;
+  }
+
+
+button.button.comprar_poppup.comprar-produto-pop:hover {
+  background-color: #76c375!important;
+  border-color: #76c375!important;
+  color: #fff!important;
+}
+
+button.button.comprar_poppup.comprar-produto-pop {
+    background-color: #fff !important;
+    border-color: #000!important;
+    color: #000;
+}
+</style>
