@@ -1,0 +1,305 @@
+2021-06-30T15:32:46+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:32:46+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:32:46+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:32:46+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 6: parser error : Opening and ending tag mismatch: hr line 5 and body  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/body&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Opening and ending tag mismatch: body line 3 and html  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Premature end of data in tag html line 1  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 6: parser error : Opening and ending tag mismatch: hr line 5 and body  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/body&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Opening and ending tag mismatch: body line 3 and html  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Premature end of data in tag html line 1  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:32:48+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T15:33:01+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:01+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:01+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:01+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:04+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:04+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:04+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:04+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:05+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:05+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:05+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:05+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:16+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:16+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:16+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:16+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:38+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:38+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:38+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:38+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:45+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:45+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:45+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:45+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:58+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:58+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:33:58+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:33:58+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:01+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:01+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:01+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:01+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:03+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:03+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:03+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:03+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:11+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:11+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:11+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:11+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:14+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:14+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:14+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:14+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:16+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:16+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:34:16+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:34:16+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/page/html/breadcrumbs.phtml on line 33
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined index: states  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/community/Dexxtz/Customaddress/Helper/Data.php on line 79
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T15:36:16+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T15:36:33+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:36:33+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:36:33+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:36:33+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:36:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:36:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:36:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:36:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:38:14+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:38:14+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:38:14+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:38:14+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:38:18+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:38:18+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:38:18+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:38:18+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:41:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:41:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:41:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:41:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:41:13+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:41:13+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T15:41:13+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T15:41:13+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T16:39:57+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T16:39:57+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T16:39:57+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T16:39:57+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T16:39:59+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T16:39:59+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T16:39:59+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T16:39:59+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:18:57+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:18:57+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:18:57+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:18:57+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:19:02+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:19:02+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:19:02+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:19:02+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:20:26+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:20:26+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:20:26+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:20:26+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:20:28+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:20:28+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:20:28+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:20:28+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:20:31+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:20:31+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:20:31+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:20:31+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:15+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:15+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:15+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:15+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:29+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:29+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:29+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:29+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:29+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:29+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:29+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:29+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:33+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:33+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:33+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:33+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:45+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:45+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:45+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:45+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:52+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:52+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:52+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:52+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:58+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:58+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:21:58+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:21:58+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:22:36+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:22:36+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:22:36+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:22:36+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:22:57+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:22:57+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:22:57+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:22:57+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:22:58+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:22:58+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:22:58+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:22:58+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/page/html/breadcrumbs.phtml on line 33
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined index: states  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/community/Dexxtz/Customaddress/Helper/Data.php on line 79
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:33:04+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:44:48+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:44:48+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:44:48+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:44:48+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 6: parser error : Opening and ending tag mismatch: hr line 5 and body  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/body&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Opening and ending tag mismatch: body line 3 and html  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Premature end of data in tag html line 1  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:51+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/AdminNotification/Model/Feed.php on line 173
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 6: parser error : Opening and ending tag mismatch: hr line 5 and body  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/body&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Opening and ending tag mismatch: body line 3 and html  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): Entity: line 7: parser error : Premature end of data in tag html line 1  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct(): &lt;/html&gt;  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:44:52+00:00 ERR (3): Warning: SimpleXMLElement::__construct():        ^  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/local/Amasty/Base/Helper/Module.php on line 81
+2021-06-30T17:45:18+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:45:18+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:45:18+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:45:18+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:46:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:46:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:46:08+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:46:08+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:46:11+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:46:11+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:46:11+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:46:11+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:46:14+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:46:14+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:46:14+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:46:14+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/page/html/breadcrumbs.phtml on line 33
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/billing.phtml on line 145
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Undefined variable: _i  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:51:48+00:00 ERR (3): Notice: Array to string conversion  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/design/frontend/base/default/template/oscheckout/step/shipping.phtml on line 101
+2021-06-30T17:53:32+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:32+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:32+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:32+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:45+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:45+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:45+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:45+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:46+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:46+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:46+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:46+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:46+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:46+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:46+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:46+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:48+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:48+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:48+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:48+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:49+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:49+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:49+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:49+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:50+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:50+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:53:50+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:53:50+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:54:27+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:54:27+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:54:27+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:54:27+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:54:29+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:54:29+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T17:54:29+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T17:54:29+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:34+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:34+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:34+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:34+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:48+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:48+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:48+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:48+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:50+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:50+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:19:50+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:19:50+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:25:39+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:25:39+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:25:39+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:25:39+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:25:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:25:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-06-30T18:25:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
+2021-06-30T18:25:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216

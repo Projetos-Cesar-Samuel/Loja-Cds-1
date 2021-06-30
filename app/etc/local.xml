@@ -41,9 +41,9 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[127.0.0.1]]></host>
-                    <username><![CDATA[a5f54a54_cds1]]></username>
-                    <password><![CDATA[VigorFieldOdiumChaste]]></password>
-                    <dbname><![CDATA[a5f54a54_cds1]]></dbname>
+                    <username><![CDATA[samuel]]></username>
+                    <password><![CDATA[figueiredo]]></password>
+                    <dbname><![CDATA[novo_checkout]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
