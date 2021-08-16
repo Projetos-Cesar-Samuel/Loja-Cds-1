@@ -303,3 +303,7 @@
 2021-06-30T18:25:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
 2021-06-30T18:25:41+00:00 ERR (3): Notice: Undefined index: files  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 138
 2021-06-30T18:25:41+00:00 ERR (3): Warning: Invalid argument supplied for foreach()  in /Applications/XAMPP/xamppfiles/htdocs/novo_checkout/app/code/core/Mage/Core/Model/Translate.php on line 216
+2021-08-16T22:32:48+00:00 ERR (3): Warning: count(): Parameter must be an array or an object that implements Countable  in C:\xampp\htdocs\lojacds1\app\code\local\Codazon\Megamenupro\Block\Widget\Megamenu.php on line 20
+2021-08-16T22:32:54+00:00 ERR (3): Warning: count(): Parameter must be an array or an object that implements Countable  in C:\xampp\htdocs\lojacds1\app\code\local\Codazon\Megamenupro\Block\Widget\Megamenu.php on line 20
+2021-08-16T22:33:07+00:00 ERR (3): Warning: count(): Parameter must be an array or an object that implements Countable  in C:\xampp\htdocs\lojacds1\app\design\frontend\codazon_unlimited\default\template\codazon_flexibletheme\widget\instagramphotos\grid.phtml on line 13
+2021-08-16T22:33:09+00:00 ERR (3): Warning: count(): Parameter must be an array or an object that implements Countable  in C:\xampp\htdocs\lojacds1\app\design\frontend\codazon_unlimited\default\template\codazon_flexibletheme\widget\instagramphotos\grid.phtml on line 13

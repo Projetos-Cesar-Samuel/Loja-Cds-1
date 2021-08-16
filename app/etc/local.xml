@@ -41,9 +41,9 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[127.0.0.1]]></host>
-                    <username><![CDATA[samuel]]></username>
-                    <password><![CDATA[figueiredo]]></password>
-                    <dbname><![CDATA[novo_checkout]]></dbname>
+                    <username><![CDATA[root]]></username>
+                    <password><![CDATA[mateus]]></password>
+                    <dbname><![CDATA[lojacds1]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>

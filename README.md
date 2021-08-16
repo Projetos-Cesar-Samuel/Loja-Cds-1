@@ -132,3 +132,4 @@ Exibir CPF/CNPJ no Frontend: Sim
 **********************************************************************************************
 Se você gostou, se foi útil para você, se fez você economizar aquela grana pois estava prestes a pagar caro por aquele módulo pago, pois não achava um solução gratuita que te atendesse e queira prestigiar o trabalho feito efetuando uma doação de qualquer valor, não vou negar e vou ficar grato, você pode fazer isso utilizando o Pagseguro no site ofical do projeto: [Site Oficial do projeto](http://onestepcheckout.com.br)
 
+...
